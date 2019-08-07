@@ -1,0 +1,109 @@
+"""
+LICENSE (MIT License):
+
+Copyright 2018 Jason Gilbert, Ryan Concienne, and Douglas Bowman
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of 
+this software and associated documentation files (the "Software"), to deal in 
+the Software without restriction, including without limitation the rights to 
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies 
+of the Software, and to permit persons to whom the Software is furnished to do 
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all 
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
+SOFTWARE.
+"""
+
+
+Specificcation sheet: WAGER WAR
+
+At start one player will randomly get the "Blind chip"
+
+Starting deck is shuffled and split between the 2 players (comp and user)
+
+Each player has a deck called "Library" after the split above
+
+**may remove**** 
+The player with the "Blind chip" starts first by making/not making a wager.
+                
+                IF: wager is made
+
+                    The non chip holder will match, raise or fold 
+                    
+                        IF: match, non chip holder matches wager.
+                            cards are now in the "pot" deck
+                            continue round (turn cards)
+                        
+                        IF: raise, non chip holder can make a raise all cards but 1.
+                            chip holder will match or fold.
+                                IF: match continue round (turn cards)
+                                IF: fold, chip holder
+                        
+                        IF: fold, non chip holder forfeits 1 card (blind) off the top of his "Library".
+                            continue to new round
+                            
+                IF: no wager is made    
+                    continue round (turn cards)
+**may remove**
+                    
+Each player turns over top card of "Library"
+
+The 2 "Library" cards are now "battlefield" *cardCompare in WWGameWindow* cards. (2 seperate lists)
+
+battlefield cards are compared (win or war)
+    IF: win
+        Cards are now in "pot" deck
+        The winner of the round gains all cards from the "POT" to their "graveyard"
+        The "Chip" moves to next player
+        
+    IF: war (both "battlefield" cards match values)
+        
+        The player with the "chip" makes/does not make a wager.
+        
+        Both players contribute 3 cards to the pot OR P(deck count -1) whichever is less.
+                
+                IF: wager is made
+
+                    The non chip holder will match, raise or fold 
+                    
+                        IF: match, non chip holder matches wager.
+                            cards are now in "pot" deck
+                            continue round (turn cards)
+                        
+                        IF: raise, non chip holder will raise. add cards up to 1 left in his "Library" 
+                            chip holder will match or fold.
+                                
+                                IF: match, chip holder matches.
+                                    all cards moved to "pot" deck
+                                    continue round
+                                
+                                IF: fold, chip holder forfeits 1 card off "Library" and original wage.
+                                    continue to new round
+                        
+                        IF: fold, non chip holder forfeits 3 cards from his "Library".
+                            continue to new round
+                            
+                IF: no wager is made continue normal round (Line 34)
+                
+
+Check each turn for cards in "Library" for each player
+Repeat until no cards in "Library" each player
+Shuffle "Graveyard" and transfer to "Library" each player
+
+Repeat above rules until 1 player has no cards in "graveyard" and "Library"
+
+
+        
+RULES
+
+if one p1 has no cards left in library or Graveyard, and p2 does, P2 wins
+if a war or wager situation leads to a draw and all cards are in the pot, there will be a re-shuffle/re-deal.
+Max wager = the Min(P1,P2) deck count -1.

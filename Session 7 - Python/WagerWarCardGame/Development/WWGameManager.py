@@ -23,36 +23,36 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from WWDeck import WWDeck
+from WWCardsDeck import WWCardsDeck
 """
 @ brief Game Manager is responsible for place holding properties
 """
 class WWGameManager:
-        
+     #TODO Look at structure for cards var.   
      '''
      @ brief Dealing deck, used to create all players decks
      '''
-     gameDeck = WWDeck()
+     gameDeck = WWCardsDeck()
      
      '''
      @ brief Deck that computer plays from
      '''
-     computerDeck = WWDeck()
+     computerDeck = WWCardsDeck()
      
      '''
      @ brief Computers winnings, After each turn, will be used again
      '''
-     computerDiscardDeck = WWDeck()
+     computerDiscardDeck = WWCardsDeck()
      
      '''
      @ brief Deck that player plays from
      '''
-     playerDeck = WWDeck()
+     playerDeck = WWCardsDeck()
      
      '''
      @ brief players winnings, After each turn, will be used again
      '''
-     playerDiscardDeck = WWDeck()
+     playerDiscardDeck = WWCardsDeck()
     
      '''
      @ brief Name of player from WWSetupWindow

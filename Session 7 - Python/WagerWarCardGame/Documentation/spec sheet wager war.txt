@@ -107,5 +107,5 @@ Repeat above rules until 1 player has no cards in "graveyard" and "Library"
 RULES
 
 if p1 has no cards left in library or Graveyard, and p2 does, P2 wins
-if a war or wager situation leads to a draw and all cards are in the pot, there will be a re-shuffle/re-deal.
+if a war or wager situation leads to a draw and all cards are in the pot, there will be a re-shuffle/re-deal of the pot.
 Max wager = the Min(P1,P2) deck count -1.

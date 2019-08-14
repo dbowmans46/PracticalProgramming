@@ -21,3 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+from WWCardsDeck import WWCardsDeck
+
+class WWShuffleDeck(WWCardsDeck):
+    def __init__(self,cards):
+        super().__init__(cards)
+        
+    def shuffle(self):
+        return None

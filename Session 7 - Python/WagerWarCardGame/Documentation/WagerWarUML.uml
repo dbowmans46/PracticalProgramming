@@ -1,68 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3ZkeEMmvEem8yO3VP_-j1g" name="WagerWarUML">
-  <packageImport xmi:type="uml:PackageImport" xmi:id="_3gVNYMmvEem8yO3VP_-j1g">
-    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
-  </packageImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_I21mMMmwEem8yO3VP_-j1g" name="WWCardsDeck">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_M--gQMmwEem8yO3VP_-j1g" name="Cards" visibility="public" isOrdered="true">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pbwp8MmwEem8yO3VP_-j1g"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o9NFsMmwEem8yO3VP_-j1g" value="*"/>
-    </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_7ZRYYMmwEem8yO3VP_-j1g" name="cardTransfer"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_LN6V0MmxEem8yO3VP_-j1g" name="shuffleDeck">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Pl1_YMmxEem8yO3VP_-j1g" name="shuffle"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_h31wEMmxEem8yO3VP_-j1g" name="Initial">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_kBx4EMmxEem8yO3VP_-j1g" name="deal"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_lXXyAMmxEem8yO3VP_-j1g" name="Library">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ofsN0MmxEem8yO3VP_-j1g" name="turn"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_wB-6kMmxEem8yO3VP_-j1g" name="BackgroundWindow">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_z20eIMmxEem8yO3VP_-j1g" name="Width">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_9gP2gMmxEem8yO3VP_-j1g" name="Height">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Hzj5YMmyEem8yO3VP_-j1g" name="Left">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Nq3D8MmyEem8yO3VP_-j1g" name="Top">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_SSvOAMmyEem8yO3VP_-j1g" name="Title">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_b6pjcMmyEem8yO3VP_-j1g" name="SetupWindow">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_XBlGQMmzEem8yO3VP_-j1g" name="Title">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_iYLyIMmzEem8yO3VP_-j1g" name="Title">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_oRjZQMmzEem8yO3VP_-j1g" name="PlayerNameLabel"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_u27KwMmzEem8yO3VP_-j1g" name="PlayerNameInputBox"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_yt0j0MmzEem8yO3VP_-j1g" name="ComputerNameLabel"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_2wJw0MmzEem8yO3VP_-j1g" name="ComputerNameInputBox"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_CPErMMm0Eem8yO3VP_-j1g" name="StartButton"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_HjKbAMm0Eem8yO3VP_-j1g" name="DeckCountLabel"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_MWkfoMm0Eem8yO3VP_-j1g" name="DeckCountInputBox"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_PsTFUMm0Eem8yO3VP_-j1g" name="DeckColorLabel"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_SuqqIMm0Eem8yO3VP_-j1g" name="DeckColorInputBox"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_WxbU8Mm0Eem8yO3VP_-j1g" name="DeckColorQLabel"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_cQXp4Mm0Eem8yO3VP_-j1g" name="BackgroundPixmap"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_uAQMAMm0Eem8yO3VP_-j1g" name="Begin"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_548RQMm0Eem8yO3VP_-j1g" name="GameMan"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_7x9BUMm0Eem8yO3VP_-j1g" name="Deck"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_9qpoUMm0Eem8yO3VP_-j1g" name="CheckDeckSize"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_AibtwMm1Eem8yO3VP_-j1g" name="Setup"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Cv5q4Mm1Eem8yO3VP_-j1g" name="Update"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_EWJ3AMm1Eem8yO3VP_-j1g" name="Draw"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Fd130Mm1Eem8yO3VP_-j1g" name="BeginTrigger"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_IXzHgMm1Eem8yO3VP_-j1g" name="GameWindow"/>
-</uml:Model>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ActionLanguage="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http://www.omg.org/spec/ALF/20120827/ActionLanguage-Profile pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ">
+  <uml:Model xmi:id="_3ZkeEMmvEem8yO3VP_-j1g" name="WagerWarUML">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_3gVNYMmvEem8yO3VP_-j1g">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_I21mMMmwEem8yO3VP_-j1g" name="WWCardsDeck">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_M--gQMmwEem8yO3VP_-j1g" name="Cards" visibility="public" isOrdered="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pbwp8MmwEem8yO3VP_-j1g"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o9NFsMmwEem8yO3VP_-j1g" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7ZRYYMmwEem8yO3VP_-j1g" name="cardTransfer"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_LN6V0MmxEem8yO3VP_-j1g" name="shuffleDeck">
+      <generalization xmi:type="uml:Generalization" xmi:id="_3-TIgMm_Eem7e_w6p13XwQ" general="_I21mMMmwEem8yO3VP_-j1g"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Pl1_YMmxEem8yO3VP_-j1g" name="shuffle"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_h31wEMmxEem8yO3VP_-j1g" name="Initial">
+      <generalization xmi:type="uml:Generalization" xmi:id="_0oS2AMm_Eem7e_w6p13XwQ" general="_LN6V0MmxEem8yO3VP_-j1g"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kBx4EMmxEem8yO3VP_-j1g" name="deal"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lXXyAMmxEem8yO3VP_-j1g" name="Library">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wRdYoMm_Eem7e_w6p13XwQ" general="_LN6V0MmxEem8yO3VP_-j1g"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_ofsN0MmxEem8yO3VP_-j1g" name="turn"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_wB-6kMmxEem8yO3VP_-j1g" name="BackgroundWindow">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_z20eIMmxEem8yO3VP_-j1g" name="Width">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_9gP2gMmxEem8yO3VP_-j1g" name="Height">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Hzj5YMmyEem8yO3VP_-j1g" name="Left">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Nq3D8MmyEem8yO3VP_-j1g" name="Top">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SSvOAMmyEem8yO3VP_-j1g" name="Title">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_b6pjcMmyEem8yO3VP_-j1g" name="SetupWindow">
+      <generalization xmi:type="uml:Generalization" xmi:id="_74H5wMm_Eem7e_w6p13XwQ" general="_wB-6kMmxEem8yO3VP_-j1g"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XBlGQMmzEem8yO3VP_-j1g" name="Title">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iYLyIMmzEem8yO3VP_-j1g" name="Title">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_oRjZQMmzEem8yO3VP_-j1g" name="PlayerNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_u27KwMmzEem8yO3VP_-j1g" name="PlayerNameInputBox"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yt0j0MmzEem8yO3VP_-j1g" name="ComputerNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2wJw0MmzEem8yO3VP_-j1g" name="ComputerNameInputBox"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_CPErMMm0Eem8yO3VP_-j1g" name="StartButton"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HjKbAMm0Eem8yO3VP_-j1g" name="DeckCountLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MWkfoMm0Eem8yO3VP_-j1g" name="DeckCountInputBox"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PsTFUMm0Eem8yO3VP_-j1g" name="DeckColorLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_SuqqIMm0Eem8yO3VP_-j1g" name="DeckColorInputBox"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WxbU8Mm0Eem8yO3VP_-j1g" name="DeckColorQLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cQXp4Mm0Eem8yO3VP_-j1g" name="BackgroundPixmap"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uAQMAMm0Eem8yO3VP_-j1g" name="Begin"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_548RQMm0Eem8yO3VP_-j1g" name="GameMan"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_7x9BUMm0Eem8yO3VP_-j1g" name="Deck"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_9qpoUMm0Eem8yO3VP_-j1g" name="CheckDeckSize"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_AibtwMm1Eem8yO3VP_-j1g" name="Setup"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Cv5q4Mm1Eem8yO3VP_-j1g" name="Update"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_EWJ3AMm1Eem8yO3VP_-j1g" name="Draw"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Fd130Mm1Eem8yO3VP_-j1g" name="BeginTrigger"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IXzHgMm1Eem8yO3VP_-j1g" name="GameWindow">
+      <generalization xmi:type="uml:Generalization" xmi:id="_-Asv0Mm_Eem7e_w6p13XwQ" general="_wB-6kMmxEem8yO3VP_-j1g"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_I21aoMm6Eem7e_w6p13XwQ" name="CompNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HTH6QMm8Eem7e_w6p13XwQ" name="PlayerNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_J5_O0Mm8Eem7e_w6p13XwQ" name="TurnLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_LJ5-kMm8Eem7e_w6p13XwQ" name="CompScore"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_MqwGQMm8Eem7e_w6p13XwQ" name="PlayerScore"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O1NysMm8Eem7e_w6p13XwQ" name="CompScoreLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QJdBwMm8Eem7e_w6p13XwQ" name="PlayerScoreLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_RxWzsMm8Eem7e_w6p13XwQ" name="AutoCompleteButton"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_UQRtMMm8Eem7e_w6p13XwQ" name="CompCardLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WOu98Mm8Eem7e_w6p13XwQ" name="PlayerCardLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_XxOEYMm8Eem7e_w6p13XwQ" name="DesignedByLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_aeHIcMm8Eem7e_w6p13XwQ" name="GameMan"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_bHJeYMm8Eem7e_w6p13XwQ" name="ContinueLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cis2YMm8Eem7e_w6p13XwQ" name="DataLogger"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_eae3YMm8Eem7e_w6p13XwQ" name="Setup"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fGeasMm8Eem7e_w6p13XwQ" name="Update"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fzn0kMm8Eem7e_w6p13XwQ" name="DrawGraphics"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_hjqO0Mm8Eem7e_w6p13XwQ" name="RunAutoComplete"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jSBOEMm8Eem7e_w6p13XwQ" name="EndGameSlot"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_oCvLEMm8Eem7e_w6p13XwQ" name="ContinueSlot"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_rYwrsMm8Eem7e_w6p13XwQ" name="CheckWinner"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_tqrrAMm8Eem7e_w6p13XwQ" name="War"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_uEPagMm8Eem7e_w6p13XwQ" name="CardCompare"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Dg8zsMm9Eem7e_w6p13XwQ" name="VictoryWindow">
+      <generalization xmi:type="uml:Generalization" xmi:id="_ATFCIMnAEem7e_w6p13XwQ" general="_wB-6kMmxEem8yO3VP_-j1g"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_S8sI8Mm9Eem7e_w6p13XwQ" name="PlayAgainButton"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_VnzEUMm9Eem7e_w6p13XwQ" name="QuitButton"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YLJK0Mm9Eem7e_w6p13XwQ" name="WinnerNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_a0r_8Mm9Eem7e_w6p13XwQ" name="TrophyLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cTTTAMm9Eem7e_w6p13XwQ" name="DesignedByLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_eJIMMMm9Eem7e_w6p13XwQ" name="Property6">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_fBSjQMm9Eem7e_w6p13XwQ">
+          <body></body>
+        </ownedComment>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_fCZWgMm9Eem7e_w6p13XwQ" name="PlayAgainSlot"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_g-G1QMm9Eem7e_w6p13XwQ" name="QuitSlot"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_q7cBEMm9Eem7e_w6p13XwQ" name="Class11"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sP9kAMm9Eem7e_w6p13XwQ" name="DataLogger">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JN75wMm_Eem7e_w6p13XwQ" name="LogOutputPath"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_Mfz6MMm_Eem7e_w6p13XwQ" name="GetCurrentTime"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_N4SJAMm_Eem7e_w6p13XwQ" name="OutputsMessage"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_scouEMm9Eem7e_w6p13XwQ" name="GameManager">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_o5VxAMm-Eem7e_w6p13XwQ" name="PlayerName"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_qlqv8Mm-Eem7e_w6p13XwQ" name="CompName"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ruTL8Mm-Eem7e_w6p13XwQ" name="DeckCount"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_sXghAMm-Eem7e_w6p13XwQ" name="DeckStyle"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tUr68Mm-Eem7e_w6p13XwQ" name="TurnCount"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uyYA8Mm-Eem7e_w6p13XwQ" name="WinnerName"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xY7McMm-Eem7e_w6p13XwQ" name="PlayerDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yWMtAMm-Eem7e_w6p13XwQ" name="PlayerDiscardDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_0OwKEMm-Eem7e_w6p13XwQ" name="ComputerDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2E0T0Mm-Eem7e_w6p13XwQ" name="ComputerDiscardDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_8R1PsMm-Eem7e_w6p13XwQ" name="GameDeck"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sefvQMm9Eem7e_w6p13XwQ" name="WarConstatns">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_K59MIMm-Eem7e_w6p13XwQ" name="PictureDir"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_M7yhAMm-Eem7e_w6p13XwQ" name="CardFileNames"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_YYyv0Mm-Eem7e_w6p13XwQ" name="CardValueHash"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Z7yzoMm-Eem7e_w6p13XwQ" name="DesignedByString"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_biE08Mm-Eem7e_w6p13XwQ" name="CardStyle"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cPCBkMm-Eem7e_w6p13XwQ" name="CardStyleFileNameDict"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_fbQtAMm-Eem7e_w6p13XwQ" name="StandardDeckCount"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_hFnWAMm-Eem7e_w6p13XwQ" name="LogOutputFilePath"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_fBdiYMm9Eem7e_w6p13XwQ">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fBfXkMm9Eem7e_w6p13XwQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+    </profileApplication>
+  </uml:Model>
+  <ActionLanguage:TextualRepresentation xmi:id="_fBjpAMm9Eem7e_w6p13XwQ" base_Comment="_fBSjQMm9Eem7e_w6p13XwQ" language="org.eclipse.papyrus.uml.textedit.property.xtext.UmlProperty"/>
+</xmi:XMI>

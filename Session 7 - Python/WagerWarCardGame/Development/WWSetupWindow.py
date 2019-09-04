@@ -157,8 +157,8 @@ class WWSetupWindow(object):
         self.DeckColorInputBox.setStyleSheet("color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.DeckColorInputBox.setObjectName("DeckColorInputBox")
 
-        for deckSyleKey in WWWarConstants.deckStyle:
-            self.DeckColorInputBox.addItem(deckSyleKey)
+        for deckStyleKey in WWWarConstants.deckStyle:
+            self.DeckColorInputBox.addItem(deckStyleKey)
 
         self.DeckColorInputBox.activated[str].connect(self.onActivated)
         

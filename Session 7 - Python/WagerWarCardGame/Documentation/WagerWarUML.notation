@@ -235,20 +235,12 @@
         <element xmi:type="uml:Property" href="WagerWarUML.uml#_548RQMm0Eem8yO3VP_-j1g"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_55Lh0cm0Eem8yO3VP_-j1g"/>
       </children>
-      <children xmi:type="notation:Shape" xmi:id="_7yM48Mm0Eem8yO3VP_-j1g" type="Property_ClassAttributeLabel">
-        <element xmi:type="uml:Property" href="WagerWarUML.uml#_7x9BUMm0Eem8yO3VP_-j1g"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_7yM48cm0Eem8yO3VP_-j1g"/>
-      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_b6rYocmyEem8yO3VP_-j1g"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_b6rYosmyEem8yO3VP_-j1g"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_b6rYo8myEem8yO3VP_-j1g"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b6rYpMmyEem8yO3VP_-j1g"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_b6rYpcmyEem8yO3VP_-j1g" type="Class_OperationCompartment">
-      <children xmi:type="notation:Shape" xmi:id="_9q1OgMm0Eem8yO3VP_-j1g" type="Operation_ClassOperationLabel">
-        <element xmi:type="uml:Operation" href="WagerWarUML.uml#_9qpoUMm0Eem8yO3VP_-j1g"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_9q1Ogcm0Eem8yO3VP_-j1g"/>
-      </children>
       <children xmi:type="notation:Shape" xmi:id="_Aims4Mm1Eem8yO3VP_-j1g" type="Operation_ClassOperationLabel">
         <element xmi:type="uml:Operation" href="WagerWarUML.uml#_AibtwMm1Eem8yO3VP_-j1g"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_Aims4cm1Eem8yO3VP_-j1g"/>

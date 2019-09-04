@@ -28,31 +28,36 @@ from WWCardsDeck import WWCardsDeck
 @ brief Game Manager is responsible for place holding properties
 """
 class WWGameManager:
-     #TODO Look at structure for cards var.   
+   
      '''
      @ brief Dealing deck, used to create all players decks
+     @ Var WWCardsDeck
      '''
-     gameDeck = WWCardsDeck()
+     gameDeck = None
      
      '''
      @ brief Deck that computer plays from
+     @ Var WWCardsDeck
      '''
-     computerDeck = WWCardsDeck()
+     computerDeck = None
      
      '''
      @ brief Computers winnings, After each turn, will be used again
+     @ Var WWCardsDeck
      '''
-     computerDiscardDeck = WWCardsDeck()
+     computerDiscardDeck = None
      
      '''
      @ brief Deck that player plays from
+     @ Var WWCardsDeck
      '''
-     playerDeck = WWCardsDeck()
+     playerDeck = None
      
      '''
      @ brief players winnings, After each turn, will be used again
+     @ Var WWCardsDeck
      '''
-     playerDiscardDeck = WWCardsDeck()
+     playerDiscardDeck = None
     
      '''
      @ brief Name of player from WWSetupWindow

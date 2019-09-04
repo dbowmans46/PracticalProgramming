@@ -31,7 +31,7 @@ from random import shuffle
 @ brief
 """
 class WWCardsDeck():
-    def __init__ (self,cards):
+    def __init__ (self, cards):
         self.cards = cards
 
     def cardsTransfer(self):

@@ -38,32 +38,37 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_SSvOAMmyEem8yO3VP_-j1g" name="Title">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_b6pjcMmyEem8yO3VP_-j1g" name="SetupWindow">
       <generalization xmi:type="uml:Generalization" xmi:id="_74H5wMm_Eem7e_w6p13XwQ" general="_wB-6kMmxEem8yO3VP_-j1g"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_XBlGQMmzEem8yO3VP_-j1g" name="Title">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_iYLyIMmzEem8yO3VP_-j1g" name="Title">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_oRjZQMmzEem8yO3VP_-j1g" name="PlayerNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_oRjZQMmzEem8yO3VP_-j1g" name="PlayerNameLabel">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_u27KwMmzEem8yO3VP_-j1g" name="PlayerNameInputBox"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_yt0j0MmzEem8yO3VP_-j1g" name="ComputerNameLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yt0j0MmzEem8yO3VP_-j1g" name="ComputerNameLabel">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_2wJw0MmzEem8yO3VP_-j1g" name="ComputerNameInputBox"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_CPErMMm0Eem8yO3VP_-j1g" name="StartButton"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_HjKbAMm0Eem8yO3VP_-j1g" name="DeckCountLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_HjKbAMm0Eem8yO3VP_-j1g" name="DeckCountLabel">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_MWkfoMm0Eem8yO3VP_-j1g" name="DeckCountInputBox"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_PsTFUMm0Eem8yO3VP_-j1g" name="DeckColorLabel"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_PsTFUMm0Eem8yO3VP_-j1g" name="DeckColorLabel">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_SuqqIMm0Eem8yO3VP_-j1g" name="DeckColorInputBox"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_WxbU8Mm0Eem8yO3VP_-j1g" name="DeckColorQLabel"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_cQXp4Mm0Eem8yO3VP_-j1g" name="BackgroundPixmap"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_uAQMAMm0Eem8yO3VP_-j1g" name="Begin"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uAQMAMm0Eem8yO3VP_-j1g" name="Begin">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_548RQMm0Eem8yO3VP_-j1g" name="GameMan"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_7x9BUMm0Eem8yO3VP_-j1g" name="Deck"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_9qpoUMm0Eem8yO3VP_-j1g" name="CheckDeckSize"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_AibtwMm1Eem8yO3VP_-j1g" name="Setup"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_Cv5q4Mm1Eem8yO3VP_-j1g" name="Update"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_EWJ3AMm1Eem8yO3VP_-j1g" name="Draw"/>

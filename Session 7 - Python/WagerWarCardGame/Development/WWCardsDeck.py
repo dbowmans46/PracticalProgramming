@@ -25,16 +25,20 @@ SOFTWARE.
 """
 
 from random import shuffle
-#import WWGameManager.WWGameManager
+
 
 """
-@ brief
+@ brief Parent cardsDeck
 """
 class WWCardsDeck():
     def __init__ (self, cards):
         self.cards = cards
 
-    def cardsTransfer(self):
-        return None
-    
+    """
+    @ param start deck, end deck, top card
+    """
+    def cardsTransfer(self, endDeck): 
+        # removes last card from list of startDeck
+        topCard = self.cards.pop()
+        endDeck.cards.append(topCard)
         

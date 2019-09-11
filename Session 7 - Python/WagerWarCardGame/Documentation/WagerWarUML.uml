@@ -10,7 +10,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pbwp8MmwEem8yO3VP_-j1g"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o9NFsMmwEem8yO3VP_-j1g" value="*"/>
       </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_7ZRYYMmwEem8yO3VP_-j1g" name="cardTransfer"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_7ZRYYMmwEem8yO3VP_-j1g" name="cardsTransfer"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_LN6V0MmxEem8yO3VP_-j1g" name="shuffleDeck">
       <generalization xmi:type="uml:Generalization" xmi:id="_3-TIgMm_Eem7e_w6p13XwQ" general="_I21mMMmwEem8yO3VP_-j1g"/>

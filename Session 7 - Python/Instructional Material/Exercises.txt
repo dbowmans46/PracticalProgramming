@@ -1,0 +1,115 @@
+Core Functionality Python Exercises
+-----------------------------------
+1.  Implement a function that acts as a switch statement
+2.  Improve the bisection method algorithm in the example code file (see code at 
+    ./Basic Examples/ExampleCode.py)
+3.  Find the error in the bisection method algorithm so that the iteration count is accurate 
+    (see code at ./Basic Examples/ExampleCode.py)
+
+4.  Redo the list comprehensions in the lecture using loops instead of the list comprehensions
+
+
+
+GUI Exercises
+-------------
+
+Create a GUI window that asks for the users birthday, then displays on the window the number of days since their birthday. (this can be either just the birth day, or can include the year)
+
+
+5. Improve upon the CarClassExample group by creating a gear class.  Utlize gear ratios to calculate 
+   the real time power and torque based on throttle and gear. (files in ./Class Examples/CarClassExample)
+
+6. In the War.py game made in class, improve the default computer names by creating a list of names and a function that will randomly pick one.
+
+7. In the War.py game made in class, add a background image/color to the setup windows other than the default
+
+8. Add error handling to the War.py game.  In particular, check the input of the SetupScreen text boxes and ensure the code does not move to the next screen unless the inputs are in the desired format.  Inform the user of the error, and suggest how to fix.
+
+9. Add functionality in the War game to limit the player and computer name sizes, so that the name does not cover other parts of the window.
+
+10. Add an icon to the windows of the War game
+
+11. Write a method that does what the random.shuffle() method does.
+
+9. Write a program to determine the default window size and location of a QWindow object.  Support results via the docs.
+
+
+Recursion Excercises
+--------------------
+1. Rework the functions in recursion_examples.py
+
+
+Black Diamond:  
+Create a class that will initiate a QtPy GUI that has an input box asking for 
+the users name, and a button that will reverse the letters in the name.  Have 
+the reversed letters output to another text box.
+
+Double Black Diamond: 	
+Create a GUI that will run the bisection method.  Have the user input 
+the equation, lower limit, upper limit, and desired tolerance.
+
+Triple Black Diamond: 	
+Redo the Double Black Diamond exercise using the Secant method instead of 
+the bisection method. Compare the convergence speed of the secant method 
+to the bisection method by counting the number of iterations for both, 
+using the same tolerance.  Come on, its just a little math.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Wizard Status:
+Create a program that will solve the 2-D steady state heat equation 
+(Laplace's Equation) for an isotropic rectangle.  First-order accuracy
+is fine.  Include inputs for tolerance and a timout safety (incase the iteration takes too long).  
+This timeout safety can be any unit you want: time, iteration count, 
+memory allocation, etc.  Output the values as a matrix in a CSV/Excel 
+file.  Remember, this is computational--no Calculus is required to solve this.
+Hint: http://geodynamics.usc.edu/~becker/teaching/557/problem_sets/problem_set_fd_2dheat.pdf
+
+
+
+Cross Dimensional:
+Create a code that solves the bisection method, secant method, Laplace's equation, 
+or anything we've done in class by utilizing multiple processor cores.  This can
+be done on your computer, or using distributed systems.  Compare the speed 
+difference using a measure of your choice.

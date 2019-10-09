@@ -30,15 +30,17 @@ from random import shuffle
 """
 @ brief Parent cardsDeck
 """
+
+
 class WWCardsDeck():
-    def __init__ (self, cards):
+    def __init__(self, cards):
         self.cards = cards
 
     """
-    @ param start deck, end deck, top card
+    @ brief Remove the top card from cards list and adds it to the end of destDeck list.
+    @ param destDeck The destination deck to which the card is transferred.
     """
-    def cardsTransfer(self, endDeck): 
-        # removes last card from list of startDeck
+    def cardsTransfer(self, destDeck):
+        # removes last card from list of cards
         topCard = self.cards.pop()
-        endDeck.cards.append(topCard)
-        
+        destDeck.cards.append(topCard)

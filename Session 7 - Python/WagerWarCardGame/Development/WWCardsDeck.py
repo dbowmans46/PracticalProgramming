@@ -24,23 +24,26 @@ SOFTWARE.
 
 """
 
-from random import shuffle
-
+#from random import shuffle
 
 """
 @ brief Parent cardsDeck
+@ param cards is a list of cards
 """
-
-
 class WWCardsDeck():
+    """
+    @ brief Constructor setup
+    @ param string-list cards 
+    """
     def __init__(self, cards):
         self.cards = cards
 
-    """
+    """..
     @ brief Remove the top card from cards list and adds it to the end of destDeck list.
-    @ param destDeck The destination deck to which the card is transferred.
+    @ param destDeck The destination deck to which the card is transferred.............
     """
     def cardsTransfer(self, destDeck):
-        # removes last card from list of cards
+        # removes last card from list of cards moves it to destDeck
         topCard = self.cards.pop()
         destDeck.cards.append(topCard)
+        

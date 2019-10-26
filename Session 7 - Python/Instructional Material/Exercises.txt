@@ -124,7 +124,7 @@ using the same tolerance.  Come on, its just a little math.
 
 
 
-Wizard Status:
+Black Diamond Problems:
 Create a program that will solve the 2-D steady state heat equation 
 (Laplace's Equation) for an isotropic rectangle.  First-order accuracy
 is fine.  Include inputs for tolerance and a timout safety (incase the iteration takes too long).  
@@ -135,7 +135,7 @@ Hint: http://geodynamics.usc.edu/~becker/teaching/557/problem_sets/problem_set_f
 
 
 
-Cross Dimensional:
+Double Black Diamond:
 Create a code that solves the bisection method, secant method, Laplace's equation, 
 or anything we've done in class by utilizing multiple processor cores.  This can
 be done on your computer, or using distributed systems.  Compare the speed 

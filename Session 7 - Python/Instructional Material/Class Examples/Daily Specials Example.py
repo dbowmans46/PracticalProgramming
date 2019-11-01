@@ -57,7 +57,6 @@ happyHourSpecials = {
         }
 
 
-
 # Get the current date, and output the value
 currentDate = datetime.date.today()
 # print('currentDate: ' + str(currentDate))

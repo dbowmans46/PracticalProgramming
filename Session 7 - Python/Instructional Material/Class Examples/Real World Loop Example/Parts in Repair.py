@@ -14,5 +14,23 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 # part is the key, need-by time is the value
 partNeedByTimes = {
-        
+        55293:'20191124',
+        101223:'20200312',
+        122136:'20180512',
+        60500:'20191113',
+        121456:'20201010'        
         }
+
+partAvgRepairTimeDays = {
+        55293:'34',
+        101223:'128',
+        122136:'212',
+        60500:'54',
+        121456:'78'
+        }
+
+# TODO: Loop through each part
+
+# TODO: Check the date with today
+
+# TODO: Check the date with the lead times to see if the parts will be done on time

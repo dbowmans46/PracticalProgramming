@@ -22,13 +22,13 @@ menu special.
 import datetime
 
 # This list contains each day of the week
-dayOfWeek = ['Monday',
+dayOfWeek = ('Monday',
              'Tuesday',
              'Wednesday',
              'Thursday',
              'Friday',
              'Saturday',
-             'Sunday']
+             'Sunday')
 
 # This dictionary contains the special for each day of the week
 specials = {
@@ -42,8 +42,8 @@ specials = {
         }
 
 # Start and end times of happy hour
-happyHourTimes = {'Start' : 17,
-                  'End' : 18}
+happyHourTimes = {'Start' : 12,
+                  'End' : 13}
 
 # The additional special during happy hour
 happyHourSpecials = {
@@ -55,6 +55,8 @@ happyHourSpecials = {
         'Saturday' : '1/2 off all Strait Spirits',
         'Sunday' : 'Dahi Chaat'
         }
+
+
 
 
 # Get the current date, and output the value
@@ -88,3 +90,4 @@ currentHappyHourSpecial = happyHourSpecials[currentWeekdayName]
 
 if ( (currentHour >= happyHourTimes['Start']) and (currentHour < happyHourTimes['End'])):
     print(currentHappyHourSpecial)
+    

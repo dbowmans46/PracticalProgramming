@@ -14,7 +14,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 """
 
 '''
-@brief Example function of a while loop
+@brief Example function of a while loop.  Get the values of tan(x), 
+       possibly for plotting values.
 '''
 def WhileLoopExample():
     
@@ -24,7 +25,10 @@ def WhileLoopExample():
     
     while(x <= math.tan(x)):
         print(x)
+        
         x=x+0.1
+        
+    #print(type(x))
     
     return None
 
@@ -58,6 +62,6 @@ def ForLoopExample2():
     return None
 
 
-# WhileLoopExample()
-ForLoopExample1()
-ForLoopExample2()
+WhileLoopExample()
+#ForLoopExample1()
+#ForLoopExample2()

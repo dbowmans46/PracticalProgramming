@@ -35,7 +35,7 @@ class WWCardsDeck():
     """
     def __init__(self, cards):
         self.cards = cards
-        
+    
     """
     @ brief Remove the top card from cards list and adds it to the end of destDeck list.
     @ param WWCardsDeck destDeck The destination deck to which the card is transferred. 

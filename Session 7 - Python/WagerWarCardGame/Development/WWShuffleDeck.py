@@ -22,17 +22,28 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
+
+
 from random import shuffle
 from WWCardsDeck import WWCardsDeck
 
-
+'''
+@ Brief a deck class that adds the method of "shuffling"
+'''
 class WWShuffleDeck(WWCardsDeck):
     
+    """
+    @ brief Constructor setup
+    @ param string-list cards strings are filenames of card images
+    """
     def __init__(self,cards):
 
         super().__init__(cards)
         return None
-
+    """
+    @ brief randomly shuffles the cards in the WWShuffleDeck object. 
+    """
     def shuffleCards(self):
         # Must be a list to use shuffle
         shuffle(self.cards)

@@ -11,54 +11,57 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 """
 
 
-# Functionality if condition is met
-condition = True
-if (condition):
-    print('condition is True')
-print('Exited conditional statement')
-# =============================================================================
-# 
-# # Functionality if condition is not met
-# condition2 = False
-# if (condition2):
-#     print('condition2 is True')
-# print('Exited conditional statement')
-# 
-# # Check if an item belongs to a list
-# pn_list=['55238','133148','44345','11098','M18038-101']
-# pn='133148'
-# if (pn in pn_list):
-#     print('Match: ' + str(pn))
-# 
-# # if-else allows you to specify an alternative, catch-all
-# condition2 = False
-# if (condition2):
-#     print('condition is True')
-# else:
-#     print('condition is False')
-# 
-# # You can nest if-else to catch more items
-# grade='F'
-# if (grade == 'A'):
-#     print(str(grade) + ': Outstanding')
-# else:
-#     if (grade=='B'):
-#         print(str(grade) + ': Good Job')
-#     #Use elif to avoid unnecessary formatting (tabs)
-#     #and exessive syntax
-#     elif (grade=='C'):
-#         print(str(grade) + ': Average')
-#     elif (grade=='D'):
-#         print(str(grade) + ': You need to stop drinking so much')
-#     else:
-#         print(str(grade) + ': Your mother and I are thinking ' +
-#               'about sending you to a military academy...' +
-#               'doesn\'t that sound like fun?')
-# 
-#         
-# =============================================================================
-    
-    
+## Functionality if condition is met
+#condition = True
+#if (condition):
+#    print('condition is True')
+#print('Exited conditional statement')
+
+
+## Functionality if condition is not met
+#condition2 = False
+#if (condition2):
+#    print('condition2 is True')
+#print('Exited conditional statement')
+
+
+## Check if an item belongs to a list
+#pn_list=['55238','133148','44345','11098','M18038-101']
+#pn=['133148','55238']
+#
+#if (pn in pn_list):
+#    print('Match: ' + str(pn))
+
+# if-else allows you to specify an alternative, catch-all
+#qty = 4
+#if (qty > 4):
+#    print('condition is True')
+#else:
+#    print('condition is False')
+#
+# You can nest if-else to catch more items
+#grade='B'
+#if (grade == 'A'):
+#    print(str(grade) + ': Outstanding')
+#else:
+#    if (grade == 'B'):
+#        print(str(grade) + ': Good Job')
+#    #Use elif to avoid unnecessary formatting (tabs)
+#    #and exessive syntax
+#    elif (grade == 'C'):
+#        print(str(grade) + ': Average')
+#    elif (grade == 'D'):
+#        print(str(grade) + ': You need to stop drinking so much')
+#    else:
+#        print(str(grade) + ': Your mother and I are thinking ' +
+#              'about sending you to a military academy...' +
+#              'doesn\'t that sound like fun?')
+#    
+#    
+#year = '2018'
+#
+#if ( (year > '2000') or (year > '2020') ):
+#    print(year)
 
 
 

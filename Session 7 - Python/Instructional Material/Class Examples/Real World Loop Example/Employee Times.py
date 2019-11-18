@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding utf-8 -*-
 """
 Created on Tue Nov 12 07:51:01 2019
 
@@ -12,32 +12,32 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 """
 
 # Employee name is the key, time worked is the value
-employeeTimes = {
-        'Bob' : ,
-        'Sally': ,
-        'Reinholdt' : ,
-        'Jack Ryan' : ,
-        'Joan' : ,
-        'Weatherby' : ,
-        'Scilia' : ,
-        'Sally': ,
-        'Jack Ryan' : ,
-        'Weatherby' : ,
-        'Joan' : ,
-        'Joan' : ,
-        'Sally': ,
-        'Reinholdt' : ,
-        'Bob' : ,
-        'Reinholdt' : ,
-        'Joan' : ,
-        'Jack Ryan' : ,
-        'Sally': ,
-        'Bob' : ,
-        'Sally': ,
-        'Reinholdt' : ,
-        'Reinholdt' : ,
-        'Joan' : 
-        }
+employeeTimes = (
+        ('Bob' , 8),
+        ('Sally', 8),
+        ('Reinholdt' , 10),
+        ('Jack Ryan' , 4),
+        ('Joan' , 12),
+        ('Weatherby' , 2),
+        ('Scilia' , 10),
+        ('Sally', 5),
+        ('Jack Ryan' , 12),
+        ('Weatherby' , 4),
+        ('Joan' , 10),
+        ('Joan' , 8),
+        ('Sally', 12),
+        ('Reinholdt' , 12),
+        ('Bob' , 10),
+        ('Reinholdt' , 8),
+        ('Joan' , 10),
+        ('Jack Ryan' , 5),
+        ('Sally', 10),
+        ('Bob' , 10),
+        ('Sally', 6),
+        ('Reinholdt' , 8),
+        ('Reinholdt' , 9),
+        ('Joan' , 10)
+        )
     
     
 # TODO: Create variable to hold times

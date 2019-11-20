@@ -25,8 +25,17 @@ SOFTWARE.
 from WWShuffleDeck import WWShuffleDeck
 
 class WWInitialDeck(WWShuffleDeck):
-    def __init__(self,cards):
+    def __init__(self,cards, playerDeck, computerDeck):
         super().__init__(cards)
+        self.cards = cards
+        self.playerDeck = playerDeck
+        self.computerDeck = computerDeck
         
     def deal(self):
-        return None
+        for card in self.cards:
+            if (len(self.cards) %2 == 0) and (len(self.cards) > 0):
+                self.cardTransfer(self.playerDeck)
+            else:
+                self.cardTransfer(self.computerDeck)
+            
+                

@@ -20,6 +20,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 def WhileLoopExample():
     
     import math
+    import os
     
     x=0
     
@@ -28,10 +29,13 @@ def WhileLoopExample():
     # value for the tangent function
     while(x <= math.tan(x)):
         print('x: ' + str(x))
+        print('Type x: ' + str(type(x)))
         print('tan(x): ' + str(math.tan(x)))
         print('\n')
         
+        
         x=x+0.1
+        os.sleep(1)
         
     #print(type(x))
     # Notice the values inside the loop are still updated, even after the 
@@ -56,7 +60,7 @@ def ForLoopExample1():
     # in the collection as the loop traverses each element
     for x in iterationValues:
         
-        print(x)
+        print(x+2)
     
     return None
 
@@ -70,19 +74,24 @@ def ForLoopExample2():
     # range() Creates a list of numbers starting at 0 and incrementing
     # by 1 until it reaches the input value.  The values remain less than the 
     # input value.
-    iterationValues2 = range(5,9
+    iterationValues = [10,11,12,13,14,15]
+    #indices = range(len(iterationValues))
     
     # TODO: create an index variable, then use that to iterate through list item
     # iterationValues = [10,11,12,13,14,15]
         
     
-    for test in iterationValues2:
+    for value in iterationValues:
         
-        print(test)
+        # print(index)
+        print(iterationValues.index(value))
+        #print(iterationValues[index])
+        print('')
         
     return None
 
 
-#WhileLoopExample()
+
+WhileLoopExample()
 #ForLoopExample1()
-ForLoopExample2()
+#ForLoopExample2()

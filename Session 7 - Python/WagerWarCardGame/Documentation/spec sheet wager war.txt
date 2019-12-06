@@ -23,7 +23,7 @@ SOFTWARE.
 
 """
 
-Specificcation sheet: WAGER WAR
+Specification sheet: WAGER WAR
 
 At start one player will randomly get the "Blind chip"
 
@@ -53,7 +53,7 @@ The player with the "Blind chip" starts first by making/not making a wager.
                     Each player turns over top card of "Library"
 		
 
-The 2 "Library" cards are now "battlefield" *cardCompare in WWGameWindow* (2 seperate lists)
+The 2 "Library" cards are now "battlefield" *cardCompare in WWGameWindow* (2 separate lists)
 
 battlefield cards are compared (win or war)
     IF: win
@@ -66,9 +66,7 @@ battlefield cards are compared (win or war)
 	Both players contribute 3 cards to the pot OR (deck count -1) whichever is less.
         
 	The player with the "chip" makes/does not make a wager.
-        
-       
-                
+             
                 IF: wager is made
 
                     The non chip holder will match, raise or fold 

@@ -22,14 +22,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
+from WWShuffleDeck import WWShuffleDeck
+
 """
 @brief This is the deck in the players hand.
 """
-from WWShuffleDeck import WWShuffleDeck
-
 class WWLibraryDeck(WWShuffleDeck):
     def __init__(self,cards):
         super().__init__(cards)
         
     def turn(self):
         return None
+    
+'''
+@brief decided not to use this deck class because the player and computer 
+libraries will be objects of the CardsDeck instead of a separate class.
+no need for the "turn" method
+'''

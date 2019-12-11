@@ -26,12 +26,11 @@ SOFTWARE.
 
 """
 @ brief Parent cardsDeck
-@ param WWCardsDeck cards is a list of cards
 """
 class WWCardsDeck():
     """
     @ brief Constructor setup
-    @ param string-list cards 
+    @ param string-list cards strings are filenames of card images
     """
     def __init__(self, cards):
         self.cards = cards

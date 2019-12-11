@@ -25,15 +25,17 @@ SOFTWARE.
 from WWShuffleDeck import WWShuffleDeck
 from WWLibraryDeck import WWLibraryDeck
 '''
-@brief 
+@ brief a card deck capable of dealing cards to multiple decks. 
+    There will only be one instance of this deck in the game 
+    (the initial deck that distributes to the two players).
 '''
 class WWInitialDeck(WWShuffleDeck):
     
     '''
-    @brief constructor set default values
-    @param str-list cards Total list of cards in the game
-    @param WWLibraryDeck playerDeck WWLibraryDeck that is given to the player 
-    @param WWLibraryDeck computerDeck WWLibraryDeck that is given to the computer
+    @ brief constructor set default values
+    @ param str-list cards Total list of cards in the game
+    @ param WWLibraryDeck playerDeck WWLibraryDeck that is given to the player 
+    @ param WWLibraryDeck computerDeck WWLibraryDeck that is given to the computer
     '''    
     def __init__(self,cards, playerDeck, computerDeck):
         super().__init__(cards)
@@ -42,18 +44,14 @@ class WWInitialDeck(WWShuffleDeck):
         self.computerDeck = computerDeck
 
     '''
-    @brief distributes cards between the player and the computer
+    @ brief distributes cards between the player and the computer
     '''    
     def deal(self):
-        for card in self.cards:
-            print(card)
-            print(self.cards)
+        for card in reversed(self.cards):
             if ((len(self.cards) %2 == 0) and (len(self.cards) > 0)):
                 self.cardTransfer(self.playerDeck)
-                print("playerDeck" + str(self.playerDeck.cards))
             else:
                 self.cardTransfer(self.computerDeck)
-                print("computerDeck" + str(self.computerDeck.cards))
             
 
 # For Testing
@@ -62,27 +60,4 @@ cards = [1,2,3,4,5,6,7,8,9,10]
 playerDeck = WWLibraryDeck([])
 computerDeck = WWLibraryDeck([])
 test = WWInitialDeck(cards, playerDeck, computerDeck)
-'''
-
-'''
-OUTPUT SO FAR
-
-test.deal()
-1
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-playerDeck[10]
-2
-[1, 2, 3, 4, 5, 6, 7, 8, 9]
-computerDeck[9]
-3
-[1, 2, 3, 4, 5, 6, 7, 8]
-playerDeck[10, 8]
-4
-[1, 2, 3, 4, 5, 6, 7]
-computerDeck[9, 7]
-5
-[1, 2, 3, 4, 5, 6]
-playerDeck[10, 8, 6]
-
-Not distibuting all the cards in the list.
 '''

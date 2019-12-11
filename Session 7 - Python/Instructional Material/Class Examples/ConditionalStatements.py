@@ -12,11 +12,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 ## Functionality if condition is met
-#condition = True
+#condition = False
 #if (condition):
 #    print('condition is True')
 #print('Exited conditional statement')
-#
+
 #
 ## Functionality if condition is not met
 #condition2 = False
@@ -34,14 +34,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 #    print('Match: ' + str(pn))
 #
 ##if-else allows you to specify an alternative, catch-all
-#qty = 4
+#qty = 10
 #if (qty > 4):
 #    print('condition is True')
 #else:
 #    print('condition is False')
 #
 # You can nest if-else to catch more items
-grade='B'
+grade='D'
 if (grade == 'A'):
     print(str(grade) + ': Outstanding')
 else:

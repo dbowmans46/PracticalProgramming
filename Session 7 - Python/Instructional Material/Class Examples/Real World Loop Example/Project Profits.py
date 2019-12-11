@@ -24,11 +24,22 @@ projects = {
         }
 
 
-
-projectsWithoutProfit = {}
-    
+#
+#projectsWithoutProfit = {}
+#    
 # TODO: Create a loop to go through each key-value pair
-
+#
 # TODO: Determine if current project has profit above zero
+#
+#print(projectsWithoutProfit)
 
-print(projectsWithoutProfit)
+
+projectDict = {}    
+for x in projects:
+    
+    if projects[x] <= 0:
+        projectDict[x]= projects[x]    
+        
+    
+
+print(projectDict)

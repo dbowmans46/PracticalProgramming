@@ -58,9 +58,9 @@ def ForLoopExample1():
     
     # x is called the loop variable, and takes the place of each element
     # in the collection as the loop traverses each element
-    for x in iterationValues:
+    for x in range(2,5):
         
-        print(x+2)
+        print(x)
     
     return None
 
@@ -75,7 +75,7 @@ def ForLoopExample2():
     # by 1 until it reaches the input value.  The values remain less than the 
     # input value.
     iterationValues = [10,11,12,13,14,15]
-    #indices = range(len(iterationValues))
+    indices = range(len(iterationValues))
     
     # TODO: create an index variable, then use that to iterate through list item
     # iterationValues = [10,11,12,13,14,15]
@@ -92,6 +92,6 @@ def ForLoopExample2():
 
 
 
-WhileLoopExample()
-#ForLoopExample1()
+#WhileLoopExample()
+ForLoopExample1()
 #ForLoopExample2()

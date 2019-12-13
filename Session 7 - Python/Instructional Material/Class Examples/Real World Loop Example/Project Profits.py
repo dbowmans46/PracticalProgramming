@@ -23,23 +23,19 @@ projects = {
         'Krakatoa' : 1800344956.01
         }
 
-
-#
-#projectsWithoutProfit = {}
-#    
-# TODO: Create a loop to go through each key-value pair
-#
-# TODO: Determine if current project has profit above zero
-#
-#print(projectsWithoutProfit)
-
-
+# Dictionary will hold the project, and the profit for each project that is in the red
 projectDict = {}    
-for x in projects:
+
+# Loop through each project, checking if the profit is below zero
+for project in projects:
     
+    # Determine which projects have negative profit
     if projects[x] <= 0:
+        
+        # Store the projects with negative profit in the dictionary holding
+        # projects in the red
         projectDict[x]= projects[x]    
         
     
-
+# Print out the projects that are in the red
 print(projectDict)

@@ -23,10 +23,19 @@ projects = {
         'Krakatoa' : 1800344956.01
         }
 
-# Task: Determine which projects are in the red (profit < 0)
+# Dictionary will hold the project, and the profit for each project that is in the red
+projectDict = {}    
 
-# TODO: Loop through each project
-
-# TODO: Determine if the current project has profit > 0, and store the projects that are in the red
-
-# TODO: Output the projects that are costing the company money
+# Loop through each project, checking if the profit is below zero
+for project in projects:
+    
+    # Determine which projects have negative profit
+    if projects[x] <= 0:
+        
+        # Store the projects with negative profit in the dictionary holding
+        # projects in the red
+        projectDict[x]= projects[x]    
+        
+    
+# Print out the projects that are in the red
+print(projectDict)

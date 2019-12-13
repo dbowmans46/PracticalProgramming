@@ -37,11 +37,11 @@ employeeTimesThisWeek = (
         ('Reinholdt' , 8),
         ('Reinholdt' , 9),
         ('Joan' , 10)
-)
+        )
     
 
 # Task: Determine which employees have worked overtime this week.
-# Bonus: Get those who haven't worked a full week.
+# Bonus: Get the slackers
     
 # TODO: Create variable to hold times
     
@@ -50,3 +50,54 @@ employeeTimesThisWeek = (
 # TODO: Add each time to the appropriate person
     
 # TODO: Manually add the times of one employee to test script functionality
+
+employeeTotalTimes = {}
+normalHoursPerWeek = 40
+
+for workerAndTime in employeeTimesThisWeek:
+    
+    if workerAndTime[0] in employeeTotalTimes.keys():
+        employeeTotalTimes[workerAndTime[0]] += workerAndTime[1]
+    else:
+        employeeTotalTimes[workerAndTime[0]] = workerAndTime[1]
+        
+        
+        
+# Sort employees by how much they worked
+overTimeWorkers = {}
+normalTimeWorkers = {}
+underTimeWorkers = {}
+
+# Create an initial record for comparison, setting the time worked higher than 
+# any possible time a person can work
+lastPlace = {'NoOne':24*7+1}  
+
+for employee in employeeTotalTimes:
+    
+    timeWorked = employeeTotalTimes[employee]
+    
+    if timeWorked > normalHoursPerWeek:
+        overTimeWorkers[employee] = timeWorked
+    elif timeWorked == normalHoursPerWeek:
+        normalTimeWorkers [employee] = timeWorked
+    else:
+        underTimeWorkers[employee] = timeWorked
+        
+    if timeWorked < lastPlace[list(lastPlace.keys())[0]]:
+        lastPlace = {employee:timeWorked}
+
+print("Overtime Workers:")        
+print(overTimeWorkers)
+print()
+
+print("Normal Work Week Workers:")
+print(normalTimeWorkers)
+print()
+
+print("Under Achievers:")
+print(underTimeWorkers)
+print()
+
+print("Least time worked:")
+print(lastPlace)
+print()

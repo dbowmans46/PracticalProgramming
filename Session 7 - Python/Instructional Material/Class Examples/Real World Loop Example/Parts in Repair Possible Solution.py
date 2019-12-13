@@ -59,3 +59,25 @@ partAvgRepairTimeDays = {
 # TODO: Check the date with the lead times to see if the parts will be done on time
 
 # Bonus: How many days behind will the parts be on the estimated completion date?
+
+
+import datetime
+
+behindParts = {}
+
+for part in partNeedByDates:
+    
+    needByDate = datetime.datetime.strptime(partNeedByDates[part],'%Y%m%d').date()
+    partRepairDays = int(partAvgRepairTimeDays[part])
+    
+    completionDate = datetime.date.today() + datetime.timedelta(days=partRepairDays)
+    
+    print("completion date: " + str(completionDate))
+    print("Need By Date: " + str(needByDate))
+    
+    if completionDate > needByDate:
+        behindParts[part] = completionDate - needByDate
+        
+    print()
+    
+print(behindParts)

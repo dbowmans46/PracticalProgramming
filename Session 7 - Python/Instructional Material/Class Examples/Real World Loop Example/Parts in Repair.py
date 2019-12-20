@@ -43,10 +43,12 @@ partAvgRepairTimeDays = {
 # years.  
 # 
 # To convert a string to a datetime object: 
-#   dateTimeVal = datetime.datetime.strptime('19891028','%Y%m%d')
+#     dateTimeVal = datetime.datetime.strptime('19891028','%Y%m%d')
 #
 # To convert a datetime to a date:
 #   dateTimeVal.date()
+#
+# more info: https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
 
 
 

@@ -30,7 +30,7 @@ projectDict = {}
 for project in projects:
     
     # Determine which projects have negative profit
-    if projects[x] <= 0:
+    if projects[project] <= 0:
         
         # Store the projects with negative profit in the dictionary holding
         # projects in the red

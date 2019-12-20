@@ -43,9 +43,45 @@ employeeTimesThisWeek = (
 # Task: Determine which employees have worked overtime this week.
 # Bonus: Get those who haven't worked a full week.
     
-# TODO: Create variable to hold times
+# Create variable to hold times
+
+HOURS_PER_WEEK = 40
+
+# key = employee name
+# value = total time worked per week
+employeeTotalTimes = {}
     
 # TODO: Loop through each key-value pair of the employeeTimes dictionary
+
+for employeeAndTime in employeeTimesThisWeek:
+    employee = employeeAndTime[0]
+    timeWorked = employeeAndTime[1]    
+    
+    if (employee in employeeTotalTimes.keys()):
+        employeeTotalTimes[employee] += timeWorked
+    else:
+        employeeTotalTimes[employee] = timeWorked
+
+    
+overTime = []
+normalTime = []
+underTime = []    
+for employee in employeeTotalTimes:
+    
+    timeWorked = employeeTotalTimes[employee]
+    
+    if employeeTotalTimes[employee] > HOURS_PER_WEEK:
+        overTime.append(employee +" " + str(timeWorked))
+    elif employeeTotalTimes[employee] == HOURS_PER_WEEK:
+        normalTime.append(employee + " " + str(timeWorked))
+    else:
+        underTime.append(employee + " " + str(timeWorked))
+      
+
+print("overTime: " + str(overTime))
+print("normalTime: " , normalTime)
+print("underTime: " , underTime)
+    
     
 # TODO: Add each time to the appropriate person
     

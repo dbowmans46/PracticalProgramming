@@ -19,7 +19,9 @@ print("\n")
 # Datetimes are defined in the datetime library
 import datetime
 
-# Converting from a string to a datetime
+##########################################
+# Converting from a string to a datetime #
+##########################################
 dateTimeInStringFormat = '20191010'
 dateTimeInDatetimeFormat = datetime.datetime.strptime(dateTimeInStringFormat,'%Y%m%d')
 
@@ -31,8 +33,10 @@ print("")
 print("Datetime format: ", dateTimeInDatetimeFormat, ", datatype: ",type(dateTimeInDatetimeFormat))
 print("\n")
 
+#####################################################
+# Arithmetic with datetimes: use datetime.timedelta #
+#####################################################
 
-# Arithmetic with datetimes: use datetime.timedelta
 # Definition: class datetime.timedelta(days=0, seconds=0, microseconds=0, 
 #                                       milliseconds=0, minutes=0, hours=0, weeks=0)
 #
@@ -63,7 +67,12 @@ print("\n")
 #
 #
 #
-## If we want to specify date constructs longer than days, we can use the library dateutil
+
+############################################################
+# Date Constructs Larger than a Week: Use dateutil Library #
+############################################################
+
+## If we want to specify date constructs longer than weeks, we can use the library dateutil
 ## dateutil is not part of the standard library, but can be found here:
 ##       https://pypi.org/project/python-dateutil/
 ## Notice the difference when not using averages of days/month or days/year
@@ -92,8 +101,10 @@ print("\n")
 #
 #
 #
-#
-## Converting a datetime back to a string - datetime.datetime.strftime()
+#########################################################################
+# Converting a datetime back to a string - datetime.datetime.strftime() #
+#########################################################################
+
 #dateTimeStringFromDateTime = datetime.datetime.strftime(dateTimeDaysAdded,"%m-%d-%Y")
 #dateTimeStringFromDateTimeSAPFormat = datetime.datetime.strftime(dateTimeDaysAdded,"%Y%m%d")
 #

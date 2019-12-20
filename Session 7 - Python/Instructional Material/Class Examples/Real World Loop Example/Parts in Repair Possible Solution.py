@@ -22,7 +22,7 @@ partNeedByDates = {
         121456:'20201010'        
         }
 
-# This is the number of calendar days needed to repair the part, on average
+# This is the number of calendar days needed to repair the part, on average, starting from today
 partAvgRepairTimeDays = {
         55293:'34',
         101223:'128',
@@ -69,9 +69,12 @@ for part in partNeedByDates:
     
     needByDate = datetime.datetime.strptime(partNeedByDates[part],'%Y%m%d').date()
     partRepairDays = int(partAvgRepairTimeDays[part])
+    todaysDate = datetime.date.today()
     
-    completionDate = datetime.date.today() + datetime.timedelta(days=partRepairDays)
+    completionDate = todaysDate + datetime.timedelta(days=partRepairDays)
     
+    # Check values while we iterate
+    print("Part: " + str(part))
     print("completion date: " + str(completionDate))
     print("Need By Date: " + str(needByDate))
     
@@ -79,5 +82,11 @@ for part in partNeedByDates:
         behindParts[part] = completionDate - needByDate
         
     print()
-    
-print(behindParts)
+
+# Print the days behind
+print("\n\n\n")
+print("Results")
+print("----------------------------")
+for part in behindParts:
+    daysBehind = behindParts[part]
+    print("Part: " + str(part) + ", Days Behind: " + str(daysBehind.days))

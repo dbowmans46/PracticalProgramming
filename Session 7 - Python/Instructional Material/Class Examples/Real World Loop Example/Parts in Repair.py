@@ -22,7 +22,7 @@ partNeedByDates = {
         121456:'20201010'        
         }
 
-# This is the number of calendar days needed to repair the part, on average
+# This is the number of calendar days needed to repair the part, on average, starting from today
 partAvgRepairTimeDays = {
         55293:'34',
         101223:'128',

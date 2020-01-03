@@ -22,7 +22,7 @@ import datetime
 ##########################################
 # Converting from a string to a datetime #
 ##########################################
-dateTimeInStringFormat = '20191010'
+dateTimeInStringFormat = '20191010'  # In YYYYMMDD format
 dateTimeInDatetimeFormat = datetime.datetime.strptime(dateTimeInStringFormat,'%Y%m%d')
 
 
@@ -33,28 +33,34 @@ print("")
 print("Datetime format: ", dateTimeInDatetimeFormat, ", datatype: ",type(dateTimeInDatetimeFormat))
 print("\n")
 
+
+
+
+
 #####################################################
 # Arithmetic with datetimes: use datetime.timedelta #
 #####################################################
 
-# Definition: class datetime.timedelta(days=0, seconds=0, microseconds=0, 
-#                                       milliseconds=0, minutes=0, hours=0, weeks=0)
+## Definition: class datetime.timedelta(days=0, seconds=0, microseconds=0, 
+##                                       milliseconds=0, minutes=0, hours=0, weeks=0)
 #
-# The definition shows that only days, seconds, microseconds, milliseconds, 
-# minutes, hours, and/or weeks can be specified
-#daysToAdd = 64
-#daysToSubtract = 44
-#monthsToAdd = 3 # Notice the difference in days when using the average days/month
-#yearsToAdd = 20
+## The definition shows that only days, seconds, microseconds, milliseconds, 
+## minutes, hours, and/or weeks can be specified
+#daysToAdd       = 64
+#daysToSubtract  = 44
+#monthsToAdd     = 3 # Notice the difference in days when using the average days/month
+#yearsToAdd      = 20
 #
-#avgDaysPerMonth = 30.44
-#avgDaysPerYear = 365.25
+#WEEKS_PER_YEAR      = 52.1775
+#AVG_WEEKS_PER_MONTH = WEEKS_PER_YEAR/12
+#AVG_DAYS_PER_MONTH  = 30.44
+#AVG_DAYS_PER_YEAR   = 365.25
 #
 #dateTimeDaysAdded      = dateTimeInDatetimeFormat + datetime.timedelta(days=daysToAdd)
 #dateTimeDaysSubtracted = dateTimeInDatetimeFormat - datetime.timedelta(days=daysToSubtract)
 ## Notice the difference in days when using the average days/month
-#dateTimeMonthsAdded    = dateTimeInDatetimeFormat + datetime.timedelta(days=monthsToAdd*avgDaysPerMonth)
-#dateTimeYearsAdded     = dateTimeInDatetimeFormat + datetime.timedelta(days=yearsToAdd*avgDaysPerYear)
+#dateTimeMonthsAdded    = dateTimeInDatetimeFormat + datetime.timedelta(days=monthsToAdd * AVG_DAYS_PER_MONTH)
+#dateTimeYearsAdded     = dateTimeInDatetimeFormat + datetime.timedelta(days=yearsToAdd * AVG_DAYS_PER_YEAR)
 #
 #print("Arithmetic with DateTimes")
 #print("-------------------------")
@@ -67,11 +73,11 @@ print("\n")
 #
 #
 #
-
-############################################################
-# Date Constructs Larger than a Week: Use dateutil Library #
-############################################################
-
+#
+#############################################################
+## Date Constructs Larger than a Week: Use dateutil Library #
+#############################################################
+#
 ## If we want to specify date constructs longer than weeks, we can use the library dateutil
 ## dateutil is not part of the standard library, but can be found here:
 ##       https://pypi.org/project/python-dateutil/
@@ -101,11 +107,11 @@ print("\n")
 #
 #
 #
-#########################################################################
-# Converting a datetime back to a string - datetime.datetime.strftime() #
-#########################################################################
-
-#dateTimeStringFromDateTime = datetime.datetime.strftime(dateTimeDaysAdded,"%m-%d-%Y")
+##########################################################################
+## Converting a datetime back to a string - datetime.datetime.strftime() #
+##########################################################################
+#
+#dateTimeStringFromDateTime          = datetime.datetime.strftime(dateTimeDaysAdded,"%m-%d-%Y")
 #dateTimeStringFromDateTimeSAPFormat = datetime.datetime.strftime(dateTimeDaysAdded,"%Y%m%d")
 #
 #print("Converting Datetime to String")

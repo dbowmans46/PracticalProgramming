@@ -17,8 +17,8 @@ import datetime
 partNeedByDates = {
         55293:'20191124',
         101223:'20200312',
-        122136:'20180512',
-        60500:'20191113',
+        122136:'20190512',
+        60500:'20200213',
         121456:'20201010'        
         }
 
@@ -54,7 +54,7 @@ partAvgRepairTimeDays = {
 
 # TODO: Loop through each part
 
-# TODO: Get when the part is estimated to be completed
+# TODO: Get when each part is estimated to be completed
 
 # TODO: Check the estimated completion date with the need-by date  
 

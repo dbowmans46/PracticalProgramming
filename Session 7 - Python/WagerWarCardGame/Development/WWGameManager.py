@@ -24,6 +24,8 @@ SOFTWARE.
 """
 
 from WWCardsDeck import WWCardsDeck
+from WWInitialDeck import WWInitialDeck
+from WWShuffleDeck import WWShuffleDeck
 """
 @ brief Game Manager is responsible for place holding properties
 """
@@ -31,43 +33,53 @@ class WWGameManager:
    
      '''
      @ brief Dealing deck, used to create all players decks
-     @ Var WWCardsDeck
+     @ param WWCardsDeck
      '''
-     gameDeck = None
+     gameDeck = WWInitialDeck([])
      
      '''
      @ brief Deck that computer plays from
-     @ Var WWCardsDeck
+     @ param WWCardsDeck
      '''
-     computerDeck = None
+     computerDeck = WWCardsDeck([])
      
      '''
      @ brief Computers winnings, After each turn, will be used again
-     @ Var WWCardsDeck
+     @ param WWCardsDeck
      '''
-     computerDiscardDeck = None
+     computerGraveyardDeck = WWShuffleDeck([])
      
      '''
-     @ brief Deck that player plays from
-     @ Var WWCardsDeck
+     @ brief computer's card being used in war. also includes wagers
+     @ param WWCardsDeck
      '''
-     playerDeck = None
+     computerWagerDeck = WWCardsDeck([])
+     '''
+     @ brief Deck that player plays from
+     @ param WWCardsDeck
+     '''
+     playerDeck = WWCardsDeck([])
      
      '''
      @ brief players winnings, After each turn, will be used again
-     @ Var WWCardsDeck
+     @ param WWCardsDeck
      '''
-     playerDiscardDeck = None
-    
+     playerGraveyardDeck = WWShuffleDeck([])
+     
+     '''
+     @ brief player's card being used in war. also includes wagers
+     @ param WWCardsDeck
+     '''
+     playerWagerDeck = WWCardsDeck([])
      '''
      @ brief Name of player from WWSetupWindow
      '''
-     playerName = 'a'
+     playerName = ''
      
      '''
      @ brief Name of computer from WWSetupWindow
      '''
-     compName = 'b'
+     compName = ''
      
      '''
      @ brief User input from WWSetupWindow sets number decks
@@ -78,12 +90,12 @@ class WWGameManager:
      @ brief User input from WWSetupWindow sets deck style
      '''
      #deck color input box
-     deckStyle = 'c'
+     deckStyle = ''
      
      '''
      @ brief Number of turns completed
      '''
-     turnCount = ''
+     turnCount = 0
      
      '''
      @ brief Name variable used at WWVictoryWindow to show who wins

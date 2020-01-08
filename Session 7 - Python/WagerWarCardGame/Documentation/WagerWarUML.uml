@@ -20,10 +20,6 @@
       <generalization xmi:type="uml:Generalization" xmi:id="_0oS2AMm_Eem7e_w6p13XwQ" general="_LN6V0MmxEem8yO3VP_-j1g"/>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_kBx4EMmxEem8yO3VP_-j1g" name="deal"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_lXXyAMmxEem8yO3VP_-j1g" name="Library">
-      <generalization xmi:type="uml:Generalization" xmi:id="_wRdYoMm_Eem7e_w6p13XwQ" general="_LN6V0MmxEem8yO3VP_-j1g"/>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_ofsN0MmxEem8yO3VP_-j1g" name="turn"/>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_wB-6kMmxEem8yO3VP_-j1g" name="BackgroundWindow">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_z20eIMmxEem8yO3VP_-j1g" name="Width">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -129,10 +125,12 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_tUr68Mm-Eem7e_w6p13XwQ" name="TurnCount"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_uyYA8Mm-Eem7e_w6p13XwQ" name="WinnerName"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xY7McMm-Eem7e_w6p13XwQ" name="PlayerDeck"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_yWMtAMm-Eem7e_w6p13XwQ" name="PlayerDiscardDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yWMtAMm-Eem7e_w6p13XwQ" name="PlayerGraveyardDeck"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_0OwKEMm-Eem7e_w6p13XwQ" name="ComputerDeck"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_2E0T0Mm-Eem7e_w6p13XwQ" name="ComputerDiscardDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_2E0T0Mm-Eem7e_w6p13XwQ" name="ComputerGraveyardDeck"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_8R1PsMm-Eem7e_w6p13XwQ" name="GameDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_sU1dYDI-EeqUabitwrosgg" name="PlayerWagerDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uu0zkDI-EeqUabitwrosgg" name="ComputerWagerDeck"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_sefvQMm9Eem7e_w6p13XwQ" name="WarConstatns">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_K59MIMm-Eem7e_w6p13XwQ" name="PictureDir"/>

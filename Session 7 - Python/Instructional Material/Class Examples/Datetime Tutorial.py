@@ -49,7 +49,7 @@ print("\n")
 #daysToAdd       = 64
 #daysToSubtract  = 44
 #monthsToAdd     = 3 # Notice the difference in days when using the average days/month
-#yearsToAdd      = 17
+#yearsToAdd      = 20
 #
 #WEEKS_PER_YEAR      = 52.1775
 #AVG_WEEKS_PER_MONTH = WEEKS_PER_YEAR/12
@@ -61,7 +61,7 @@ print("\n")
 ## Notice the difference in days when using the average days/month
 #dateTimeMonthsAdded    = dateTimeInDatetimeFormat + datetime.timedelta(days=monthsToAdd * AVG_DAYS_PER_MONTH)
 #dateTimeYearsAdded     = dateTimeInDatetimeFormat + datetime.timedelta(days=yearsToAdd * AVG_DAYS_PER_YEAR)
-
+#
 #print("Arithmetic with DateTimes")
 #print("-------------------------")
 #print("(", str(dateTimeInDatetimeFormat),  ") +",  daysToAdd,   "  days:", dateTimeDaysAdded)
@@ -74,7 +74,7 @@ print("\n")
 #
 #
 
-#############################################################
+###########################################################
 ## Date Constructs Larger than a Week: Use dateutil Library #
 #############################################################
 #
@@ -89,7 +89,7 @@ print("\n")
 #dateUtilDaysSubtracted = dateTimeInDatetimeFormat - dateutil.relativedelta.relativedelta(days=daysToSubtract)
 #dateUtilMonthsAdded    = dateTimeInDatetimeFormat + dateutil.relativedelta.relativedelta(months=monthsToAdd)
 #dateUtilYearsAdded     = dateTimeInDatetimeFormat + dateutil.relativedelta.relativedelta(years=yearsToAdd)
-
+#
 #print("Using dateutil")
 #print("--------------")
 #print("(", str(dateTimeInDatetimeFormat),  ") +",  daysToAdd,   "  days:", dateUtilDaysAdded)
@@ -106,7 +106,7 @@ print("\n")
 #
 #
 #
-
+#
 ##########################################################################
 ## Converting a datetime back to a string - datetime.datetime.strftime() #
 ##########################################################################

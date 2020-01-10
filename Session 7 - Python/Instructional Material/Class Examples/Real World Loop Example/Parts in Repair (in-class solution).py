@@ -49,11 +49,23 @@ partAvgRepairTimeDays = {
 #   dateTimeVal.date()
 #
 # more info: https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
+# TODO: Loop through each part
 
+currentDate = datetime.datetime.today()
+for part in partNeedByDates:
+    daysLate = 0
+    completionDate = currentDate + datetime.timedelta(days=int(partAvgRepairTimeDays[part]))
+    needByDate = datetime.datetime.strptime(partNeedByDates[part],"%Y%m%d")
 
-
-
-# TODO: Loop through each part    
+    
+    if completionDate > needByDate:
+        daysLate = abs(completionDate - needByDate)
+        print(part," is late by ",daysLate," days")
+    else:
+        print(part," is not late")
+    
+    
+    
 
 # TODO: Get when each part is estimated to be completed
 

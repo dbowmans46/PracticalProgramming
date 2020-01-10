@@ -31,6 +31,10 @@ partAvgRepairTimeDays = {
         121456:'78'
         }
 
+
+completionDates = [(part,datetime.datetime.today() + datetime.timedelta(days=int(partAvgRepairTimeDays[part])))for part in partNeedByDates]
+
+[print(part[0],": ",datetime.datetime.strptime(partNeedByDates[part[0]],"%Y%m%d")>part[1]) for part in completionDates]
 # Task: Assuming people work 7 days a week, determine which parts will get 
 # repaired on time and which parts will fall behind.
 # Bonus: How many days behind are the parts?

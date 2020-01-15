@@ -25,6 +25,10 @@ SOFTWARE.
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QLineEdit, QPushButton, QComboBox, QDialog
+from WWCardValueManager import WWCardValueManager
+from WWWarConstants import WWWarConstants
+from WWInitialDeck import WWInitialDeck
+
 
 class WWGameWindow(object):
         
@@ -179,10 +183,29 @@ class WWGameWindow(object):
     """
     def turnEventUpdate(self):
 
-        return None
+        return 
+    
+    """
+    @brief Create the starting deck
+    """
+    # TODO Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
+    def deckSetup(self):
+        self.WagerWarGameMan.gameDeck = WWWarConstants.CARD_FILE_NAMES * self.WagerWarGameMan.deckCount
+        self.WWInitDeck = WWInitialDeck(self.WagerWarGameMan.gameDeck,self.WagerWarGameMan.playerDeck, self.WagerWarGameMan.computerDeck)
+        
+    # TODO shuffle the cards
+    
+    
+    # TODO pass cards to player and comp using deal method in initialDeck
+    # TODO give control to player with "deal button"
+    # TODO Deal button pressed: cards transfered to battlefield, SetCardValue,  auto compare of cards
+    # TODO determine which player gets cards and transfer to their graveYard
+    
+    
+            
 
-    def pullSetup():
-        print("")
+#    def pullSetup():
+#        print("")
 
     def retranslateUi(self, MainWindow):
                 

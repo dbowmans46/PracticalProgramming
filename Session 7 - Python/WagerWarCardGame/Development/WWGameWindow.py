@@ -219,6 +219,8 @@ class WWGameWindow(object):
             self.WagerWarGameMan.gameDeck, self.WagerWarGameMan.playerDeck, self.WagerWarGameMan.computerDeck)
 
     # TODO shuffle the cards
+    def deckShuffle(self):
+        
 
     # TODO pass cards to player and comp using deal method in initialDeck
     # TODO give control to player with "deal button"

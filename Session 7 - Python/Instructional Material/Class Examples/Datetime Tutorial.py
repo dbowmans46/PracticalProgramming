@@ -25,16 +25,16 @@ import datetime
 dateTimeInStringFormat = '20191028'  # In YYYYMMDD format
 dateTimeInDatetimeFormat = datetime.datetime.strptime(dateTimeInStringFormat,'%Y%m%d')
 
-
-print("Conversion to a DateTime")
-print("-----------------------")
-print("String format:    " + dateTimeInStringFormat + ", datatype: " + str(type(dateTimeInStringFormat)))
-print("")
-print("Datetime format: ", dateTimeInDatetimeFormat, ", datatype: ",type(dateTimeInDatetimeFormat))
-print("\n")
-
-
-
+#
+#print("Conversion to a DateTime")
+#print("-----------------------")
+#print("String format:    " + dateTimeInStringFormat + ", datatype: " + str(type(dateTimeInStringFormat)))
+#print("")
+#print("Datetime format: ", dateTimeInDatetimeFormat, ", datatype: ",type(dateTimeInDatetimeFormat))
+#print("\n")
+#
+#
+#
 
 
 ######################################################
@@ -104,9 +104,9 @@ print("\n")
 #print("dateTimeDaysAdded type:", type(dateTimeDaysAdded))
 #print("\n")
 #
-#
-#
-#
+
+
+
 ##########################################################################
 ## Converting a datetime back to a string - datetime.datetime.strftime() #
 ##########################################################################

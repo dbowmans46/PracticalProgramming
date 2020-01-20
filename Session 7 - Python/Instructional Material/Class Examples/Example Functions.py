@@ -45,3 +45,22 @@ def Power(base,exponent):
 
 # Power(2,3)
 # outputVal = Power(3,3)
+
+
+'''
+@brief Gets all the folders and files on the current user'd desktop
+'''
+def GetDesktopContainers():
+	
+	# Operating System library
+	import os
+	
+	# containers is a local variable, and is in the local scope.
+	# Once the function returns, containers will be marked for deletion
+	containers = []
+	
+	userName = os.getlogin()
+	desktopDirPath = "C:\\users\\" + userName + "\\Desktop\\"
+	containers = os.listdir(desktopDirPath)
+
+	return containers

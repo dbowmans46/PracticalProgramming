@@ -35,7 +35,14 @@ class WWGameManager:
      @ brief Dealing deck, used to create all players decks
      @ param WWCardsDeck
      '''
-     gameDeck = WWInitialDeck([])
+     gameDeck = None
+     
+     '''
+     @ brief Deck holding all wagers
+     @ param WWCardsDeck
+     '''
+     wagerDeck = WWCardsDeck([])
+     
      
      '''
      @ brief Deck that computer plays from
@@ -50,10 +57,10 @@ class WWGameManager:
      computerGraveyardDeck = WWShuffleDeck([])
      
      '''
-     @ brief computer's card being used in war. also includes wagers
+     @ brief computer's card being used in war. does not include wagers
      @ param WWCardsDeck
      '''
-     computerWagerDeck = WWCardsDeck([])
+     computerBattleDeck = WWCardsDeck([])
      '''
      @ brief Deck that player plays from
      @ param WWCardsDeck
@@ -67,10 +74,10 @@ class WWGameManager:
      playerGraveyardDeck = WWShuffleDeck([])
      
      '''
-     @ brief player's card being used in war. also includes wagers
+     @ brief player's card being used in war. does not include wagers
      @ param WWCardsDeck
      '''
-     playerWagerDeck = WWCardsDeck([])
+     playerBattleDeck = WWCardsDeck([])
      '''
      @ brief Name of player from WWSetupWindow
      '''

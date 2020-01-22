@@ -251,6 +251,4 @@ class WWSetupWindow(object):
         self.DeckColorLabel.setText(_translate("Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Deck Color</span></p></body></html>"))
         
         self.wagerWarTitle.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; color:#ffffff;\">WAGER WAR !!!</span></p></body></html>"))
-            
-            
-    def createInitialDeck(deckcount,cardsDeck,CARD_FILE_NAMES)
+        

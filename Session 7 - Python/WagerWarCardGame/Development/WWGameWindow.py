@@ -193,7 +193,7 @@ class WWGameWindow(object):
 
         self.MainWindow.show()
 
-        self.WagerWarGameMan = wwGameManager
+        #self.wwgm = wwGameManager
 
         self.dealPushButton.clicked.connect(self.turnEventUpdate)
 
@@ -211,16 +211,15 @@ class WWGameWindow(object):
     @brief Create the starting deck
     """
 
-   def deckSetup(self):
+    def deckSetup(self):
         # multiply start deck by number of decks selected by player.
-        self.WagerWarGameMan.gameDeck = WWWarConstants.CARD_FILE_NAMES * \
-            self.WagerWarGameMan.deckCount
+        self.wwgm.gameDeck = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
-            self.WagerWarGameMan.gameDeck, self.WagerWarGameMan.playerDeck, self.WagerWarGameMan.computerDeck)
+            self.wwgm.gameDeck, self.wwgm.playerDeck, self.wwgm.computerDeck)
 
     # TODO shuffle the cards
     def deckShuffle(self):
-        
+        return None
 
     # TODO pass cards to player and comp using deal method in initialDeck
     # TODO give control to player with "deal button"
@@ -231,7 +230,7 @@ class WWGameWindow(object):
     @brief "Not entirlt sure whats going on here.  Need more info" Converted from PYQT5 GUI
     @param MainWindow
     """
-
+    
     def retranslateUi(self, MainWindow):
 
         MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))

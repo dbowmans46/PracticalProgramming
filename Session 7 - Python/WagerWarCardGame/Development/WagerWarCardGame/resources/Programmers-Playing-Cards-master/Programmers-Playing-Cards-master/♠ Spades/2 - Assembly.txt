@@ -1,6 +1,0 @@
-.global card
-.data
-rank:
-  .long 2
-suit:
-  .string "spades"

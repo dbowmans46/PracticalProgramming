@@ -143,6 +143,7 @@ class WWGameWindow(object):
         self.dealPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.dealPushButton.setObjectName("dealPushButton")
+        self.dealPushButton.clicked.connect(self.dealButtonOnClick)
 
         self.gridLayout.addWidget(
             self.dealPushButton, 16, 3, 1, 1, QtCore.Qt.AlignHCenter)
@@ -197,6 +198,18 @@ class WWGameWindow(object):
 
         self.dealPushButton.clicked.connect(self.turnEventUpdate)
 
+    '''
+    @brief sets up the game state by shuffling deck and dealing cards to player and computer. 
+    @param
+    '''
+    def setTheStage(self):
+        # TODO pass cards to player and comp using deal method in initialDeck
+        self.deckSetup()
+        self.WWInitDeck.shuffleCards()
+        self.WWInitDeck.deal()
+        
+        
+
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
     @param
@@ -221,9 +234,19 @@ class WWGameWindow(object):
     def deckShuffle(self):
         return None
 
-    # TODO pass cards to player and comp using deal method in initialDeck
     # TODO give control to player with "deal button"
+    def dealButtonOnClick(self):
+    
     # TODO Deal button pressed: cards transfered to battlefield, SetCardValue,  auto compare of cards
+        
+        print("button clicked")
+        return None 
+    
+
+    
+    
+    
+    
     # TODO determine which player gets cards and transfer to their graveYard
 
     """
@@ -283,3 +306,7 @@ class WWGameWindow(object):
 
         self.cardCountPlayerLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">Card Count: + &lt;int&gt;</span></p></body></html>"))
+
+                
+                
+                

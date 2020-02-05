@@ -33,7 +33,7 @@ class WWGameManager:
    
      '''
      @ brief Dealing deck, used to create all players decks
-     @ param WWCardsDeck
+     @ param WWCardsdeck
      '''
      gameDeck = None
      

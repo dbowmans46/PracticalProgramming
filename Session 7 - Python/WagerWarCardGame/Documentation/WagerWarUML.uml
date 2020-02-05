@@ -129,10 +129,11 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_0OwKEMm-Eem7e_w6p13XwQ" name="ComputerDeck"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_2E0T0Mm-Eem7e_w6p13XwQ" name="ComputerGraveyardDeck"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_8R1PsMm-Eem7e_w6p13XwQ" name="GameDeck"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_sU1dYDI-EeqUabitwrosgg" name="PlayerWagerDeck"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_uu0zkDI-EeqUabitwrosgg" name="ComputerWagerDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_sU1dYDI-EeqUabitwrosgg" name="PlayerBattleDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_uu0zkDI-EeqUabitwrosgg" name="ComputerBattleDeck"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="__hgp8D08EeqidrYwHCuaMQ" name="WagerDeck"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_sefvQMm9Eem7e_w6p13XwQ" name="WarConstatns">
+    <packagedElement xmi:type="uml:Class" xmi:id="_sefvQMm9Eem7e_w6p13XwQ" name="WarConstants">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_K59MIMm-Eem7e_w6p13XwQ" name="PictureDir"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_M7yhAMm-Eem7e_w6p13XwQ" name="CardFileNames"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_YYyv0Mm-Eem7e_w6p13XwQ" name="CardValueHash"/>

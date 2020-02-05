@@ -479,7 +479,7 @@
       <layoutConstraint xsi:type="notation:Bounds" xmi:id="_sP_ZQcm9Eem7e_w6p13XwQ"/>
     </children>
     <element href="WagerWarUML.uml#_sP9kAMm9Eem7e_w6p13XwQ"/>
-    <layoutConstraint xsi:type="notation:Bounds" xmi:id="_sP-yIcm9Eem7e_w6p13XwQ" x="1380" y="600" height="161"/>
+    <layoutConstraint xsi:type="notation:Bounds" xmi:id="_sP-yIcm9Eem7e_w6p13XwQ" x="1380" y="660" height="161"/>
   </children>
   <children xsi:type="notation:Shape" xmi:id="_scp8MMm9Eem7e_w6p13XwQ" type="Class_Shape">
     <children xsi:type="notation:DecorationNode" xmi:id="_scp8Msm9Eem7e_w6p13XwQ" type="Class_NameLabel"/>
@@ -538,6 +538,10 @@
       <children xsi:type="notation:Shape" xmi:id="_sV074DI-EeqUabitwrosgg" type="Property_ClassAttributeLabel">
         <element href="WagerWarUML.uml#_sU1dYDI-EeqUabitwrosgg"/>
         <layoutConstraint xsi:type="notation:Location" xmi:id="_sV074TI-EeqUabitwrosgg"/>
+      </children>
+      <children xsi:type="notation:Shape" xmi:id="__isVsD08EeqidrYwHCuaMQ" type="Property_ClassAttributeLabel">
+        <element href="WagerWarUML.uml#__hgp8D08EeqidrYwHCuaMQ"/>
+        <layoutConstraint xsi:type="notation:Location" xmi:id="__isVsT08EeqidrYwHCuaMQ"/>
       </children>
       <styles xsi:type="notation:TitleStyle" xmi:id="_scp8Nsm9Eem7e_w6p13XwQ"/>
       <styles xsi:type="notation:SortingStyle" xmi:id="_scp8N8m9Eem7e_w6p13XwQ"/>

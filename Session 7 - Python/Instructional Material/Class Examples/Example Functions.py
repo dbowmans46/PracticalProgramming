@@ -13,6 +13,94 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
+
+
+
+# Define the function
+'''
+@brief Example of a function definition
+'''
+def ExampleFunction():
+    
+    print("This is an example function")
+    
+    return
+
+
+# Call the function
+ExampleFunction()
+
+
+
+
+
+'''
+@brief Function demonstrating local scope
+'''
+def YetAnotherFunction():
+
+    localVariable = "This is a local variable"
+    print(localVariable)
+
+    return None
+
+# localVariable does not exist here, only in YetAnotherFunction().  The code
+# below causes an error
+#localVariable
+
+
+
+
+
+'''
+@brief Example function with an input
+@param string inputVal1 String to print to the screen
+'''
+def FunctionWithInput(inputVal1):
+    
+    print("The input is ",inputVal1)
+    
+    return None
+
+
+
+
+
+'''
+@brief Function that outputs the input
+@param string valToOutput Value to return from the function
+'''
+def FunctionThatOutputs(valToOutput):
+    
+    return valToOutput
+
+
+
+
+
+'''
+@brief Function that has no code
+'''
+def FunctionThatHasNoCode():
+    
+    return None
+
+
+
+
+
+'''
+@brief Example of a void function -- returns nothing (None)
+'''
+def VoidFunctionExample():
+    
+    print("This is a void function")
+    
+
+
+
+
+
 '''
 @brief Prints the value passed to the function
 @param string valueToPrint
@@ -27,8 +115,13 @@ def PrintValue(valueToPrint):
     # function
     return None
 
+
 # PrintValue('This is the value to print')
 # outputVal = PrintValue('This is the value to print')
+
+
+
+
 
 '''
 @brief Raises the base to a given exponent power
@@ -45,6 +138,9 @@ def Power(base,exponent):
 
 # Power(2,3)
 # outputVal = Power(3,3)
+
+
+
 
 
 '''
@@ -64,3 +160,4 @@ def GetDesktopContainers():
 	containers = os.listdir(desktopDirPath)
 
 	return containers
+

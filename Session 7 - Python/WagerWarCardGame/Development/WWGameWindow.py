@@ -28,6 +28,7 @@ from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QLineEdit, QPushButto
 from WWCardValueManager import WWCardValueManager
 from WWWarConstants import WWWarConstants
 from WWInitialDeck import WWInitialDeck
+from WWGameManager import WWGameManager
 
 """
 @brief Creates game window, handles game logic
@@ -197,27 +198,15 @@ class WWGameWindow(object):
         #self.wwgm = wwGameManager
 
         self.dealPushButton.clicked.connect(self.turnEventUpdate)
-
+    
     '''
     @brief sets up the game state by shuffling deck and dealing cards to player and computer. 
     @param
     '''
-    def setTheStage(self):
-        # TODO pass cards to player and comp using deal method in initialDeck
+    def setTheStage(self, wwgm):
+        self.setupUi(wwgm)
         self.deckSetup()
-        self.WWInitDeck.shuffleCards()
-        self.WWInitDeck.deal()
-        
-        
 
-    """
-    @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
-    @param
-    """
-
-    def turnEventUpdate(self):
-
-        return
 
     # TODO Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
     """
@@ -229,6 +218,19 @@ class WWGameWindow(object):
         self.wwgm.gameDeck = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck, self.wwgm.playerDeck, self.wwgm.computerDeck)
+        self.WWInitDeck.shuffleCards()
+        self.WWInitDeck.deal()
+
+    """
+    @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
+    @param
+    """
+
+    def turnEventUpdate(self):
+
+        return
+
+    
 
     # TODO shuffle the cards
     def deckShuffle(self):

@@ -42,7 +42,7 @@ if __name__ == "__main__":
          QtCore.QCoreApplication.processEvents()
 
     wwgw = WWGameWindow()
-    wwgw.setupUi(wwgm)
+    wwgw.setTheStage(wwgm)
     sys.exit(app.exec_())
     
 """

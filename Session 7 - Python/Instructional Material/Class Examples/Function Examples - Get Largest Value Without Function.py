@@ -13,26 +13,46 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
-listVals = [10,3,6,8,2,6]
-maxValue = None
+listValsA = [10,3,6,8,2,6]
 
-for val in listVals:
-    
-    if maxValue == None:
-        maxValue = val
-    elif val > maxValue:
-        maxValue=val
+
+def MaxSomethingORRather(inputVal):
+
+    maxValue = None
+    for val in inputVal:
         
-print(maxValue)
+        if maxValue == None:
+            maxValue = val
+        elif val > maxValue:
+            maxValue=val
+            
+    print(maxValue)
     
+    return None
     
-#listVals = [2,34,789,4456,2,555,-12]
-#
-#listVals = [-12,-4,-2,-7,-17]
-#
-#listVals = [3,-1,45,12,9]
-#
-#listVals = [-3,57,90,-10000,12,0.0001]
-#
-#listVals = [0.0001,0.0003,0.0008283,0.00000000483]
+MaxSomethingORRather(listValsA)    
+    
+listValsB = [2,34,789,4456,2,555,-12]
+
+MaxSomethingORRather(listValsB)
+
+listValsC = [-12,-4,-2,-7,-17]
+
+MaxSomethingORRather(listValsC)
+
+listVals = [3,-1,45,12,9]
+
+MaxSomethingORRather(listVals)
+
+listVals = [-3,57,90,-10000,12,0.0001]
+
+MaxSomethingORRather(listVals)
+
+listVals = [0.0001,0.0003,0.0008283,0.00000000483]
+
+MaxSomethingORRather(listVals)
+
+
+
+    
 

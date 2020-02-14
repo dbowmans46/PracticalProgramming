@@ -28,7 +28,7 @@ def ExampleFunction():
 
 
 # Call the function
-ExampleFunction()
+#ExampleFunction()
 
 
 
@@ -73,8 +73,6 @@ def FunctionWithInput(inputVal1):
 def FunctionThatOutputs(valToOutput):
     
     return valToOutput
-
-
 
 
 

@@ -35,7 +35,7 @@ class WWGameManager:
      @ brief Dealing deck, used to create all players decks
      @ param str-list
      '''
-     gameDeck = None
+     gameDeck = WWCardsDeck([])
      
      '''
      @ brief Deck holding all wagers

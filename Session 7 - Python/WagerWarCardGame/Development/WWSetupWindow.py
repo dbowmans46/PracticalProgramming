@@ -193,7 +193,7 @@ class WWSetupWindow(object):
 
         self.WagerWarGameMan.compName = self.ComputerNameInputBox.text()
         self.WagerWarGameMan.playerName = self.PlayerNameInputBox.text()
-        self.WagerWarGameMan.deckCount = self.DeckCountLineEdit.text()
+        self.WagerWarGameMan.deckCount = int(self.DeckCountLineEdit.text())
         self.WagerWarGameMan.deckStyle = self.DeckColorInputBox.currentText()
 
         """

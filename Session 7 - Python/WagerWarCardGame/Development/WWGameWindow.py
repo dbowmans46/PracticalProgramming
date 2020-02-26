@@ -208,16 +208,16 @@ class WWGameWindow(object):
         self.deckSetup()
 
 
-    # TODO Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
+    # Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
     """
     @brief Create the starting deck
     """
 
     def deckSetup(self):
         # multiply start deck by number of decks selected by player.
-        self.wwgm.gameDeck = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
+        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
-            self.wwgm.gameDeck, self.wwgm.playerDeck, self.wwgm.computerDeck)
+            self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
         self.WWInitDeck.shuffleCards()
         self.WWInitDeck.deal()
 

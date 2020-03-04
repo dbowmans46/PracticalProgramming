@@ -29,6 +29,7 @@ from WWCardValueManager import WWCardValueManager
 from WWWarConstants import WWWarConstants
 from WWInitialDeck import WWInitialDeck
 from WWGameManager import WWGameManager
+from WWCardsDeck import WWCardsDeck
 
 """
 @brief Creates game window, handles game logic
@@ -225,34 +226,32 @@ class WWGameWindow(object):
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
     @param
     """
-
     def turnEventUpdate(self):
 
         return
 
-    
-
-    # TODO shuffle the cards
-    def deckShuffle(self):
-        return None
-
-    # TODO give control to player with "deal button"
+    """
+    @brief Primary event trigger for game logic
+    """
     def dealButtonOnClick(self):
     
-    # TODO Deal button pressed: cards transfered to battlefield, SetCardValue,  auto compare of cards
-        
-        print("button clicked")
-        return None 
-    
+        # Deal button pressed
+        # TODO 1. Transfer top cards from Player/Computer Library to battlefield 
+        self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
+        self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
 
+        # TODO 2. Compare card value 
+        # TODO 3. Transfer winning cards to winners graveyard -or- start war if equal value
+        # TODO 4. Check Player and Computer card count - if 0 declare winner
+        # TODO 5. WAR: both players transfer 3 cards or deckCount -1 to battlefield   
+        # TODO 6. Loop back to 1.
     
     
-    
-    
-    # TODO determine which player gets cards and transfer to their graveYard
+         
+        return None 
 
     """
-    @brief "Not entirlt sure whats going on here.  Need more info" Converted from PYQT5 GUI
+    @brief "Not entirelt sure whats going on here.  Need more info" Converted from PYQT5 GUI
     @param MainWindow
     """
     
@@ -308,7 +307,3 @@ class WWGameWindow(object):
 
         self.cardCountPlayerLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">Card Count: + &lt;int&gt;</span></p></body></html>"))
-
-                
-                
-                

@@ -236,11 +236,18 @@ class WWGameWindow(object):
     def dealButtonOnClick(self):
     
         # Deal button pressed
-        # TODO 1. Transfer top cards from Player/Computer Library to battlefield 
+        # Transfer top cards from Player/Computer Library to battlefield 
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
 
-        # TODO 2. Compare card value 
+        # TODO 2. Convert card value and Compare  
+        # TODO NEED TO TEST
+        self.cardValueManager = WWCardValueManager(self.wwgm.playerBattleDeck[-1])
+        self.cardValuePlayer = self.cardValueManager.GetCardValue()
+        self.cardValueComputer = self.cardValueManager.NewCardValue(self.wwgm.computerBattleDeck[-1])
+         
+        
+
         # TODO 3. Transfer winning cards to winners graveyard -or- start war if equal value
         # TODO 4. Check Player and Computer card count - if 0 declare winner
         # TODO 5. WAR: both players transfer 3 cards or deckCount -1 to battlefield   

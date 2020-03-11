@@ -10,14 +10,15 @@ import os
 
 
 dirPath = "C:\\Users\\Doug\\Repositories\\PracticalProgramming\\Session 7 - Python\\Instructional Material\\Class Examples\\File Access Examples\\"
+thisIsAList = ["a","B"]
 
-for x in os.scandir(dirPath):    
+for container in os.scandir(dirPath):    
+    
+     if (os.path.isfile(container)):
+          print(container," is a file")
 
-     if (os.path.isfile(x)):
-          print(x," is a file")
-
-     elif (os.path.isdir(x)):
-          print(x," is a folder")
+     elif (os.path.isdir(container)):
+          print(container," is a folder")
 
          
 
@@ -29,15 +30,24 @@ textLines = []
 
 with open(dirPath + "Part Stock.csv") as fileHandle:    
 
-     for line in fileHandle.readlines():
-          cleanedLine = line.strip()
+     for fileLine in fileHandle.readlines():
+          cleanedLine = fileLine.strip()
           
           textLines.append(cleanedLine)
           
           print(cleanedLine)
+          
+          userInput = input("Stop")
 
 print(textLines)
  
 
-for line in textLines:
-     print(line)
+
+
+for listItem in textLines:
+     print(listItem)
+     
+     
+     
+     
+     

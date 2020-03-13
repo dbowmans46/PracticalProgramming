@@ -235,7 +235,6 @@ class WWGameWindow(object):
     """
     def dealButtonOnClick(self):
     
-        # Deal button pressed
         # Transfer top cards from Player/Computer Library to battlefield 
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
@@ -258,7 +257,7 @@ class WWGameWindow(object):
         return None 
 
     """
-    @brief "Not entirelt sure whats going on here.  Need more info" Converted from PYQT5 GUI
+    @brief Converted from PYQT5 GUI
     @param MainWindow
     """
     

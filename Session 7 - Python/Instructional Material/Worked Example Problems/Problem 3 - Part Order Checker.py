@@ -40,6 +40,11 @@ Problem Description:
     need to order 10 more parts so that the stock will be 15.
 
 Plan of Attack:
+    Get data from csv file
+    Check if current quantity is below order point
+    If quantity is below, print how much needs to be ordered to get the quantity 
+        to the safety stock level
+        
     
 Required Libraries:
 

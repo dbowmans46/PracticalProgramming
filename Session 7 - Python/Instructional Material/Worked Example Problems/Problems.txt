@@ -1,0 +1,7 @@
+1.  Determine if the current day of the week is past "hump" day (Wednesday).  Assume the first day of the week is Monday, and the last day of the week is Sunday.
+
+2.  Given the meeting room maximum capacities in "Room Capacities", have the user input a room and the number of employees that will use it, and return whether the room will be below, at, or over capacity.
+
+3.  Given the data in "Part Min Qty.csv", determine if a part needs to be ordered to maintain adequate stock and how much needs to be ordered to maintain the safety stock amount.  The "Order Point" is determines when an order needs placed to order more parts. "Safety Stock" is the amount of parts that should be in stores after a part has reached the order point.  For instance, if we have 5 of part A, and the order point is 10, and the safety stock is 15, we need to order 10 more parts so that the stock will be 15.
+
+4.  Check if the email addresses in the file "Emails to Check for Addition.csv" exist in the file "Employee Email Addresses.csv". If not, add them.  Ensure the email addresses are saved in alphabetical order in the file "Employee Email Addresses.csv".

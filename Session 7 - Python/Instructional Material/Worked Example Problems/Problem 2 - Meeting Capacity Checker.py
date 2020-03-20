@@ -44,7 +44,7 @@ Plan of Attack:
     6. Check if the room can accommodate, and report
     
 Required Libraries:
-    None, only standard library functionality utilized
+    None
 
 """
 

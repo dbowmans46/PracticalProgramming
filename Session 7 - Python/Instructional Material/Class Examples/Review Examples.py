@@ -66,25 +66,48 @@ Created on Fri Mar  6 00:13:31 2020
 #    return powerVal
 #
 #print(Power(2,3))
+#
+## TODO: Write to a file that doesn't exist
+#filePath = "C:/users/doug/desktop/file.txt"
+#
+#with open(filePath,"a") as fileHandle:
+#    
+#    fileHandle.write("this is text")
+#    
+#    
+    
 
-# TODO: Write to a file that doesn't exist
-filePath = "C:/users/doug/desktop/file.txt"
+## TODO: Read from a file
+#tempList = []
+#with open(filePath,"r") as fileHandle:
+#    
+#    for line in fileHandle.readlines():
+#        tempList.append(line)
+#        
+#print(tempList)
 
-with open(filePath,"a") as fileHandle:
-    
-    fileHandle.write("this is text")
-    
-    
-    
 
-# TODO: Read from a file
+#
+#filePath = "C:/users/doug/desktop/file.txt"
+#with open(filePath,"w") as fileHandle:
+#    
+#    fileHandle.write("Separate new text")
+    
 # TODO: Append data to a file
 
 
+testStr = "this\tis\ta\tstring"
+
+print(testStr.split("\t"))
 
 
+testStr2 = "this is a test string, as well\n"
+print(testStr2.strip())
 
 
+revenue = "500"
+cost = "200\n"
+print( int(revenue) - int(cost.split()[0]) )
 
 
 

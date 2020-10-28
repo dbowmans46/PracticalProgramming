@@ -48,5 +48,7 @@ class WWShuffleDeck(WWCardsDeck):
 
     def shuffleCards(self):
         # Must be a list to use shuffle
-        shuffle(self.cards)
+        for dummy in range(1000):
+            shuffle(self.cards)
+            print(self.cards)
         return None

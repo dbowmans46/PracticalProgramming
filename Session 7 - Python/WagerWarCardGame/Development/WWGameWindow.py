@@ -219,8 +219,18 @@ class WWGameWindow(object):
         self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
+        [print(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.shuffleCards()
+        print("\n\n\nInitDeck")
+        [print(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.deal()
+        print("\n\n\Player Deck")
+        [print(x) for x in self.wwgm.playerDeck.cards]
+        print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
+        
+        print("\n\n\nComputer Deck")
+        [print(x) for x in self.wwgm.computerDeck.cards]
+        print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
 
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
@@ -236,6 +246,7 @@ class WWGameWindow(object):
     def dealButtonOnClick(self):
     
         # Transfer top cards from Player/Computer Library to battlefield 
+        
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
 

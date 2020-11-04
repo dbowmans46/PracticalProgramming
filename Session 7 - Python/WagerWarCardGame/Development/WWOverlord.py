@@ -31,6 +31,7 @@ from WWWarConstants import WWWarConstants
 from WWGameManager import WWGameManager
 from WWGameWindow import WWGameWindow
 
+
 if __name__ == "__main__":     
     wwgm = WWGameManager()
     const = WWWarConstants()

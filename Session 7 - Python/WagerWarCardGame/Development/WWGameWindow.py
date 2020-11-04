@@ -35,7 +35,6 @@ from WWCardsDeck import WWCardsDeck
 @brief Creates game window, handles game logic
 """
 
-
 class WWGameWindow(object):
     """
     @brief Using PYQT5, creates GUI for game window, handles connnections between buttons

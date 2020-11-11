@@ -198,6 +198,9 @@ class WWGameWindow(object):
         #self.wwgm = wwGameManager
 
         self.dealPushButton.clicked.connect(self.turnEventUpdate)
+        
+        
+        
     
     '''
     @brief sets up the game state by shuffling deck and dealing cards to player and computer. 
@@ -218,18 +221,21 @@ class WWGameWindow(object):
         self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
-        [print(x) for x in self.WWInitDeck.cards]
+       # [print(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.shuffleCards()
-        print("\n\n\nInitDeck")
-        [print(x) for x in self.WWInitDeck.cards]
+       # print("\n\n\nInitDeck")
+       # [print(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.deal()
-        print("\n\n\Player Deck")
-        [print(x) for x in self.wwgm.playerDeck.cards]
-        print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
+       # print("\n\n\Player Deck")
+       # [print(x) for x in self.wwgm.playerDeck.cards]
+       # print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
         
-        print("\n\n\nComputer Deck")
-        [print(x) for x in self.wwgm.computerDeck.cards]
-        print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
+       # print("\n\n\nComputer Deck")
+       # [print(x) for x in self.wwgm.computerDeck.cards]
+       # print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
+       
+       #self.wwgm.playerBattleDeck = WWCardsDeck([])
+       #self.wwgm.computerBattleDeck = WWCardDeck([])
 
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
@@ -248,13 +254,28 @@ class WWGameWindow(object):
         
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-
+        # print("Player" , self.wwgm.playerBattleDeck.cards)
+        # print("Computer", self.wwgm.computerBattleDeck.cards)
+        
         # TODO 2. Convert card value and Compare  
-        # TODO NEED TO TEST
-        self.cardValueManager = WWCardValueManager(self.wwgm.playerBattleDeck[-1])
+        self.cardValueManager = WWCardValueManager(self.wwgm.playerBattleDeck.cards[-1])
         self.cardValuePlayer = self.cardValueManager.GetCardValue()
-        self.cardValueComputer = self.cardValueManager.NewCardValue(self.wwgm.computerBattleDeck[-1])
-         
+        self.cardValueComputer = self.cardValueManager.NewCardValue(self.wwgm.computerBattleDeck.cards[-1])
+        # print("Player Value", self.cardValuePlayer)
+        # print("Computer Value", self.cardValueComputer)
+
+        # Compare computerBattle and playerBattle
+        if self.cardValuePlayer == self.cardValueComputer:
+            for i in range(3):
+                self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
+                self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+            self.dealButtonOnClick()
+        else:
+            # TEMP
+            return None
+
+
+
         
 
         # TODO 3. Transfer winning cards to winners graveyard -or- start war if equal value
@@ -265,6 +286,7 @@ class WWGameWindow(object):
     
          
         return None 
+    
 
     """
     @brief Converted from PYQT5 GUI

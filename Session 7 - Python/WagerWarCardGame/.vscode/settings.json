@@ -1,4 +1,4 @@
 {
-  "python.pythonPath": "C:\\Users\\gilbe\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
+  "python.pythonPath": "C:\\Program Files\\Inkscape\\bin\\python.exe",
   "python.formatting.provider": "black"
 }

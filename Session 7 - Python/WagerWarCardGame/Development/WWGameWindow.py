@@ -269,14 +269,40 @@ class WWGameWindow(object):
             for i in range(3):
                 self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
                 self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+                '''
+                print("War")
+                print("Player" , self.wwgm.playerBattleDeck.cards)
+                print("size", len(self.wwgm.playerDeck.cards))
+                print("Computer", self.wwgm.computerBattleDeck.cards)
+                print("size", len(self.wwgm.computerDeck.cards))
+                '''
             self.dealButtonOnClick()
+        elif self.cardValuePlayer > self.cardValueComputer:
+            
+            '''
+            print("Player wins")
+            print("Player", self.wwgm.playerBattleDeck.cards)
+            print("size", len(self.wwgm.playerDeck.cards))
+            print("Computer", self.wwgm.computerBattleDeck.cards)
+            print("size", len(self.wwgm.computerDeck.cards))
+            '''
+            self.wwgm.playerBattleDeck.cardTransfer(self.wwgm.playerGraveyardDeck)
+            self.wwgm.computerBattleDeck.cardTransfer(self.wwgm.playerGraveyardDeck)
+            #print("PlayerGraveyard", self.wwgm.playerGraveyardDeck.cards)
+            
+        elif self.cardValuePlayer < self.cardValueComputer:
+            '''
+            print("Computer wins")
+            print("Player", self.wwgm.playerBattleDeck.cards)
+            print("size", len(self.wwgm.playerDeck.cards))
+            print("Computer", self.wwgm.computerBattleDeck.cards)
+            print("size", len(self.wwgm.computerDeck.cards))
+            '''
+            self.wwgm.playerBattleDeck.cardTransfer(self.wwgm.computerGraveyardDeck)
+            self.wwgm.computerBattleDeck.cardTransfer(self.wwgm.computerGraveyardDeck)
+            #print("ComputerGraveyard", self.wwgm.computerGraveyardDeck.cards)
         else:
-            # TEMP
-            return None
-
-
-
-        
+            print("sumthin wrong here")
 
         # TODO 3. Transfer winning cards to winners graveyard -or- start war if equal value
         # TODO 4. Check Player and Computer card count - if 0 declare winner

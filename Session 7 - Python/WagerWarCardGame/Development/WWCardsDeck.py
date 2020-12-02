@@ -44,6 +44,15 @@ class WWCardsDeck():
         topCard = self.cards.pop()
         destDeck.cards.append(topCard)
 
+
+        """
+    @ brief Remove the first card from cards list and adds it to the end of destDeck list.
+    @ param WWCardsDeck destDeck The destination deck to which the card is transferred. 
+    """
+    def cardTransferALT(self, destDeck):
+        # removes last card from list of cards moves it to destDeck
+        topCard = self.cards.pop(0)
+        destDeck.cards.append(topCard)
 # For testing        
 """        
 orgDeck = ['c01.bmp',

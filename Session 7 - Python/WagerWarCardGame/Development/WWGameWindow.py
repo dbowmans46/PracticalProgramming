@@ -246,6 +246,19 @@ class WWGameWindow(object):
         return
 
     """
+    @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
+    """
+    def cardCheck(self)
+        if len(wwgm.playerDeck.cards) < 4:
+           self.wwgm.playerGraveyardDeck.shuffleCards() 
+           self.wwgm.
+        return None
+    
+    # Possible to shuffle graveyard then transfer playerDeck to Graveyard then move back to playerDeck
+    
+    
+    
+    """
     @brief Primary event trigger for game logic
     """
     def dealButtonOnClick(self):
@@ -304,7 +317,6 @@ class WWGameWindow(object):
         else:
             print("sumthin wrong here")
 
-        # TODO 3. Transfer winning cards to winners graveyard -or- start war if equal value
         # TODO 4. Check Player and Computer card count - if 0 declare winner
         # TODO 5. WAR: both players transfer 3 cards or deckCount -1 to battlefield   
         # TODO 6. Loop back to 1.

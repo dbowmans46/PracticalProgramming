@@ -251,7 +251,8 @@ class WWGameWindow(object):
     def cardCheck(self)
         if len(wwgm.playerDeck.cards) < 4:
            self.wwgm.playerGraveyardDeck.shuffleCards() 
-           self.wwgm.
+           self.wwgm.playerDeck.TransferAll(self.wwgm.playerGraveyardDeck)
+           self.wwgm.playerGraveyardDeck.TransferAll(self.wwgm.playerDeck)
         return None
     
     # Possible to shuffle graveyard then transfer playerDeck to Graveyard then move back to playerDeck
@@ -263,6 +264,8 @@ class WWGameWindow(object):
     """
     def dealButtonOnClick(self):
     
+        #insert card check function - once it's working
+        
         # Transfer top cards from Player/Computer Library to battlefield 
         
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)

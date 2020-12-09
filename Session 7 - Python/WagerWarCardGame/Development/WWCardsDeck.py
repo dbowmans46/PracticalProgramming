@@ -44,13 +44,17 @@ class WWCardsDeck():
         topCard = self.cards.pop()
         destDeck.cards.append(topCard)
 
+    def cardTransferAll(self, destDeck):
+        # transfers every card in deck to destination deck
+        destDeck.cards.extend(self.cards)
+        self.cards = []
 
         """
     @ brief Remove the first card from cards list and adds it to the end of destDeck list.
     @ param WWCardsDeck destDeck The destination deck to which the card is transferred. 
     """
     def cardTransferALT(self, destDeck):
-        # removes last card from list of cards moves it to destDeck
+        # removes first card from list of cards moves it to destDeck
         topCard = self.cards.pop(0)
         destDeck.cards.append(topCard)
 # For testing        

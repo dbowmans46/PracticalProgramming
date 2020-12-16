@@ -248,30 +248,32 @@ class WWGameWindow(object):
     """
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
-    def cardCheck(self)
-        if len(wwgm.playerDeck.cards) < 4:
+    def cardCheck(self):
+        if len(self.wwgm.playerDeck.cards) < 4:
            self.wwgm.playerGraveyardDeck.shuffleCards() 
-           self.wwgm.playerDeck.TransferAll(self.wwgm.playerGraveyardDeck)
-           self.wwgm.playerGraveyardDeck.TransferAll(self.wwgm.playerDeck)
+           self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
+           self.wwgm.playerGraveyardDeck.cardTransferAll(self.wwgm.playerDeck)
+           
+        if len(self.wwgm.computerDeck.cards) < 4:
+           self.wwgm.computerGraveyardDeck.shuffleCards() 
+           self.wwgm.computerDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
+           self.wwgm.computerGraveyardDeck.cardTransferAll(self.wwgm.computerDeck)
         return None
     
-    # Possible to shuffle graveyard then transfer playerDeck to Graveyard then move back to playerDeck
-    
-    
-    
+       
     """
     @brief Primary event trigger for game logic
     """
     def dealButtonOnClick(self):
     
-        #insert card check function - once it's working
+        self.cardCheck()
         
         # Transfer top cards from Player/Computer Library to battlefield 
         
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-        # print("Player" , self.wwgm.playerBattleDeck.cards)
-        # print("Computer", self.wwgm.computerBattleDeck.cards)
+        print("Player Battle" , self.wwgm.playerBattleDeck.cards)
+        print("Computer Battle", self.wwgm.computerBattleDeck.cards)
         
         # TODO 2. Convert card value and Compare  
         self.cardValueManager = WWCardValueManager(self.wwgm.playerBattleDeck.cards[-1])
@@ -282,6 +284,8 @@ class WWGameWindow(object):
 
         # Compare computerBattle and playerBattle
         if self.cardValuePlayer == self.cardValueComputer:
+            
+            # check for less than three cards.throw all but one.
             for i in range(3):
                 self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
                 self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
@@ -302,8 +306,8 @@ class WWGameWindow(object):
             print("Computer", self.wwgm.computerBattleDeck.cards)
             print("size", len(self.wwgm.computerDeck.cards))
             '''
-            self.wwgm.playerBattleDeck.cardTransfer(self.wwgm.playerGraveyardDeck)
-            self.wwgm.computerBattleDeck.cardTransfer(self.wwgm.playerGraveyardDeck)
+            self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
+            self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
             #print("PlayerGraveyard", self.wwgm.playerGraveyardDeck.cards)
             
         elif self.cardValuePlayer < self.cardValueComputer:
@@ -314,8 +318,8 @@ class WWGameWindow(object):
             print("Computer", self.wwgm.computerBattleDeck.cards)
             print("size", len(self.wwgm.computerDeck.cards))
             '''
-            self.wwgm.playerBattleDeck.cardTransfer(self.wwgm.computerGraveyardDeck)
-            self.wwgm.computerBattleDeck.cardTransfer(self.wwgm.computerGraveyardDeck)
+            self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
+            self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
             #print("ComputerGraveyard", self.wwgm.computerGraveyardDeck.cards)
         else:
             print("sumthin wrong here")

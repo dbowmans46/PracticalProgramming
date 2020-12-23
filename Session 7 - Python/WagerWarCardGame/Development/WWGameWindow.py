@@ -249,12 +249,12 @@ class WWGameWindow(object):
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
     def cardCheck(self):
-        if len(self.wwgm.playerDeck.cards) < 4:
+        if len(self.wwgm.playerDeck.cards) < 5:
            self.wwgm.playerGraveyardDeck.shuffleCards() 
            self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
            self.wwgm.playerGraveyardDeck.cardTransferAll(self.wwgm.playerDeck)
            
-        if len(self.wwgm.computerDeck.cards) < 4:
+        if len(self.wwgm.computerDeck.cards) < 5:
            self.wwgm.computerGraveyardDeck.shuffleCards() 
            self.wwgm.computerDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
            self.wwgm.computerGraveyardDeck.cardTransferAll(self.wwgm.computerDeck)
@@ -285,17 +285,27 @@ class WWGameWindow(object):
         # Compare computerBattle and playerBattle
         if self.cardValuePlayer == self.cardValueComputer:
             
-            # check for less than three cards.throw all but one.
-            for i in range(3):
-                self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
-                self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-                '''
-                print("War")
-                print("Player" , self.wwgm.playerBattleDeck.cards)
-                print("size", len(self.wwgm.playerDeck.cards))
-                print("Computer", self.wwgm.computerBattleDeck.cards)
-                print("size", len(self.wwgm.computerDeck.cards))
-                '''
+            # Check for less than three cards if less throw in all but one card.
+            if len(self.wwgm.playerDeck.cards) < 4:
+                for i in range(len(self.wwgm.playerDeck.cards)-1):
+                    self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)       
+            else:    
+                for i in range(3):
+                    self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
+            
+            if len(self.wwgm.computerDeck.cards) < 4:
+                for i in range(len(self.wwgm.computerDeck.cards)-1):
+                    self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+            else:    
+                for i in range(3):
+                    self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+                    '''
+                    print("War")
+                    print("Player" , self.wwgm.playerBattleDeck.cards)
+                    print("size", len(self.wwgm.playerDeck.cards))
+                    print("Computer", self.wwgm.computerBattleDeck.cards)
+                    print("size", len(self.wwgm.computerDeck.cards))
+                    '''
             self.dealButtonOnClick()
         elif self.cardValuePlayer > self.cardValueComputer:
             
@@ -308,7 +318,7 @@ class WWGameWindow(object):
             '''
             self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
-            #print("PlayerGraveyard", self.wwgm.playerGraveyardDeck.cards)
+            print("PlayerGraveyard", self.wwgm.playerGraveyardDeck.cards)
             
         elif self.cardValuePlayer < self.cardValueComputer:
             '''
@@ -320,11 +330,13 @@ class WWGameWindow(object):
             '''
             self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
-            #print("ComputerGraveyard", self.wwgm.computerGraveyardDeck.cards)
+            print("ComputerGraveyard", self.wwgm.computerGraveyardDeck.cards)
         else:
-            print("sumthin wrong here")
+            print("---Something went wrong here---")
 
         # TODO 4. Check Player and Computer card count - if 0 declare winner
+        
+        
         # TODO 5. WAR: both players transfer 3 cards or deckCount -1 to battlefield   
         # TODO 6. Loop back to 1.
     

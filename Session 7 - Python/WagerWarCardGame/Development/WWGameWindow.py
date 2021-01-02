@@ -23,6 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QLineEdit, QPushButton, QComboBox, QDialog
 from WWCardValueManager import WWCardValueManager
@@ -227,8 +228,8 @@ class WWGameWindow(object):
         self.WWInitDeck.shuffleCards()
 
         self.WWInitDeck.deal()
-        print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
-        print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
+        #print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
+        #print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
        
 
     """
@@ -258,7 +259,7 @@ class WWGameWindow(object):
     @brief Primary event trigger for game logic
     """
     def dealButtonOnClick(self):
-    
+        sys.stdout = open("game_log.txt","a") # opens text file to write all print statements too
         self.cardCheck()
         
         # Transfer top cards from Player/Computer Library to battlefield 
@@ -330,12 +331,19 @@ class WWGameWindow(object):
             print("---Something went wrong here---")
 
         return None 
-# TODO Check Player and Computer card count - if 0 declare winner
+        sys.stdout.close() # closes text file
+
+#TODO Check Player and Computer card count - if 0 declare winner
+#TODO Need end sequence when game is won (currently it results in error)
+
     """
     @brief Auto completes the game with one button click
     """
-    def autoCompleteButtonOnClick():
-
+    def autoCompleteButtonOnClick(self):
+        while True:
+            self.dealButtonOnClick()
+        else:
+            print("Loop is done")
         return None
 
     """

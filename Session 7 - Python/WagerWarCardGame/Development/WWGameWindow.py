@@ -136,6 +136,7 @@ class WWGameWindow(object):
         self.quitPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.quitPushButton.setObjectName("quitPushButton")
+        self.quitPushButton.clicked.connect(self.quitButtonOnClick)
 
         self.gridLayout.addWidget(
             self.quitPushButton, 16, 4, 1, 1, QtCore.Qt.AlignHCenter)
@@ -173,6 +174,8 @@ class WWGameWindow(object):
 
         self.dealPushButton.raise_()
 
+        self.quitPushButton.raise_()
+
         self.warTitle.raise_()
 
         self.playerDeckDiscard.raise_()
@@ -195,9 +198,9 @@ class WWGameWindow(object):
 
         self.MainWindow.show()
 
-        #self.wwgm = wwGameManager
-
         self.dealPushButton.clicked.connect(self.turnEventUpdate)
+
+        self.quitPushButton.clicked.connect(self.turnEventUpdate)
         
         
         
@@ -343,6 +346,11 @@ class WWGameWindow(object):
     
          
         return None 
+    """
+    @brief Qutis the game from WWGameWindow
+    """
+    def quitButtonOnClick(self):
+        exit(self)
     
 
     """

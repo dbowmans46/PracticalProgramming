@@ -117,6 +117,7 @@ class WWGameWindow(object):
         self.autoCompletPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.autoCompletPushButton.setObjectName("autoCompletPushButton")
+        self.autoCompletPushButton.clicked.connect(self.autoCompleteButtonOnClick)
 
         self.gridLayout.addWidget(self.autoCompletPushButton, 16, 2, 1, 1)
 
@@ -184,14 +185,8 @@ class WWGameWindow(object):
 
         self.compDeckActive.raise_()
 
-        # Leave commented
-        # self.MainWindow.setCentralWidget(self.setCentralWidget)
-
         self.statusbar = QtWidgets.QStatusBar(self.MainWindow)
         self.statusbar.setObjectName("statusbar")
-
-        # Leave commented
-        # self.MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(self.MainWindow)
         QtCore.QMetaObject.connectSlotsByName(self.MainWindow)
@@ -201,6 +196,10 @@ class WWGameWindow(object):
         self.dealPushButton.clicked.connect(self.turnEventUpdate)
 
         self.quitPushButton.clicked.connect(self.turnEventUpdate)
+
+        self.autoCompletPushButton.clicked.connect(self.turnEventUpdate)
+
+
         
         
         
@@ -226,19 +225,11 @@ class WWGameWindow(object):
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
        # [print(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.shuffleCards()
-       # print("\n\n\nInitDeck")
-       # [print(x) for x in self.WWInitDeck.cards]
+
         self.WWInitDeck.deal()
-       # print("\n\n\Player Deck")
-       # [print(x) for x in self.wwgm.playerDeck.cards]
-       # print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
-        
-       # print("\n\n\nComputer Deck")
-       # [print(x) for x in self.wwgm.computerDeck.cards]
-       # print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
+        print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
+        print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
        
-       #self.wwgm.playerBattleDeck = WWCardsDeck([])
-       #self.wwgm.computerBattleDeck = WWCardDeck([])
 
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
@@ -246,8 +237,7 @@ class WWGameWindow(object):
     """
     def turnEventUpdate(self):
 
-        return
-
+        return None
     """
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
@@ -275,10 +265,10 @@ class WWGameWindow(object):
         
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-        print("Player Battle" , self.wwgm.playerBattleDeck.cards)
-        print("Computer Battle", self.wwgm.computerBattleDeck.cards)
+        print("Player Plays" , self.wwgm.playerBattleDeck.cards)
+        print("Computer Plays", self.wwgm.computerBattleDeck.cards)
         
-        # TODO 2. Convert card value and Compare  
+       
         self.cardValueManager = WWCardValueManager(self.wwgm.playerBattleDeck.cards[-1])
         self.cardValuePlayer = self.cardValueManager.GetCardValue()
         self.cardValueComputer = self.cardValueManager.NewCardValue(self.wwgm.computerBattleDeck.cards[-1])
@@ -302,54 +292,57 @@ class WWGameWindow(object):
             else:    
                 for i in range(3):
                     self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-                    '''
+                    
                     print("War")
-                    print("Player" , self.wwgm.playerBattleDeck.cards)
-                    print("size", len(self.wwgm.playerDeck.cards))
-                    print("Computer", self.wwgm.computerBattleDeck.cards)
-                    print("size", len(self.wwgm.computerDeck.cards))
-                    '''
+                    #print("Player" , self.wwgm.playerBattleDeck.cards)
+                    #print("size", len(self.wwgm.playerDeck.cards))
+                    #print("Computer", self.wwgm.computerBattleDeck.cards)
+                    #print("size", len(self.wwgm.computerDeck.cards))
+                    
             self.dealButtonOnClick()
         elif self.cardValuePlayer > self.cardValueComputer:
             
-            '''
+            
             print("Player wins")
-            print("Player", self.wwgm.playerBattleDeck.cards)
-            print("size", len(self.wwgm.playerDeck.cards))
-            print("Computer", self.wwgm.computerBattleDeck.cards)
-            print("size", len(self.wwgm.computerDeck.cards))
-            '''
+            #print("Player", self.wwgm.playerBattleDeck.cards)
+            #print("size", len(self.wwgm.playerDeck.cards))
+            #print("Computer", self.wwgm.computerBattleDeck.cards)
+            #print("size", len(self.wwgm.computerDeck.cards))
+            
             self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
             print("PlayerGraveyard", self.wwgm.playerGraveyardDeck.cards)
+            print("\n")
             
         elif self.cardValuePlayer < self.cardValueComputer:
-            '''
+            
             print("Computer wins")
-            print("Player", self.wwgm.playerBattleDeck.cards)
-            print("size", len(self.wwgm.playerDeck.cards))
-            print("Computer", self.wwgm.computerBattleDeck.cards)
-            print("size", len(self.wwgm.computerDeck.cards))
-            '''
+            #print("Player", self.wwgm.playerBattleDeck.cards)
+            #print("size", len(self.wwgm.playerDeck.cards))
+            #print("Computer", self.wwgm.computerBattleDeck.cards)
+            #print("size", len(self.wwgm.computerDeck.cards))
+            
             self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
             print("ComputerGraveyard", self.wwgm.computerGraveyardDeck.cards)
+            print("\n")
         else:
             print("---Something went wrong here---")
 
-        # TODO 4. Check Player and Computer card count - if 0 declare winner
-        
-        
-        # TODO 5. WAR: both players transfer 3 cards or deckCount -1 to battlefield   
-        # TODO 6. Loop back to 1.
-    
-    
-         
         return None 
+# TODO Check Player and Computer card count - if 0 declare winner
+    """
+    @brief Auto completes the game with one button click
+    """
+    def autoCompleteButtonOnClick():
+
+        return None
+
     """
     @brief Qutis the game from WWGameWindow
     """
     def quitButtonOnClick(self):
+        print("***Game was quit by user***")
         exit(self)
     
 

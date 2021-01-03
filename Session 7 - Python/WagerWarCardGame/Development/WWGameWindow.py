@@ -334,7 +334,8 @@ class WWGameWindow(object):
         sys.stdout.close() # closes text file
 
 #TODO Check Player and Computer card count - if 0 declare winner
-#TODO Need end sequence when game is won (currently it results in error)
+#TODO Improve game_log.txt 1. create file at start and append to it during the game
+#TODO Need end sequence when game is won (currently it results in IndexError: pop from empty list)
 
     """
     @brief Auto completes the game with one button click
@@ -343,7 +344,7 @@ class WWGameWindow(object):
         while True:
             self.dealButtonOnClick()
         else:
-            print("Loop is done")
+            print("Loop error in autoComplete")
         return None
 
     """

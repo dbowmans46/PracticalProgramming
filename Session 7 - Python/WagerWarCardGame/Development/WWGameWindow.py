@@ -266,7 +266,7 @@ class WWGameWindow(object):
         
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-        print("Player Plays" , self.wwgm.playerBattleDeck.cards)
+        print("Player Plays", self.wwgm.playerBattleDeck.cards)
         print("Computer Plays", self.wwgm.computerBattleDeck.cards)
         
        
@@ -291,10 +291,10 @@ class WWGameWindow(object):
                 for i in range(len(self.wwgm.computerDeck.cards)-1):
                     self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
             else:    
+                print("WAR!!")
                 for i in range(3):
                     self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
                     
-                    print("War")
                     #print("Player" , self.wwgm.playerBattleDeck.cards)
                     #print("size", len(self.wwgm.playerDeck.cards))
                     #print("Computer", self.wwgm.computerBattleDeck.cards)
@@ -312,7 +312,7 @@ class WWGameWindow(object):
             
             self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
-            print("PlayerGraveyard", self.wwgm.playerGraveyardDeck.cards)
+            print("PlayerGraveyard ", self.wwgm.playerGraveyardDeck.cards)
             print("\n")
             
         elif self.cardValuePlayer < self.cardValueComputer:
@@ -325,7 +325,7 @@ class WWGameWindow(object):
             
             self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
-            print("ComputerGraveyard", self.wwgm.computerGraveyardDeck.cards)
+            print("ComputerGraveyard ", self.wwgm.computerGraveyardDeck.cards)
             print("\n")
         else:
             print("---Something went wrong here---")

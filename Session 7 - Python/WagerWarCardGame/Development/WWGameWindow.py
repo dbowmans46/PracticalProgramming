@@ -248,10 +248,17 @@ class WWGameWindow(object):
            self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
            self.wwgm.playerGraveyardDeck.cardTransferAll(self.wwgm.playerDeck)
            
-        if len(self.wwgm.computerDeck.cards) < 5:
+        if len(self.wwgm.computerDeck.cards) < 5: 
            self.wwgm.computerGraveyardDeck.shuffleCards() 
            self.wwgm.computerDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
            self.wwgm.computerGraveyardDeck.cardTransferAll(self.wwgm.computerDeck)
+           
+        if (len(self.wwgm.playerDeck.cards) + len(self.wwgm.playerGraveyardDeck.cards) + len(self.wwgm.playerBattleDeck.cards) == 0):
+            # declare computer the winner
+            # go to victory window
+        if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
+            # declare player the winner
+            # go to victory window
         return None
     
        
@@ -259,6 +266,7 @@ class WWGameWindow(object):
     @brief Primary event trigger for game logic
     """
     def dealButtonOnClick(self):
+        
         sys.stdout = open("game_log.txt","a") # opens text file to write all print statements too
         self.cardCheck()
         
@@ -352,7 +360,7 @@ class WWGameWindow(object):
     """
     def quitButtonOnClick(self):
         print("***Game was quit by user***")
-        exit(self)
+        sys.exit(self)
     
 
     """

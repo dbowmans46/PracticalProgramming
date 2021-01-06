@@ -1,0 +1,7 @@
+Player Plays ['h12.bmp']
+Computer Plays ['d07.bmp']
+Player wins
+PlayerGraveyard  ['h12.bmp', 'd07.bmp']
+
+
+***Game was quit by user***

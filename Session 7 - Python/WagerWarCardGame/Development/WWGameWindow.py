@@ -256,9 +256,15 @@ class WWGameWindow(object):
         if (len(self.wwgm.playerDeck.cards) + len(self.wwgm.playerGraveyardDeck.cards) + len(self.wwgm.playerBattleDeck.cards) == 0):
             # declare computer the winner
             # go to victory window
+            print("computer wins game")
+            self.wwgm.winnerName = self.wwgm.compName
+            self.MainWindow.close()
         if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
             # declare player the winner
             # go to victory window
+            print("Player wins game")
+            self.wwgm.winnerName = self.wwgm.playerName
+            self.MainWindow.close()
         return None
     
        
@@ -269,6 +275,11 @@ class WWGameWindow(object):
         
         sys.stdout = open("game_log.txt","a") # opens text file to write all print statements too
         self.cardCheck()
+        
+        #check if a winner name has been determined, if so, end loop.
+        if self.wwgm.winnerName is not '':
+            sys.stdout.close() # closes text file
+            return None
         
         # Transfer top cards from Player/Computer Library to battlefield 
         
@@ -338,8 +349,10 @@ class WWGameWindow(object):
         else:
             print("---Something went wrong here---")
 
-        return None 
         sys.stdout.close() # closes text file
+        return None 
+        
+        
 
 #TODO Check Player and Computer card count - if 0 declare winner
 #TODO Improve game_log.txt 1. create file at start and append to it during the game
@@ -349,10 +362,12 @@ class WWGameWindow(object):
     @brief Auto completes the game with one button click
     """
     def autoCompleteButtonOnClick(self):
-        while True:
+        while self.wwgm.winnerName == '':
             self.dealButtonOnClick()
+        '''
         else:
             print("Loop error in autoComplete")
+        '''
         return None
 
     """

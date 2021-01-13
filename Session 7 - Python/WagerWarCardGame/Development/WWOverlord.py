@@ -44,6 +44,7 @@ if __name__ == "__main__":
 
     wwgw = WWGameWindow()
     wwgw.setTheStage(wwgm)
+    print('you are stuck in an infinite ciiiircllleee')
     sys.exit(app.exec_())
     
 """

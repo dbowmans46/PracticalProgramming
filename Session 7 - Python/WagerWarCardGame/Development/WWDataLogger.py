@@ -23,3 +23,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
+import json
+"""
+@brief
+"""
+# TODO open a log file
+# TODO overwrite existing file every game
+# TODO Log file comes from game manager
+
+
+class WWDataLogger():
+
+    file_path = "game_log.json"
+
+    def logger(log_message):
+        with open(WWDataLogger.file_path, "a") as filehandle:
+            filehandle.write(json.dumps(log_message))
+        # file_path is the file path
+        # token: 'a' = append, 'w' = write
+        # with open(<file_path>,<token>) as fileHandle:
+        #      fileHandle.writeLine(<msg_goes_here>)
+        return None

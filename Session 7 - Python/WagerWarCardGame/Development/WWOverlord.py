@@ -30,23 +30,40 @@ from WWSetupWindow import WWSetupWindow
 from WWWarConstants import WWWarConstants
 from WWGameManager import WWGameManager
 from WWGameWindow import WWGameWindow
+from WWVictoryWindow import WWVictoryWindow
 
 
-if __name__ == "__main__":     
+if __name__ == "__main__":
     wwgm = WWGameManager()
     const = WWWarConstants()
     app = QApplication(sys.argv)
+
     wwsw = WWSetupWindow()
     wwsw.setupUi(wwgm)
-
     while wwsw.wwswIsActive == True:
-         QtCore.QCoreApplication.processEvents()
+        QtCore.QCoreApplication.processEvents()
 
     wwgw = WWGameWindow()
     wwgw.setTheStage(wwgm)
-    print('you are stuck in an infinite ciiiircllleee')
+    while wwgw.wwgwIsActive == True:
+        QtCore.QCoreApplication.processEvents()
+
+    wwvw = WWVictoryWindow()
+    wwvw.setTheStage(wwgm)
+    while wwvw.wwvwIsActive == True:
+        QtCore.QCoreApplication.processEvents()
+
+# TODO victory window as above
+# TODO Add isActive to victory
+    """
+    wwgw = WWGameWindow()
+    wwgw.setTheStage(wwgm)
+    while wwgw.wwgwIsActive == True:
+        QtCore.QCoreApplication.processEvents()
+    """
+
     sys.exit(app.exec_())
-    
+
 """
 Overlord.py is the game executable *is WagerWar*
 overlord runs game manager
@@ -61,4 +78,3 @@ overlord opens game window
 Overlord opens Victory Window
 (Game Manager passes info to Victory Screen)
 """
-    

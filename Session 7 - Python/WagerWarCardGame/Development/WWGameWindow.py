@@ -31,10 +31,12 @@ from WWWarConstants import WWWarConstants
 from WWInitialDeck import WWInitialDeck
 from WWGameManager import WWGameManager
 from WWCardsDeck import WWCardsDeck
+from WWDataLogger import WWDataLogger
 
 """
 @brief Creates game window, handles game logic
 """
+
 
 class WWGameWindow(object):
     """
@@ -118,7 +120,8 @@ class WWGameWindow(object):
         self.autoCompletPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.autoCompletPushButton.setObjectName("autoCompletPushButton")
-        self.autoCompletPushButton.clicked.connect(self.autoCompleteButtonOnClick)
+        self.autoCompletPushButton.clicked.connect(
+            self.autoCompleteButtonOnClick)
 
         self.gridLayout.addWidget(self.autoCompletPushButton, 16, 2, 1, 1)
 
@@ -200,19 +203,16 @@ class WWGameWindow(object):
 
         self.autoCompletPushButton.clicked.connect(self.turnEventUpdate)
 
+        self.wwgwIsActive = True
 
-        
-        
-        
-    
     '''
     @brief sets up the game state by shuffling deck and dealing cards to player and computer. 
     @param
     '''
+
     def setTheStage(self, wwgm):
         self.setupUi(wwgm)
         self.deckSetup()
-
 
     # Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
     """
@@ -224,165 +224,175 @@ class WWGameWindow(object):
         self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
-       # [print(x) for x in self.WWInitDeck.cards]
+       # [WWDataLogger.logger(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.shuffleCards()
 
         self.WWInitDeck.deal()
-        #print("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
-        #print("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
-       
+        #WWDataLogger.logger("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
+        #WWDataLogger.logger("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
 
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
     @param
     """
+
     def turnEventUpdate(self):
 
         return None
     """
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
+
     def cardCheck(self):
         if len(self.wwgm.playerDeck.cards) < 5:
-           self.wwgm.playerGraveyardDeck.shuffleCards() 
-           self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
-           self.wwgm.playerGraveyardDeck.cardTransferAll(self.wwgm.playerDeck)
-           
-        if len(self.wwgm.computerDeck.cards) < 5: 
-           self.wwgm.computerGraveyardDeck.shuffleCards() 
-           self.wwgm.computerDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
-           self.wwgm.computerGraveyardDeck.cardTransferAll(self.wwgm.computerDeck)
-           
+            self.wwgm.playerGraveyardDeck.shuffleCards()
+            self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
+            self.wwgm.playerGraveyardDeck.cardTransferAll(self.wwgm.playerDeck)
+
+        if len(self.wwgm.computerDeck.cards) < 5:
+            self.wwgm.computerGraveyardDeck.shuffleCards()
+            self.wwgm.computerDeck.cardTransferAll(
+                self.wwgm.computerGraveyardDeck)
+            self.wwgm.computerGraveyardDeck.cardTransferAll(
+                self.wwgm.computerDeck)
+
         if (len(self.wwgm.playerDeck.cards) + len(self.wwgm.playerGraveyardDeck.cards) + len(self.wwgm.playerBattleDeck.cards) == 0):
             # declare computer the winner
             # go to victory window
-            print("computer wins game")
+            WWDataLogger.logger("computer wins game")
             self.wwgm.winnerName = self.wwgm.compName
+            self.wwgwIsActive = False
             self.MainWindow.close()
         if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
             # declare player the winner
             # go to victory window
-            print("Player wins game")
+            WWDataLogger.logger("Player wins game")
             self.wwgm.winnerName = self.wwgm.playerName
+            self.wwgwIsActive = False
             self.MainWindow.close()
         return None
-    
-       
+
     """
     @brief Primary event trigger for game logic
     """
+
     def dealButtonOnClick(self):
-        
-        sys.stdout = open("game_log.txt","a") # opens text file to write all print statements too
         self.cardCheck()
-        
-        #check if a winner name has been determined, if so, end loop.
+
+        # check if a winner name has been determined, if so, end loop.
         if self.wwgm.winnerName is not '':
-            sys.stdout.close() # closes text file
+            # sys.stdout.close()  # closes text file
             return None
-        
-        # Transfer top cards from Player/Computer Library to battlefield 
-        
+
+        # Transfer top cards from Player/Computer Library to battlefield
+
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-        print("Player Plays", self.wwgm.playerBattleDeck.cards)
-        print("Computer Plays", self.wwgm.computerBattleDeck.cards)
-        
-       
-        self.cardValueManager = WWCardValueManager(self.wwgm.playerBattleDeck.cards[-1])
+        # func to log info to game_log.txt
+        WWDataLogger.logger("Player Plays")
+        WWDataLogger.logger(self.wwgm.playerBattleDeck.cards)
+        WWDataLogger.logger("Computer Plays")
+        WWDataLogger.logger(self.wwgm.computerBattleDeck.cards)
+
+        self.cardValueManager = WWCardValueManager(
+            self.wwgm.playerBattleDeck.cards[-1])
         self.cardValuePlayer = self.cardValueManager.GetCardValue()
-        self.cardValueComputer = self.cardValueManager.NewCardValue(self.wwgm.computerBattleDeck.cards[-1])
-        # print("Player Value", self.cardValuePlayer)
-        # print("Computer Value", self.cardValueComputer)
+        self.cardValueComputer = self.cardValueManager.NewCardValue(
+            self.wwgm.computerBattleDeck.cards[-1])
+        # WWDataLogger.logger("Player Value", self.cardValuePlayer)
+        # WWDataLogger.logger("Computer Value", self.cardValueComputer)
 
         # Compare computerBattle and playerBattle
         if self.cardValuePlayer == self.cardValueComputer:
-            
+
             # Check for less than three cards if less throw in all but one card.
             if len(self.wwgm.playerDeck.cards) < 4:
                 for i in range(len(self.wwgm.playerDeck.cards)-1):
-                    self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)       
-            else:    
+                    self.wwgm.playerDeck.cardTransfer(
+                        self.wwgm.playerBattleDeck)
+            else:
                 for i in range(3):
-                    self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
-            
+                    self.wwgm.playerDeck.cardTransfer(
+                        self.wwgm.playerBattleDeck)
+
             if len(self.wwgm.computerDeck.cards) < 4:
                 for i in range(len(self.wwgm.computerDeck.cards)-1):
-                    self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-            else:    
-                print("WAR!!")
+                    self.wwgm.computerDeck.cardTransfer(
+                        self.wwgm.computerBattleDeck)
+            else:
+                WWDataLogger.logger("WAR!!")
                 for i in range(3):
-                    self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
-                    
-                    #print("Player" , self.wwgm.playerBattleDeck.cards)
-                    #print("size", len(self.wwgm.playerDeck.cards))
-                    #print("Computer", self.wwgm.computerBattleDeck.cards)
-                    #print("size", len(self.wwgm.computerDeck.cards))
-                    
+                    self.wwgm.computerDeck.cardTransfer(
+                        self.wwgm.computerBattleDeck)
+
+                    #WWDataLogger.logger("Player" , self.wwgm.playerBattleDeck.cards)
+                    #WWDataLogger.logger("size", len(self.wwgm.playerDeck.cards))
+                    #WWDataLogger.logger("Computer", self.wwgm.computerBattleDeck.cards)
+                    #WWDataLogger.logger("size", len(self.wwgm.computerDeck.cards))
+
             self.dealButtonOnClick()
         elif self.cardValuePlayer > self.cardValueComputer:
-            
-            
-            print("Player wins")
-            #print("Player", self.wwgm.playerBattleDeck.cards)
-            #print("size", len(self.wwgm.playerDeck.cards))
-            #print("Computer", self.wwgm.computerBattleDeck.cards)
-            #print("size", len(self.wwgm.computerDeck.cards))
-            
-            self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
-            self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
-            print("PlayerGraveyard ", self.wwgm.playerGraveyardDeck.cards)
-            print("\n")
-            
+
+            WWDataLogger.logger("Player wins")
+            #WWDataLogger.logger("Player", self.wwgm.playerBattleDeck.cards)
+            #WWDataLogger.logger("size", len(self.wwgm.playerDeck.cards))
+            #WWDataLogger.logger("Computer", self.wwgm.computerBattleDeck.cards)
+            #WWDataLogger.logger("size", len(self.wwgm.computerDeck.cards))
+
+            self.wwgm.playerBattleDeck.cardTransferAll(
+                self.wwgm.playerGraveyardDeck)
+            self.wwgm.computerBattleDeck.cardTransferAll(
+                self.wwgm.playerGraveyardDeck)
+            WWDataLogger.logger("PlayerGraveyard ")
+            WWDataLogger.logger(self.wwgm.playerGraveyardDeck.cards)
+
         elif self.cardValuePlayer < self.cardValueComputer:
-            
-            print("Computer wins")
-            #print("Player", self.wwgm.playerBattleDeck.cards)
-            #print("size", len(self.wwgm.playerDeck.cards))
-            #print("Computer", self.wwgm.computerBattleDeck.cards)
-            #print("size", len(self.wwgm.computerDeck.cards))
-            
-            self.wwgm.playerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
-            self.wwgm.computerBattleDeck.cardTransferAll(self.wwgm.computerGraveyardDeck)
-            print("ComputerGraveyard ", self.wwgm.computerGraveyardDeck.cards)
-            print("\n")
+
+            WWDataLogger.logger("Computer wins")
+            #WWDataLogger.logger("Player", self.wwgm.playerBattleDeck.cards)
+            #WWDataLogger.logger("size", len(self.wwgm.playerDeck.cards))
+            #WWDataLogger.logger("Computer", self.wwgm.computerBattleDeck.cards)
+            #WWDataLogger.logger("size", len(self.wwgm.computerDeck.cards))
+
+            self.wwgm.playerBattleDeck.cardTransferAll(
+                self.wwgm.computerGraveyardDeck)
+            self.wwgm.computerBattleDeck.cardTransferAll(
+                self.wwgm.computerGraveyardDeck)
+            WWDataLogger.logger("ComputerGraveyard ")
+            WWDataLogger.logger(self.wwgm.computerGraveyardDeck.cards)
+
         else:
-            print("---Something went wrong here---")
+            WWDataLogger.logger("---Something went wrong here---")
 
-        sys.stdout.close() # closes text file
-        return None 
-        
-        
-
-#TODO Check Player and Computer card count - if 0 declare winner
-#TODO Improve game_log.txt 1. create file at start and append to it during the game
-#TODO Need end sequence when game is won (currently it results in IndexError: pop from empty list)
+        # sys.stdout.close()  # closes text file
+        return None
 
     """
     @brief Auto completes the game with one button click
     """
+
     def autoCompleteButtonOnClick(self):
         while self.wwgm.winnerName == '':
             self.dealButtonOnClick()
         '''
         else:
-            print("Loop error in autoComplete")
+            WWDataLogger.logger("Loop error in autoComplete")
         '''
         return None
 
     """
     @brief Qutis the game from WWGameWindow
     """
+
     def quitButtonOnClick(self):
-        print("***Game was quit by user***")
+        WWDataLogger.logger("***Game was quit by user***")
         sys.exit(self)
-    
 
     """
     @brief Converted from PYQT5 GUI
     @param MainWindow
     """
-    
+
     def retranslateUi(self, MainWindow):
 
         MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
@@ -424,10 +434,10 @@ class WWGameWindow(object):
 
         self.dealPushButton.setText(self._translate("MainWindow", "Deal"))
 
-
     """
     @brief Will render the card count?
     """
+
     def cardCountUpdate(self):
 
         self.cardCountCompLabel.setText(self._translate(

@@ -299,8 +299,6 @@ class WWGameWindow(object):
         self.cardValuePlayer = self.cardValueManager.GetCardValue()
         self.cardValueComputer = self.cardValueManager.NewCardValue(
             self.wwgm.computerBattleDeck.cards[-1])
-        # WWDataLogger.logger("Player Value", self.cardValuePlayer)
-        # WWDataLogger.logger("Computer Value", self.cardValueComputer)
 
         # Compare computerBattle and playerBattle
         if self.cardValuePlayer == self.cardValueComputer:
@@ -325,20 +323,10 @@ class WWGameWindow(object):
                     self.wwgm.computerDeck.cardTransfer(
                         self.wwgm.computerBattleDeck)
 
-                    #WWDataLogger.logger("Player" , self.wwgm.playerBattleDeck.cards)
-                    #WWDataLogger.logger("size", len(self.wwgm.playerDeck.cards))
-                    #WWDataLogger.logger("Computer", self.wwgm.computerBattleDeck.cards)
-                    #WWDataLogger.logger("size", len(self.wwgm.computerDeck.cards))
-
             self.dealButtonOnClick()
         elif self.cardValuePlayer > self.cardValueComputer:
 
             WWDataLogger.logger("Player wins")
-            #WWDataLogger.logger("Player", self.wwgm.playerBattleDeck.cards)
-            #WWDataLogger.logger("size", len(self.wwgm.playerDeck.cards))
-            #WWDataLogger.logger("Computer", self.wwgm.computerBattleDeck.cards)
-            #WWDataLogger.logger("size", len(self.wwgm.computerDeck.cards))
-
             self.wwgm.playerBattleDeck.cardTransferAll(
                 self.wwgm.playerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(
@@ -349,11 +337,6 @@ class WWGameWindow(object):
         elif self.cardValuePlayer < self.cardValueComputer:
 
             WWDataLogger.logger("Computer wins")
-            #WWDataLogger.logger("Player", self.wwgm.playerBattleDeck.cards)
-            #WWDataLogger.logger("size", len(self.wwgm.playerDeck.cards))
-            #WWDataLogger.logger("Computer", self.wwgm.computerBattleDeck.cards)
-            #WWDataLogger.logger("size", len(self.wwgm.computerDeck.cards))
-
             self.wwgm.playerBattleDeck.cardTransferAll(
                 self.wwgm.computerGraveyardDeck)
             self.wwgm.computerBattleDeck.cardTransferAll(
@@ -363,8 +346,6 @@ class WWGameWindow(object):
 
         else:
             WWDataLogger.logger("---Something went wrong here---")
-
-        # sys.stdout.close()  # closes text file
         return None
 
     """

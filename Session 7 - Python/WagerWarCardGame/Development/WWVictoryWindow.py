@@ -43,7 +43,7 @@ class WWVictoryWindow(object):
     def setupUi(self, wwVictoryWindow):
         self._translate = QtCore.QCoreApplication.translate
 
-        self.wwvw = wwVictoryWindow
+        self.wwgm = wwVictoryWindow
         self.MainWindow = QDialog()
 
         self.MainWindow.setObjectName("WWVictoryWindow")
@@ -137,7 +137,8 @@ class WWVictoryWindow(object):
         self.quitPushButton.setText(_translate("WWVictoryWindow", "Quit"))
 
         self.designedByLabel.setText(_translate(
-            "WWVictoryWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))
+            "WWMainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))
 
         self.winnerLabel.setText(_translate(
-            "WWVictoryWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#ffffff;\">&lt;Winner Name&gt; Wins!!</span></p></body></html>"))
+            "WWMainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#ffffff;\">"
+            + self.wwgm.winnerName + " Wins!!</span></p></body></html>"))

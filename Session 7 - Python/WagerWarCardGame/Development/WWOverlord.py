@@ -53,15 +53,6 @@ if __name__ == "__main__":
     while wwvw.wwvwIsActive == True:
         QtCore.QCoreApplication.processEvents()
 
-# TODO victory window as above
-# TODO Add isActive to victory
-    """
-    wwgw = WWGameWindow()
-    wwgw.setTheStage(wwgm)
-    while wwgw.wwgwIsActive == True:
-        QtCore.QCoreApplication.processEvents()
-    """
-
     sys.exit(app.exec_())
 
 """

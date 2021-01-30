@@ -29,90 +29,83 @@ from WWShuffleDeck import WWShuffleDeck
 """
 @ brief Game Manager is responsible for place holding properties
 """
+
+
 class WWGameManager:
-   
-     '''
-     @ brief Dealing deck, used to create all players decks
-     @ param str-list
-     '''
-     gameDeck = WWCardsDeck([])
-     
-     '''
+
+    '''
+    @ brief Dealing deck, used to create all players decks
+    @ param str-list
+    '''
+    gameDeck = WWCardsDeck([])
+
+    '''
      @ brief Deck holding all wagers
      @ param WWCardsDeck
      '''
-     wagerDeck = WWCardsDeck([])
-     
-     
-     '''
+    wagerDeck = WWCardsDeck([])
+
+    '''
      @ brief Deck that computer plays from
      @ param WWCardsDeck
      '''
-     computerDeck = WWCardsDeck([])
-     
-     '''
+    computerDeck = WWCardsDeck([])
+
+    '''
      @ brief Computers winnings, After each turn, will be used again
      @ param WWCardsDeck
      '''
-     computerGraveyardDeck = WWShuffleDeck([])
-     
-     '''
+    computerGraveyardDeck = WWShuffleDeck([])
+
+    '''
      @ brief computer's card being used in war. does not include wagers
      @ param WWCardsDeck
      '''
-     computerBattleDeck = WWCardsDeck([])
-     '''
+    computerBattleDeck = WWCardsDeck([])
+    '''
      @ brief Deck that player plays from
      @ param WWCardsDeck
      '''
-     playerDeck = WWCardsDeck([])
-     
-     '''
+    playerDeck = WWCardsDeck([])
+
+    '''
      @ brief players winnings, After each turn, will be used again
      @ param WWCardsDeck
      '''
-     playerGraveyardDeck = WWShuffleDeck([])
-     
-     '''
+    playerGraveyardDeck = WWShuffleDeck([])
+
+    '''
      @ brief player's card being used in war. does not include wagers
      @ param WWCardsDeck
      '''
-     playerBattleDeck = WWCardsDeck([])
-     '''
+    playerBattleDeck = WWCardsDeck([])
+    '''
      @ brief Name of player from WWSetupWindow
      '''
-     playerName = ''
-     
-     '''
+    playerName = ''
+
+    '''
      @ brief Name of computer from WWSetupWindow
      '''
-     compName = ''
-     
-     '''
+    compName = ''
+
+    '''
      @ brief User input from WWSetupWindow sets number decks
      '''
-     deckCount = 1
-     
-     '''
+    deckCount = 1
+
+    '''
      @ brief User input from WWSetupWindow sets deck style
      '''
-     #deck color input box
-     deckStyle = ''
-     
-     '''
+    # deck color input box
+    deckStyle = ''
+
+    '''
      @ brief Number of turns completed
      '''
-     turnCount = 0
-     
-     '''
+    turnCount = 0
+
+    '''
      @ brief Name variable used at WWVictoryWindow to show who wins
      '''
-     winnerName = ''
-     
-     
-         
-         
-'''
-This Window will remain passive. Basically just a placeholder for info
-
-'''
+    winnerName = ''

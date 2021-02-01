@@ -259,7 +259,7 @@ class WWGameWindow(object):
         if (len(self.wwgm.playerDeck.cards) + len(self.wwgm.playerGraveyardDeck.cards) + len(self.wwgm.playerBattleDeck.cards) == 0):
             # declare computer the winner
             # go to victory window
-            WWDataLogger.logger("computer wins game")
+            WWDataLogger.logger("Computer wins game")
             self.wwgm.winnerName = self.wwgm.compName
             self.wwgwIsActive = False
             self.MainWindow.close()

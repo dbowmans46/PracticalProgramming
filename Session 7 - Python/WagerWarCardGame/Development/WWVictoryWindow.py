@@ -73,6 +73,7 @@ class WWVictoryWindow(object):
         self.playAgainPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.playAgainPushButton.setObjectName("playAgainPushButton")
+        self.playAgainPushButton.clicked.connect(self.playAgainButtonOnClick)
 
         self.quitPushButton = QtWidgets.QPushButton(self.widget)
         self.quitPushButton.setGeometry(QtCore.QRect(410, 480, 75, 23))
@@ -115,6 +116,11 @@ class WWVictoryWindow(object):
 
     def setTheStage(self, wwgm):
         self.setupUi(wwgm)
+
+    def playAgainButtonOnClick(self):
+        sys.exit(self)  # exit current session
+        WWOverlord()  # restart at the beginning
+        print("test")
 
     def quitButtonOnClick(self):
         WWDataLogger.logger("***Game was quit by user***")

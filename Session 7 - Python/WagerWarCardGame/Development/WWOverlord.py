@@ -23,6 +23,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+# TODO T/S bug, pressing the deal button once, then the autocomplete results in an error.
+#! POPs from empty list ** UNABLE TO RECREATE AFTER LATEST GIT PUSH **
+
 import sys
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QDialog, QApplication
@@ -31,12 +34,14 @@ from WWWarConstants import WWWarConstants
 from WWGameManager import WWGameManager
 from WWGameWindow import WWGameWindow
 from WWVictoryWindow import WWVictoryWindow
+from WWDataLogger import WWDataLogger
 
 
 if __name__ == "__main__":
     wwgm = WWGameManager()
     const = WWWarConstants()
     app = QApplication(sys.argv)
+    WWDataLogger.deleteLogger()
 
     wwsw = WWSetupWindow()
     wwsw.setupUi(wwgm)

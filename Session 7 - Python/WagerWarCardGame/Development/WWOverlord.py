@@ -41,7 +41,8 @@ if __name__ == "__main__":
     wwgm = WWGameManager()
     const = WWWarConstants()
     app = QApplication(sys.argv)
-    WWDataLogger.deleteLogger()
+    # this will delete the "game_log.json" before running new game
+    WWDataLogger()
 
     wwsw = WWSetupWindow()
     wwsw.setupUi(wwgm)

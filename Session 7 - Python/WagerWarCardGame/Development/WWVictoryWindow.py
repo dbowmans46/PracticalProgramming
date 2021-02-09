@@ -117,13 +117,23 @@ class WWVictoryWindow(object):
     def setTheStage(self, wwgm):
         self.setupUi(wwgm)
 
-    def playAgainButtonOnClick(self):
-        sys.exit(self)  # exit current session
-        WWOverlord()  # restart at the beginning
-        print("test")
+    # Need to figure out the logic of this to play another game
+    #def playAgainButtonOnClick(self):
+        #sys.exit(self)  # exit current session
+        #WWOverlord()  # restart at the beginning
+    """
+    from datetime import datetime
+
+    # current date and time
+    now = datetime.now()
+
+    timestamp = datetime.timestamp(now)
+    print("timestamp =", timestamp)
+    """
 
     def quitButtonOnClick(self):
         WWDataLogger.logger("***Game was quit by user***")
+        WWDataLogger.logger()
         self.wwvwIsActive = False
         sys.exit(self)
 

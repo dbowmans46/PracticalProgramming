@@ -20,7 +20,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
-SOFTWARE.
+SOFTWARE.slack
 """
 
 # TODO T/S bug, pressing the deal button once, then the autocomplete results in an error.
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     const = WWWarConstants()
     app = QApplication(sys.argv)
     # this will delete the "game_log.json" before running new game
-    WWDataLogger()
+    #WWDataLogger.deleteLogger()
 
     wwsw = WWSetupWindow()
     wwsw.setupUi(wwgm)

@@ -41,7 +41,8 @@ class WWDataLogger():
     def deleteLogger():
         if os.path.isfile(WWDataLogger.file_path):
             os.remove(WWDataLogger.file_path)
-        
+        else:
+            WWDataLogger.logger(log_message)
 
     def logger(log_message):
         with open(WWDataLogger.file_path, "a") as filehandle:

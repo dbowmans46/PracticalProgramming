@@ -263,6 +263,7 @@ class WWGameWindow(object):
             self.wwgm.winnerName = self.wwgm.compName
             self.wwgwIsActive = False
             self.MainWindow.close()
+            
         if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
             # declare player the winner
             # go to victory window
@@ -270,6 +271,7 @@ class WWGameWindow(object):
             self.wwgm.winnerName = self.wwgm.playerName
             self.wwgwIsActive = False
             self.MainWindow.close()
+            
         return None
 
     """

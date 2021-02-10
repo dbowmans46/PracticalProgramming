@@ -153,6 +153,7 @@ class WWSetupWindow(object):
         self.DeckCountLineEdit = QtWidgets.QLineEdit(self.layoutWidget)
         self.DeckCountLineEdit.setStyleSheet("color: rgb(255, 255, 255);")
         self.DeckCountLineEdit.setObjectName("DeckCountLineEdit")
+        self.DeckCountLineEdit.setText(str(wwGameManager.deckCount))
 
         self.verticalLayout_2.addWidget(
             self.DeckCountLineEdit, 0, QtCore.Qt.AlignHCenter)

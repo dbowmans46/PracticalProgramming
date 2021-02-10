@@ -40,8 +40,9 @@ class WWCardsDeck():
     @ param WWCardsDeck destDeck The destination deck to which the card is transferred. 
     """
     def cardTransfer(self, destDeck):
-        topCard = self.cards.pop()
-        destDeck.cards.append(topCard)
+        if len(self.cards) > 0:
+            topCard = self.cards.pop()            
+            destDeck.cards.append(topCard)
 
     """
     @ brief Transfer all the cards in the deck to destination deck.
@@ -58,8 +59,9 @@ class WWCardsDeck():
     """
     def cardTransferALT(self, destDeck):
         # removes first card from list of cards moves it to destDeck
-        topCard = self.cards.pop(0)
-        destDeck.cards.append(topCard)
+        if len(self.cards) > 0:
+            topCard = self.cards.pop(0)
+            destDeck.cards.append(topCard)
 # For testing        
 """        
 orgDeck = ['c01.bmp',

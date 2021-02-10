@@ -41,10 +41,11 @@ from WWDataLogger import WWDataLogger
 
 class WWVictoryWindow(object):
 
-    def setupUi(self, wwVictoryWindow):
+    def setupUi(self, wwVictoryWindow, wwGameManager):
         self._translate = QtCore.QCoreApplication.translate
 
-        self.wwgm = wwVictoryWindow
+        self.wwvw = wwVictoryWindow
+        self.wwgm = wwGameManager
         self.MainWindow = QDialog()
 
         self.MainWindow.setObjectName("WWVictoryWindow")
@@ -114,28 +115,18 @@ class WWVictoryWindow(object):
 
         self.wwvwIsActive = True
 
-    def setTheStage(self, wwgm):
-        self.setupUi(wwgm)
+    def setTheStage(self, windowItem, wwGameManager):
+        self.setupUi(windowItem, wwGameManager)
 
-    # Need to figure out the logic of this to play another game
-    #def playAgainButtonOnClick(self):
-        #sys.exit(self)  # exit current session
-        #WWOverlord()  # restart at the beginning
-    """
-    from datetime import datetime
-
-    # current date and time
-    now = datetime.now()
-
-    timestamp = datetime.timestamp(now)
-    print("timestamp =", timestamp)
-    """
+    def playAgainButtonOnClick(self):
+        sys.exit(self)  # exit current session
+        WWOverlord()  # restart at the beginning
+        print("test")
 
     def quitButtonOnClick(self):
         WWDataLogger.logger("***Game was quit by user***")
-        WWDataLogger.logger()
         self.wwvwIsActive = False
-        sys.exit(self)
+        self.MainWindow.close()
 
     def retranslateUi(self, WWVictoryWindow):
         _translate = QtCore.QCoreApplication.translate

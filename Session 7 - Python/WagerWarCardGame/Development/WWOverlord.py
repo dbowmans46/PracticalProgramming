@@ -20,11 +20,12 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
-SOFTWARE.slack
+SOFTWARE.
 """
 
 # TODO T/S bug, pressing the deal button once, then the autocomplete results in an error.
 #! POPs from empty list ** UNABLE TO RECREATE AFTER LATEST GIT PUSH **
+#! Currently showing a error with WWDataLogger
 
 import sys
 from PyQt5 import QtCore
@@ -42,7 +43,7 @@ if __name__ == "__main__":
     const = WWWarConstants()
     app = QApplication(sys.argv)
     # this will delete the "game_log.json" before running new game
-    #WWDataLogger.deleteLogger()
+    WWDataLogger()
 
     wwsw = WWSetupWindow()
     wwsw.setupUi(wwgm)
@@ -55,11 +56,13 @@ if __name__ == "__main__":
         QtCore.QCoreApplication.processEvents()
 
     wwvw = WWVictoryWindow()
-    wwvw.setTheStage(wwgm)
+    wwvw.setTheStage(wwvw, wwgm)
     while wwvw.wwvwIsActive == True:
         QtCore.QCoreApplication.processEvents()
-
-    sys.exit(app.exec_())
+    
+    sys.exit()
+    # sys.exit(app.exec_())
+    
 
 """
 Overlord.py is the game executable *is WagerWar*

@@ -64,39 +64,40 @@ class WWGameWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.widget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-
+        """
+        # 1 deck of cards
         self.playerDeckMain = QtWidgets.QLabel(self.widget)
         self.playerDeckMain.setObjectName("playerDeckMain")
-
         self.gridLayout.addWidget(
             self.playerDeckMain, 11, 2, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
-
+        """
         self.computerNameLabel = QtWidgets.QLabel(self.widget)
         self.computerNameLabel.setObjectName("computerNameLabel")
-
         self.gridLayout.addWidget(self.computerNameLabel, 4, 3, 1, 1)
 
         self.warTitle = QtWidgets.QLabel(self.widget)
         self.warTitle.setStyleSheet("background-image: url(:/Main/q02th.jpg);")
         self.warTitle.setObjectName("warTitle")
-
         self.gridLayout.addWidget(self.warTitle, 2, 3, 1, 1)
 
+        """
+        # 1 deck of cards
         self.playerDeckDiscard = QtWidgets.QLabel(self.widget)
         self.playerDeckDiscard.setObjectName("playerDeckDiscard")
-
         self.gridLayout.addWidget(
             self.playerDeckDiscard, 11, 4, 1, 1, QtCore.Qt.AlignHCenter)
-
+        """
+        """
+        # 1 deck of cards
         self.compDeckDiscard = QtWidgets.QLabel(self.widget)
         self.compDeckDiscard.setObjectName("compDeckDiscard")
-
         self.gridLayout.addWidget(
             self.compDeckDiscard, 10, 4, 1, 1, QtCore.Qt.AlignHCenter)
+        """
 
+        # 1 deck of cards
         self.compDeckActive = QtWidgets.QLabel(self.widget)
         self.compDeckActive.setObjectName("compDeckActive")
-
         self.gridLayout.addWidget(
             self.compDeckActive, 10, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
 
@@ -109,49 +110,48 @@ class WWGameWindow(object):
         self.verticalLayout.addWidget(self.palyerNameLabel)
 
         self.gridLayout.addLayout(self.verticalLayout, 14, 3, 1, 1)
-
+        """
+        # 1 deck of cards
         self.compDeckMain = QtWidgets.QLabel(self.widget)
         self.compDeckMain.setObjectName("compDeckMain")
-
         self.gridLayout.addWidget(
             self.compDeckMain, 10, 2, 1, 1, QtCore.Qt.AlignHCenter)
-
+        """
+        # autocomplete button section
         self.autoCompletPushButton = QtWidgets.QPushButton(self.widget)
         self.autoCompletPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.autoCompletPushButton.setObjectName("autoCompletPushButton")
         self.autoCompletPushButton.clicked.connect(
             self.autoCompleteButtonOnClick)
-
         self.gridLayout.addWidget(self.autoCompletPushButton, 16, 2, 1, 1)
 
+        # 1 deck of cards
         self.playerDeckActive = QtWidgets.QLabel(self.widget)
         self.playerDeckActive.setObjectName("playerDeckActive")
-
         self.gridLayout.addWidget(
             self.playerDeckActive, 11, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
 
         self.designedByLabel = QtWidgets.QLabel(self.widget)
         self.designedByLabel.setObjectName("DesignedByLabel")
-
         self.gridLayout.addWidget(
             self.designedByLabel, 18, 1, 1, 6, QtCore.Qt.AlignHCenter)
 
+        # quit button section
         self.quitPushButton = QtWidgets.QPushButton(self.widget)
         self.quitPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.quitPushButton.setObjectName("quitPushButton")
         self.quitPushButton.clicked.connect(self.quitButtonOnClick)
-
         self.gridLayout.addWidget(
             self.quitPushButton, 16, 4, 1, 1, QtCore.Qt.AlignHCenter)
 
+        # deal button section
         self.dealPushButton = QtWidgets.QPushButton(self.widget)
         self.dealPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.dealPushButton.setObjectName("dealPushButton")
         self.dealPushButton.clicked.connect(self.dealButtonOnClick)
-
         self.gridLayout.addWidget(
             self.dealPushButton, 16, 3, 1, 1, QtCore.Qt.AlignHCenter)
 
@@ -165,6 +165,7 @@ class WWGameWindow(object):
 
         self.gridLayout.addLayout(self.verticalLayout_2, 2, 1, 1, 1)
 
+        # want to add a label to this for the user to see
         self.cardCountCompLabel = QtWidgets.QLabel(self.widget)
         self.cardCountCompLabel.setObjectName("cardCountCompLabel")
 
@@ -183,7 +184,7 @@ class WWGameWindow(object):
 
         self.warTitle.raise_()
 
-        self.playerDeckDiscard.raise_()
+        self.playerDeckActive.raise_()
 
         self.designedByLabel.raise_()
 
@@ -233,12 +234,16 @@ class WWGameWindow(object):
 
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
-    @param
+    @param WWCardsDeck
     """
+    # TODO Add Turn Count
+    # TODO Add Card Image
+    # TODO Add Player and Computer  total card count near name
 
     def turnEventUpdate(self):
 
         return None
+
     """
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
@@ -379,31 +384,31 @@ class WWGameWindow(object):
     def retranslateUi(self, MainWindow):
 
         MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
-
+        """
         self.playerDeckMain.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
-
+        """
         self.computerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + self.wwgm.compName + "</span></p></body></html>"))
 
         self.warTitle.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#ffffff;\">War!!!</span></p></body></html>"))
-
+        """
         self.playerDeckDiscard.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
-
+        
         self.compDeckDiscard.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
-
+        """
         self.compDeckActive.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.palyerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\"> " + self.wwgm.playerName + "</span></p></body></html>"))
-
+        """
         self.compDeckMain.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
-
+        """
         self.autoCompletPushButton.setText(
             self._translate("MainWindow", "Auto Complete"))
 

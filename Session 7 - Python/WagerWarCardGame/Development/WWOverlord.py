@@ -57,20 +57,3 @@ if __name__ == "__main__":
         QtCore.QCoreApplication.processEvents()
 
     sys.exit()
-    # sys.exit(app.exec_())
-
-
-"""
-Overlord.py is the game executable *is WagerWar*
-overlord runs game manager
-overlord opens setup window
-(setup window waiting for user inputs)
-(setup window pass info to game manager)
-(setup window closes)
-overlord opens game window 
-(game window grabs info from game manager)
-(game window waiting for user inputs/and updating game manager)
-(in Vic/Defeat scenario, game window closes)
-Overlord opens Victory Window
-(Game Manager passes info to Victory Screen)
-"""

@@ -23,10 +23,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-# TODO T/S bug, pressing the deal button once, then the autocomplete results in an error.
-#! POPs from empty list ** UNABLE TO RECREATE AFTER LATEST GIT PUSH **
-#! Currently showing a error with WWDataLogger
-
 import sys
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QDialog, QApplication
@@ -59,10 +55,10 @@ if __name__ == "__main__":
     wwvw.setTheStage(wwvw, wwgm)
     while wwvw.wwvwIsActive == True:
         QtCore.QCoreApplication.processEvents()
-    
+
     sys.exit()
     # sys.exit(app.exec_())
-    
+
 
 """
 Overlord.py is the game executable *is WagerWar*

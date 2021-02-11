@@ -131,11 +131,11 @@ class WWGameWindow(object):
         self.gridLayout.addWidget(
             self.playerDeckActive, 11, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
 
-        self.DesignedByLabel = QtWidgets.QLabel(self.widget)
-        self.DesignedByLabel.setObjectName("DesignedByLabel")
+        self.designedByLabel = QtWidgets.QLabel(self.widget)
+        self.designedByLabel.setObjectName("DesignedByLabel")
 
         self.gridLayout.addWidget(
-            self.DesignedByLabel, 18, 1, 1, 6, QtCore.Qt.AlignHCenter)
+            self.designedByLabel, 18, 1, 1, 6, QtCore.Qt.AlignHCenter)
 
         self.quitPushButton = QtWidgets.QPushButton(self.widget)
         self.quitPushButton.setStyleSheet(
@@ -185,7 +185,7 @@ class WWGameWindow(object):
 
         self.playerDeckDiscard.raise_()
 
-        self.DesignedByLabel.raise_()
+        self.designedByLabel.raise_()
 
         self.compDeckActive.raise_()
 
@@ -263,7 +263,7 @@ class WWGameWindow(object):
             self.wwgm.winnerName = self.wwgm.compName
             self.wwgwIsActive = False
             self.MainWindow.close()
-            
+
         if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
             # declare player the winner
             # go to victory window
@@ -271,7 +271,7 @@ class WWGameWindow(object):
             self.wwgm.winnerName = self.wwgm.playerName
             self.wwgwIsActive = False
             self.MainWindow.close()
-            
+
         return None
 
     """
@@ -410,7 +410,7 @@ class WWGameWindow(object):
         self.playerDeckActive.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
 
-        self.DesignedByLabel.setText(self._translate(
+        self.designedByLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-style:italic; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))
 
         self.quitPushButton.setText(self._translate("MainWindow", "Quit"))

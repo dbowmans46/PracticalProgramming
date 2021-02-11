@@ -47,7 +47,7 @@ class WWDataLogger():
     def logger(log_message):
         with open(WWDataLogger.file_path, "a") as filehandle:
             filehandle.write(json.dumps(
-                log_message, indent=4))
+                log_message, indent=2))
 
         # file_path is the file path
         # token: 'a' = append, 'w' = write

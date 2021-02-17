@@ -95,7 +95,64 @@ class WWWarConstants():
                         's11.bmp',
                         's12.bmp',
                         's13.bmp']
-    
+
+    CARD_FILE_NAMES2 = ['c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp',
+						'c01.bmp']
+
+
+	
+	
+	
     """
     @brief Card style Dictionary 
     @parma key, value

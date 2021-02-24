@@ -96,7 +96,7 @@ class WWWarConstants():
                         's12.bmp',
                         's13.bmp']
 
-    CARD_FILE_NAMES2 = ['c01.bmp',
+    CARD_FILE_NAMES_TEST = ['c01.bmp',
 						'c01.bmp',
 						'c01.bmp',
 						'c01.bmp',

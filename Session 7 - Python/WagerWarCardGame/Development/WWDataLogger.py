@@ -41,13 +41,13 @@ class WWDataLogger():
     def deleteLogger():
         if os.path.isfile(WWDataLogger.file_path):
             os.remove(WWDataLogger.file_path)
-        else:
-            WWDataLogger.logger(log_message)
+        
 
     def logger(log_message):
-        with open(WWDataLogger.file_path, "a") as filehandle:
-            filehandle.write(json.dumps(
-                log_message, indent=2))
+        print("logger")
+        # with open(WWDataLogger.file_path, "a") as filehandle:
+        #     filehandle.write(json.dumps(
+        #         log_message, indent=2))
 
         # file_path is the file path
         # token: 'a' = append, 'w' = write

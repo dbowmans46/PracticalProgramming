@@ -66,7 +66,7 @@ class WWCardValueManager:
             if self.CardValue < 1:
                 raise ValueError("Card value is too Low. " + custom_card)
         except:
-            raise Exception("An Error Occured.")
+            raise Exception("An Error Occured. " + str(self.CardName))
             
         return None
      

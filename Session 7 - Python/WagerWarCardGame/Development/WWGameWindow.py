@@ -221,7 +221,7 @@ class WWGameWindow(object):
 
     def deckSetup(self):
         # multiply start deck by number of decks selected by player.
-        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
+        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
        # [WWDataLogger.logger(x) for x in self.WWInitDeck.cards]
@@ -271,7 +271,14 @@ class WWGameWindow(object):
             self.wwgm.winnerName = self.wwgm.playerName
             self.wwgwIsActive = False
             self.MainWindow.close()
-
+        
+        # Only occurs when the last hand is a war and ALL cards are in the battle decks.
+        if (len(self.wwgm.playerGraveyardDeck.cards) and len(self.wwgm.computerGraveyardDeck.cards) == self.wwgm.deckCount * WWWarConstants.DECK_SIZE):
+            WWDataLogger.logger("Ultra War!!!!!!")
+            WWDataLogger.logger("Player is Defacto Winner")
+            self.wwgm.winnerName = self.wwgm.playerName
+            self.wwgwIsActive = False
+            self.MainWindow.close()
         return None
 
     """
@@ -282,7 +289,7 @@ class WWGameWindow(object):
         self.cardCheck()
 
         # check if a winner name has been determined, if so, end loop.
-        if self.wwgm.winnerName is not '':
+        if self.wwgm.winnerName != '':
             # sys.stdout.close()  # closes text file
             return None
 
@@ -290,12 +297,13 @@ class WWGameWindow(object):
 
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+        self.cardCheck()
         # func to log info to game_log.txt
         WWDataLogger.logger("Player Plays")
         WWDataLogger.logger(self.wwgm.playerBattleDeck.cards)
         WWDataLogger.logger("Computer Plays")
         WWDataLogger.logger(self.wwgm.computerBattleDeck.cards)
-
+        print("Printing....")
         self.cardValueManager = WWCardValueManager(
             self.wwgm.playerBattleDeck.cards[-1])
         self.cardValuePlayer = self.cardValueManager.GetCardValue()

@@ -109,3 +109,8 @@ class WWGameManager:
      @ brief Name variable used at WWVictoryWindow to show who wins
      '''
     winnerName = ''
+    '''
+     @ number of Wars in a row
+     '''
+    warCount = 0
+    

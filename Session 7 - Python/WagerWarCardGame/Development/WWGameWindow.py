@@ -286,6 +286,7 @@ class WWGameWindow(object):
     """
 
     def dealButtonOnClick(self):
+        
         self.cardCheck()
 
         # check if a winner name has been determined, if so, end loop.
@@ -303,7 +304,7 @@ class WWGameWindow(object):
         WWDataLogger.logger(self.wwgm.playerBattleDeck.cards)
         WWDataLogger.logger("Computer Plays")
         WWDataLogger.logger(self.wwgm.computerBattleDeck.cards)
-        print("Printing....")
+        print("Printing. Deal Button on Click")
         self.cardValueManager = WWCardValueManager(
             self.wwgm.playerBattleDeck.cards[-1])
         self.cardValuePlayer = self.cardValueManager.GetCardValue()
@@ -312,6 +313,7 @@ class WWGameWindow(object):
 
         # Compare computerBattle and playerBattle
         if self.cardValuePlayer == self.cardValueComputer:
+            self.wwgm.warCount +=1
 
             # Check for less than three cards if less throw in all but one card.
             if len(self.wwgm.playerDeck.cards) < 4:
@@ -332,8 +334,15 @@ class WWGameWindow(object):
                 for i in range(3):
                     self.wwgm.computerDeck.cardTransfer(
                         self.wwgm.computerBattleDeck)
-
-            self.dealButtonOnClick()
+            if self.wwgm.warCount <= 5:
+                print("The war count is:",self.wwgm.warCount)
+                self.dealButtonOnClick()
+                
+            else:
+                input("Enter your Credit Card Number NOW!")
+                self.wwgwIsActive = False
+                self.MainWindow.close()
+                
         elif self.cardValuePlayer > self.cardValueComputer:
 
             WWDataLogger.logger("Player wins")
@@ -365,7 +374,7 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         while self.wwgm.winnerName == '':
             self.dealButtonOnClick()
-            print("dealButtonOnClick called - while loop")
+            print("autoCompleteButtonOnClick called - while loop")
         '''
         else:
             WWDataLogger.logger("Loop error in autoComplete")

@@ -365,6 +365,7 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         while self.wwgm.winnerName == '':
             self.dealButtonOnClick()
+            print("dealButtonOnClick called - while loop")
         '''
         else:
             WWDataLogger.logger("Loop error in autoComplete")

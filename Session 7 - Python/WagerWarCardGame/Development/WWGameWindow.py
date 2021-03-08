@@ -271,7 +271,7 @@ class WWGameWindow(object):
             self.wwgm.winnerName = self.wwgm.playerName
             self.wwgwIsActive = False
             self.MainWindow.close()
-        
+
         # Only occurs when the last hand is a war and ALL cards are in the battle decks.
         if (len(self.wwgm.playerGraveyardDeck.cards) and len(self.wwgm.computerGraveyardDeck.cards) == self.wwgm.deckCount * WWWarConstants.DECK_SIZE):
             WWDataLogger.logger("Ultra War!!!!!!")
@@ -286,7 +286,7 @@ class WWGameWindow(object):
     """
 
     def dealButtonOnClick(self):
-        
+
         self.cardCheck()
 
         # check if a winner name has been determined, if so, end loop.
@@ -313,7 +313,7 @@ class WWGameWindow(object):
 
         # Compare computerBattle and playerBattle
         if self.cardValuePlayer == self.cardValueComputer:
-            self.wwgm.warCount +=1
+            self.wwgm.warCount += 1
 
             # Check for less than three cards if less throw in all but one card.
             if len(self.wwgm.playerDeck.cards) < 4:
@@ -335,14 +335,14 @@ class WWGameWindow(object):
                     self.wwgm.computerDeck.cardTransfer(
                         self.wwgm.computerBattleDeck)
             if self.wwgm.warCount <= 5:
-                print("The war count is:",self.wwgm.warCount)
+                print("The war count is:", self.wwgm.warCount)
                 self.dealButtonOnClick()
-                
+
             else:
-                input("Enter your Credit Card Number NOW!")
+                self.wwgm.winnerName = "Ultimate Draw"
                 self.wwgwIsActive = False
                 self.MainWindow.close()
-                
+
         elif self.cardValuePlayer > self.cardValueComputer:
 
             WWDataLogger.logger("Player wins")
@@ -372,7 +372,7 @@ class WWGameWindow(object):
     """
 
     def autoCompleteButtonOnClick(self):
-        while self.wwgm.winnerName == '':
+        while self.wwgm.winnerName == '' and self.wwgwIsActive == True:
             self.dealButtonOnClick()
             print("autoCompleteButtonOnClick called - while loop")
         '''

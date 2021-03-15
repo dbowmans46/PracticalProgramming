@@ -29,11 +29,6 @@ import os
 """
 @brief
 """
-# TODO open a log file
-# TODO overwrite existing file every game
-# TODO Log file comes from game manager
-
-
 class WWDataLogger():
 
     file_path = "game_log.json"
@@ -44,7 +39,7 @@ class WWDataLogger():
         
 
     def logger(log_message):
-        print("logger")
+        #print("logger")
         with open(WWDataLogger.file_path, "a") as filehandle:
             filehandle.write(json.dumps(
                 log_message, indent=2))

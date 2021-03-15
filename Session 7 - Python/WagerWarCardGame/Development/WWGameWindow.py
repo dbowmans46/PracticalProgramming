@@ -221,7 +221,7 @@ class WWGameWindow(object):
 
     def deckSetup(self):
         # multiply start deck by number of decks selected by player.
-        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * self.wwgm.deckCount
+        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
        # [WWDataLogger.logger(x) for x in self.WWInitDeck.cards]
@@ -273,8 +273,11 @@ class WWGameWindow(object):
             self.MainWindow.close()
 
         # Only occurs when the last hand is a war and ALL cards are in the battle decks.
-        #TODO compare each deck with DECK.SIZe / 2 
-        if ((len(self.wwgm.playerBattleDeck.cards) + (len(self.wwgm.computerBattleDeck.cards))) == self.wwgm.deckCount * WWWarConstants.DECK_SIZE):
+        #TODO compare each deck with DECK.SIZE / 2 
+        if ((len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2)
+            + (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2)
+            == (self.wwgm.deckCount * WWWarConstants.DECK_SIZE)
+            ):
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
             self.wwgm.winnerName = self.wwgm.playerName
@@ -290,23 +293,18 @@ class WWGameWindow(object):
 
         self.cardCheck()
 
-        # check if a winner name has been determined, if so, end loop.
-        # if self.wwgm.winnerName != '':
-        #     # sys.stdout.close()  # closes text file
-        #     return None
-
-        # Transfer top cards from Player/Computer Library to battlefield
-
         self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+
         self.cardCheck()
+        
         if self.wwgm.winnerName == '':
             # func to log info to game_log.txt
             WWDataLogger.logger("Player Plays")
             WWDataLogger.logger(self.wwgm.playerBattleDeck.cards)
             WWDataLogger.logger("Computer Plays")
             WWDataLogger.logger(self.wwgm.computerBattleDeck.cards)
-            print("Printing. Deal Button on Click")
+            #print("Printing. Deal Button on Click")
             self.cardValueManager = WWCardValueManager(
                 self.wwgm.playerBattleDeck.cards[-1])
             self.cardValuePlayer = self.cardValueManager.GetCardValue()
@@ -337,7 +335,7 @@ class WWGameWindow(object):
                         self.wwgm.computerDeck.cardTransfer(
                             self.wwgm.computerBattleDeck)
                 if self.wwgm.warCount <= 40:
-                    print("The war count is:", self.wwgm.warCount)
+                    #print("The war count is:", self.wwgm.warCount)
                     self.dealButtonOnClick()
     
                 else:
@@ -376,7 +374,7 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         while self.wwgm.winnerName == '' and self.wwgwIsActive == True:
             self.dealButtonOnClick()
-            print("autoCompleteButtonOnClick called - while loop")
+            #print("autoCompleteButtonOnClick called - while loop")
         '''
         else:
             WWDataLogger.logger("Loop error in autoComplete")

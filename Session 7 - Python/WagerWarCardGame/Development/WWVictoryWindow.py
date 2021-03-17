@@ -118,7 +118,10 @@ class WWVictoryWindow(object):
         self.setupUi(windowItem, wwGameManager)
 
     def playAgainButtonOnClick(self):
-        sys.exit(self)  # exit current session
+        self.wwgm.playAgainToggle = True
+        self.wwvwIsActive = False 
+        # self.wwgm = WWGameManager()
+        # sys.exit(self)  # exit current session
         # WWOverlord()  # restart at the beginning
         # print("test")
 

@@ -221,7 +221,8 @@ class WWGameWindow(object):
 
     def deckSetup(self):
         # multiply start deck by number of decks selected by player.
-        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
+        # self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
+        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * self.wwgm.deckCount
         self.WWInitDeck = WWInitialDeck(
             self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
        # [WWDataLogger.logger(x) for x in self.WWInitDeck.cards]
@@ -262,7 +263,7 @@ class WWGameWindow(object):
             WWDataLogger.logger("Computer wins game")
             self.wwgm.winnerName = self.wwgm.compName
             self.wwgwIsActive = False
-            self.MainWindow.close()
+            # self.MainWindow.close()
 
         if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
             # declare player the winner
@@ -270,19 +271,25 @@ class WWGameWindow(object):
             WWDataLogger.logger("Player wins game")
             self.wwgm.winnerName = self.wwgm.playerName
             self.wwgwIsActive = False
-            self.MainWindow.close()
+            # self.MainWindow.close()
 
-        # Only occurs when the last hand is a war and ALL cards are in the battle decks.
+        # Only occurs when:
+        #    the last hand is a war 
+        #    ALL cards are in the battle decks.
+        #    PlayerBattleDeck has half the cards
+        #    ComputerBattleDeck has all the cards
         #TODO compare each deck with DECK.SIZE / 2 
-        if ((len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2)
-            + (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2)
-            == (self.wwgm.deckCount * WWWarConstants.DECK_SIZE)
+        if (  (len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+              (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+              ( (len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) == 
+                     (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
             ):
+            #print("We have arrived")
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
             self.wwgm.winnerName = self.wwgm.playerName
             self.wwgwIsActive = False
-            self.MainWindow.close()
+            # self.MainWindow.close()
         return None
 
     """
@@ -337,7 +344,9 @@ class WWGameWindow(object):
                 if self.wwgm.warCount <= 40:
                     #print("The war count is:", self.wwgm.warCount)
                     self.dealButtonOnClick()
-    
+                    
+                # TODO: On autocomplete for the 2nd time, why is this else statement getting hit vs the ultra war above
+                # TODO: Check if this else statement is even needed any more
                 else:
                     self.wwgm.winnerName = "Ultimate Draw"
                     self.wwgwIsActive = False
@@ -372,6 +381,9 @@ class WWGameWindow(object):
     """
 
     def autoCompleteButtonOnClick(self):
+        #print("Autocomplete")
+        #print("isActive: ", self.wwgwIsActive)
+        #print("self.wwgm.winnerName: ", self.wwgm.winnerName)
         while self.wwgm.winnerName == '' and self.wwgwIsActive == True:
             self.dealButtonOnClick()
             #print("autoCompleteButtonOnClick called - while loop")
@@ -387,7 +399,9 @@ class WWGameWindow(object):
 
     def quitButtonOnClick(self):
         WWDataLogger.logger("***Game was quit by user***")
-        sys.exit(self)
+        #sys.exit(self)
+        self.wwgwIsActive = False
+        self.wwgm.winnerName = "No one, quitter"
 
     """
     @brief Converted from PYQT5 GUI

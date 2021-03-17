@@ -41,20 +41,32 @@ if __name__ == "__main__":
     # this will delete the "game_log.json" before running new game
     WWDataLogger.deleteLogger()
 
-    wwsw = WWSetupWindow()
-    wwsw.setupUi(wwgm)
-    while wwsw.wwswIsActive == True:
-        QtCore.QCoreApplication.processEvents()
-
-    wwgw = WWGameWindow()
-    wwgw.setTheStage(wwgm)
-    while wwgw.wwgwIsActive == True:
-        QtCore.QCoreApplication.processEvents()
-
-    wwvw = WWVictoryWindow()
-    wwvw.setTheStage(wwvw, wwgm)
-    while wwvw.wwvwIsActive == True:
-        QtCore.QCoreApplication.processEvents()
+    while (wwgm.playAgainToggle):        
+        
+        # Turn off right away to prevent possible infinite loops
+        wwgm.playAgainToggle = False
+        
+        wwsw = WWSetupWindow()
+        wwsw.setupUi(wwgm)
+        while wwsw.wwswIsActive == True:
+            QtCore.QCoreApplication.processEvents()
+        wwsw.Dialog.close()
+    
+        wwgw = WWGameWindow()
+        wwgw.setTheStage(wwgm)
+        while wwgw.wwgwIsActive == True:
+            QtCore.QCoreApplication.processEvents()
+        wwgw.MainWindow.close()
+    
+        wwvw = WWVictoryWindow()
+        wwvw.setTheStage(wwvw, wwgm)
+        while wwvw.wwvwIsActive == True:
+            QtCore.QCoreApplication.processEvents()
+        wwvw.MainWindow.close()
+        
+        # Reset game manager values when playing again
+        if wwgm.playAgainToggle:
+            wwgm = WWGameManager()
 
     sys.exit()
     # sys.exit(app.exec_())

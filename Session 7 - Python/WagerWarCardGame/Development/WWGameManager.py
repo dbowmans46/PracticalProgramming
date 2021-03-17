@@ -114,3 +114,8 @@ class WWGameManager:
      '''
     warCount = 0
     
+    '''
+    @ Switch to tell the game to restart if the player chooses
+    '''
+    playAgainToggle = True
+    

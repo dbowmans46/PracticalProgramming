@@ -278,7 +278,6 @@ class WWGameWindow(object):
         #    ALL cards are in the battle decks.
         #    PlayerBattleDeck has half the cards
         #    ComputerBattleDeck has all the cards
-        #TODO compare each deck with DECK.SIZE / 2 
         if (  (len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
               (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
               ( (len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) == 
@@ -317,10 +316,12 @@ class WWGameWindow(object):
             self.cardValuePlayer = self.cardValueManager.GetCardValue()
             self.cardValueComputer = self.cardValueManager.NewCardValue(
                 self.wwgm.computerBattleDeck.cards[-1])
-    
+            
+            
             # Compare computerBattle and playerBattle
             if self.cardValuePlayer == self.cardValueComputer:
                 self.wwgm.warCount += 1
+                print("warCount",self.wwgm.warCount)
     
                 # Check for less than three cards if less throw in all but one card.
                 if len(self.wwgm.playerDeck.cards) < 4:
@@ -345,7 +346,7 @@ class WWGameWindow(object):
                     #print("The war count is:", self.wwgm.warCount)
                     self.dealButtonOnClick()
                     
-                # TODO: On autocomplete for the 2nd time, why is this else statement getting hit vs the ultra war above
+                # TODO: On autocomplete for the 3rd time, why is this else statement getting hit vs the ultra war above
                 # TODO: Check if this else statement is even needed any more
                 else:
                     self.wwgm.winnerName = "Ultimate Draw"

@@ -244,7 +244,7 @@ class WWGameWindow(object):
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
 
-    def cardCheck(self):        
+    def cardCheck(self):
         if len(self.wwgm.playerDeck.cards) < 5:
             self.wwgm.playerGraveyardDeck.shuffleCards()
             self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
@@ -274,15 +274,15 @@ class WWGameWindow(object):
             # self.MainWindow.close()
 
         # Only occurs when:
-        #    the last hand is a war 
+        #    the last hand is a war
         #    ALL cards are in the battle decks.
         #    PlayerBattleDeck has half the cards
         #    ComputerBattleDeck has all the cards
-        #TODO compare each deck with DECK.SIZE / 2 
-        if (  (len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-              (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-              ( (len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) == 
-                     (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
+        # TODO compare each deck with DECK.SIZE / 2
+        if ((len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                ((len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) ==
+                 (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
             ):
             #print("We have arrived")
             WWDataLogger.logger("Ultra War!!!!!!")
@@ -304,7 +304,7 @@ class WWGameWindow(object):
         self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
 
         self.cardCheck()
-        
+
         if self.wwgm.winnerName == '':
             # func to log info to game_log.txt
             WWDataLogger.logger("Player Plays")
@@ -317,11 +317,11 @@ class WWGameWindow(object):
             self.cardValuePlayer = self.cardValueManager.GetCardValue()
             self.cardValueComputer = self.cardValueManager.NewCardValue(
                 self.wwgm.computerBattleDeck.cards[-1])
-    
+
             # Compare computerBattle and playerBattle
             if self.cardValuePlayer == self.cardValueComputer:
                 self.wwgm.warCount += 1
-    
+
                 # Check for less than three cards if less throw in all but one card.
                 if len(self.wwgm.playerDeck.cards) < 4:
                     for i in range(len(self.wwgm.playerDeck.cards)-1):
@@ -331,7 +331,7 @@ class WWGameWindow(object):
                     for i in range(3):
                         self.wwgm.playerDeck.cardTransfer(
                             self.wwgm.playerBattleDeck)
-    
+
                 if len(self.wwgm.computerDeck.cards) < 4:
                     for i in range(len(self.wwgm.computerDeck.cards)-1):
                         self.wwgm.computerDeck.cardTransfer(
@@ -344,16 +344,18 @@ class WWGameWindow(object):
                 if self.wwgm.warCount <= 40:
                     #print("The war count is:", self.wwgm.warCount)
                     self.dealButtonOnClick()
-                    
-                # TODO: On autocomplete for the 2nd time, why is this else statement getting hit vs the ultra war above
+
+                # TODO: On autocomplete for the 3nd time, why is this else statement getting hit vs the ultra war above
                 # TODO: Check if this else statement is even needed any more
+                # TODO: With this else staement commented out, autocomplete no longer functions.
+                """
                 else:
                     self.wwgm.winnerName = "Ultimate Draw"
                     self.wwgwIsActive = False
                     self.MainWindow.close()
-    
+                """
             elif self.cardValuePlayer > self.cardValueComputer:
-    
+
                 WWDataLogger.logger("Player wins")
                 self.wwgm.playerBattleDeck.cardTransferAll(
                     self.wwgm.playerGraveyardDeck)
@@ -361,9 +363,9 @@ class WWGameWindow(object):
                     self.wwgm.playerGraveyardDeck)
                 WWDataLogger.logger("PlayerGraveyard ")
                 WWDataLogger.logger(self.wwgm.playerGraveyardDeck.cards)
-    
+
             elif self.cardValuePlayer < self.cardValueComputer:
-    
+
                 WWDataLogger.logger("Computer wins")
                 self.wwgm.playerBattleDeck.cardTransferAll(
                     self.wwgm.computerGraveyardDeck)
@@ -371,7 +373,7 @@ class WWGameWindow(object):
                     self.wwgm.computerGraveyardDeck)
                 WWDataLogger.logger("ComputerGraveyard ")
                 WWDataLogger.logger(self.wwgm.computerGraveyardDeck.cards)
-    
+
             else:
                 WWDataLogger.logger("---Something went wrong here---")
         return None
@@ -381,7 +383,7 @@ class WWGameWindow(object):
     """
 
     def autoCompleteButtonOnClick(self):
-        #print("Autocomplete")
+        # print("Autocomplete")
         #print("isActive: ", self.wwgwIsActive)
         #print("self.wwgm.winnerName: ", self.wwgm.winnerName)
         while self.wwgm.winnerName == '' and self.wwgwIsActive == True:
@@ -399,7 +401,7 @@ class WWGameWindow(object):
 
     def quitButtonOnClick(self):
         WWDataLogger.logger("***Game was quit by user***")
-        #sys.exit(self)
+        # sys.exit(self)
         self.wwgwIsActive = False
         self.wwgm.winnerName = "No one, quitter"
 

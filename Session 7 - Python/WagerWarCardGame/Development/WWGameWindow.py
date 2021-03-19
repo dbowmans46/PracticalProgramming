@@ -278,11 +278,18 @@ class WWGameWindow(object):
         #    ALL cards are in the battle decks.
         #    PlayerBattleDeck has half the cards
         #    ComputerBattleDeck has all the cards
+<<<<<<< HEAD
         # TODO compare each deck with DECK.SIZE / 2
         if ((len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
                 (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
                 ((len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) ==
                  (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
+=======
+        if (  (len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+              (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+              ( (len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) == 
+                     (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
+>>>>>>> e27ba8311035c2d1db83cbd8df432b050ac17ef0
             ):
             #print("We have arrived")
             WWDataLogger.logger("Ultra War!!!!!!")
@@ -317,11 +324,21 @@ class WWGameWindow(object):
             self.cardValuePlayer = self.cardValueManager.GetCardValue()
             self.cardValueComputer = self.cardValueManager.NewCardValue(
                 self.wwgm.computerBattleDeck.cards[-1])
+<<<<<<< HEAD
 
             # Compare computerBattle and playerBattle
             if self.cardValuePlayer == self.cardValueComputer:
                 self.wwgm.warCount += 1
 
+=======
+            
+            
+            # Compare computerBattle and playerBattle
+            if self.cardValuePlayer == self.cardValueComputer:
+                self.wwgm.warCount += 1
+                print("warCount",self.wwgm.warCount)
+    
+>>>>>>> e27ba8311035c2d1db83cbd8df432b050ac17ef0
                 # Check for less than three cards if less throw in all but one card.
                 if len(self.wwgm.playerDeck.cards) < 4:
                     for i in range(len(self.wwgm.playerDeck.cards)-1):
@@ -344,8 +361,13 @@ class WWGameWindow(object):
                 if self.wwgm.warCount <= 40:
                     #print("The war count is:", self.wwgm.warCount)
                     self.dealButtonOnClick()
+<<<<<<< HEAD
 
                 # TODO: On autocomplete for the 3nd time, why is this else statement getting hit vs the ultra war above
+=======
+                    
+                # TODO: On autocomplete for the 3rd time, why is this else statement getting hit vs the ultra war above
+>>>>>>> e27ba8311035c2d1db83cbd8df432b050ac17ef0
                 # TODO: Check if this else statement is even needed any more
                 # TODO: With this else staement commented out, autocomplete no longer functions.
                 """

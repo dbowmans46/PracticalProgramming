@@ -353,6 +353,8 @@ class WWGameWindow(object):
                     self.cardCheck()
                     print("else cardCheck")
                     #TODO print playerBattle and computerBattle card lengths
+                    print(len(self.wwgm.playerBattleDeck.cards))
+                    print(len(self.wwgm.computerBattleDeck.cards))
                    # self.wwgm.winnerName = "Ultimate Draw"
                    # self.wwgwIsActive = False
                    # self.MainWindow.close()

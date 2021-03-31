@@ -27,57 +27,43 @@ SOFTWARE.
 """
 @ brief Parent cardsDeck
 """
+
+
 class WWCardsDeck():
     """
     @ brief Constructor setup
     @ param string-list cards strings are filenames of card images
     """
+
     def __init__(self, cards):
         self.cards = cards
-    
+
     """
     @ brief Remove the top card from cards list and adds it to the end of destDeck list.
     @ param WWCardsDeck destDeck The destination deck to which the card is transferred. 
     """
+
     def cardTransfer(self, destDeck):
         if len(self.cards) > 0:
-            topCard = self.cards.pop()            
+            topCard = self.cards.pop()
             destDeck.cards.append(topCard)
 
     """
     @ brief Transfer all the cards in the deck to destination deck.
     @ param WWCardsDeck destDeck The destination deck to which the deck is transferred. 
     """
+
     def cardTransferAll(self, destDeck):
         destDeck.cards.extend(self.cards)
         self.cards = []
-        
 
     """
     @ brief Remove the first card from cards list and adds it to the end of destDeck list.
     @ param WWCardsDeck destDeck The destination deck to which the card is transferred. 
     """
+
     def cardTransferALT(self, destDeck):
         # removes first card from list of cards moves it to destDeck
         if len(self.cards) > 0:
             topCard = self.cards.pop(0)
             destDeck.cards.append(topCard)
-# For testing        
-"""        
-orgDeck = ['c01.bmp',
-            'c02.bmp',
-            'c03.bmp',
-            'c04.bmp',
-            'c05.bmp']
-
-
-destDeck = ['d01.bmp',
-            'd02.bmp',
-            'd03.bmp',
-            'd04.bmp',
-            'd05.bmp',
-            'd06.bmp']
-
-oldDeck = WWCardsDeck(orgDeck)
-newDeck = WWCardsDeck(destDeck)
-"""

@@ -29,15 +29,18 @@ from WWShuffleDeck import WWShuffleDeck
     There will only be one instance of this deck in the game 
     (the initial deck that distributes to the two players).
 '''
+
+
 class WWInitialDeck(WWShuffleDeck):
-    
+
     '''
     @ brief constructor set default values
     @ param str-list cards Total list of cards in the game
     @ param WWLibraryDeck playerDeck WWLibraryDeck that is given to the player 
     @ param WWLibraryDeck computerDeck WWLibraryDeck that is given to the computer
-    '''    
-    def __init__(self,cards, playerDeck, computerDeck):
+    '''
+
+    def __init__(self, cards, playerDeck, computerDeck):
         super().__init__(cards)
         self.cards = cards
         self.playerDeck = playerDeck
@@ -45,19 +48,11 @@ class WWInitialDeck(WWShuffleDeck):
 
     '''
     @ brief distributes cards between the player and the computer
-    '''    
+    '''
+
     def deal(self):
-        for card in reversed(self.cards):
-            if ((len(self.cards) %2 == 0) and (len(self.cards) > 0)):
+        for dummycard in reversed(self.cards):
+            if ((len(self.cards) % 2 == 0) and (len(self.cards) > 0)):
                 self.cardTransfer(self.playerDeck)
             else:
                 self.cardTransfer(self.computerDeck)
-            
-
-# For Testing
-'''
-cards = [1,2,3,4,5,6,7,8,9,10]
-playerDeck = WWLibraryDeck([])
-computerDeck = WWLibraryDeck([])
-test = WWInitialDeck(cards, playerDeck, computerDeck)
-'''

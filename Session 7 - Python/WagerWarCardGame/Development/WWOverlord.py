@@ -41,45 +41,52 @@ if __name__ == "__main__":
     # this will delete the "game_log.json" before running new game
     WWDataLogger.deleteLogger()
 
-    while (wwgm.playAgainToggle):  
+    while (wwgm.playAgainToggle):
         print("NEW GAME")
-        wwgm = WWGameManager()
-        
+        #wwgm = WWGameManager()
+        print("PB over- ", len(wwgm.playerBattleDeck.cards))
+        print("CB over- ", len(wwgm.computerBattleDeck.cards))
+        print("Winner over- ", wwgm.winnerName)
         # Turn off right away to prevent possible infinite loops
         wwgm.playAgainToggle = False
-        
+
         wwsw = WWSetupWindow()
         wwsw.setupUi(wwgm)
         while wwsw.wwswIsActive == True:
             QtCore.QCoreApplication.processEvents()
         QtCore.QCoreApplication.exit()
         wwsw.Dialog.close()
-    
+
         wwgw = WWGameWindow()
         wwgw.setTheStage(wwgm)
         while wwgw.wwgwIsActive == True:
             QtCore.QCoreApplication.processEvents()
         QtCore.QCoreApplication.exit()
         wwgw.MainWindow.close()
-    
+
         wwvw = WWVictoryWindow()
         wwvw.setTheStage(wwvw, wwgm)
         while wwvw.wwvwIsActive == True:
             QtCore.QCoreApplication.processEvents()
         QtCore.QCoreApplication.exit()
         wwvw.MainWindow.close()
-        
+
         # Reset game manager values when playing again
         if wwgm.playAgainToggle:
             del wwgm
+            #print("Before del - wwgm", wwgm)
             wwgm = WWGameManager()
+            #print("After del - wwgm", wwgm)
             del wwsw
             del wwgw
             del wwvw
-
+            print("PB - del", len(wwgm.playerBattleDeck.cards))
+            print("CB - del", len(wwgm.computerBattleDeck.cards))
+            print("Winner - del", wwgm.winnerName)
+            print("DC", wwgm.deckCount)
     sys.exit()
     # sys.exit(app.exec_())
-
+# TODO print wwgm-referance types (objects itself)
 
 """
 Overlord.py is the game executable *is WagerWar*

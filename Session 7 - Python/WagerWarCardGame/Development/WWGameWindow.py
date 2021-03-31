@@ -50,6 +50,10 @@ class WWGameWindow(object):
         self.wwgm = wwGameManager
         self.MainWindow = QDialog()
 
+        print("PB - ", len(self.wwgm.playerBattleDeck.cards))
+        print("CB - ", len(self.wwgm.computerBattleDeck.cards))
+        print("Winner - ", self.wwgm.winnerName)
+
         self.MainWindow.setObjectName("MainWindow")
         self.MainWindow.resize(800, 600)
         self.MainWindow.setStyleSheet("background-color: rgb(0, 85, 0);")
@@ -213,7 +217,6 @@ class WWGameWindow(object):
     def setTheStage(self, wwgm):
         self.setupUi(wwgm)
         self.deckSetup()
-
     # Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
     """
     @brief Create the starting deck
@@ -279,9 +282,9 @@ class WWGameWindow(object):
         #    PlayerBattleDeck has half the cards
         #    ComputerBattleDeck has all the cards
         if ((len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                ((len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) ==
-                 (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
+            (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                    ((len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) ==
+                     (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
             ):
             #print("We have arrived")
             WWDataLogger.logger("Ultra War!!!!!!")
@@ -348,17 +351,17 @@ class WWGameWindow(object):
                 # TODO: On autocomplete for the 3rd time, why is this else statement getting hit vs the ultra war above
                 # TODO: Check if this else statement is even needed any more
                 # TODO: With this else staement commented out, autocomplete no longer functions.
-                
+
                 else:
                     self.cardCheck()
                     print("else cardCheck")
-                    #TODO print playerBattle and computerBattle card lengths
+                    # TODO print playerBattle and computerBattle card lengths
                     print(len(self.wwgm.playerBattleDeck.cards))
                     print(len(self.wwgm.computerBattleDeck.cards))
                    # self.wwgm.winnerName = "Ultimate Draw"
                    # self.wwgwIsActive = False
                    # self.MainWindow.close()
-                
+
             elif self.cardValuePlayer > self.cardValueComputer:
 
                 WWDataLogger.logger("Player wins")

@@ -201,7 +201,7 @@ class WWSetupWindow(object):
 
         self.Dialog.show()
 
-        self.WagerWarGameMan = wwGameManager
+        #WWGameManager = wwGameManager
 
         self.startButton.clicked.connect(self.startButtonOnClick)
 
@@ -213,10 +213,10 @@ class WWSetupWindow(object):
 
     def startButtonOnClick(self):
 
-        self.WagerWarGameMan.compName = self.ComputerNameInputBox.text()
-        self.WagerWarGameMan.playerName = self.PlayerNameInputBox.text()
-        self.WagerWarGameMan.deckCount = int(self.DeckCountLineEdit.text())
-        self.WagerWarGameMan.deckStyle = self.DeckColorInputBox.currentText()
+        WWGameManager.compName = self.ComputerNameInputBox.text()
+        WWGameManager.playerName = self.PlayerNameInputBox.text()
+        WWGameManager.deckCount = int(self.DeckCountLineEdit.text())
+        WWGameManager.deckStyle = self.DeckColorInputBox.currentText()
 
         self.wwswIsActive = False
 

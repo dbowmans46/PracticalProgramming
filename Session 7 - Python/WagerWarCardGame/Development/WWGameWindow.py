@@ -47,12 +47,12 @@ class WWGameWindow(object):
     def setupUi(self, wwGameManager):
         self._translate = QtCore.QCoreApplication.translate
 
-        self.wwgm = wwGameManager
+        WWGameManager = wwGameManager
         self.MainWindow = QDialog()
 
-        print("PB - ", len(self.wwgm.playerBattleDeck.cards))
-        print("CB - ", len(self.wwgm.computerBattleDeck.cards))
-        print("Winner - ", self.wwgm.winnerName)
+        print("PB - ", len(WWGameManager.playerBattleDeck.cards))
+        print("CB - ", len(WWGameManager.computerBattleDeck.cards))
+        print("Winner - ", WWGameManager.winnerName)
 
         self.MainWindow.setObjectName("MainWindow")
         self.MainWindow.resize(800, 600)
@@ -224,16 +224,16 @@ class WWGameWindow(object):
 
     def deckSetup(self):
         # multiply start deck by number of decks selected by player.
-        # self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * self.wwgm.deckCount
-        self.wwgm.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * self.wwgm.deckCount
+        # WWGameManager.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * WWGameManager.deckCount
+        WWGameManager.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * WWGameManager.deckCount
         self.WWInitDeck = WWInitialDeck(
-            self.wwgm.gameDeck.cards, self.wwgm.playerDeck, self.wwgm.computerDeck)
+            WWGameManager.gameDeck.cards, WWGameManager.playerDeck, WWGameManager.computerDeck)
        # [WWDataLogger.logger(x) for x in self.WWInitDeck.cards]
         self.WWInitDeck.shuffleCards()
 
         self.WWInitDeck.deal()
-        #WWDataLogger.logger("Player Deck Size:" + str(len(self.wwgm.playerDeck.cards)))
-        #WWDataLogger.logger("Computer Deck Size:", len(self.wwgm.computerDeck.cards))
+        #WWDataLogger.logger("Player Deck Size:" + str(len(WWGameManager.playerDeck.cards)))
+        #WWDataLogger.logger("Computer Deck Size:", len(WWGameManager.computerDeck.cards))
 
     """
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
@@ -248,31 +248,31 @@ class WWGameWindow(object):
     """
 
     def cardCheck(self):
-        if len(self.wwgm.playerDeck.cards) < 5:
-            self.wwgm.playerGraveyardDeck.shuffleCards()
-            self.wwgm.playerDeck.cardTransferAll(self.wwgm.playerGraveyardDeck)
-            self.wwgm.playerGraveyardDeck.cardTransferAll(self.wwgm.playerDeck)
+        if len(WWGameManager.playerDeck.cards) < 5:
+            WWGameManager.playerGraveyardDeck.shuffleCards()
+            WWGameManager.playerDeck.cardTransferAll(WWGameManager.playerGraveyardDeck)
+            WWGameManager.playerGraveyardDeck.cardTransferAll(WWGameManager.playerDeck)
 
-        if len(self.wwgm.computerDeck.cards) < 5:
-            self.wwgm.computerGraveyardDeck.shuffleCards()
-            self.wwgm.computerDeck.cardTransferAll(
-                self.wwgm.computerGraveyardDeck)
-            self.wwgm.computerGraveyardDeck.cardTransferAll(
-                self.wwgm.computerDeck)
+        if len(WWGameManager.computerDeck.cards) < 5:
+            WWGameManager.computerGraveyardDeck.shuffleCards()
+            WWGameManager.computerDeck.cardTransferAll(
+                WWGameManager.computerGraveyardDeck)
+            WWGameManager.computerGraveyardDeck.cardTransferAll(
+                WWGameManager.computerDeck)
 
-        if (len(self.wwgm.playerDeck.cards) + len(self.wwgm.playerGraveyardDeck.cards) + len(self.wwgm.playerBattleDeck.cards) == 0):
+        if (len(WWGameManager.playerDeck.cards) + len(WWGameManager.playerGraveyardDeck.cards) + len(WWGameManager.playerBattleDeck.cards) == 0):
             # declare computer the winner
             # go to victory window
             WWDataLogger.logger("Computer wins game")
-            self.wwgm.winnerName = self.wwgm.compName
+            WWGameManager.winnerName = WWGameManager.compName
             self.wwgwIsActive = False
             # self.MainWindow.close()
 
-        if (len(self.wwgm.computerDeck.cards) + len(self.wwgm.computerGraveyardDeck.cards) + len(self.wwgm.computerBattleDeck.cards) == 0):
+        if (len(WWGameManager.computerDeck.cards) + len(WWGameManager.computerGraveyardDeck.cards) + len(WWGameManager.computerBattleDeck.cards) == 0):
             # declare player the winner
             # go to victory window
             WWDataLogger.logger("Player wins game")
-            self.wwgm.winnerName = self.wwgm.playerName
+            WWGameManager.winnerName = WWGameManager.playerName
             self.wwgwIsActive = False
             # self.MainWindow.close()
 
@@ -281,15 +281,15 @@ class WWGameWindow(object):
         #    ALL cards are in the battle decks.
         #    PlayerBattleDeck has half the cards
         #    ComputerBattleDeck has all the cards
-        if ((len(self.wwgm.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-            (len(self.wwgm.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                    ((len(self.wwgm.playerBattleDeck.cards) + len(self.wwgm.computerBattleDeck.cards)) ==
-                     (self.wwgm.deckCount * WWWarConstants.DECK_SIZE))
+        if ((len(WWGameManager.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+            (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                    ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
+                     (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
             ):
             #print("We have arrived")
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
-            self.wwgm.winnerName = self.wwgm.playerName
+            WWGameManager.winnerName = WWGameManager.playerName
             self.wwgwIsActive = False
             # self.MainWindow.close()
         return None
@@ -302,50 +302,50 @@ class WWGameWindow(object):
 
         self.cardCheck()
 
-        self.wwgm.playerDeck.cardTransfer(self.wwgm.playerBattleDeck)
-        self.wwgm.computerDeck.cardTransfer(self.wwgm.computerBattleDeck)
+        WWGameManager.playerDeck.cardTransfer(WWGameManager.playerBattleDeck)
+        WWGameManager.computerDeck.cardTransfer(WWGameManager.computerBattleDeck)
 
         self.cardCheck()
 
-        if self.wwgm.winnerName == '':
+        if WWGameManager.winnerName == '':
             # func to log info to game_log.txt
             WWDataLogger.logger("Player Plays")
-            WWDataLogger.logger(self.wwgm.playerBattleDeck.cards)
+            WWDataLogger.logger(WWGameManager.playerBattleDeck.cards)
             WWDataLogger.logger("Computer Plays")
-            WWDataLogger.logger(self.wwgm.computerBattleDeck.cards)
+            WWDataLogger.logger(WWGameManager.computerBattleDeck.cards)
             #print("Printing. Deal Button on Click")
             self.cardValueManager = WWCardValueManager(
-                self.wwgm.playerBattleDeck.cards[-1])
+                WWGameManager.playerBattleDeck.cards[-1])
             self.cardValuePlayer = self.cardValueManager.GetCardValue()
             self.cardValueComputer = self.cardValueManager.NewCardValue(
-                self.wwgm.computerBattleDeck.cards[-1])
+                WWGameManager.computerBattleDeck.cards[-1])
 
             # Compare computerBattle and playerBattle
             if self.cardValuePlayer == self.cardValueComputer:
-                self.wwgm.warCount += 1
-                print("warCount", self.wwgm.warCount)
+                WWGameManager.warCount += 1
+                print("warCount", WWGameManager.warCount)
 
                 # Check for less than three cards if less throw in all but one card.
-                if len(self.wwgm.playerDeck.cards) < 4:
-                    for i in range(len(self.wwgm.playerDeck.cards)-1):
-                        self.wwgm.playerDeck.cardTransfer(
-                            self.wwgm.playerBattleDeck)
+                if len(WWGameManager.playerDeck.cards) < 4:
+                    for i in range(len(WWGameManager.playerDeck.cards)-1):
+                        WWGameManager.playerDeck.cardTransfer(
+                            WWGameManager.playerBattleDeck)
                 else:
                     for i in range(3):
-                        self.wwgm.playerDeck.cardTransfer(
-                            self.wwgm.playerBattleDeck)
+                        WWGameManager.playerDeck.cardTransfer(
+                            WWGameManager.playerBattleDeck)
 
-                if len(self.wwgm.computerDeck.cards) < 4:
-                    for i in range(len(self.wwgm.computerDeck.cards)-1):
-                        self.wwgm.computerDeck.cardTransfer(
-                            self.wwgm.computerBattleDeck)
+                if len(WWGameManager.computerDeck.cards) < 4:
+                    for i in range(len(WWGameManager.computerDeck.cards)-1):
+                        WWGameManager.computerDeck.cardTransfer(
+                            WWGameManager.computerBattleDeck)
                 else:
                     WWDataLogger.logger("WAR!!")
                     for i in range(3):
-                        self.wwgm.computerDeck.cardTransfer(
-                            self.wwgm.computerBattleDeck)
-                if self.wwgm.warCount <= 40:
-                    #print("The war count is:", self.wwgm.warCount)
+                        WWGameManager.computerDeck.cardTransfer(
+                            WWGameManager.computerBattleDeck)
+                if WWGameManager.warCount <= 40:
+                    #print("The war count is:", WWGameManager.warCount)
                     self.dealButtonOnClick()
 
                 # TODO: On autocomplete for the 3rd time, why is this else statement getting hit vs the ultra war above
@@ -356,31 +356,31 @@ class WWGameWindow(object):
                     self.cardCheck()
                     print("else cardCheck")
                     # TODO print playerBattle and computerBattle card lengths
-                    print(len(self.wwgm.playerBattleDeck.cards))
-                    print(len(self.wwgm.computerBattleDeck.cards))
-                   # self.wwgm.winnerName = "Ultimate Draw"
+                    print(len(WWGameManager.playerBattleDeck.cards))
+                    print(len(WWGameManager.computerBattleDeck.cards))
+                   # WWGameManager.winnerName = "Ultimate Draw"
                    # self.wwgwIsActive = False
                    # self.MainWindow.close()
 
             elif self.cardValuePlayer > self.cardValueComputer:
 
                 WWDataLogger.logger("Player wins")
-                self.wwgm.playerBattleDeck.cardTransferAll(
-                    self.wwgm.playerGraveyardDeck)
-                self.wwgm.computerBattleDeck.cardTransferAll(
-                    self.wwgm.playerGraveyardDeck)
+                WWGameManager.playerBattleDeck.cardTransferAll(
+                    WWGameManager.playerGraveyardDeck)
+                WWGameManager.computerBattleDeck.cardTransferAll(
+                    WWGameManager.playerGraveyardDeck)
                 WWDataLogger.logger("PlayerGraveyard ")
-                WWDataLogger.logger(self.wwgm.playerGraveyardDeck.cards)
+                WWDataLogger.logger(WWGameManager.playerGraveyardDeck.cards)
 
             elif self.cardValuePlayer < self.cardValueComputer:
 
                 WWDataLogger.logger("Computer wins")
-                self.wwgm.playerBattleDeck.cardTransferAll(
-                    self.wwgm.computerGraveyardDeck)
-                self.wwgm.computerBattleDeck.cardTransferAll(
-                    self.wwgm.computerGraveyardDeck)
+                WWGameManager.playerBattleDeck.cardTransferAll(
+                    WWGameManager.computerGraveyardDeck)
+                WWGameManager.computerBattleDeck.cardTransferAll(
+                    WWGameManager.computerGraveyardDeck)
                 WWDataLogger.logger("ComputerGraveyard ")
-                WWDataLogger.logger(self.wwgm.computerGraveyardDeck.cards)
+                WWDataLogger.logger(WWGameManager.computerGraveyardDeck.cards)
 
             else:
                 WWDataLogger.logger("---Something went wrong here---")
@@ -393,8 +393,8 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         # print("Autocomplete")
         #print("isActive: ", self.wwgwIsActive)
-        #print("self.wwgm.winnerName: ", self.wwgm.winnerName)
-        while self.wwgm.winnerName == '' and self.wwgwIsActive == True:
+        #print("WWGameManager.winnerName: ", WWGameManager.winnerName)
+        while WWGameManager.winnerName == '' and self.wwgwIsActive == True:
             self.dealButtonOnClick()
             #print("autoCompleteButtonOnClick called - while loop")
         '''
@@ -411,7 +411,7 @@ class WWGameWindow(object):
         WWDataLogger.logger("***Game was quit by user***")
         # sys.exit(self)
         self.wwgwIsActive = False
-        self.wwgm.winnerName = "No one, quitter"
+        WWGameManager.winnerName = "No one, quitter"
 
     """
     @brief Converted from PYQT5 GUI
@@ -426,7 +426,7 @@ class WWGameWindow(object):
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.computerNameLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + self.wwgm.compName + "</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + WWGameManager.compName + "</span></p></body></html>"))
 
         self.warTitle.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#ffffff;\">War!!!</span></p></body></html>"))
@@ -441,7 +441,7 @@ class WWGameWindow(object):
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.palyerNameLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\"> " + self.wwgm.playerName + "</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\"> " + WWGameManager.playerName + "</span></p></body></html>"))
 
         self.compDeckMain.setText(self._translate(
             "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))

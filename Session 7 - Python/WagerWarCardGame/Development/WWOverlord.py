@@ -32,6 +32,8 @@ from WWGameManager import WWGameManager
 from WWGameWindow import WWGameWindow
 from WWVictoryWindow import WWVictoryWindow
 from WWDataLogger import WWDataLogger
+from WWCardsDeck import WWCardsDeck
+from WWShuffleDeck import WWShuffleDeck
 
 
 if __name__ == "__main__":
@@ -44,9 +46,9 @@ if __name__ == "__main__":
     while (wwgm.playAgainToggle):
         print("NEW GAME")
         #wwgm = WWGameManager()
-        print("PB over- ", len(wwgm.playerBattleDeck.cards))
-        print("CB over- ", len(wwgm.computerBattleDeck.cards))
-        print("Winner over- ", wwgm.winnerName)
+        print("PB over- ", len(WWGameManager.playerBattleDeck.cards))
+        print("CB over- ", len(WWGameManager.computerBattleDeck.cards))
+        print("Winner over- ", WWGameManager.winnerName)
         # Turn off right away to prevent possible infinite loops
         wwgm.playAgainToggle = False
 
@@ -73,17 +75,64 @@ if __name__ == "__main__":
 
         # Reset game manager values when playing again
         if wwgm.playAgainToggle:
-            del wwgm
+             
+            '''
+            @ brief Dealing deck, used to create all players decks
+            @ param str-list
+            '''
+            gameDeck = WWCardsDeck([])
+        
+            '''
+             @ brief Deck holding all wagers
+             @ param WWCardsDeck
+             '''
+            wagerDeck = WWCardsDeck([])
+        
+            '''
+             @ brief Deck that computer plays from
+             @ param WWCardsDeck
+             '''
+            computerDeck = WWCardsDeck([])
+        
+            '''
+             @ brief Computers winnings, After each turn, will be used again
+             @ param WWCardsDeck
+             '''
+            computerGraveyardDeck = WWShuffleDeck([])
+        
+            '''
+             @ brief computer's card being used in war. does not include wagers
+             @ param WWCardsDeck
+             '''
+            computerBattleDeck = WWCardsDeck([])
+            '''
+             @ brief Deck that player plays from
+             @ param WWCardsDeck
+             '''
+            playerDeck = WWCardsDeck([])
+        
+            '''
+             @ brief players winnings, After each turn, will be used again
+             @ param WWCardsDeck
+             '''
+            playerGraveyardDeck = WWShuffleDeck([])
+        
+            '''
+             @ brief player's card being used in war. does not include wagers
+             @ param WWCardsDeck
+             '''
+            playerBattleDeck = WWCardsDeck([])
+            #del wwgm
             #print("Before del - wwgm", wwgm)
             wwgm = WWGameManager()
             #print("After del - wwgm", wwgm)
             del wwsw
             del wwgw
             del wwvw
-            print("PB - del", len(wwgm.playerBattleDeck.cards))
-            print("CB - del", len(wwgm.computerBattleDeck.cards))
-            print("Winner - del", wwgm.winnerName)
-            print("DC", wwgm.deckCount)
+            print("PB - del", len(WWGameManager.playerBattleDeck.cards))
+            print("CB - del", len(WWGameManager.computerBattleDeck.cards))
+            print("Winner - del", WWGameManager.winnerName)
+            print("DC", WWGameManager.deckCount)
     sys.exit()
     # sys.exit(app.exec_())
 # TODO print wwgm-referance types (objects itself)

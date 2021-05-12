@@ -41,11 +41,11 @@ from WWDataLogger import WWDataLogger
 
 class WWVictoryWindow(object):
 
-    def setupUi(self, wwVictoryWindow, wwGameManager):
+    def setupUi(self):
         self._translate = QtCore.QCoreApplication.translate
 
-        self.wwvw = wwVictoryWindow
-        self.wwgm = wwGameManager
+        #self.wwvw = wwVictoryWindow
+        #self.wwgm = wwGameManager
         self.MainWindow = QDialog()
 
         self.MainWindow.setObjectName("WWVictoryWindow")
@@ -114,12 +114,12 @@ class WWVictoryWindow(object):
 
         self.wwvwIsActive = True
 
-    def setTheStage(self, windowItem, wwGameManager):
-        self.setupUi(windowItem, wwGameManager)
+    def setTheStage(self):
+        self.setupUi()
 
     def playAgainButtonOnClick(self):
-        self.wwgm.playAgainToggle = True
-        self.wwvwIsActive = False 
+        WWGameManager.playAgainToggle = True
+        self.wwvwIsActive = False
         # self.wwgm = WWGameManager()
         # sys.exit(self)  # exit current session
         # WWOverlord()  # restart at the beginning
@@ -151,4 +151,4 @@ class WWVictoryWindow(object):
 
         self.winnerLabel.setText(_translate(
             "WWMainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600; color:#ffffff;\">"
-            + self.wwgm.winnerName + " Wins!!</span></p></body></html>"))
+            + WWGameManager.winnerName + " Wins!!</span></p></body></html>"))

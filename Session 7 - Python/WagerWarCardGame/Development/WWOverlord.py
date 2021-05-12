@@ -43,88 +43,91 @@ if __name__ == "__main__":
     # this will delete the "game_log.json" before running new game
     WWDataLogger.deleteLogger()
 
-    while (wwgm.playAgainToggle):
+    while (WWGameManager.playAgainToggle):
         print("NEW GAME")
         #wwgm = WWGameManager()
         print("PB over- ", len(WWGameManager.playerBattleDeck.cards))
         print("CB over- ", len(WWGameManager.computerBattleDeck.cards))
         print("Winner over- ", WWGameManager.winnerName)
         # Turn off right away to prevent possible infinite loops
-        wwgm.playAgainToggle = False
+        WWGameManager.playAgainToggle = False
 
         wwsw = WWSetupWindow()
-        wwsw.setupUi(wwgm)
+        wwsw.setupUi()
         while wwsw.wwswIsActive == True:
             QtCore.QCoreApplication.processEvents()
         QtCore.QCoreApplication.exit()
         wwsw.Dialog.close()
 
         wwgw = WWGameWindow()
-        wwgw.setTheStage(wwgm)
+        wwgw.setTheStage()
         while wwgw.wwgwIsActive == True:
             QtCore.QCoreApplication.processEvents()
         QtCore.QCoreApplication.exit()
         wwgw.MainWindow.close()
 
         wwvw = WWVictoryWindow()
-        wwvw.setTheStage(wwvw, wwgm)
+        wwvw.setTheStage()
         while wwvw.wwvwIsActive == True:
             QtCore.QCoreApplication.processEvents()
         QtCore.QCoreApplication.exit()
         wwvw.MainWindow.close()
 
         # Reset game manager values when playing again
-        if wwgm.playAgainToggle:
-             
+        if WWGameManager.playAgainToggle:
+
             '''
             @ brief Dealing deck, used to create all players decks
             @ param str-list
             '''
-            gameDeck = WWCardsDeck([])
-        
+            WWGameManager.gameDeck = WWCardsDeck([])
+
             '''
              @ brief Deck holding all wagers
              @ param WWCardsDeck
              '''
-            wagerDeck = WWCardsDeck([])
-        
+            WWGameManager.wagerDeck = WWCardsDeck([])
+
             '''
              @ brief Deck that computer plays from
              @ param WWCardsDeck
              '''
-            computerDeck = WWCardsDeck([])
-        
+            WWGameManager.computerDeck = WWCardsDeck([])
+
             '''
              @ brief Computers winnings, After each turn, will be used again
              @ param WWCardsDeck
              '''
-            computerGraveyardDeck = WWShuffleDeck([])
-        
+            WWGameManager.computerGraveyardDeck = WWShuffleDeck([])
+
             '''
              @ brief computer's card being used in war. does not include wagers
              @ param WWCardsDeck
              '''
-            computerBattleDeck = WWCardsDeck([])
+            WWGameManager.computerBattleDeck = WWCardsDeck([])
             '''
              @ brief Deck that player plays from
              @ param WWCardsDeck
              '''
-            playerDeck = WWCardsDeck([])
-        
+            WWGameManager.playerDeck = WWCardsDeck([])
+
             '''
              @ brief players winnings, After each turn, will be used again
              @ param WWCardsDeck
              '''
-            playerGraveyardDeck = WWShuffleDeck([])
-        
+            WWGameManager.playerGraveyardDeck = WWShuffleDeck([])
+
             '''
              @ brief player's card being used in war. does not include wagers
              @ param WWCardsDeck
              '''
-            playerBattleDeck = WWCardsDeck([])
+            WWGameManager.playerBattleDeck = WWCardsDeck([])
+
+            WWGameManager.winnerName = ""
+            WWGameManager.warCount = 0
             #del wwgm
             #print("Before del - wwgm", wwgm)
-            wwgm = WWGameManager()
+            #wwgm = WWGameManager()
             #print("After del - wwgm", wwgm)
             del wwsw
             del wwgw

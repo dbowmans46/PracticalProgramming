@@ -44,10 +44,10 @@ class WWGameWindow(object):
     @param wwGameManager
     """
 
-    def setupUi(self, wwGameManager):
+    def setupUi(self):
         self._translate = QtCore.QCoreApplication.translate
 
-        WWGameManager = wwGameManager
+        #WWGameManager = wwGameManager
         self.MainWindow = QDialog()
 
         print("PB - ", len(WWGameManager.playerBattleDeck.cards))
@@ -214,8 +214,8 @@ class WWGameWindow(object):
     @param
     '''
 
-    def setTheStage(self, wwgm):
-        self.setupUi(wwgm)
+    def setTheStage(self):
+        self.setupUi()
         self.deckSetup()
     # Pass list of cards * # of decks to initialDeck, collection of all cards used in game.
     """
@@ -225,7 +225,8 @@ class WWGameWindow(object):
     def deckSetup(self):
         # multiply start deck by number of decks selected by player.
         # WWGameManager.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * WWGameManager.deckCount
-        WWGameManager.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * WWGameManager.deckCount
+        WWGameManager.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES_TEST * \
+            WWGameManager.deckCount
         self.WWInitDeck = WWInitialDeck(
             WWGameManager.gameDeck.cards, WWGameManager.playerDeck, WWGameManager.computerDeck)
        # [WWDataLogger.logger(x) for x in self.WWInitDeck.cards]
@@ -250,8 +251,10 @@ class WWGameWindow(object):
     def cardCheck(self):
         if len(WWGameManager.playerDeck.cards) < 5:
             WWGameManager.playerGraveyardDeck.shuffleCards()
-            WWGameManager.playerDeck.cardTransferAll(WWGameManager.playerGraveyardDeck)
-            WWGameManager.playerGraveyardDeck.cardTransferAll(WWGameManager.playerDeck)
+            WWGameManager.playerDeck.cardTransferAll(
+                WWGameManager.playerGraveyardDeck)
+            WWGameManager.playerGraveyardDeck.cardTransferAll(
+                WWGameManager.playerDeck)
 
         if len(WWGameManager.computerDeck.cards) < 5:
             WWGameManager.computerGraveyardDeck.shuffleCards()
@@ -282,10 +285,10 @@ class WWGameWindow(object):
         #    PlayerBattleDeck has half the cards
         #    ComputerBattleDeck has all the cards
         if ((len(WWGameManager.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-            (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                    ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
-                     (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
-            ):
+                (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
+                         (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
+                ):
             #print("We have arrived")
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
@@ -299,11 +302,12 @@ class WWGameWindow(object):
     """
 
     def dealButtonOnClick(self):
-
+        print("dealButtonOnClick Pressed")
         self.cardCheck()
 
         WWGameManager.playerDeck.cardTransfer(WWGameManager.playerBattleDeck)
-        WWGameManager.computerDeck.cardTransfer(WWGameManager.computerBattleDeck)
+        WWGameManager.computerDeck.cardTransfer(
+            WWGameManager.computerBattleDeck)
 
         self.cardCheck()
 
@@ -391,7 +395,7 @@ class WWGameWindow(object):
     """
 
     def autoCompleteButtonOnClick(self):
-        # print("Autocomplete")
+        print("Autocomplete Clicked")
         #print("isActive: ", self.wwgwIsActive)
         #print("WWGameManager.winnerName: ", WWGameManager.winnerName)
         while WWGameManager.winnerName == '' and self.wwgwIsActive == True:

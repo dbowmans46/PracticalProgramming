@@ -40,16 +40,9 @@ if __name__ == "__main__":
     wwgm = WWGameManager()
     const = WWWarConstants()
     app = QApplication(sys.argv)
-    # this will delete the "game_log.json" before running new game
-    WWDataLogger.deleteLogger()
+    WWDataLogger.deleteLogger() # this will delete the "game_log.json" before running new game
 
     while (WWGameManager.playAgainToggle):
-        print("NEW GAME")
-        #wwgm = WWGameManager()
-        print("PB over- ", len(WWGameManager.playerBattleDeck.cards))
-        print("CB over- ", len(WWGameManager.computerBattleDeck.cards))
-        print("Winner over- ", WWGameManager.winnerName)
-        # Turn off right away to prevent possible infinite loops
         WWGameManager.playAgainToggle = False
 
         wwsw = WWSetupWindow()
@@ -125,32 +118,5 @@ if __name__ == "__main__":
 
             WWGameManager.winnerName = ""
             WWGameManager.warCount = 0
-            #del wwgm
-            #print("Before del - wwgm", wwgm)
-            #wwgm = WWGameManager()
-            #print("After del - wwgm", wwgm)
-            del wwsw
-            del wwgw
-            del wwvw
-            print("PB - del", len(WWGameManager.playerBattleDeck.cards))
-            print("CB - del", len(WWGameManager.computerBattleDeck.cards))
-            print("Winner - del", WWGameManager.winnerName)
-            print("DC", WWGameManager.deckCount)
-    sys.exit()
-    # sys.exit(app.exec_())
-# TODO print wwgm-referance types (objects itself)
 
-"""
-Overlord.py is the game executable *is WagerWar*
-overlord runs game manager
-overlord opens setup window
-(setup window waiting for user inputs)
-(setup window pass info to game manager)
-(setup window closes)
-overlord opens game window 
-(game window grabs info from game manager)
-(game window waiting for user inputs/and updating game manager)
-(in Vic/Defeat scenario, game window closes)
-Overlord opens Victory Window
-(Game Manager passes info to Victory Screen)
-"""
+    sys.exit()

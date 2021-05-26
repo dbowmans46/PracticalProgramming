@@ -63,7 +63,6 @@ class WWCardsDeck():
     """
 
     def cardTransferALT(self, destDeck):
-        # removes first card from list of cards moves it to destDeck
         if len(self.cards) > 0:
             topCard = self.cards.pop(0)
             destDeck.cards.append(topCard)

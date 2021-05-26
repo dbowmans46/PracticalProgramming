@@ -201,8 +201,6 @@ class WWSetupWindow(object):
 
         self.Dialog.show()
 
-        #WWGameManager = wwGameManager
-
         self.startButton.clicked.connect(self.startButtonOnClick)
 
         self.wwswIsActive = True
@@ -236,8 +234,6 @@ class WWSetupWindow(object):
 
         self.DeckColorPixMap.setText(_translate(
             "Dialog", prefix + WWWarConstants.deckStyle[pix] + suffix))
-
-        #print (self.DeckColorPixMap.text())
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate

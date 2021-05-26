@@ -25,7 +25,6 @@ SOFTWARE.
 """
 import sys
 from PyQt5 import QtWidgets, QtCore
-#from win32api import GetSystemMetrics
 
 """
 @brief This is a static class
@@ -44,7 +43,6 @@ class WWWarConstants():
     """
     CARD_PICTURE_LOCATION = "./resources/production/"
 
-    # Card name will dictate value--change file picture accordingly
     CARD_FILE_NAMES = ['c01.bmp',
                        'c02.bmp',
                        'c03.bmp',
@@ -162,14 +160,8 @@ class WWWarConstants():
     """
     @ brief string used on all GUI windows, A credit to the developers
     """
-    # COULD NOT GET TO WORK ON 02-06-2019
-#    DesignedByLabel = QtWidgets.QLabel("Designed By Peoples:")
-#    DesignedByLabel.setGeometry(QtCore.QRect(430, 120, 341, 58))
-#    DesignedByLabel.setFont ("font-size:14pt; font-style:italic; color:#ffffff;")
 
     """
     @ brief Retrieve users resolution to use for window size
     """
 
-#    ResWidth = GetSystemMetrics(0)
-#    ResHeight = GetSystemMetrics(1)

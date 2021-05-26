@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-# TODO Need to get the "Play again button working"
 
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -44,8 +43,6 @@ class WWVictoryWindow(object):
     def setupUi(self):
         self._translate = QtCore.QCoreApplication.translate
 
-        #self.wwvw = wwVictoryWindow
-        #self.wwgm = wwGameManager
         self.MainWindow = QDialog()
 
         self.MainWindow.setObjectName("WWVictoryWindow")
@@ -120,10 +117,6 @@ class WWVictoryWindow(object):
     def playAgainButtonOnClick(self):
         WWGameManager.playAgainToggle = True
         self.wwvwIsActive = False
-        # self.wwgm = WWGameManager()
-        # sys.exit(self)  # exit current session
-        # WWOverlord()  # restart at the beginning
-        # print("test")
 
     def quitButtonOnClick(self):
         WWDataLogger.logger("***Game was quit by user***")

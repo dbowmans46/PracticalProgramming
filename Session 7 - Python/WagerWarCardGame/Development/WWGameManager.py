@@ -95,9 +95,10 @@ class WWGameManager:
     deckCount = 1
 
     '''
-     @ brief User input from WWSetupWindow sets deck style
+     @ brief User input from WWSetupWindow sets deck style 
+     @ details deck color input box
      '''
-    # deck color input box
+
     deckStyle = ''
 
     '''

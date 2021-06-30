@@ -28,7 +28,7 @@ from PyQt5.QtWidgets import QApplication, QDialog
 from WWGameManager import WWGameManager
 from WWWarConstants import WWWarConstants
 import sys
-import re1
+# import re1
 
 """
 @brief
@@ -44,7 +44,8 @@ import re1
 class WWSetupWindow(object):
 
     def setupUi(self):
-
+        
+        # TODO: Convert to not use QTDesigner and resource file
         self.Dialog = QDialog()
         self.Dialog.setObjectName("Dialog")
         self.Dialog.resize(800, 600)
@@ -229,7 +230,8 @@ class WWSetupWindow(object):
     def onActivated(self, pix):
         _translate = QtCore.QCoreApplication.translate
 
-        prefix = "<html><head/><body><p><img src=\":/Main/production/"
+        #prefix = "<html><head/><body><p><img src=\":/Main/production/"
+        prefix = "<html><head/><body><p><img src=\"./resources/production/"
         suffix = "\"/></p></body></html>"
 
         self.DeckColorPixMap.setText(_translate(
@@ -241,7 +243,7 @@ class WWSetupWindow(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
 
         self.startButton.setText(_translate("Dialog", "START"))
-
+        
         self.DesignedByLabel.setText(_translate(
             "Dialog", "<html><head/><body><p><span style=\" font-size:14pt; font-style:italic; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))
 
@@ -255,8 +257,9 @@ class WWSetupWindow(object):
             "Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Deck Count</span></p></body></html>"))
 
         self.DeckColorPixMap.setText(_translate(
-            "Dialog", "<html><head/><body><p align=\"center\"><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
-
+            #"Dialog", "<html><head/><body><p align=\"center\"><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            "Dialog", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
+        
         self.DeckColorInputBox.setItemText(0, _translate("Dialog", "BLUE"))
         self.DeckColorInputBox.setItemText(1, _translate("Dialog", "CAMO"))
         self.DeckColorInputBox.setItemText(2, _translate("Dialog", "RED"))

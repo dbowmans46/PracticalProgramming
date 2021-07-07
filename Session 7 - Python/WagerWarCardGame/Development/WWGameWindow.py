@@ -370,12 +370,11 @@ class WWGameWindow(object):
     """
 
     def retranslateUi(self, MainWindow):
-
+        #TODO Change the "bluebackvert" to use the dictionary variable.  Look at "onactivated" in setupWindow Line 230
         MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
 
         self.playerDeckMain.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
-
+            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
         self.computerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + WWGameManager.compName + "</span></p></body></html>"))
 
@@ -383,25 +382,25 @@ class WWGameWindow(object):
             "MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#ffffff;\">War!!!</span></p></body></html>"))
 
         self.playerDeckDiscard.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.compDeckDiscard.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.compDeckActive.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.palyerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\"> " + WWGameManager.playerName + "</span></p></body></html>"))
 
         self.compDeckMain.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.autoCompletPushButton.setText(
             self._translate("MainWindow", "Auto Complete"))
 
         self.playerDeckActive.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.designedByLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-style:italic; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))

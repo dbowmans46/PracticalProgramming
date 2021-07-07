@@ -82,12 +82,12 @@ class WWGameManager:
     '''
      @ brief Name of player from WWSetupWindow
      '''
-    playerName = ''
+    playerName = 'PLAYER'
 
     '''
      @ brief Name of computer from WWSetupWindow
      '''
-    compName = ''
+    compName = 'COMPUTER'
 
     '''
      @ brief User input from WWSetupWindow sets number decks

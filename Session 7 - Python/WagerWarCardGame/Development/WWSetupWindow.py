@@ -107,6 +107,7 @@ class WWSetupWindow(object):
         self.PlayerNameInputBox = QtWidgets.QLineEdit(self.layoutWidget)
         self.PlayerNameInputBox.setStyleSheet("color: rgb(255, 255, 255);")
         self.PlayerNameInputBox.setObjectName("PlayerNameInputBox")
+        self.PlayerNameInputBox.setText(str(WWGameManager.playerName))
 
         self.verticalLayout.addWidget(self.PlayerNameInputBox)
 
@@ -129,6 +130,7 @@ class WWSetupWindow(object):
         self.ComputerNameInputBox = QtWidgets.QLineEdit(self.layoutWidget)
         self.ComputerNameInputBox.setStyleSheet("color: rgb(255, 255, 255);")
         self.ComputerNameInputBox.setObjectName("ComputerNameInputBox")
+        self.ComputerNameInputBox.setText(str(WWGameManager.compName))
 
         self.formLayout.setWidget(
             1, QtWidgets.QFormLayout.LabelRole, self.ComputerNameInputBox)
@@ -255,7 +257,7 @@ class WWSetupWindow(object):
 
         self.DeckCountLabel.setText(_translate(
             "Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Deck Count</span></p></body></html>"))
-
+        
         self.DeckColorPixMap.setText(_translate(
             #"Dialog", "<html><head/><body><p align=\"center\"><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
             "Dialog", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))

@@ -44,7 +44,7 @@ import sys
 class WWSetupWindow(object):
 
     def setupUi(self):
-        
+
         # TODO: Convert to not use QTDesigner and resource file
         self.Dialog = QDialog()
         self.Dialog.setObjectName("Dialog")
@@ -217,7 +217,9 @@ class WWSetupWindow(object):
         WWGameManager.compName = self.ComputerNameInputBox.text()
         WWGameManager.playerName = self.PlayerNameInputBox.text()
         WWGameManager.deckCount = int(self.DeckCountLineEdit.text())
-        WWGameManager.deckStyle = self.DeckColorInputBox.currentText()
+
+        deckStyleKey = self.DeckColorInputBox.currentText()
+        WWGameManager.deckStyle = WWWarConstants.deckStyle[deckStyleKey]
 
         self.wwswIsActive = False
 
@@ -245,7 +247,7 @@ class WWSetupWindow(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
 
         self.startButton.setText(_translate("Dialog", "START"))
-        
+
         self.DesignedByLabel.setText(_translate(
             "Dialog", "<html><head/><body><p><span style=\" font-size:14pt; font-style:italic; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))
 
@@ -257,11 +259,11 @@ class WWSetupWindow(object):
 
         self.DeckCountLabel.setText(_translate(
             "Dialog", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Deck Count</span></p></body></html>"))
-        
+
         self.DeckColorPixMap.setText(_translate(
-            #"Dialog", "<html><head/><body><p align=\"center\"><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
+            # "Dialog", "<html><head/><body><p align=\"center\"><img src=\":/Main/production/blueBackVert.bmp\"/></p></body></html>"))
             "Dialog", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
-        
+
         self.DeckColorInputBox.setItemText(0, _translate("Dialog", "BLUE"))
         self.DeckColorInputBox.setItemText(1, _translate("Dialog", "CAMO"))
         self.DeckColorInputBox.setItemText(2, _translate("Dialog", "RED"))

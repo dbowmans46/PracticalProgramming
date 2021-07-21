@@ -45,9 +45,9 @@ class WWGameWindow(object):
     """
 
     def setupUi(self):
-        
+
         # TODO: Convert to not use QTDesigner and resource file
-        
+
         self._translate = QtCore.QCoreApplication.translate
 
         self.MainWindow = QDialog()
@@ -210,12 +210,14 @@ class WWGameWindow(object):
     @brief sets up the game state by shuffling deck and dealing cards to player and computer. 
     @param
     '''
+
     def setTheStage(self):
         self.setupUi()
         self.deckSetup()
     """
     @brief Create the starting deck
     """
+
     def deckSetup(self):
         WWGameManager.gameDeck.cards = WWWarConstants.CARD_FILE_NAMES * WWGameManager.deckCount
         self.WWInitDeck = WWInitialDeck(
@@ -227,13 +229,15 @@ class WWGameWindow(object):
     @brief Update GUI: update Player/Comp Card Count, Turn Count, Populate the new card image.
     @param
     """
+
     def turnEventUpdate(self):
 
         return None
-    
+
     """
     @brief Checks count of player and computer to determine when the graveyards need to be shuffled in.
     """
+
     def cardCheck(self):
         if len(WWGameManager.playerDeck.cards) < 5:
             WWGameManager.playerGraveyardDeck.shuffleCards()
@@ -262,8 +266,8 @@ class WWGameWindow(object):
         if ((len(WWGameManager.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
                 (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
                 ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
-                         (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
-                ):
+                 (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
+            ):
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
             WWGameManager.winnerName = WWGameManager.playerName
@@ -296,7 +300,7 @@ class WWGameWindow(object):
 
             if self.cardValuePlayer == self.cardValueComputer:
                 WWGameManager.warCount += 1
-         
+
                 if len(WWGameManager.playerDeck.cards) < 4:
                     for i in range(len(WWGameManager.playerDeck.cards)-1):
                         WWGameManager.playerDeck.cardTransfer(
@@ -352,7 +356,7 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         while WWGameManager.winnerName == '' and self.wwgwIsActive == True:
             self.dealButtonOnClick()
-              
+
         return None
 
     """
@@ -370,11 +374,18 @@ class WWGameWindow(object):
     """
 
     def retranslateUi(self, MainWindow):
-        #TODO Change the "bluebackvert" to use the dictionary variable.  Look at "onactivated" in setupWindow Line 230
-        MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
+        # TODO Change the "bluebackvert" to use the dictionary variable.  Look at "onactivated" in setupWindow Line 230
+        # TODO create var to house pre, suf and deckStyle for all cards
+        _translate = QtCore.QCoreApplication.translate
 
-        self.playerDeckMain.setText(self._translate(
-            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
+        prefix = "<html><head/><body><p><img src=\"./resources/production/"
+        suffix = "\"/></p></body></html>"
+
+        MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
+        print(prefix, suffix, "Pre and Suf", WWGameManager.deckStyle, "Style")
+        self.playerDeckMain.setText(_translate(
+            "MainWindow", prefix + WWGameManager.deckStyle + suffix))
+
         self.computerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + WWGameManager.compName + "</span></p></body></html>"))
 
@@ -382,7 +393,7 @@ class WWGameWindow(object):
             "MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#ffffff;\">War!!!</span></p></body></html>"))
 
         self.playerDeckDiscard.setText(self._translate(
-            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
+            "MainWindow", prefix + WWGameManager.deckStyle + suffix))
 
         self.compDeckDiscard.setText(self._translate(
             "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))

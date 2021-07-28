@@ -78,7 +78,7 @@ class WWGameWindow(object):
         self.gridLayout.addWidget(self.computerNameLabel, 4, 3, 1, 1)
 
         self.warTitle = QtWidgets.QLabel(self.widget)
-        self.warTitle.setStyleSheet("background-image: url(:/Main/q02th.jpg);")
+        #self.warTitle.setStyleSheet("background-image: url(:/Main/q02th.jpg);")
         self.warTitle.setObjectName("warTitle")
 
         self.gridLayout.addWidget(self.warTitle, 2, 3, 1, 1)
@@ -264,9 +264,9 @@ class WWGameWindow(object):
             self.wwgwIsActive = False
 
         if ((len(WWGameManager.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                    (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                    ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
-                     (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
+                (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
+                         (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
                 ):
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
@@ -374,9 +374,6 @@ class WWGameWindow(object):
     """
 
     def retranslateUi(self, MainWindow):
-        # TODO Change the "bluebackvert" to use the dictionary variable.  Look at "onactivated" in setupWindow Line 230
-
-        # TODO create var to house pre, suf and deckStyle for all cards
         _translate = QtCore.QCoreApplication.translate
 
         prefix = "<html><head/><body><p><img src=\"./resources/production/"
@@ -384,20 +381,20 @@ class WWGameWindow(object):
 
         MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
 
-        deckstyle_short = "MainWindow", (prefix +
-                                         WWGameManager.deckStyle + suffix)
+        deckstyle_short = _translate(
+            "MainWindow", prefix + WWGameManager.deckStyle + suffix)
 
-        self.playerDeckMain.setText(self._translate(deckstyle_short))
+        self.playerDeckMain.setText(deckstyle_short)
 
-        self.playerDeckDiscard.setText(self._translate(deckstyle_short))
+        self.playerDeckDiscard.setText(deckstyle_short)
 
-        self.compDeckDiscard.setText(self._translate(deckstyle_short))
+        self.compDeckDiscard.setText(deckstyle_short)
 
-        self.compDeckActive.setText(self._translate(deckstyle_short))
+        self.compDeckActive.setText(deckstyle_short)
 
-        self.compDeckMain.setText(self._translate(deckstyle_short))
+        self.compDeckMain.setText(deckstyle_short)
 
-        self.playerDeckActive.setText(self._translate(deckstyle_short))
+        self.playerDeckActive.setText(deckstyle_short)
 
         self.computerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + WWGameManager.compName + "</span></p></body></html>"))
@@ -419,7 +416,7 @@ class WWGameWindow(object):
         self.dealPushButton.setText(self._translate("MainWindow", "Deal"))
 
     """
-    @brief Will render the card count?
+    @brief Will render the card count
     """
 
     def cardCountUpdate(self):

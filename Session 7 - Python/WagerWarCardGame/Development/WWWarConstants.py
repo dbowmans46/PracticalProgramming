@@ -155,7 +155,7 @@ class WWWarConstants():
     """
     deckStyle = {"BLUE": "blueBackVert.bmp",
                  "RED": "redBackVert.bmp",
-                 "CAMO": "camo.bmp"}
+                 "CAMO": "camoBackVert.bmp"}
 
     """
     @ brief string used on all GUI windows, A credit to the developers
@@ -164,4 +164,3 @@ class WWWarConstants():
     """
     @ brief Retrieve users resolution to use for window size
     """
-

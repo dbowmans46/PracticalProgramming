@@ -264,10 +264,10 @@ class WWGameWindow(object):
             self.wwgwIsActive = False
 
         if ((len(WWGameManager.playerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
-                ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
-                 (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
-            ):
+                    (len(WWGameManager.computerBattleDeck.cards)) == (WWWarConstants.DECK_SIZE / 2) and
+                    ((len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.computerBattleDeck.cards)) ==
+                     (WWGameManager.deckCount * WWWarConstants.DECK_SIZE))
+                ):
             WWDataLogger.logger("Ultra War!!!!!!")
             WWDataLogger.logger("Player is Defacto Winner")
             WWGameManager.winnerName = WWGameManager.playerName
@@ -375,6 +375,7 @@ class WWGameWindow(object):
 
     def retranslateUi(self, MainWindow):
         # TODO Change the "bluebackvert" to use the dictionary variable.  Look at "onactivated" in setupWindow Line 230
+
         # TODO create var to house pre, suf and deckStyle for all cards
         _translate = QtCore.QCoreApplication.translate
 
@@ -382,9 +383,21 @@ class WWGameWindow(object):
         suffix = "\"/></p></body></html>"
 
         MainWindow.setWindowTitle(self._translate("MainWindow", "MainWindow"))
-        print(prefix, suffix, "Pre and Suf", WWGameManager.deckStyle, "Style")
-        self.playerDeckMain.setText(_translate(
-            "MainWindow", prefix + WWGameManager.deckStyle + suffix))
+
+        deckstyle_short = "MainWindow", (prefix +
+                                         WWGameManager.deckStyle + suffix)
+
+        self.playerDeckMain.setText(self._translate(deckstyle_short))
+
+        self.playerDeckDiscard.setText(self._translate(deckstyle_short))
+
+        self.compDeckDiscard.setText(self._translate(deckstyle_short))
+
+        self.compDeckActive.setText(self._translate(deckstyle_short))
+
+        self.compDeckMain.setText(self._translate(deckstyle_short))
+
+        self.playerDeckActive.setText(self._translate(deckstyle_short))
 
         self.computerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + WWGameManager.compName + "</span></p></body></html>"))
@@ -392,26 +405,11 @@ class WWGameWindow(object):
         self.warTitle.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:20pt; color:#ffffff;\">War!!!</span></p></body></html>"))
 
-        self.playerDeckDiscard.setText(self._translate(
-            "MainWindow", prefix + WWGameManager.deckStyle + suffix))
-
-        self.compDeckDiscard.setText(self._translate(
-            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
-
-        self.compDeckActive.setText(self._translate(
-            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
-
         self.palyerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\"> " + WWGameManager.playerName + "</span></p></body></html>"))
 
-        self.compDeckMain.setText(self._translate(
-            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
-
         self.autoCompletPushButton.setText(
             self._translate("MainWindow", "Auto Complete"))
-
-        self.playerDeckActive.setText(self._translate(
-            "MainWindow", "<html><head/><body><p align=\"center\"><img src=\"./resources/production/blueBackVert.bmp\"/></p></body></html>"))
 
         self.designedByLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; font-style:italic; color:#ffffff;\">Designed By: Peoples\'</span></p></body></html>"))

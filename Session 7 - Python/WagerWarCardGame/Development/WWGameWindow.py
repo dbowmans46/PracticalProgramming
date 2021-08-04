@@ -52,7 +52,7 @@ class WWGameWindow(object):
 
         self.MainWindow = QDialog()
         self.MainWindow.setObjectName("MainWindow")
-        self.MainWindow.resize(800, 600)
+        self.MainWindow.resize(1000, 800)
         self.MainWindow.setStyleSheet("background-color: rgb(0, 85, 0);")
 
         self.centralwidget = QtWidgets.QWidget(self.MainWindow)
@@ -279,6 +279,7 @@ class WWGameWindow(object):
     """
 
     def dealButtonOnClick(self):
+        #TODO add cardcountlabel update
         self.cardCheck()
 
         WWGameManager.playerDeck.cardTransfer(WWGameManager.playerBattleDeck)
@@ -422,7 +423,7 @@ class WWGameWindow(object):
     def cardCountUpdate(self):
 
         self.cardCountCompLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">Card Count: + &lt;int&gt;</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">0;</span></p></body></html>"))
 
         self.cardCountPlayerLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">Card Count: + &lt;int&gt;</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">0;</span></p></body></html>"))

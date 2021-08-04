@@ -25,19 +25,18 @@ SOFTWARE.
 """
 
 
-
 from PyQt5.QtWidgets import QWidget, QApplication
 
-#create the class for the background window
+# create the class for the background window
+
+
 class wwbackgroundwindow(QWidget):
 
-     def __init__(self):
-          super().__init__()
-          self.initUI()
-         
-     def initUI(self):
-          self.resize(800, 600)
-          self.show()
-          self.setWindowTitle("BackGround") 
-          
-     
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        self.resize(1000, 800)
+        self.show()
+        self.setWindowTitle("BackGround")

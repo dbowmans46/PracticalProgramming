@@ -42,53 +42,54 @@ class WWVictoryWindow(object):
 
     def setupUi(self):
         # TODO: Convert to not use QTDesigner and resource file
-        
+
         self._translate = QtCore.QCoreApplication.translate
 
         self.MainWindow = QDialog()
 
         self.MainWindow.setObjectName("WWVictoryWindow")
-        self.MainWindow.resize(800, 600)
+        self.MainWindow.resize(1000, 800)
         self.MainWindow.setStyleSheet("background-color: rgb(0, 85, 0);")
 
         self.centralwidget = QtWidgets.QWidget(self.MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(40, 20, 800, 600))
+        self.widget.setGeometry(QtCore.QRect(40, 20, 1000, 800))
         self.widget.setObjectName("widget")
 
         self.victorLabel = QtWidgets.QLabel(self.widget)
-        self.victorLabel.setGeometry(QtCore.QRect(270, 10, 131, 51))
+        self.victorLabel.setGeometry(QtCore.QRect(300, 10, 250, 80))
         self.victorLabel.setObjectName("victorLabel")
 
         self.trophyPixMap = QtWidgets.QLabel(self.widget)
-        self.trophyPixMap.setGeometry(QtCore.QRect(200, 70, 290, 340))
+        self.trophyPixMap.setGeometry(QtCore.QRect(300, 100, 290, 340))
         self.trophyPixMap.setStyleSheet(
-            "border-image: url(:/Main/img/trophy.png); background-color: rgba(255, 255, 255, 0);")
+            "border-image: url(./resources/production/trophy_victory.png); background-color: rgba(255, 255, 255, 0);")
         self.trophyPixMap.setObjectName("trophyPixMap")
 
         self.playAgainPushButton = QtWidgets.QPushButton(self.widget)
-        self.playAgainPushButton.setGeometry(QtCore.QRect(210, 480, 75, 23))
+        self.playAgainPushButton.setGeometry(QtCore.QRect(300, 520, 140, 40))
         self.playAgainPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.playAgainPushButton.setObjectName("playAgainPushButton")
         self.playAgainPushButton.clicked.connect(self.playAgainButtonOnClick)
 
         self.quitPushButton = QtWidgets.QPushButton(self.widget)
-        self.quitPushButton.setGeometry(QtCore.QRect(410, 480, 75, 23))
+        self.quitPushButton.setGeometry(QtCore.QRect(490, 520, 75, 40))
         self.quitPushButton.setStyleSheet(
             "color: rgb(255, 255, 255); background-color: rgb(138, 138, 138);")
         self.quitPushButton.setObjectName("quitPushButton")
         self.quitPushButton.clicked.connect(self.quitButtonOnClick)
 
         self.designedByLabel = QtWidgets.QLabel(self.widget)
-        self.designedByLabel.setGeometry(QtCore.QRect(250, 500, 161, 41))
+        self.designedByLabel.setGeometry(QtCore.QRect(
+            300, self.MainWindow.height()-41-20, 340, 41))
         self.designedByLabel.setStyleSheet(
             "background-color: rgba(255, 255, 255, 0);")
         self.designedByLabel.setObjectName("designedByLabel")
 
         self.winnerLabel = QtWidgets.QLabel(self.widget)
-        self.winnerLabel.setGeometry(QtCore.QRect(260, 420, 281, 31))
+        self.winnerLabel.setGeometry(QtCore.QRect(300, 420, 400, 80))
         self.winnerLabel.setAutoFillBackground(False)
         self.winnerLabel.setStyleSheet(
             "background-color: rgba(255, 255, 255, 0);")

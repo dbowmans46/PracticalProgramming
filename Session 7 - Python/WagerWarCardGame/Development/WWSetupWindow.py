@@ -48,7 +48,7 @@ class WWSetupWindow(object):
         # TODO: Convert to not use QTDesigner and resource file
         self.Dialog = QDialog()
         self.Dialog.setObjectName("Dialog")
-        self.Dialog.resize(800, 600)
+        self.Dialog.resize(1000, 800)
 
         sizePolicy = QtWidgets.QSizePolicy(
             QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)

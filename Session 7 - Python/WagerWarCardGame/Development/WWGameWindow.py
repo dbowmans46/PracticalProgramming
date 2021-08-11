@@ -376,6 +376,7 @@ class WWGameWindow(object):
         while WWGameManager.winnerName == '' and self.wwgwIsActive == True:
             time.sleep(1)
             self.MainWindow.show()
+            QtCore.QCoreApplication.processEvents()
             self.dealButtonOnClick()
 
         return None

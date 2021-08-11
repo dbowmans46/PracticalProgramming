@@ -24,6 +24,7 @@ SOFTWARE.
 """
 
 import sys
+import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QLineEdit, QPushButton, QComboBox, QDialog
 from WWCardValueManager import WWCardValueManager
@@ -95,11 +96,11 @@ class WWGameWindow(object):
         self.gridLayout.addWidget(
             self.compDeckDiscard, 10, 4, 1, 1, QtCore.Qt.AlignHCenter)
 
-        self.compDeckActive = QtWidgets.QLabel(self.widget)
-        self.compDeckActive.setObjectName("compDeckActive")
+        self.computerBattleDeck = QtWidgets.QLabel(self.widget)
+        self.computerBattleDeck.setObjectName("computerBattleDeck")
 
         self.gridLayout.addWidget(
-            self.compDeckActive, 10, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+            self.computerBattleDeck, 10, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
 
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
@@ -126,11 +127,11 @@ class WWGameWindow(object):
 
         self.gridLayout.addWidget(self.autoCompletPushButton, 16, 2, 1, 1)
 
-        self.playerDeckActive = QtWidgets.QLabel(self.widget)
-        self.playerDeckActive.setObjectName("playerDeckActive")
+        self.playerBattleDeck = QtWidgets.QLabel(self.widget)
+        self.playerBattleDeck.setObjectName("playerBattleDeck")
 
         self.gridLayout.addWidget(
-            self.playerDeckActive, 11, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
+            self.playerBattleDeck, 11, 3, 1, 1, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignVCenter)
 
         self.designedByLabel = QtWidgets.QLabel(self.widget)
         self.designedByLabel.setObjectName("DesignedByLabel")
@@ -188,7 +189,7 @@ class WWGameWindow(object):
 
         self.designedByLabel.raise_()
 
-        self.compDeckActive.raise_()
+        self.computerBattleDeck.raise_()
 
         self.statusbar = QtWidgets.QStatusBar(self.MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -280,6 +281,7 @@ class WWGameWindow(object):
 
     def dealButtonOnClick(self):
         #TODO add cardcountlabel update
+        #print(WWGameManager.playerDeck.cards)
         self.cardCheck()
 
         WWGameManager.playerDeck.cardTransfer(WWGameManager.playerBattleDeck)
@@ -289,12 +291,27 @@ class WWGameWindow(object):
         self.cardCheck()
 
         if WWGameManager.winnerName == '':
+            # Changes top card visually
+            _translate = QtCore.QCoreApplication.translate
+
+            prefix = "<html><head/><body><p><img src=\"./resources/production/"
+            suffix = "\"/></p></body></html>"
+
+            deckstyle_player = _translate(
+            "MainWindow", prefix + WWGameManager.playerBattleDeck.cards[-1] + suffix)
+            deckstyle_computer = _translate(
+            "MainWindow", prefix + WWGameManager.computerBattleDeck.cards[-1] + suffix)
+            
+            self.playerBattleDeck.setText(deckstyle_player)
+            self.computerBattleDeck.setText(deckstyle_computer)
+            
             WWDataLogger.logger("Player Plays")
             WWDataLogger.logger(WWGameManager.playerBattleDeck.cards)
             WWDataLogger.logger("Computer Plays")
             WWDataLogger.logger(WWGameManager.computerBattleDeck.cards)
             self.cardValueManager = WWCardValueManager(
                 WWGameManager.playerBattleDeck.cards[-1])
+                
             self.cardValuePlayer = self.cardValueManager.GetCardValue()
             self.cardValueComputer = self.cardValueManager.NewCardValue(
                 WWGameManager.computerBattleDeck.cards[-1])
@@ -355,7 +372,10 @@ class WWGameWindow(object):
     """
 
     def autoCompleteButtonOnClick(self):
+        
         while WWGameManager.winnerName == '' and self.wwgwIsActive == True:
+            time.sleep(1)
+            self.MainWindow.show()
             self.dealButtonOnClick()
 
         return None
@@ -391,11 +411,11 @@ class WWGameWindow(object):
 
         self.compDeckDiscard.setText(deckstyle_short)
 
-        self.compDeckActive.setText(deckstyle_short)
+        self.computerBattleDeck.setText(deckstyle_short)
 
         self.compDeckMain.setText(deckstyle_short)
 
-        self.playerDeckActive.setText(deckstyle_short)
+        self.playerBattleDeck.setText(deckstyle_short)
 
         self.computerNameLabel.setText(self._translate(
             "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + WWGameManager.compName + "</span></p></body></html>"))

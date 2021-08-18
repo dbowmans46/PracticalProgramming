@@ -41,7 +41,6 @@ from WWDataLogger import WWDataLogger
 class WWVictoryWindow(object):
 
     def setupUi(self):
-        # TODO: Convert to not use QTDesigner and resource file
 
         self._translate = QtCore.QCoreApplication.translate
 

@@ -45,7 +45,6 @@ class WWSetupWindow(object):
 
     def setupUi(self):
 
-        # TODO: Convert to not use QTDesigner and resource file
         self.Dialog = QDialog()
         self.Dialog.setObjectName("Dialog")
         self.Dialog.resize(1000, 800)
@@ -166,7 +165,7 @@ class WWSetupWindow(object):
         self.DeckColorPixMap = QtWidgets.QLabel(self.layoutWidget)
         self.DeckColorPixMap.setObjectName("DeckColorPixMap")
 
-        self.gridLayout.addWidget(self.DeckColorPixMap, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.DeckColorPixMap, 5, 0, 1, 1, QtCore.Qt.AlignHCenter)
 
         spacerItem4 = QtWidgets.QSpacerItem(
             20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)

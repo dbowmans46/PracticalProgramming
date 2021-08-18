@@ -46,9 +46,7 @@ class WWGameWindow(object):
     """
 
     def setupUi(self):
-
-        # TODO: Convert to not use QTDesigner and resource file
-
+        
         self._translate = QtCore.QCoreApplication.translate
 
         self.MainWindow = QDialog()
@@ -169,13 +167,17 @@ class WWGameWindow(object):
 
         self.cardCountCompLabel = QtWidgets.QLabel(self.widget)
         self.cardCountCompLabel.setObjectName("cardCountCompLabel")
-
-        self.gridLayout.addWidget(self.cardCountCompLabel, 5, 3, 1, 1)
+        self.gridLayout.addWidget(self.cardCountCompLabel, 4, 0, 1, 1)
+        
 
         self.cardCountPlayerLabel = QtWidgets.QLabel(self.widget)
         self.cardCountPlayerLabel.setObjectName("cardCountPlayerLabel")
+        self.gridLayout.addWidget(self.cardCountPlayerLabel, 14, 0, 1, 1)
+        
 
-        self.gridLayout.addWidget(self.cardCountPlayerLabel, 15, 3, 1, 1)
+        self.cardCountCompLabel.raise_()
+
+        self.cardCountPlayerLabel.raise_()
 
         self.autoCompletPushButton.raise_()
 
@@ -206,6 +208,8 @@ class WWGameWindow(object):
         self.autoCompletPushButton.clicked.connect(self.turnEventUpdate)
 
         self.wwgwIsActive = True
+
+        self.cardCountUpdate()
 
     '''
     @brief sets up the game state by shuffling deck and dealing cards to player and computer. 
@@ -280,6 +284,7 @@ class WWGameWindow(object):
     """
 
     def dealButtonOnClick(self):
+        self.cardCountUpdate()
         #TODO add cardcountlabel update
         #print(WWGameManager.playerDeck.cards)
         self.cardCheck()
@@ -374,7 +379,7 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         
         while WWGameManager.winnerName == '' and self.wwgwIsActive == True:
-            time.sleep(1)
+            time.sleep(.25)
             self.MainWindow.show()
             QtCore.QCoreApplication.processEvents()
             self.dealButtonOnClick()
@@ -444,7 +449,8 @@ class WWGameWindow(object):
     def cardCountUpdate(self):
 
         self.cardCountCompLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">0;</span></p></body></html>"))
-
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + str(len(WWGameManager.computerBattleDeck.cards)) + str(len(WWGameManager.computerGraveyardDeck.cards))+ "</span></p></body></html>"))
+        
         self.cardCountPlayerLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">0;</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + str(len(WWGameManager.playerBattleDeck.cards)) + str(len(WWGameManager.playerGraveyardDeck.cards))+ "</span></p></body></html>"))
+        

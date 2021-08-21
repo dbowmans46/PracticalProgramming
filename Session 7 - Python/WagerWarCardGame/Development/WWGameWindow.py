@@ -447,10 +447,11 @@ class WWGameWindow(object):
     """
 
     def cardCountUpdate(self):
-
+        cardCountComputer = len(WWGameManager.computerBattleDeck.cards) + len(WWGameManager.computerGraveyardDeck.cards) + len(WWGameManager.computerDeck.cards)
+        cardCountPlayer = len(WWGameManager.playerBattleDeck.cards) + len(WWGameManager.playerGraveyardDeck.cards) + len(WWGameManager.playerDeck.cards)
         self.cardCountCompLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + str(len(WWGameManager.computerBattleDeck.cards)) + str(len(WWGameManager.computerGraveyardDeck.cards))+ "</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + str(cardCountComputer) + "</span></p></body></html>"))
         
         self.cardCountPlayerLabel.setText(self._translate(
-            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + str(len(WWGameManager.playerBattleDeck.cards)) + str(len(WWGameManager.playerGraveyardDeck.cards))+ "</span></p></body></html>"))
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:14pt; color:#ffffff;\">" + str(cardCountPlayer) + "</span></p></body></html>"))
         

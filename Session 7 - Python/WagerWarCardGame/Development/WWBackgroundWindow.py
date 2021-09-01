@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
+"""
 from PyQt5.QtWidgets import QWidget, QApplication
 
 # create the class for the background window
@@ -40,3 +40,4 @@ class wwbackgroundwindow(QWidget):
         self.resize(1000, 800)
         self.show()
         self.setWindowTitle("BackGround")
+"""

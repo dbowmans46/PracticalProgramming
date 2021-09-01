@@ -62,8 +62,6 @@ class WWVictoryWindow(object):
 
         self.trophyPixMap = QtWidgets.QLabel(self.widget)
         self.trophyPixMap.setGeometry(QtCore.QRect(300, 100, 290, 340))
-        self.trophyPixMap.setStyleSheet(
-            "border-image: url(./resources/production/trophy_victory.png); background-color: rgba(255, 255, 255, 0);")
         self.trophyPixMap.setObjectName("trophyPixMap")
 
         self.playAgainPushButton = QtWidgets.QPushButton(self.widget)
@@ -134,7 +132,7 @@ class WWVictoryWindow(object):
             "WWVictoryWindow", "<html><head/><body><p><span style=\" font-size:24pt; color:#ffffff;\">Victory!!!</span></p></body></html>"))
 
         self.trophyPixMap.setText(_translate(
-            "WWVictoryWindow", "<html><head/><body><p><br/></p></body></html>"))
+            "WWVictoryWindow", "<html><head/><body><p><img src = \"./resources/production/trophy_victory.png\" width=\"250\" height=\"350\"></p></body></html>"))
 
         self.playAgainPushButton.setText(
             _translate("WWVictoryWindow", "Play Again"))

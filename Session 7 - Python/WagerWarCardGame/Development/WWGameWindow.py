@@ -285,8 +285,7 @@ class WWGameWindow(object):
 
     def dealButtonOnClick(self):
         self.cardCountUpdate()
-        #TODO add cardcountlabel update
-        #print(WWGameManager.playerDeck.cards)
+        
         self.cardCheck()
 
         WWGameManager.playerDeck.cardTransfer(WWGameManager.playerBattleDeck)
@@ -379,7 +378,7 @@ class WWGameWindow(object):
     def autoCompleteButtonOnClick(self):
         
         while WWGameManager.winnerName == '' and self.wwgwIsActive == True:
-            time.sleep(.25)
+            time.sleep(.005)
             self.MainWindow.show()
             QtCore.QCoreApplication.processEvents()
             self.dealButtonOnClick()

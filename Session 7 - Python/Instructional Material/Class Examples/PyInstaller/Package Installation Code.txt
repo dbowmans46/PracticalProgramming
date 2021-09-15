@@ -1,0 +1,16 @@
+# Run this command in conda powershell
+conda install pyinstaller
+
+# Run this command in a normal python environment.  All the examples
+# below were run in PowerShell
+pip install pyinstaller
+
+# If you have a wheel file, cd to the .whl file and do something 
+# like pip install library_file.whl.  Working example below:
+pip install "C:\Software\Programming\Python Packages\pyinstaller-4.5.1-py3-none-win_amd64.whl"
+
+# If you have the .tar.gz archive, extract the directory from the 
+# tarball and run pip install . inside the directory containig the
+# setup.py file.  Working example below:
+cd "C:\Software\Programming\Python Packages\pyinstaller-4.5.1"
+pip install .

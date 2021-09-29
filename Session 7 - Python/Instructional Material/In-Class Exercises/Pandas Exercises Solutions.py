@@ -45,5 +45,29 @@ combined_data_df = pd.merge(orbital_mechanics_df, planet_symbols_df, on="Planet"
 
 
 # TODO: Filter the data so only the inner planets remain
-combined_data_df = combined_data_df[combined_data_df["Planet"].isin(['Mercury','Venus','Earth','Mars'])]
+inner_planets_df = combined_data_df[combined_data_df["Planet"].isin(['Mercury','Venus','Earth','Mars'])]
+#inner_planets_df = combined_data_df[0:4]
+#inner_planets_df = combined_data_df.iloc[0:4]
+
+# TODO: Add Pluto's data to the original DataFrame containing all data: 
+# Planet, Semimajor Axis (AU), Eccentricity, Orbital Periods (Earth Years), Mass (Earth Masses),Number of Known Satellites, Symbol
+# Pluto, 39.4821, 0.24883 , 248.0208, 0.00220, 5, ♇
+pluto_data = {'Planet':'Pluto', 
+              'Semimajor Axis (AU)':39.4821, 
+              'Eccentricity':0.24883 , 
+              'Orbital Periods (Earth Years)':248.0208, 
+              'Mass (Earth Masses)':0.00220, 
+              'Number of Known Satellites':5, 
+              'Symbol':'♇'}
+combined_data_df = combined_data_df.append(pluto_data, ignore_index=True)
+
+# TODO: Get all planets that are more massive than Earth (Pluto can be included at your discretion)
+print(combined_data_df[combined_data_df['Mass (Earth Masses)'] > combined_data_df.iloc[2]['Mass (Earth Masses)']])
+
+# TODO: Add a column that gives the mass of each planet in kg's.  Earth is roughly 5.9742E24 kg.
+combined_data_df['Mass (kg)'] = combined_data_df['Mass (Earth Masses)']*5.9742E24
+
+# TODO: Reset the index so it is the planet name
+combined_data_df = combined_data_df.set_index(combined_data_df['Planet'])
+combined_data_df = combined_data_df.drop('Planet', axis=1)
 

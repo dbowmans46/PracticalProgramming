@@ -16,9 +16,9 @@ Created on Wed Sep 22 12:18:54 2021
 
 # DataFrame In-Class Exercises
 
-# TODO: Load the example orbital mechanics dataset from Orbital Elements.xlsx
-# TODO: Load the example planet symbols dataset from Orbital Elements.xlsx
-# TODO: Combine the planet symbol data to the orbital mechanics data
+# TODO: Load the example orbital mechanics dataset from Orbital Elements.xlsx into a DataFrame
+# TODO: Load the example planet symbols dataset from Orbital Elements.xlsx into a DataFrame
+# TODO: Combine the planet symbol data to the orbital mechanics data into a new DataFrame
 # TODO: Filter the data so only the inner planets remain
 # TODO: Add Pluto's data: 
 # Planet, Semimajor Axis (AU), Eccentricity, Orbital Periods (Earth Years), Mass (Earth Masses),Number of Known Satellites, Symbol

@@ -17,24 +17,14 @@ Created on Wed Sep 22 12:18:54 2021
 # DataFrame In-Class Exercises
 
 # TODO: Load the example orbital mechanics dataset from Orbital Elements.xlsx into a DataFrame
-import pandas as pd
-data_filepath = 'Orbital Elements.xlsx'
-orbital_sheet_name = 'Orbital Mechanics'
-orbit_df = pd.read_excel(data_filepath, sheet_name=orbital_sheet_name)
-
 # TODO: Load the example planet symbols dataset from Orbital Elements.xlsx into a DataFrame
-symbols_sheet_name = 'Planet Symbols'
-planet_symbols_df = pd.read_excel(data_filepath, sheet_name=1)
-
 # TODO: Add the planet symbol data as a new column appended to the orbital
 # mechanics data.  Put the data into a new DataFrame.
-combined_data_df = pd.merge(orbit_df, planet_symbols_df, how='left', on='Planet')
-
 # TODO: Filter the data so only the inner planets remain
-inner_planets_df = combined_data_df[combined_data_df["Planet"].isin(['Mercury','Venus','Earth','Mars'])]
-#inner_planets_df = combined_data_df[0:4]
-#inner_planets_df = combined_data_df.iloc[0:4]
 
+
+
+# Got here in class
 # TODO: Add Pluto's data: 
 # Planet, Semimajor Axis (AU), Eccentricity, Orbital Periods (Earth Years), Mass (Earth Masses),Number of Known Satellites, Symbol
 # Pluto, 39.4821, 0.24883 , 248.0208, 0.00220, 5, ♇

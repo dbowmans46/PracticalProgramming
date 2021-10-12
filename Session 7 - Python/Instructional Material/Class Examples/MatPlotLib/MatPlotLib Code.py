@@ -11,12 +11,38 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 """
 
+# Basic scatter plot
+import matplotlib.pyplot as plt
+
+# Setup data for graph
+profit = [800, 1200, 1300, 1600, 1600, 900, 1900, 900, 1600, 1550, 2100, 2300]
+time_in_months = ['Jan', 'Feb', 'Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+plt.plot(time_in_months,profit)  # Create plot with x,y data, but don't show yet
+plt.xlabel('Time (Months)')      # x-axis label
+plt.ylabel('Profit (1000s USD)') # y-axis label
+plt.show()                       # Show the plot
+
+# We can change the line style
+plt.figure(1)  # Create a new figure to show the data on
+# * is the symbol
+# the 2nd character of '-' connects the points
+# last character is color
+plt.plot(time_in_months,profit, '*-r')
+plt.xlabel('Time (Months)')
+plt.ylabel('Profit (1000s USD)')
+plt.grid(True)    # Turn x and y grid lines on
+plt.ylim(0,2500)  # Set the y-axis limits
+plt.show()
+
+
+# Scatter plot with multiple data lines
+
 # Get data in DataFrame
 import pandas as pd
 
 # Data bibliography:
 #   OECD (2021), Inflation (CPI) (indicator). doi: 10.1787/eee82e6e-en (Accessed on 11 October 2021)
-
 inflation_data_filepath = 'Inflation 1980-2020.csv'
 inflation_df = pd.read_csv(inflation_data_filepath)
 
@@ -34,11 +60,7 @@ france_inflation_df = inflation_df[inflation_df['Country'] == 'FRA']
 italy_inflation_df = inflation_df[inflation_df['Country'] == 'ITA']
 gb_inflation_df = inflation_df[inflation_df['Country'] == 'GBR']
 
-# Basic scatter plot
-import matplotlib.pyplot as plt
-
-
-fig, ax = plt.subplots()
+# fig, ax = plt.subplots()
 # To plot, we first give the x values, then the y values, then how we want
 # to customize the line display.
 # We can customize the lines by giving symbols, whether or not to connect
@@ -50,7 +72,8 @@ fig, ax = plt.subplots()
 #   the line style
 # After the line data is given, any remaining keywords are used to control 
 # the plot style overall
-ax.plot(usa_inflation_df["Year"], usa_inflation_df["Inflation"], '+-b', 
+plt.figure(2)
+plt.plot(usa_inflation_df["Year"], usa_inflation_df["Inflation"], '+-b', 
         canada_inflation_df["Year"], canada_inflation_df["Inflation"], '--g',
         japan_inflation_df["Year"], japan_inflation_df["Inflation"], '.-m',
         germany_inflation_df["Year"], germany_inflation_df["Inflation"], '*-y',
@@ -60,8 +83,9 @@ ax.plot(usa_inflation_df["Year"], usa_inflation_df["Inflation"], '+-b',
         gb_inflation_df["Year"], gb_inflation_df["Inflation"], 'c',
         linewidth=1)
 
-# We can set the lowest bound of the y-axis to make the graph easier to read
-ax.set_ylim(bottom=-5)
+# We can set the lowest bound of the y-axis to make the graph 
+# easier to read.  LetMatPlotLib decide the upper bounds.
+plt.ylim(bottom=-5)
 
 # We can add labels to describe the data shown
 plt.xlabel('Year')
@@ -69,7 +93,71 @@ plt.ylabel('Inflation')
 
 # We can add annotations as desired, giving the x coordinate, y coordinate,
 # text to display, and optional parameters.
-ax.text(1999, -3, r"Negative inflation", horizontalalignment='center', fontsize=10)
+plt.text(1999, -3, r"Negative inflation", horizontalalignment='center', fontsize=10)
 
 # Finally, we must tell Python to show the figure
 plt.show()
+
+
+# Multiple graphs on one figure with subplot()
+plt.figure(3)
+plt.subplot(3,3,1)
+plt.plot(usa_inflation_df["Year"], usa_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('USA Inflation')
+
+plt.subplot(3,3,2)
+plt.plot(canada_inflation_df["Year"], canada_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('Canada Inflation')
+
+plt.subplot(3,3,3)
+plt.plot(japan_inflation_df["Year"], japan_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('Japan Inflation')
+
+plt.subplot(3,3,4)
+plt.plot(germany_inflation_df["Year"], germany_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('Germany Inflation')
+
+plt.subplot(3,3,5)
+plt.plot(china_inflation_df["Year"], china_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('China Inflation')
+
+plt.subplot(3,3,6)
+plt.plot(france_inflation_df["Year"], france_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('France Inflation')
+
+plt.subplot(3,3,7)
+plt.plot(italy_inflation_df["Year"], italy_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('Italy Inflation')
+
+plt.subplot(3,3,8)
+plt.plot(gb_inflation_df["Year"], gb_inflation_df["Inflation"])
+plt.xlabel('Year')
+plt.ylabel('Inflation')
+plt.title('Great Britain Inflation')
+
+# Setup the spacing so the graphs aren't on top of each other
+# top    - The position of the top edge of the subplots, as a fraction of the figure height.
+# bottom - The position of the right edge of the subplots, as a fraction of the figure width.
+# left   - The position of the left edge of the subplots, as a fraction of the figure width.
+# right  - The position of the right edge of the subplots, as a fraction of the figure width.
+# hspace - The height of the padding between subplots, as a fraction of the average Axes height.
+# wspace - The width of the padding between subplots, as a fraction of the average Axes width.
+# plt.subplots_adjust(top=1, bottom=0.1, left=0.10, right=0.95, hspace=1.25, wspace=0.75)
+
+plt.show()
+
+# Exporting figures to a file

@@ -25,13 +25,24 @@ import matplotlib.pyplot as plt
 # profit = [800, 1200, 1300, 1600, 1600, 900, 1900, 900, 1600, 1550, 2100, 2300]
 # time_in_months = ['Jan', 'Feb', 'Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
+# # To plot, we first give the x values, then the y values, then how we want
+# # to customize the line display.
+# # We can customize the lines by giving symbols, whether or not to connect
+# # the symbols with a line, and the color to use.
+# #
+# # The plot() function separates lines of data by 3 sets of information:
+# #   the x-axis
+# #   the y-axis
+# #   the line style
+# # After the line data is given, any remaining keywords are used to control 
+# # the plot style overall
 # plt.plot(time_in_months,profit)  # Create plot with x,y data, but don't show yet
 # plt.xlabel('Time (Months)')      # x-axis label
 # plt.ylabel('Profit (1000s USD)') # y-axis label
 # plt.show()                       # Show the plot
 
 # # We can change the line style
-# plt.figure(1)  # Create a new figure to show the data on
+# plt.figure(0)  # Create a new figure to show the data on
 # # * is the symbol
 # # the 2nd character of '-' connects the points
 # # last character is color
@@ -43,6 +54,17 @@ import matplotlib.pyplot as plt
 # plt.title('Monthly Profit in 2015')
 # plt.show()
 
+# # We see some explicit marker and line styles in this example
+# # markers: https://matplotlib.org/stable/api/markers_api.html#module-matplotlib.markers
+# # linestyles: https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html
+# plt.figure(1)
+# plt.plot(time_in_months,profit, marker=4, linewidth=1, linestyle='-.')
+# plt.xlabel('Time (Months)')
+# plt.ylabel('Profit (1000s USD)')
+# plt.grid(True)    # Turn x and y grid lines on
+# plt.ylim(0,2500)  # Set the y-axis limits
+# plt.title('Monthly Profit in 2015')
+# plt.show()
 
 
 #############################################################
@@ -73,18 +95,6 @@ import matplotlib.pyplot as plt
 # italy_inflation_df = inflation_df[inflation_df['Country'] == 'ITA']
 # gb_inflation_df = inflation_df[inflation_df['Country'] == 'GBR']
 
-# # fig, ax = plt.subplots()
-# # To plot, we first give the x values, then the y values, then how we want
-# # to customize the line display.
-# # We can customize the lines by giving symbols, whether or not to connect
-# # the symbols with a line, and the color to use.
-# #
-# # The plot() function separates lines of data by 3 sets of information:
-# #   the x-axis
-# #   the y-axis
-# #   the line style
-# # After the line data is given, any remaining keywords are used to control 
-# # the plot style overall
 # plt.figure(2)
 # plt.plot(usa_inflation_df["Year"], usa_inflation_df["Inflation"], '+-b', 
 #         canada_inflation_df["Year"], canada_inflation_df["Inflation"], '--g',

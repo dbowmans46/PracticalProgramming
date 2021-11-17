@@ -1,0 +1,5 @@
+NYC_Expense_Actuals.csv: https://catalog.data.gov/dataset/expense-actuals
+NYS_Waterbody_Classifications.csv: https://catalog.data.gov/dataset/waterbody-classifications
+NYS_Alcoholic_Beverage_Wet_and_Dry_Local_Options.csv: https://catalog.data.gov/dataset/state-liquor-authority-sla-alcoholic-beverage-wet-and-dry-local-options-beginning-1948
+Inflation 1980-2020.csv: https://data.oecd.org/price/inflation-cpi.htm
+2020_earthquakes_4_5_plus.csv: https://earthquake.usgs.gov/earthquakes/search/

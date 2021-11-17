@@ -237,7 +237,7 @@ fig = plt.figure(5)
 plt.subplot(3,3,1)
 plt.plot([1,2,3,4,5],[1,4,9,16,25],'.b')
 plt.xlabel('x')
-plt.ylabel('$x^2$', rotation=0)
+plt.ylabel('$x^2$', rotation=0) # Rotates the y-label
 plt.xticks(fontsize=5)
 plt.yticks(fontsize=6)
 plt.title('Scatter Plot')
@@ -283,7 +283,7 @@ plt.subplot(3,3,5)
 profit = [800, 1200, 1300, 1600, 1600, 900, 1900, 900, 1600, 1550, 2100, 2300]
 months = ['Jan', 'Feb', 'Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 plt.bar(months,profit)
-plt.xticks(fontsize=5, rotation=90)
+plt.xticks(fontsize=5, rotation=90) # Rotates the tick labels so they don't overlap each other
 plt.yticks(fontsize=6)
 plt.xlabel('Month')
 plt.ylabel('Profit')
@@ -310,5 +310,6 @@ plt.xticks(fontsize=5)
 plt.yticks(range(6),fontsize=5)
 plt.title('Polar Plot')
 
+# Adjust the spacing between subplots
 plt.subplots_adjust(hspace=1.25, wspace=0.75)
 plt.show()

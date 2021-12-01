@@ -151,6 +151,11 @@ for max_depth_val in range(1,11):
 ###############################################################################
 
 from sklearn.neighbors import KNeighborsRegressor
+from sklearn.datasets import fetch_california_housing
+ca_housing_data = fetch_california_housing()
+
+
+
 
 ###############################################################################
 #                                                                             #

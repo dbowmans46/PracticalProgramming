@@ -14,6 +14,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 """
 
+# Datasets and locations can be found at .\PracticalProgramming\Session 7 - Python\Instructional Material\In-Class Exercises\Data\
+
 # For the following TODO's, use a data set with a single x-y series
 # Workable data set: Any
 # TODO: Plot basic data using an appropriate plot type.

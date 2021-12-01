@@ -33,7 +33,7 @@ print(series_data.head(4))
 
 # TODO: Load the example orbital mechanics dataset
 orbital_mechanics_sheet = "Orbital Mechanics"
-worksheet_filepath = "Orbital Elements.xlsx"
+worksheet_filepath = "../Data/Orbital Elements.xlsx"
 orbital_mechanics_df = pd.read_excel(worksheet_filepath, orbital_mechanics_sheet)
 
 # TODO: Load the example planet symbols dataset

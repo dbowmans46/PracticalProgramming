@@ -1,0 +1,6 @@
+http://lib.stat.cmu.edu/datasets/
+https://www.kaggle.com/
+https://www.data.gov/
+https://data.oecd.org/price/inflation-cpi.htm
+https://web.archive.org/web/20060112045100/http://www.oxfordjournals.org/nar/database/c
+https://github.com/awesomedata/awesome-public-datasets

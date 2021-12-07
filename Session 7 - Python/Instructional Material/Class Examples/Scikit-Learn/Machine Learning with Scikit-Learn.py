@@ -150,15 +150,21 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.datasets import fetch_california_housing
-ca_housing_data = fetch_california_housing()
-
+# from sklearn.datasets import fetch_california_housing
+# ca_housing_data = fetch_california_housing()
+# x_train, x_test, y_train, y_test = \
+#     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
+#                                           ca_housing_data['target'], 
+#                                           random_state=0)
+    
+from sklearn.datasets import load_boston
+boston_data = load_boston()
 x_train, x_test, y_train, y_test = \
-    sklearn.model_selection.train_test_split(ca_housing_data['data'], 
-                                          ca_housing_data['target'], 
+    sklearn.model_selection.train_test_split(boston_data['data'], 
+                                          boston_data['target'], 
                                           random_state=0)
-
+    
+from sklearn.neighbors import KNeighborsRegressor
 for neighbor_count in range(1,20):
     knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
     knn_model.fit(x_train, y_train)

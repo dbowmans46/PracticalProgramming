@@ -49,8 +49,8 @@ iris_dataset.target
 from sklearn import model_selection
 data_train, data_test, target_train, target_test = \
     sklearn.model_selection.train_test_split(iris_dataset['data'], 
-                                             iris_dataset['target'], 
-                                             random_state=0)
+                                              iris_dataset['target'], 
+                                              random_state=0)
 
 print("\nIntro Model - K-Nearest Neighbors Classifier\n")
 
@@ -81,18 +81,18 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-print("\n\n\n\nK-Nearest Neighbors Classifier\n")
+# print("\n\n\n\nK-Nearest Neighbors Classifier\n")
 
-# How does accuracy change with the number of neighbors?
-for neighbors in range(1,11):
-    knn_model = KNeighborsClassifier(n_neighbors=neighbors) 
-    knn_model.fit(data_train, target_train)         
-    target_predictions = knn_model.predict(data_test)
-    knn_score = round(knn_model.score(data_test,target_test)*100,8)
-    print("K-Nearest Neighbors accuracy neighbors=" + str(neighbors) + " score:", str(knn_score) + "%")
+# # How does accuracy change with the number of neighbors?
+# for neighbors in range(1,11):
+#     knn_model = KNeighborsClassifier(n_neighbors=neighbors) 
+#     knn_model.fit(data_train, target_train)         
+#     target_predictions = knn_model.predict(data_test)
+#     knn_score = round(knn_model.score(data_test,target_test)*100,8)
+#     print("K-Nearest Neighbors accuracy neighbors=" + str(neighbors) + " score:", str(knn_score) + "%")
 
 
-print("\n\n\n\n")
+# print("\n\n\n\n")
 
 
 ###############################################################################
@@ -101,47 +101,47 @@ print("\n\n\n\n")
 #                                                                             #
 ###############################################################################
 
-print("\nDecision Tree Classifier\n")
+# print("\nDecision Tree Classifier\n")
 
 
-# This example will use the decision tree classifier
-from sklearn.tree import DecisionTreeClassifier
-dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
-dec_tree_model.fit(data_train, target_train)            # Train the model with data
-dec_target_predictions = dec_tree_model.predict(data_test)
-print("Decision tree accuracy score:", str(dec_tree_model.score(data_test,target_test)*100) + "%")
+# # This example will use the decision tree classifier
+# from sklearn.tree import DecisionTreeClassifier
+# dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
+# dec_tree_model.fit(data_train, target_train)            # Train the model with data
+# dec_target_predictions = dec_tree_model.predict(data_test)
+# print("Decision tree accuracy score:", str(dec_tree_model.score(data_test,target_test)*100) + "%")
 
-# Viewing the decision tree
-# Create a document that represents the tree
-from sklearn.tree import export_graphviz
-tree_file_name = "decision_tree.dot"
-class_name_vals = iris_dataset.target_names
-export_graphviz(dec_tree_model,out_file=tree_file_name, \
-                class_names=iris_dataset.target_names, \
-                feature_names=iris_dataset.feature_names, \
-                impurity=False, filled=True)
+# # Viewing the decision tree
+# # Create a document that represents the tree
+# from sklearn.tree import export_graphviz
+# tree_file_name = "decision_tree.dot"
+# class_name_vals = iris_dataset.target_names
+# export_graphviz(dec_tree_model,out_file=tree_file_name, \
+#                 class_names=iris_dataset.target_names, \
+#                 feature_names=iris_dataset.feature_names, \
+#                 impurity=False, filled=True)
     
-# Load the document and view
-import graphviz
-with open(tree_file_name) as fileHandle:
-    dot_graph = fileHandle.read()
+# # Load the document and view
+# import graphviz
+# with open(tree_file_name) as fileHandle:
+#     dot_graph = fileHandle.read()
 
-graphviz.Source(dot_graph)
-# If this does not work, you can always run dot.exe from the Graphviz
-# installation, and generate the graph manually.
-
-
-# How does accuracy change with the number of decisions?
-for max_depth_val in range(1,11):
-    dtm = DecisionTreeClassifier(max_depth=max_depth_val, random_state=0)  # Set the classifier type
-    dtm.fit(data_train, target_train)            # Train the model with data
-    dtm_target_predictions = dtm.predict(data_test)
-    dtm_score = round(dtm.score(data_test,target_test)*100,8)
-    print("Decision tree accuracy max_depth=" + str(max_depth_val) + " score:", str(dtm_score) + "%")
+# graphviz.Source(dot_graph)
+# # If this does not work, you can always run dot.exe from the Graphviz
+# # installation, and generate the graph manually.
 
 
-# Why does the accuracy not improve after so many depth levels?  Hint: How many
-# attributes do we have?
+# # How does accuracy change with the number of decisions?
+# for max_depth_val in range(1,11):
+#     dtm = DecisionTreeClassifier(max_depth=max_depth_val, random_state=0)  # Set the classifier type
+#     dtm.fit(data_train, target_train)            # Train the model with data
+#     dtm_target_predictions = dtm.predict(data_test)
+#     dtm_score = round(dtm.score(data_test,target_test)*100,8)
+#     print("Decision tree accuracy max_depth=" + str(max_depth_val) + " score:", str(dtm_score) + "%")
+
+
+# # Why does the accuracy not improve after so many depth levels?  Hint: How many
+# # attributes do we have?
 
 
 ###############################################################################
@@ -154,12 +154,130 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.datasets import fetch_california_housing
 ca_housing_data = fetch_california_housing()
 
+x_train, x_test, y_train, y_test = \
+    sklearn.model_selection.train_test_split(ca_housing_data['data'], 
+                                          ca_housing_data['target'], 
+                                          random_state=0)
+
+for neighbor_count in range(1,20):
+    knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
+    knn_model.fit(x_train, y_train)
+    print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(x_train,y_train)*100) + "%")
+    print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(x_test,y_test)*100) + "%\n")
+
+
+
+
+###############################################################################
+#                                                                             #
+#                          Linear Regression Regressor                        #
+#                                                                             #
+###############################################################################
+
+from sklearn.linear_model import LinearRegression
+
+l_reg_model = LinearRegression()
+l_reg_model.fit(x_train, y_train)
+print("Linear Regressor Train Accuracy Score:", str(l_reg_model.score(x_train,y_train)*100) + "%")
+print("Linear Regressor Test Accuracy Score:", str(l_reg_model.score(x_test,y_test)*100) + "%\n")
 
 
 
 ###############################################################################
 #                                                                             #
-#                        Decision Tree Regressor                              #
+#                          Ridge Regression Regressor                         #
+#                                                                             #
+###############################################################################
+
+from sklearn.linear_model import Ridge
+
+ridge_model = Ridge(alpha=1)
+ridge_model.fit(x_train, y_train)
+print("Ridge for Alpha=1")
+print("Ridge Train Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
+print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+
+ridge_model = Ridge(alpha=5)
+ridge_model.fit(x_train, y_train)
+print("Ridge for Alpha=5")
+print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
+print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+
+ridge_model = Ridge(alpha=10)
+ridge_model.fit(x_train, y_train)
+print("Ridge for Alpha=10")
+print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
+print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+
+ridge_model = Ridge(alpha=0.5)
+ridge_model.fit(x_train, y_train)
+print("Ridge for Alpha=0.5")
+print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
+print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+
+ridge_model = Ridge(alpha=0.01)
+ridge_model.fit(x_train, y_train)
+print("Ridge for Alpha=0.01")
+print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
+print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+
+ridge_model = Ridge(alpha=0.0001)
+ridge_model.fit(x_train, y_train)
+print("Ridge for Alpha=0.0001")
+print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
+print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+
+
+###############################################################################
+#                                                                             #
+#                          LASSO Regression Regressor                         #
+#                                                                             #
+###############################################################################
+
+from sklearn.linear_model import Lasso
+
+lasso_model = Lasso(alpha=1)
+lasso_model.fit(x_train, y_train)
+print("Lasso for Alpha=1")
+print("Lasso Train Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
+print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+
+lasso_model = Lasso(alpha=5)
+lasso_model.fit(x_train, y_train)
+print("Lasso for Alpha=5")
+print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
+print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+
+lasso_model = Lasso(alpha=10)
+lasso_model.fit(x_train, y_train)
+print("Lasso for Alpha=10")
+print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
+print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+
+
+lasso_model = Ridge(alpha=0.5)
+lasso_model.fit(x_train, y_train)
+print("Lasso for Alpha=0.5")
+print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
+print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+
+lasso_model = Ridge(alpha=0.01)
+lasso_model.fit(x_train, y_train)
+print("Lasso for Alpha=0.01")
+print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
+print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+
+lasso_model = Ridge(alpha=0.0001)
+lasso_model.fit(x_train, y_train)
+print("Lasso for Alpha=0.0001")
+print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
+print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+
+
+
+###############################################################################
+#                                                                             #
+#                           Decision Tree Regressor                           #
 #                                                                             #
 ###############################################################################
 
@@ -167,33 +285,17 @@ ca_housing_data = fetch_california_housing()
 
 ###############################################################################
 #                                                                             #
-#                       Linear Regression Regressor                           #
-#                                                                             #
-###############################################################################
-
-
-###############################################################################
-#                                                                             #
-#                        Ridge Regression Regressor                           #
-#                                                                             #
-###############################################################################
-
-
-###############################################################################
-#                                                                             #
-#                        Lasso Regression Regressor                           #
-#                                                                             #
-###############################################################################
-
-
-###############################################################################
-#                                                                             #
-#                       Linear Regression Regressor                           #
+#                           Random Forest Regressor                           #
 #                                                                             #
 ###############################################################################
 
 
 
+###############################################################################
+#                                                                             #
+#                       Gradient-Boosted Regression Tree                      #
+#                                                                             #
+###############################################################################
 
 
 

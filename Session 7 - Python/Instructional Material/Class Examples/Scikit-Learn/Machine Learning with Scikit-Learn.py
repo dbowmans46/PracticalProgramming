@@ -144,11 +144,18 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 # # attributes do we have?
 
 
+
+
 ###############################################################################
 #                                                                             #
-#                     K-Nearest Neighbors Regressor                           #
+#                          Regressor Data Setup                               #
 #                                                                             #
 ###############################################################################
+
+from sklearn.pipeline import Pipeline
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
 
 # from sklearn.datasets import fetch_california_housing
 # ca_housing_data = fetch_california_housing()
@@ -163,6 +170,39 @@ x_train, x_test, y_train, y_test = \
     sklearn.model_selection.train_test_split(boston_data['data'], 
                                           boston_data['target'], 
                                           random_state=0)
+    
+# from sklearn.datasets import load_diabetes
+# diabetes_data = load_diabetes()
+# x_train, x_test, y_train, y_test = \
+#     sklearn.model_selection.train_test_split(diabetes_data['data'], 
+#                                           diabetes_data['target'], 
+#                                           random_state=0)
+
+def FitAndGetAccuracy(model, x_train, x_test, y_train, y_test, dec_points=4):
+    
+    model.fit(x_train, y_train)
+    
+    train_score = model.score(x_train,y_train)
+    test_score  = model.score(x_test, y_test)
+    mse         = mean_squared_error(y_test, model.predict(x_test))
+    
+    formatted_train_score = str(round(train_score,dec_points)*100) + "%"
+    formatted_test_score  = str(round(test_score, dec_points)*100) + "%"
+    
+    print("Train Accuracy Score:", formatted_train_score)
+    print("Test Accuracy Score:", formatted_test_score)
+    print("MSE Score:", mse)
+    print()
+    
+    return None
+
+tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
+
+###############################################################################
+#                                                                             #
+#                     K-Nearest Neighbors Regressor                           #
+#                                                                             #
+###############################################################################
     
 from sklearn.neighbors import KNeighborsRegressor
 for neighbor_count in range(1,20):
@@ -182,10 +222,11 @@ for neighbor_count in range(1,20):
 
 from sklearn.linear_model import LinearRegression
 
+print("Linear Regression")
+# l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
 l_reg_model = LinearRegression()
 l_reg_model.fit(x_train, y_train)
-print("Linear Regressor Train Accuracy Score:", str(l_reg_model.score(x_train,y_train)*100) + "%")
-print("Linear Regressor Test Accuracy Score:", str(l_reg_model.score(x_test,y_test)*100) + "%\n")
+FitAndGetAccuracy(l_reg_model, x_train, x_test, y_train, y_test, 6)
 
 
 
@@ -197,41 +238,12 @@ print("Linear Regressor Test Accuracy Score:", str(l_reg_model.score(x_test,y_te
 
 from sklearn.linear_model import Ridge
 
-ridge_model = Ridge(alpha=1)
-ridge_model.fit(x_train, y_train)
-print("Ridge for Alpha=1")
-print("Ridge Train Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
-print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
+for alpha_val in tuning_parameter_vals:
+    print("Ridge for Alpha=",alpha_val)
+    # ridge_model = make_pipeline(StandardScaler(), Ridge(alpha=alpha_val))
+    ridge_model = Ridge(alpha=alpha_val)
+    FitAndGetAccuracy(ridge_model, x_train, x_test, y_train, y_test, 6)
 
-ridge_model = Ridge(alpha=5)
-ridge_model.fit(x_train, y_train)
-print("Ridge for Alpha=5")
-print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
-print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
-
-ridge_model = Ridge(alpha=10)
-ridge_model.fit(x_train, y_train)
-print("Ridge for Alpha=10")
-print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
-print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
-
-ridge_model = Ridge(alpha=0.5)
-ridge_model.fit(x_train, y_train)
-print("Ridge for Alpha=0.5")
-print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
-print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
-
-ridge_model = Ridge(alpha=0.01)
-ridge_model.fit(x_train, y_train)
-print("Ridge for Alpha=0.01")
-print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
-print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
-
-ridge_model = Ridge(alpha=0.0001)
-ridge_model.fit(x_train, y_train)
-print("Ridge for Alpha=0.0001")
-print("Ridge Training Accuracy Score:", str(ridge_model.score(x_train,y_train)*100) + "%")
-print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + "%\n")
 
 
 ###############################################################################
@@ -242,42 +254,12 @@ print("Ridge Test Accuracy Score:", str(ridge_model.score(x_test,y_test)*100) + 
 
 from sklearn.linear_model import Lasso
 
-lasso_model = Lasso(alpha=1)
-lasso_model.fit(x_train, y_train)
-print("Lasso for Alpha=1")
-print("Lasso Train Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
-print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
+for alpha_val in tuning_parameter_vals:
+    print("Lasso for Alpha=",alpha_val)
+    # lasso_model = make_pipeline(StandardScaler(), Lasso(alpha=alpha_val))
+    lasso_model = Lasso(alpha=alpha_val)
+    FitAndGetAccuracy(lasso_model, x_train, x_test, y_train, y_test, 6)
 
-lasso_model = Lasso(alpha=5)
-lasso_model.fit(x_train, y_train)
-print("Lasso for Alpha=5")
-print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
-print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
-
-lasso_model = Lasso(alpha=10)
-lasso_model.fit(x_train, y_train)
-print("Lasso for Alpha=10")
-print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
-print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
-
-
-lasso_model = Ridge(alpha=0.5)
-lasso_model.fit(x_train, y_train)
-print("Lasso for Alpha=0.5")
-print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
-print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
-
-lasso_model = Ridge(alpha=0.01)
-lasso_model.fit(x_train, y_train)
-print("Lasso for Alpha=0.01")
-print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
-print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
-
-lasso_model = Ridge(alpha=0.0001)
-lasso_model.fit(x_train, y_train)
-print("Lasso for Alpha=0.0001")
-print("Lasso Training Accuracy Score:", str(lasso_model.score(x_train,y_train)*100) + "%")
-print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + "%\n")
 
 
 
@@ -286,6 +268,10 @@ print("Lasso Test Accuracy Score:", str(lasso_model.score(x_test,y_test)*100) + 
 #                           Decision Tree Regressor                           #
 #                                                                             #
 ###############################################################################
+
+from sklearn.tree import DecisionTreeRegressor
+
+
 
 
 

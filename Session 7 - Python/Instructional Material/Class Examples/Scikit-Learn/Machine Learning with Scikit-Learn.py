@@ -145,6 +145,44 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 
 
 
+###############################################################################
+#                                                                             #
+#                     Logistic Regression Classifier                          #
+#                                                                             #
+###############################################################################
+
+from sklearn.linear_model import LogisticRegression
+
+# Default model uses a c value of 1
+lr_model = LogisticRegression()
+lr_model.fit(data_train, target_train)
+target_predictions = knn_model.predict(data_test)
+print("Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
+
+# What happens when we play around with c
+for c_val in [0.01, 0.1, 1, 10, 100]:
+    print("Logistic Regresion with c =",c_val)
+    lr_model = LogisticRegression(c=c_val)
+    lr_model.fit(data_train, target_train)
+    print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
+    print("\n")
+    
+    
+
+###############################################################################
+#                                                                             #
+#                      Linear Support Vector Machine                          #
+#                                                                             #
+###############################################################################
+
+from sklearn.svm import LinearSVC
+svc_model = LinearSVC()
+svc_model.fit(data_train, target_train)
+target_predictions = svc_model.predict(data_test)
+print("Accuracy Score:", str(svc_model.score(data_test,target_test)*100) + "%")
+
+
+
 
 ###############################################################################
 #                                                                             #

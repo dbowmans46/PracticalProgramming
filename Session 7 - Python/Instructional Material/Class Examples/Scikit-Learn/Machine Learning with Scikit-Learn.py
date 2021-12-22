@@ -14,6 +14,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import pandas as pd
 import sklearn
+from MLHelper import MLHelper
+
 
 '''
 The hello-world of machine learning - The iris data set prediction.  This data
@@ -101,15 +103,19 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-# print("\nDecision Tree Classifier\n")
-
 
 # # This example will use the decision tree classifier
 # from sklearn.tree import DecisionTreeClassifier
+
 # dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
 # dec_tree_model.fit(data_train, target_train)            # Train the model with data
 # dec_target_predictions = dec_tree_model.predict(data_test)
-# print("Decision tree accuracy score:", str(dec_tree_model.score(data_test,target_test)*100) + "%")
+
+# #print("Decision tree accuracy score:", str(dec_tree_model.score(data_test,target_test)*100) + "%")
+# print("Decision Tree Accuracy")
+# print("----------------------------")
+# MLHelper.FitAndGetAccuracy(dec_tree_model, data_train, data_test, target_train, target_test, 8)
+# print("\n\n")
 
 # # Viewing the decision tree
 # # Create a document that represents the tree
@@ -151,21 +157,27 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-from sklearn.linear_model import LogisticRegression
+# from sklearn.linear_model import LogisticRegression
 
-# Default model uses a c value of 1
-lr_model = LogisticRegression()
-lr_model.fit(data_train, target_train)
-target_predictions = knn_model.predict(data_test)
-print("Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
+# # Default model uses a c value of 1
+# # We may need to increase the number of iterations the model uses to optimize
+# # the prediction function.
+# lr_model = LogisticRegression(max_iter=100000)
+# lr_model.fit(data_train, target_train)
+# target_predictions = lr_model.predict(data_test)
+# # print("Logistic Regression Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
+# print("Logistic Regression Accuracy")
+# print("----------------------------")
+# MLHelper.FitAndGetAccuracy(lr_model, data_train, data_test, target_train, target_test, 8)
 
-# What happens when we play around with c
-for c_val in [0.01, 0.1, 1, 10, 100]:
-    print("Logistic Regresion with c =",c_val)
-    lr_model = LogisticRegression(c=c_val)
-    lr_model.fit(data_train, target_train)
-    print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
-    print("\n")
+
+# # What happens when we play around with c
+# for c_val in [0.01, 0.1, 1, 10, 100]:
+#     print("Logistic Regresion with c =",c_val)
+#     lr_model = LogisticRegression(c=c_val)
+#     lr_model.fit(data_train, target_train)
+#     print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
+#     print("\n")
     
     
 
@@ -175,11 +187,11 @@ for c_val in [0.01, 0.1, 1, 10, 100]:
 #                                                                             #
 ###############################################################################
 
-from sklearn.svm import LinearSVC
-svc_model = LinearSVC()
-svc_model.fit(data_train, target_train)
-target_predictions = svc_model.predict(data_test)
-print("Accuracy Score:", str(svc_model.score(data_test,target_test)*100) + "%")
+# from sklearn.svm import LinearSVC
+# svc_model = LinearSVC()
+# svc_model.fit(data_train, target_train)
+# target_predictions = svc_model.predict(data_test)
+# print("Accuracy Score:", str(svc_model.score(data_test,target_test)*100) + "%")
 
 
 
@@ -190,51 +202,51 @@ print("Accuracy Score:", str(svc_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-from sklearn.pipeline import Pipeline
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error
+# from sklearn.pipeline import Pipeline
+# from sklearn.pipeline import make_pipeline
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.metrics import mean_squared_error
 
-# from sklearn.datasets import fetch_california_housing
-# ca_housing_data = fetch_california_housing()
+# # from sklearn.datasets import fetch_california_housing
+# # ca_housing_data = fetch_california_housing()
+# # x_train, x_test, y_train, y_test = \
+# #     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
+# #                                           ca_housing_data['target'], 
+# #                                           random_state=0)
+    
+# from sklearn.datasets import load_boston
+# boston_data = load_boston()
 # x_train, x_test, y_train, y_test = \
-#     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
-#                                           ca_housing_data['target'], 
+#     sklearn.model_selection.train_test_split(boston_data['data'], 
+#                                           boston_data['target'], 
 #                                           random_state=0)
     
-from sklearn.datasets import load_boston
-boston_data = load_boston()
-x_train, x_test, y_train, y_test = \
-    sklearn.model_selection.train_test_split(boston_data['data'], 
-                                          boston_data['target'], 
-                                          random_state=0)
-    
-# from sklearn.datasets import load_diabetes
-# diabetes_data = load_diabetes()
-# x_train, x_test, y_train, y_test = \
-#     sklearn.model_selection.train_test_split(diabetes_data['data'], 
-#                                           diabetes_data['target'], 
-#                                           random_state=0)
+# # from sklearn.datasets import load_diabetes
+# # diabetes_data = load_diabetes()
+# # x_train, x_test, y_train, y_test = \
+# #     sklearn.model_selection.train_test_split(diabetes_data['data'], 
+# #                                           diabetes_data['target'], 
+# #                                           random_state=0)
 
-def FitAndGetAccuracy(model, x_train, x_test, y_train, y_test, dec_points=4):
+# def FitAndGetAccuracy(model, x_train, x_test, y_train, y_test, dec_points=4):
     
-    model.fit(x_train, y_train)
+#     model.fit(x_train, y_train)
     
-    train_score = model.score(x_train,y_train)
-    test_score  = model.score(x_test, y_test)
-    mse         = mean_squared_error(y_test, model.predict(x_test))
+#     train_score = model.score(x_train,y_train)
+#     test_score  = model.score(x_test, y_test)
+#     mse         = mean_squared_error(y_test, model.predict(x_test))
     
-    formatted_train_score = str(round(train_score,dec_points)*100) + "%"
-    formatted_test_score  = str(round(test_score, dec_points)*100) + "%"
+#     formatted_train_score = str(round(train_score,dec_points)*100) + "%"
+#     formatted_test_score  = str(round(test_score, dec_points)*100) + "%"
     
-    print("Train Accuracy Score:", formatted_train_score)
-    print("Test Accuracy Score:", formatted_test_score)
-    print("MSE Score:", mse)
-    print()
+#     print("Train Accuracy Score:", formatted_train_score)
+#     print("Test Accuracy Score:", formatted_test_score)
+#     print("MSE Score:", mse)
+#     print()
     
-    return None
+#     return None
 
-tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
+# tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
 
 ###############################################################################
 #                                                                             #
@@ -242,12 +254,12 @@ tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
 #                                                                             #
 ###############################################################################
     
-from sklearn.neighbors import KNeighborsRegressor
-for neighbor_count in range(1,20):
-    knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
-    knn_model.fit(x_train, y_train)
-    print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(x_train,y_train)*100) + "%")
-    print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(x_test,y_test)*100) + "%\n")
+# from sklearn.neighbors import KNeighborsRegressor
+# for neighbor_count in range(1,20):
+#     knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
+#     knn_model.fit(x_train, y_train)
+#     print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(x_train,y_train)*100) + "%")
+#     print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(x_test,y_test)*100) + "%\n")
 
 
 
@@ -258,13 +270,13 @@ for neighbor_count in range(1,20):
 #                                                                             #
 ###############################################################################
 
-from sklearn.linear_model import LinearRegression
+# from sklearn.linear_model import LinearRegression
 
-print("Linear Regression")
-# l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
-l_reg_model = LinearRegression()
-l_reg_model.fit(x_train, y_train)
-FitAndGetAccuracy(l_reg_model, x_train, x_test, y_train, y_test, 6)
+# print("Linear Regression")
+# # l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
+# l_reg_model = LinearRegression()
+# l_reg_model.fit(x_train, y_train)
+# FitAndGetAccuracy(l_reg_model, x_train, x_test, y_train, y_test, 6)
 
 
 
@@ -274,13 +286,13 @@ FitAndGetAccuracy(l_reg_model, x_train, x_test, y_train, y_test, 6)
 #                                                                             #
 ###############################################################################
 
-from sklearn.linear_model import Ridge
+# from sklearn.linear_model import Ridge
 
-for alpha_val in tuning_parameter_vals:
-    print("Ridge for Alpha=",alpha_val)
-    # ridge_model = make_pipeline(StandardScaler(), Ridge(alpha=alpha_val))
-    ridge_model = Ridge(alpha=alpha_val)
-    FitAndGetAccuracy(ridge_model, x_train, x_test, y_train, y_test, 6)
+# for alpha_val in tuning_parameter_vals:
+#     print("Ridge for Alpha=",alpha_val)
+#     # ridge_model = make_pipeline(StandardScaler(), Ridge(alpha=alpha_val))
+#     ridge_model = Ridge(alpha=alpha_val)
+#     FitAndGetAccuracy(ridge_model, x_train, x_test, y_train, y_test, 6)
 
 
 
@@ -290,13 +302,13 @@ for alpha_val in tuning_parameter_vals:
 #                                                                             #
 ###############################################################################
 
-from sklearn.linear_model import Lasso
+# from sklearn.linear_model import Lasso
 
-for alpha_val in tuning_parameter_vals:
-    print("Lasso for Alpha=",alpha_val)
-    # lasso_model = make_pipeline(StandardScaler(), Lasso(alpha=alpha_val))
-    lasso_model = Lasso(alpha=alpha_val)
-    FitAndGetAccuracy(lasso_model, x_train, x_test, y_train, y_test, 6)
+# for alpha_val in tuning_parameter_vals:
+#     print("Lasso for Alpha=",alpha_val)
+#     # lasso_model = make_pipeline(StandardScaler(), Lasso(alpha=alpha_val))
+#     lasso_model = Lasso(alpha=alpha_val)
+#     FitAndGetAccuracy(lasso_model, x_train, x_test, y_train, y_test, 6)
 
 
 
@@ -307,7 +319,7 @@ for alpha_val in tuning_parameter_vals:
 #                                                                             #
 ###############################################################################
 
-from sklearn.tree import DecisionTreeRegressor
+# from sklearn.tree import DecisionTreeRegressor
 
 
 

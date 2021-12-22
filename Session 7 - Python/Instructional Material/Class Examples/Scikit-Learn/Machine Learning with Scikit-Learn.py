@@ -24,23 +24,23 @@ for 3 different species of iris flowers.  This dataset is setup to predict
 the name of an iris flower given the petal length, petal width, sepal length, 
 and sepal width as features.
 '''
-from sklearn.datasets import load_iris
-iris_dataset = load_iris()
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
 
-# We can get a description of the dataset
-iris_dataset.DESCR
+# # We can get a description of the dataset
+# iris_dataset.DESCR
 
-# We can get the features 
-iris_dataset.feature_names
+# # We can get the features 
+# iris_dataset.feature_names
 
-# We can look at the data
-iris_dataset.data
+# # We can look at the data
+# iris_dataset.data
 
-# We can see what the name of the actual species is, and what values the data 
-# represents.  The term 'target' is used in scikit-learn to represent the
-# actual value the data represents.
-iris_dataset.target_names
-iris_dataset.target
+# # We can see what the name of the actual species is, and what values the data 
+# # represents.  The term 'target' is used in scikit-learn to represent the
+# # actual value the data represents.
+# iris_dataset.target_names
+# iris_dataset.target
 
 # Let's setup our first model.  We will use a 75% training to 25% testing data
 # ratio.  First, let's separate our training and testing data.  We use the
@@ -48,18 +48,18 @@ iris_dataset.target
 # outcomes) for our training data, and our testing data.  This function
 # will shuffle the data, using a pseudorandom number generator that takes
 # the random_state argument as the seed.
-from sklearn import model_selection
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(iris_dataset['data'], 
-                                              iris_dataset['target'], 
-                                              random_state=0)
+# from sklearn import model_selection
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(iris_dataset['data'], 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
     
-# # from sklearn.datasets import fetch_california_housing
-# # ca_housing_data = fetch_california_housing()
-# # x_train, x_test, y_train, y_test = \
-# #     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
-# #                                           ca_housing_data['target'], 
-# #                                           random_state=0)
+# from sklearn.datasets import fetch_california_housing
+# ca_housing_data = fetch_california_housing()
+# x_train, x_test, y_train, y_test = \
+#     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
+#                                           ca_housing_data['target'], 
+#                                           random_state=0)
     
 # from sklearn.datasets import load_boston
 # boston_data = load_boston()
@@ -68,39 +68,39 @@ data_train, data_test, target_train, target_test = \
 #                                           boston_data['target'], 
 #                                           random_state=0)
     
-# # from sklearn.datasets import load_diabetes
-# # diabetes_data = load_diabetes()
-# # x_train, x_test, y_train, y_test = \
-# #     sklearn.model_selection.train_test_split(diabetes_data['data'], 
-# #                                           diabetes_data['target'], 
-# #                                           random_state=0)
+# from sklearn.datasets import load_diabetes
+# diabetes_data = load_diabetes()
+# x_train, x_test, y_train, y_test = \
+#     sklearn.model_selection.train_test_split(diabetes_data['data'], 
+#                                           diabetes_data['target'], 
+#                                           random_state=0)
    
-# # from sklearn.datasets import load_breast_cancer
-# # breast_cancer_data = load_breast_cancer()
-# # x_train, x_test, y_train, y_test = \
-# #     sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
-# #                                           breast_cancer_data['target'], 
-# #                                           random_state=0)
+from sklearn.datasets import load_breast_cancer
+breast_cancer_data = load_breast_cancer()
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
+                                          breast_cancer_data['target'], 
+                                          random_state=0)
 
-print("\nIntro Model - K-Nearest Neighbors Classifier\n")
+# print("\nIntro Model - K-Nearest Neighbors Classifier\n")
 
-# We can look at our data to see how it was split
-print("data_train.shape:", data_train.shape)
-print("data_test.shape:", data_test.shape)
-print("target_train.shape:", target_train.shape)
-print("target_test.shape:", target_test.shape)
+# # We can look at our data to see how it was split
+# print("data_train.shape:", data_train.shape)
+# print("data_test.shape:", data_test.shape)
+# print("target_train.shape:", target_train.shape)
+# print("target_test.shape:", target_test.shape)
 
-# This example will use the k-NN linear classifier
-from sklearn.neighbors import KNeighborsClassifier
-knn_model = KNeighborsClassifier(n_neighbors=1)  # Set the classifier type
-knn_model.fit(data_train, target_train)          # Train the model with data
+# # This example will use the k-NN linear classifier
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=3)  # Set the classifier type
+# knn_model.fit(data_train, target_train)          # Train the model with data
 
-# We have now built the model, stored in the knn_classifier variable.  But how
-# do we know if it is accurate?  Let us check this now by creating a prediction
-# from our test data, and seeing how well it matches our test targets.
-target_predictions = knn_model.predict(data_test)
-print("predictions:", target_predictions)
-print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
+# # We have now built the model, stored in the knn_classifier variable.  But how
+# # do we know if it is accurate?  Let us check this now by creating a prediction
+# # from our test data, and seeing how well it matches our test targets.
+# target_predictions = knn_model.predict(data_test)
+# print("predictions:", target_predictions)
+# print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 
 
 
@@ -112,6 +112,7 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 ###############################################################################
 
 # print("\n\n\n\nK-Nearest Neighbors Classifier\n")
+# from sklearn.neighbors import KNeighborsClassifier
 
 # # How does accuracy change with the number of neighbors?
 # for neighbors in range(1,11):
@@ -215,14 +216,14 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-from sklearn.svm import LinearSVC
+# from sklearn.svm import LinearSVC
 
-svc_model = LinearSVC(max_iter=100000)
-svc_model.fit(data_train, target_train)
-target_predictions = svc_model.predict(data_test)
-print("Linear Support Vector Machine Accuracy")
-print("----------------------------")
-MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test, target_train, target_test, 8)
+# svc_model = LinearSVC(max_iter=1000000)
+# svc_model.fit(data_train, target_train)
+# target_predictions = svc_model.predict(data_test)
+# print("Linear Support Vector Machine Accuracy")
+# print("----------------------------")
+# MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test, target_train, target_test, 8)
 
 
 

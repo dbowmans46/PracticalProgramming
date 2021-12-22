@@ -53,6 +53,34 @@ data_train, data_test, target_train, target_test = \
     sklearn.model_selection.train_test_split(iris_dataset['data'], 
                                               iris_dataset['target'], 
                                               random_state=0)
+    
+# # from sklearn.datasets import fetch_california_housing
+# # ca_housing_data = fetch_california_housing()
+# # x_train, x_test, y_train, y_test = \
+# #     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
+# #                                           ca_housing_data['target'], 
+# #                                           random_state=0)
+    
+# from sklearn.datasets import load_boston
+# boston_data = load_boston()
+# x_train, x_test, y_train, y_test = \
+#     sklearn.model_selection.train_test_split(boston_data['data'], 
+#                                           boston_data['target'], 
+#                                           random_state=0)
+    
+# # from sklearn.datasets import load_diabetes
+# # diabetes_data = load_diabetes()
+# # x_train, x_test, y_train, y_test = \
+# #     sklearn.model_selection.train_test_split(diabetes_data['data'], 
+# #                                           diabetes_data['target'], 
+# #                                           random_state=0)
+   
+# # from sklearn.datasets import load_breast_cancer
+# # breast_cancer_data = load_breast_cancer()
+# # x_train, x_test, y_train, y_test = \
+# #     sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
+# #                                           breast_cancer_data['target'], 
+# #                                           random_state=0)
 
 print("\nIntro Model - K-Nearest Neighbors Classifier\n")
 
@@ -187,11 +215,14 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 #                                                                             #
 ###############################################################################
 
-# from sklearn.svm import LinearSVC
-# svc_model = LinearSVC()
-# svc_model.fit(data_train, target_train)
-# target_predictions = svc_model.predict(data_test)
-# print("Accuracy Score:", str(svc_model.score(data_test,target_test)*100) + "%")
+from sklearn.svm import LinearSVC
+
+svc_model = LinearSVC(max_iter=100000)
+svc_model.fit(data_train, target_train)
+target_predictions = svc_model.predict(data_test)
+print("Linear Support Vector Machine Accuracy")
+print("----------------------------")
+MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test, target_train, target_test, 8)
 
 
 
@@ -206,45 +237,6 @@ print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 # from sklearn.pipeline import make_pipeline
 # from sklearn.preprocessing import StandardScaler
 # from sklearn.metrics import mean_squared_error
-
-# # from sklearn.datasets import fetch_california_housing
-# # ca_housing_data = fetch_california_housing()
-# # x_train, x_test, y_train, y_test = \
-# #     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
-# #                                           ca_housing_data['target'], 
-# #                                           random_state=0)
-    
-# from sklearn.datasets import load_boston
-# boston_data = load_boston()
-# x_train, x_test, y_train, y_test = \
-#     sklearn.model_selection.train_test_split(boston_data['data'], 
-#                                           boston_data['target'], 
-#                                           random_state=0)
-    
-# # from sklearn.datasets import load_diabetes
-# # diabetes_data = load_diabetes()
-# # x_train, x_test, y_train, y_test = \
-# #     sklearn.model_selection.train_test_split(diabetes_data['data'], 
-# #                                           diabetes_data['target'], 
-# #                                           random_state=0)
-
-# def FitAndGetAccuracy(model, x_train, x_test, y_train, y_test, dec_points=4):
-    
-#     model.fit(x_train, y_train)
-    
-#     train_score = model.score(x_train,y_train)
-#     test_score  = model.score(x_test, y_test)
-#     mse         = mean_squared_error(y_test, model.predict(x_test))
-    
-#     formatted_train_score = str(round(train_score,dec_points)*100) + "%"
-#     formatted_test_score  = str(round(test_score, dec_points)*100) + "%"
-    
-#     print("Train Accuracy Score:", formatted_train_score)
-#     print("Test Accuracy Score:", formatted_test_score)
-#     print("MSE Score:", mse)
-#     print()
-    
-#     return None
 
 # tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
 

@@ -48,7 +48,10 @@ and sepal width as features.
 # outcomes) for our training data, and our testing data.  This function
 # will shuffle the data, using a pseudorandom number generator that takes
 # the random_state argument as the seed.
-# from sklearn import model_selection
+from sklearn import model_selection
+
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
 # data_train, data_test, target_train, target_test = \
 #     sklearn.model_selection.train_test_split(iris_dataset['data'], 
 #                                               iris_dataset['target'], 
@@ -56,21 +59,21 @@ and sepal width as features.
     
 # from sklearn.datasets import fetch_california_housing
 # ca_housing_data = fetch_california_housing()
-# x_train, x_test, y_train, y_test = \
+# data_train, data_test, target_train, target_test = \
 #     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
 #                                           ca_housing_data['target'], 
 #                                           random_state=0)
     
 # from sklearn.datasets import load_boston
 # boston_data = load_boston()
-# x_train, x_test, y_train, y_test = \
+# data_train, data_test, target_train, target_test = \
 #     sklearn.model_selection.train_test_split(boston_data['data'], 
 #                                           boston_data['target'], 
 #                                           random_state=0)
     
 # from sklearn.datasets import load_diabetes
 # diabetes_data = load_diabetes()
-# x_train, x_test, y_train, y_test = \
+# data_train, data_test, target_train, target_test = \
 #     sklearn.model_selection.train_test_split(diabetes_data['data'], 
 #                                           diabetes_data['target'], 
 #                                           random_state=0)
@@ -143,7 +146,8 @@ data_train, data_test, target_train, target_test = \
 # #print("Decision tree accuracy score:", str(dec_tree_model.score(data_test,target_test)*100) + "%")
 # print("Decision Tree Accuracy")
 # print("----------------------------")
-# MLHelper.FitAndGetAccuracy(dec_tree_model, data_train, data_test, target_train, target_test, 8)
+# MLHelper.FitAndGetAccuracy(dec_tree_model, data_train, data_test, \
+#                            target_train, target_test, 8)
 # print("\n\n")
 
 # # Viewing the decision tree
@@ -151,30 +155,42 @@ data_train, data_test, target_train, target_test = \
 # from sklearn.tree import export_graphviz
 # tree_file_name = "decision_tree.dot"
 # class_name_vals = iris_dataset.target_names
-# export_graphviz(dec_tree_model,out_file=tree_file_name, \
-#                 class_names=iris_dataset.target_names, \
-#                 feature_names=iris_dataset.feature_names, \
-#                 impurity=False, filled=True)
+# export_graphviz(dec_tree_model,          # The machine learning model to export \
+#                 out_file=tree_file_name, # The output filepath for the graph \
+#                 class_names=iris_dataset.target_names,    # Target classes \
+#                 feature_names=iris_dataset.feature_names, # Feature data names \
+#                 impurity=True, # Show the gini score or not \
+#                 filled=True,   # Fill each node with color in the output image \
+#                 rounded=True)  # Round the corners of the output graph image 
     
+# # If this does not work due to pathin issues, you can always run dot.exe from
+# # the Graphviz installation, and generate the graph manually.  See the file
+# # 'Convert dot.ps1' for an example PowerShell script
+
 # # Load the document and view
 # import graphviz
 # with open(tree_file_name) as fileHandle:
 #     dot_graph = fileHandle.read()
+    
+# graph = graphviz.Source(dot_graph)
+# s = graphviz.Source(graph.source, filename="test.png", format="png")
+# s.view()
+    
 
-# graphviz.Source(dot_graph)
-# # If this does not work, you can always run dot.exe from the Graphviz
-# # installation, and generate the graph manually.
 
 
 # # How does accuracy change with the number of decisions?
-# for max_depth_val in range(1,11):
+# for max_depth_val in range(1,3):
 #     dtm = DecisionTreeClassifier(max_depth=max_depth_val, random_state=0)  # Set the classifier type
 #     dtm.fit(data_train, target_train)            # Train the model with data
 #     dtm_target_predictions = dtm.predict(data_test)
+#     dtm_score_train = round(dtm.score(data_train,target_train)*100,8)
 #     dtm_score = round(dtm.score(data_test,target_test)*100,8)
-#     print("Decision tree accuracy max_depth=" + str(max_depth_val) + " score:", str(dtm_score) + "%")
+#     print("Decision tree training accuracy max_depth=" + str(max_depth_val) + " score:", str(dtm_score_train) + "%")
+#     print("Decision tree test     accuracy max_depth=" + str(max_depth_val) + " score:", str(dtm_score) + "%\n")
 
-
+# print(dtm.feature_importances_)
+# print(breast_cancer_data.feature_names)
 # # Why does the accuracy not improve after so many depth levels?  Hint: How many
 # # attributes do we have?
 
@@ -194,18 +210,18 @@ data_train, data_test, target_train, target_test = \
 # lr_model = LogisticRegression(max_iter=100000)
 # lr_model.fit(data_train, target_train)
 # target_predictions = lr_model.predict(data_test)
-# # print("Logistic Regression Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
 # print("Logistic Regression Accuracy")
 # print("----------------------------")
-# MLHelper.FitAndGetAccuracy(lr_model, data_train, data_test, target_train, target_test, 8)
+# MLHelper.FitAndGetAccuracy(lr_model, data_train, data_test, \
+#                             target_train, target_test, 8)
 
 
 # # What happens when we play around with c
 # for c_val in [0.01, 0.1, 1, 10, 100]:
 #     print("Logistic Regresion with c =",c_val)
-#     lr_model = LogisticRegression(c=c_val)
+#     lr_model = LogisticRegression(C=c_val, max_iter=100000)  # Note that C is capitalized
 #     lr_model.fit(data_train, target_train)
-#     print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
+#     print("Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
 #     print("\n")
     
     
@@ -223,7 +239,66 @@ data_train, data_test, target_train, target_test = \
 # target_predictions = svc_model.predict(data_test)
 # print("Linear Support Vector Machine Accuracy")
 # print("----------------------------")
-# MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test, target_train, target_test, 8)
+# MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
+#                             target_train, target_test, 8)
+
+
+
+###############################################################################
+#                                                                             #
+#                    Non-linear Support Vector Machine                          #
+#                                                                             #
+###############################################################################
+
+
+
+# Option 1 - Use PolynomialFeatures and LinearSVC
+
+from sklearn.svm import LinearSVC
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+# # Parameters:
+# #    degree - The order to increase each feature, recursively
+# #    include_bias - Toggle to include bias column, which contains the intercepts
+poly_features = PolynomialFeatures(degree=3, include_bias=False)
+poly_features_data = poly_features.fit_transform(data_train)
+poly_svm = LinearSVC(loss="hinge", max_iter=1000000)
+poly_svm.fit(poly_features_data, target_train)
+
+# # Can shorten the chain by using Pipelines.  Also, below is a brief peek at
+# # scaling data.  Scaling data becomes necessary when the features span vastly
+# # different orders of magnitude.
+# from sklearn.pipeline import Pipeline
+# poly_svm = Pipeline([
+#     ("poly_features", PolynomialFeatures(degree=3)),
+#     ("scalar", StandardScaler()),
+#     ("svm_clf", LinearSVC(C=5, loss="hinge"))
+#     ])
+
+poly_svm.fit(data_train, target_train)
+print("Linear Support Vector Machine Accuracy")
+print("----------------------------")
+MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
+                            target_train, target_test, 8)
+
+
+# # Option 2 - Use SVC with arguments
+# from sklearn.svm import SVC
+
+# # Parameters:
+# #    degree - The order to increase each feature, recursively
+# #    include_bias - Toggle to include bias column, which contains the intercepts
+# #poly_features = PolynomialFeatures(degree=2, include_bias=False)
+# #poly_features_data = poly_features.fit_transform(data_train)
+# nonlinear_svc_model = SVC(kernel="poly", degree=3, coef0=1, max_iter=100000)
+# nonlinear_svc_model.fit(data_train, target_train)
+# target_predictions = nonlinear_svc_model.predict(data_test)
+# print("Linear Support Vector Machine Accuracy")
+# print("----------------------------")
+# MLHelper.FitAndGetAccuracy(nonlinear_svc_model, data_train, data_test,  \
+#                             target_train, target_test, 8)
+
+
 
 
 
@@ -241,6 +316,8 @@ data_train, data_test, target_train, target_test = \
 
 # tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
 
+
+
 ###############################################################################
 #                                                                             #
 #                     K-Nearest Neighbors Regressor                           #
@@ -250,10 +327,9 @@ data_train, data_test, target_train, target_test = \
 # from sklearn.neighbors import KNeighborsRegressor
 # for neighbor_count in range(1,20):
 #     knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
-#     knn_model.fit(x_train, y_train)
+#     knn_model.fit(data_train, target_train)
 #     print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(x_train,y_train)*100) + "%")
 #     print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(x_test,y_test)*100) + "%\n")
-
 
 
 
@@ -268,9 +344,9 @@ data_train, data_test, target_train, target_test = \
 # print("Linear Regression")
 # # l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
 # l_reg_model = LinearRegression()
-# l_reg_model.fit(x_train, y_train)
-# FitAndGetAccuracy(l_reg_model, x_train, x_test, y_train, y_test, 6)
-
+# l_reg_model.fit(data_train, target_train)
+# MLHelper.FitAndGetAccuracy(l_reg_model, data_train, data_test, \ 
+#                            target_train, target_test, 8)
 
 
 ###############################################################################
@@ -285,8 +361,8 @@ data_train, data_test, target_train, target_test = \
 #     print("Ridge for Alpha=",alpha_val)
 #     # ridge_model = make_pipeline(StandardScaler(), Ridge(alpha=alpha_val))
 #     ridge_model = Ridge(alpha=alpha_val)
-#     FitAndGetAccuracy(ridge_model, x_train, x_test, y_train, y_test, 6)
-
+#     MLHelper.FitAndGetAccuracy(ridge_model, data_train, data_test, \ 
+#                                target_train, target_test, 8)
 
 
 ###############################################################################
@@ -301,9 +377,8 @@ data_train, data_test, target_train, target_test = \
 #     print("Lasso for Alpha=",alpha_val)
 #     # lasso_model = make_pipeline(StandardScaler(), Lasso(alpha=alpha_val))
 #     lasso_model = Lasso(alpha=alpha_val)
-#     FitAndGetAccuracy(lasso_model, x_train, x_test, y_train, y_test, 6)
-
-
+#     MLHelper.FitAndGetAccuracy(lasso_model, data_train, data_test, \ 
+#                                target_train, target_test, 8)
 
 
 ###############################################################################
@@ -314,6 +389,17 @@ data_train, data_test, target_train, target_test = \
 
 # from sklearn.tree import DecisionTreeRegressor
 
+# dec_tree_reg = DecisionTreeRegressor(max_depth=4)
+# dec_tree_reg.fit(data_train, target_train)
+# MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
+#                            target_train, target_test, 8)
+
+# for depth_val in range(1, 11):
+#     print("Decision Tree Regressor Depth=",depth_val)
+#     dec_tree_reg = DecisionTreeRegressor(max_depth=depth_val)
+#     dec_tree_reg.fit(data_train, target_train)
+#     MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \ 
+#                                target_train, target_test, 8)
 
 
 
@@ -331,6 +417,22 @@ data_train, data_test, target_train, target_test = \
 #                       Gradient-Boosted Regression Tree                      #
 #                                                                             #
 ###############################################################################
+
+
+
+
+###############################################################################
+#                                                                             #
+#                      Evaluating Predictive Capabilities                     #
+#                                                                             #
+###############################################################################
+
+
+
+
+
+
+
 
 
 

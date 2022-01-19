@@ -50,12 +50,12 @@ and sepal width as features.
 # the random_state argument as the seed.
 from sklearn import model_selection
 
-# from sklearn.datasets import load_iris
-# iris_dataset = load_iris()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(iris_dataset['data'], 
-#                                               iris_dataset['target'], 
-#                                               random_state=0)
+from sklearn.datasets import load_iris
+iris_dataset = load_iris()
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(iris_dataset['data'], 
+                                              iris_dataset['target'], 
+                                              random_state=0)
     
 # from sklearn.datasets import fetch_california_housing
 # ca_housing_data = fetch_california_housing()
@@ -78,12 +78,12 @@ from sklearn import model_selection
 #                                           diabetes_data['target'], 
 #                                           random_state=0)
    
-from sklearn.datasets import load_breast_cancer
-breast_cancer_data = load_breast_cancer()
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
-                                          breast_cancer_data['target'], 
-                                          random_state=0)
+# from sklearn.datasets import load_breast_cancer
+# breast_cancer_data = load_breast_cancer()
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
+#                                           breast_cancer_data['target'], 
+#                                           random_state=0)
 
 # print("\nIntro Model - K-Nearest Neighbors Classifier\n")
 
@@ -207,7 +207,7 @@ data_train, data_test, target_train, target_test = \
 # # Default model uses a c value of 1
 # # We may need to increase the number of iterations the model uses to optimize
 # # the prediction function.
-# lr_model = LogisticRegression(max_iter=100000)
+# lr_model = LogisticRegression(max_iter=1000000)
 # lr_model.fit(data_train, target_train)
 # target_predictions = lr_model.predict(data_test)
 # print("Logistic Regression Accuracy")
@@ -216,8 +216,12 @@ data_train, data_test, target_train, target_test = \
 #                             target_train, target_test, 8)
 
 
+# c_vals = [0.001]
+# for x in range(10):
+#     c_vals.append(10*c_vals[-1])
+    
 # # What happens when we play around with c
-# for c_val in [0.01, 0.1, 1, 10, 100]:
+# for c_val in c_vals:
 #     print("Logistic Regresion with c =",c_val)
 #     lr_model = LogisticRegression(C=c_val, max_iter=100000)  # Note that C is capitalized
 #     lr_model.fit(data_train, target_train)
@@ -232,42 +236,43 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
-# from sklearn.svm import LinearSVC
-
-# svc_model = LinearSVC(max_iter=1000000)
-# svc_model.fit(data_train, target_train)
-# target_predictions = svc_model.predict(data_test)
-# print("Linear Support Vector Machine Accuracy")
-# print("----------------------------")
-# MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
-#                             target_train, target_test, 8)
-
-
-
-###############################################################################
-#                                                                             #
-#                    Non-linear Support Vector Machine                          #
-#                                                                             #
-###############################################################################
-
-
-
-# Option 1 - Use PolynomialFeatures and LinearSVC
-
 from sklearn.svm import LinearSVC
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 
-# # Parameters:
-# #    degree - The order to increase each feature, recursively
-# #    include_bias - Toggle to include bias column, which contains the intercepts
-poly_features = PolynomialFeatures(degree=3, include_bias=False)
-poly_features_data = poly_features.fit_transform(data_train)
-poly_svm = LinearSVC(loss="hinge", max_iter=1000000)
-poly_svm.fit(poly_features_data, target_train)
+svc_model = LinearSVC(max_iter=1000000)
+svc_model.fit(data_train, target_train)
+target_predictions = svc_model.predict(data_test)
+print("Linear Support Vector Machine Accuracy")
+print("----------------------------")
+MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
+                            target_train, target_test, 8)
+
+
+
+###############################################################################
+#                                                                             #
+#                    Non-linear Support Vector Machine                        #
+#                                                                             #
+###############################################################################
+
+
+
+# # Option 1 - Use PolynomialFeatures and LinearSVC to add polynomial features
+
+# from sklearn.svm import LinearSVC
+# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+# # # Parameters:
+# # #    degree - The order to increase each feature, recursively
+# # #    include_bias - Toggle to include bias column, which contains the intercepts
+# poly_features = PolynomialFeatures(degree=3, include_bias=False)
+# poly_features_data = poly_features.fit_transform(data_train)
+# poly_svm = LinearSVC(loss="hinge", max_iter=100000, n_jobs=-1)
+# poly_svm.fit(poly_features_data, target_train)
 
 # # Can shorten the chain by using Pipelines.  Also, below is a brief peek at
 # # scaling data.  Scaling data becomes necessary when the features span vastly
-# # different orders of magnitude.
+# # different orders of magnitude.  SVM's are particularly sensitive to 
+# # scaling
 # from sklearn.pipeline import Pipeline
 # poly_svm = Pipeline([
 #     ("poly_features", PolynomialFeatures(degree=3)),
@@ -275,27 +280,42 @@ poly_svm.fit(poly_features_data, target_train)
 #     ("svm_clf", LinearSVC(C=5, loss="hinge"))
 #     ])
 
-poly_svm.fit(data_train, target_train)
-print("Linear Support Vector Machine Accuracy")
-print("----------------------------")
-MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
-                            target_train, target_test, 8)
-
-
-# # Option 2 - Use SVC with arguments
-# from sklearn.svm import SVC
-
-# # Parameters:
-# #    degree - The order to increase each feature, recursively
-# #    include_bias - Toggle to include bias column, which contains the intercepts
-# #poly_features = PolynomialFeatures(degree=2, include_bias=False)
-# #poly_features_data = poly_features.fit_transform(data_train)
-# nonlinear_svc_model = SVC(kernel="poly", degree=3, coef0=1, max_iter=100000)
-# nonlinear_svc_model.fit(data_train, target_train)
-# target_predictions = nonlinear_svc_model.predict(data_test)
+# poly_svm.fit(data_train, target_train)
 # print("Linear Support Vector Machine Accuracy")
 # print("----------------------------")
+# MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
+#                             target_train, target_test, 8)
+
+
+# # Option 2 - Use SVC with arguments to use the kernel trick
+# from sklearn.svm import SVC
+
+# # coef0 adjusts high-degree polynomial coefficients and low-degree polynomial 
+# # coefficients
+# nonlinear_svc_model = SVC(kernel="poly", degree=3, coef0=1, max_iter=100000, n_jobs=-1)
+# nonlinear_svc_model.fit(data_train, target_train)
+# print("Non-linear Polynomial SVM Accuracy")
+# print("----------------------------")
 # MLHelper.FitAndGetAccuracy(nonlinear_svc_model, data_train, data_test,  \
+#                             target_train, target_test, 8)
+
+
+# # Use SVC with a different kernel
+# from sklearn.svm import SVC
+# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+# from sklearn.pipeline import Pipeline
+
+# # gamma is another regularization parameter.  Larger gamma tightens the kernel
+# # boundary around its respective class, while larger gamma values broaden the
+# # boundaries.
+# rbf_kernel_svc_model = Pipeline([
+#     ("scalar", StandardScaler()),
+#     ("svm_clf", SVC(kernel="rbf", gamma=5, C=1))
+#     ])
+# rbf_kernel_svc_model.fit(data_train, target_train)
+# print("Non-linear RBF Kernel SVM Accuracy")
+# print("----------------------------")
+# MLHelper.FitAndGetAccuracy(rbf_kernel_svc_model, data_train, data_test,  \
 #                             target_train, target_test, 8)
 
 

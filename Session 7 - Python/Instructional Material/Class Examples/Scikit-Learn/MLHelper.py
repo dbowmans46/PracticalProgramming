@@ -9,23 +9,23 @@ from sklearn.metrics import mean_squared_error
 
 class MLHelper():
     
-    def FitAndGetAccuracy(model, x_train, x_test, y_train, y_test, dec_points=4):
+    def FitAndGetAccuracy(model, x_train, x_test, y_train, y_test, dec_places=4):
         """
         Print accuracies for a ML model
 
         Parameters
         ----------
-        model : TYPE
+        model : sci-kit-learn-predictor
             The scikit-learn model, fitted with data.
-        x_train : TYPE
+        x_train : tuple
             Training data.
-        x_test : TYPE
+        x_test : tuple
             Test training data.
-        y_train : TYPE
+        y_train : tuple
             Training labels.
-        y_test : TYPE
+        y_test : tuple
             Test labels.
-        dec_points : TYPE, optional
+        dec_places : int, optional
             The number of decimal places to display in accuracy measures. The default is 4.
 
         Returns
@@ -41,12 +41,34 @@ class MLHelper():
         test_score  = model.score(x_test, y_test)
         mse         = mean_squared_error(y_test, model.predict(x_test))
         
-        formatted_train_score = str(round(train_score,dec_points)*100) + "%"
-        formatted_test_score  = str(round(test_score, dec_points)*100) + "%"
+        formatted_train_score = str(round(train_score*100, dec_places)) + "%"
+        formatted_test_score  = str(round(test_score*100, dec_places)) + "%"
+        formatted_mse = str(round(mse*100, dec_places)) + "%"
         
         print("Train Accuracy Score:", formatted_train_score)
         print("Test Accuracy Score:", formatted_test_score)
-        print("MSE Score:", mse)
+        print("MSE Score:", formatted_mse)
         print()
         
         return None
+    
+    
+    def FormatScore(score_val, dec_places):
+        """
+        
+
+        Parameters
+        ----------
+        score_val : TYPE
+            DESCRIPTION.
+        dec_places : TYPE
+            DESCRIPTION.
+
+        Returns
+        -------
+        TYPE
+            DESCRIPTION.
+
+        """
+        
+        return str(round(score_val*100, dec_places)) + "%"

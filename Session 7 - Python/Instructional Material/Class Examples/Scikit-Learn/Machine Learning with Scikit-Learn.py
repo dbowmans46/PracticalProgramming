@@ -236,15 +236,16 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
-from sklearn.svm import LinearSVC
+# from sklearn.svm import LinearSVC
 
-svc_model = LinearSVC(max_iter=1000000)
-svc_model.fit(data_train, target_train)
-target_predictions = svc_model.predict(data_test)
-print("Linear Support Vector Machine Accuracy")
-print("----------------------------")
-MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
-                            target_train, target_test, 8)
+# for c_val in [0.001, 1, 10000]:
+#     svc_model = LinearSVC(max_iter=1e7, C=c_val)
+#     svc_model.fit(data_train, target_train)
+#     target_predictions = svc_model.predict(data_test)
+#     print("Linear Support Vector Machine Accuracy")
+#     print("----------------------------")
+#     MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
+#                                 target_train, target_test, 8)
 
 
 
@@ -256,18 +257,18 @@ MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
 
 
 
-# # Option 1 - Use PolynomialFeatures and LinearSVC to add polynomial features
+# Option 1 - Use PolynomialFeatures and LinearSVC to add polynomial features
 
-# from sklearn.svm import LinearSVC
-# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+from sklearn.svm import LinearSVC
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 
-# # # Parameters:
-# # #    degree - The order to increase each feature, recursively
-# # #    include_bias - Toggle to include bias column, which contains the intercepts
-# poly_features = PolynomialFeatures(degree=3, include_bias=False)
-# poly_features_data = poly_features.fit_transform(data_train)
-# poly_svm = LinearSVC(loss="hinge", max_iter=100000, n_jobs=-1)
-# poly_svm.fit(poly_features_data, target_train)
+# # Parameters:
+# #    degree - The order to increase each feature, recursively
+# #    include_bias - Toggle to include bias column, which contains the intercepts
+poly_features = PolynomialFeatures(degree=3, include_bias=False)
+poly_features_data = poly_features.fit_transform(data_train)
+poly_svm = LinearSVC(loss="hinge", max_iter=100000)
+poly_svm.fit(poly_features_data, target_train)
 
 # # Can shorten the chain by using Pipelines.  Also, below is a brief peek at
 # # scaling data.  Scaling data becomes necessary when the features span vastly
@@ -280,11 +281,11 @@ MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
 #     ("svm_clf", LinearSVC(C=5, loss="hinge"))
 #     ])
 
-# poly_svm.fit(data_train, target_train)
-# print("Linear Support Vector Machine Accuracy")
-# print("----------------------------")
-# MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
-#                             target_train, target_test, 8)
+poly_svm.fit(data_train, target_train)
+print("Linear Support Vector Machine Accuracy")
+print("----------------------------")
+MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
+                            target_train, target_test, 8)
 
 
 # # Option 2 - Use SVC with arguments to use the kernel trick

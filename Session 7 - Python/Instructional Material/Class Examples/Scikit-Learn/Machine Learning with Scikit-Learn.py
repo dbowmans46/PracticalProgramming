@@ -50,12 +50,12 @@ and sepal width as features.
 # the random_state argument as the seed.
 from sklearn import model_selection
 
-from sklearn.datasets import load_iris
-iris_dataset = load_iris()
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(iris_dataset['data'], 
-                                              iris_dataset['target'], 
-                                              random_state=0)
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(iris_dataset['data'], 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
     
 # from sklearn.datasets import fetch_california_housing
 # ca_housing_data = fetch_california_housing()
@@ -84,6 +84,14 @@ data_train, data_test, target_train, target_test = \
 #     sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
 #                                           breast_cancer_data['target'], 
 #                                           random_state=0)
+
+# from sklearn.datasets import load_wine
+# wine_data = load_wine()
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(wine_data['data'], 
+#                                           wine_data['target'], 
+#                                           random_state=0)
+
 
 # print("\nIntro Model - K-Nearest Neighbors Classifier\n")
 
@@ -257,18 +265,18 @@ data_train, data_test, target_train, target_test = \
 
 
 
-# Option 1 - Use PolynomialFeatures and LinearSVC to add polynomial features
+# # Option 1 - Use PolynomialFeatures and LinearSVC to add polynomial features
 
-from sklearn.svm import LinearSVC
-from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+# from sklearn.svm import LinearSVC
+# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 
 # # Parameters:
 # #    degree - The order to increase each feature, recursively
 # #    include_bias - Toggle to include bias column, which contains the intercepts
-poly_features = PolynomialFeatures(degree=3, include_bias=False)
-poly_features_data = poly_features.fit_transform(data_train)
-poly_svm = LinearSVC(loss="hinge", max_iter=100000)
-poly_svm.fit(poly_features_data, target_train)
+# poly_features = PolynomialFeatures(degree=3, include_bias=False)
+# poly_features_data = poly_features.fit_transform(data_train)
+# poly_svm = LinearSVC(loss="hinge", max_iter=1000000)
+# poly_svm.fit(poly_features_data, target_train)
 
 # # Can shorten the chain by using Pipelines.  Also, below is a brief peek at
 # # scaling data.  Scaling data becomes necessary when the features span vastly
@@ -276,16 +284,15 @@ poly_svm.fit(poly_features_data, target_train)
 # # scaling
 # from sklearn.pipeline import Pipeline
 # poly_svm = Pipeline([
-#     ("poly_features", PolynomialFeatures(degree=3)),
+#     ("poly_features", PolynomialFeatures(degree=3, include_bias=False)),
 #     ("scalar", StandardScaler()),
-#     ("svm_clf", LinearSVC(C=5, loss="hinge"))
+#     ("svm_clf", LinearSVC(C=5, loss="hinge", max_iter=1000000))
 #     ])
-
-poly_svm.fit(data_train, target_train)
-print("Linear Support Vector Machine Accuracy")
-print("----------------------------")
-MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
-                            target_train, target_test, 8)
+# poly_svm.fit(data_train, target_train)
+# print("Linear Support Vector Machine Accuracy")
+# print("----------------------------")
+# MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
+#                             target_train, target_test, 8)
 
 
 # # Option 2 - Use SVC with arguments to use the kernel trick
@@ -293,7 +300,7 @@ MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
 
 # # coef0 adjusts high-degree polynomial coefficients and low-degree polynomial 
 # # coefficients
-# nonlinear_svc_model = SVC(kernel="poly", degree=3, coef0=1, max_iter=100000, n_jobs=-1)
+# nonlinear_svc_model = SVC(kernel="poly", degree=3, coef0=1, max_iter=100000)
 # nonlinear_svc_model.fit(data_train, target_train)
 # print("Non-linear Polynomial SVM Accuracy")
 # print("----------------------------")
@@ -303,7 +310,7 @@ MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
 
 # # Use SVC with a different kernel
 # from sklearn.svm import SVC
-# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+# from sklearn.preprocessing import StandardScaler
 # from sklearn.pipeline import Pipeline
 
 # # gamma is another regularization parameter.  Larger gamma tightens the kernel
@@ -349,8 +356,13 @@ MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
 # for neighbor_count in range(1,20):
 #     knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
 #     knn_model.fit(data_train, target_train)
-#     print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(x_train,y_train)*100) + "%")
-#     print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(x_test,y_test)*100) + "%\n")
+#     # knn_model = Pipeline([
+#     #     ("scalar", StandardScaler()),
+#     #     ("knnf", KNeighborsRegressor(n_neighbors=neighbor_count))
+#     #     ])
+#     # knn_model.fit(data_train, target_train)
+#     print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(data_train,target_train)*100) + "%")
+#     print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%\n")
 
 
 
@@ -362,13 +374,38 @@ MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
 
 # from sklearn.linear_model import LinearRegression
 
-# print("Linear Regression")
+# # print("Linear Regression")
 # # l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
-# l_reg_model = LinearRegression()
-# l_reg_model.fit(data_train, target_train)
-# MLHelper.FitAndGetAccuracy(l_reg_model, data_train, data_test, \ 
-#                            target_train, target_test, 8)
+# # # l_reg_model = LinearRegression()
+# # l_reg_model.fit(data_train, target_train)
+# # MLHelper.FitAndGetAccuracy(l_reg_model, data_train, data_test, \
+# #                             target_train, target_test, 8)
+    
+# # Time difference in scaling with a pipeline vs normal scaling
+# import time
+# times = []
+# for index in range(500):
+#     start_time_standard = time.perf_counter()
+#     l_reg_model = LinearRegression()
+#     scaled_features = StandardScaler()
+#     scaled_features_data = scaled_features.fit_transform(data_train)
+#     l_reg_model.fit(scaled_features_data, target_train)
+#     # MLHelper.FitAndGetAccuracy(l_reg_model, data_train, data_test, \
+#     #                             target_train, target_test, 8)
+#     end_time_standard = time.perf_counter()
+#     time_standard = end_time_standard - start_time_standard
+    
+#     start_time_pipeline = time.perf_counter()
+#     l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
+#     l_reg_model.fit(data_train, target_train)
+#     # MLHelper.FitAndGetAccuracy(l_reg_model, data_train, data_test, \
+#     #                             target_train, target_test, 8)
+#     end_time_pipeline = time.perf_counter()
+#     time_pipeline = end_time_pipeline - start_time_pipeline
 
+#     times.append(time_pipeline - time_standard)
+
+# print(sum(times)/len(times))
 
 ###############################################################################
 #                                                                             #
@@ -421,6 +458,58 @@ MLHelper.FitAndGetAccuracy(poly_svm, data_train, data_test,  \
 #     dec_tree_reg.fit(data_train, target_train)
 #     MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \ 
 #                                target_train, target_test, 8)
+
+
+
+
+###############################################################################
+#                                                                             #
+#                              Train Test Split                               #
+#                                                                             #
+###############################################################################
+
+from sklearn.datasets import load_wine
+from sklearn.svm import LinearSVC
+from sklearn.linear_model import LogisticRegression
+
+wine_data = load_wine()
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(wine_data['data'], 
+                                          wine_data['target'], 
+                                          random_state=0)
+
+tts_model = LogisticRegression(max_iter=500000)
+tts_model.fit(data_train, target_train)
+print("TTS Score: ", tts_model.score(data_test, target_test))
+
+
+
+###############################################################################
+#                                                                             #
+#                              Cross Validation                               #
+#                                                                             #
+###############################################################################
+
+from sklearn.datasets import load_wine
+from sklearn.svm import LinearSVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import cross_val_score
+
+wine_data = load_wine()
+cv_model = LogisticRegression(max_iter=500000)
+cvs = cross_val_score(cv_model, wine_data["data"], wine_data["target"], scoring="accuracy")
+print("Cross Validation Scores: ", cvs)
+print("Cross Validation Mean: ", cvs.mean())
+print("Cross Validation Standard Deviation: ", cvs.std())
+
+
+###############################################################################
+#                                                                             #
+#                                Scaling Data                                 #
+#                                                                             #
+###############################################################################
+
+
 
 
 

@@ -43,7 +43,7 @@ class MLHelper():
         
         formatted_train_score = str(round(train_score*100, dec_places)) + "%"
         formatted_test_score  = str(round(test_score*100, dec_places)) + "%"
-        formatted_mse = str(round(mse*100, dec_places)) + "%"
+        formatted_mse = str(round(mse, dec_places))
         
         print("Train Accuracy Score:", formatted_train_score)
         print("Test Accuracy Score:", formatted_test_score)

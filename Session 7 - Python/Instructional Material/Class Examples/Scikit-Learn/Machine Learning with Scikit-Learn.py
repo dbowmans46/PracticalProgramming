@@ -57,12 +57,12 @@ from sklearn import model_selection
 #                                               iris_dataset['target'], 
 #                                               random_state=0)
     
-# from sklearn.datasets import fetch_california_housing
-# ca_housing_data = fetch_california_housing()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(ca_housing_data['data'], 
-#                                           ca_housing_data['target'], 
-#                                           random_state=0)
+from sklearn.datasets import fetch_california_housing
+ca_housing_data = fetch_california_housing()
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(ca_housing_data['data'], 
+                                          ca_housing_data['target'], 
+                                          random_state=0)
     
 # from sklearn.datasets import load_boston
 # boston_data = load_boston()
@@ -161,7 +161,7 @@ from sklearn import model_selection
 # # Viewing the decision tree
 # # Create a document that represents the tree
 # from sklearn.tree import export_graphviz
-# tree_file_name = "decision_tree.dot"
+# tree_file_name = "./decision_tree_classifier/decision_tree.dot"
 # class_name_vals = iris_dataset.target_names
 # export_graphviz(dec_tree_model,          # The machine learning model to export \
 #                 out_file=tree_file_name, # The output filepath for the graph \
@@ -337,12 +337,12 @@ from sklearn import model_selection
 #                                                                             #
 ###############################################################################
 
-# from sklearn.pipeline import Pipeline
-# from sklearn.pipeline import make_pipeline
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.metrics import mean_squared_error
+from sklearn.pipeline import Pipeline
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import mean_squared_error
 
-# tuning_parameter_vals = [0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10]
+tuning_parameter_vals = [0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10, 100, 1000]
 
 
 
@@ -416,11 +416,11 @@ from sklearn import model_selection
 # from sklearn.linear_model import Ridge
 
 # for alpha_val in tuning_parameter_vals:
-#     print("Ridge for Alpha=",alpha_val)
-#     # ridge_model = make_pipeline(StandardScaler(), Ridge(alpha=alpha_val))
-#     ridge_model = Ridge(alpha=alpha_val)
-#     MLHelper.FitAndGetAccuracy(ridge_model, data_train, data_test, \ 
-#                                target_train, target_test, 8)
+#     print("Ridge for Alpha=", alpha_val)
+#     ridge_model = make_pipeline(StandardScaler(), Ridge(alpha=alpha_val))
+#     # ridge_model = Ridge(alpha=alpha_val)
+#     MLHelper.FitAndGetAccuracy(ridge_model, data_train, data_test, \
+#                                 target_train, target_test, 8)
 
 
 ###############################################################################
@@ -430,13 +430,18 @@ from sklearn import model_selection
 ###############################################################################
 
 # from sklearn.linear_model import Lasso
+# import numpy as np
 
 # for alpha_val in tuning_parameter_vals:
 #     print("Lasso for Alpha=",alpha_val)
-#     # lasso_model = make_pipeline(StandardScaler(), Lasso(alpha=alpha_val))
+#     #lasso_model = make_pipeline(StandardScaler(), Lasso(alpha=alpha_val))
 #     lasso_model = Lasso(alpha=alpha_val)
-#     MLHelper.FitAndGetAccuracy(lasso_model, data_train, data_test, \ 
-#                                target_train, target_test, 8)
+#     MLHelper.FitAndGetAccuracy(lasso_model, data_train, data_test, \
+#                                 target_train, target_test, 8)
+        
+#     pred_test_lasso = lasso_model.predict(data_test)
+#     #print("MSE: ", np.sqrt(mean_squared_error(target_test,pred_test_lasso)))
+#     #print("Weights: ", lasso_model.coef_)
 
 
 ###############################################################################
@@ -445,19 +450,46 @@ from sklearn import model_selection
 #                                                                             #
 ###############################################################################
 
-# from sklearn.tree import DecisionTreeRegressor
+from sklearn.tree import DecisionTreeRegressor
 
-# dec_tree_reg = DecisionTreeRegressor(max_depth=4)
-# dec_tree_reg.fit(data_train, target_train)
-# MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
-#                            target_train, target_test, 8)
+dec_tree_reg = DecisionTreeRegressor(max_depth=4)
+dec_tree_reg.fit(data_train, target_train)
+MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
+                            target_train, target_test, 8)
 
-# for depth_val in range(1, 11):
-#     print("Decision Tree Regressor Depth=",depth_val)
-#     dec_tree_reg = DecisionTreeRegressor(max_depth=depth_val)
-#     dec_tree_reg.fit(data_train, target_train)
-#     MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \ 
-#                                target_train, target_test, 8)
+for depth_val in range(1, 9):
+    print("Decision Tree Regressor Depth=",depth_val)
+    dec_tree_reg = DecisionTreeRegressor(max_depth=depth_val)
+    dec_tree_reg.fit(data_train, target_train)
+    MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
+                                target_train, target_test, 8)
+
+
+# Viewing the decision tree
+# Create a document that represents the tree
+from sklearn.tree import export_graphviz
+tree_file_name = "./decision_tree_regressor/decision_tree.dot"
+class_name_vals = ca_housing_data.target_names
+export_graphviz(dec_tree_reg,            # The machine learning model to export \
+                out_file=tree_file_name, # The output filepath for the graph \
+                class_names=ca_housing_data.target_names,    # Target classes \
+                feature_names=ca_housing_data.feature_names, # Feature data names \
+                impurity=True, # Show the gini score or not \
+                filled=True,   # Fill each node with color in the output image \
+                rounded=True)  # Round the corners of the output graph image 
+    
+# # If this does not work due to pathin issues, you can always run dot.exe from
+# # the Graphviz installation, and generate the graph manually.  See the file
+# # 'Convert dot.ps1' for an example PowerShell script
+
+# # Load the document and view
+# import graphviz
+# with open(tree_file_name) as fileHandle:
+#     dot_graph = fileHandle.read()
+    
+# graph = graphviz.Source(dot_graph)
+# s = graphviz.Source(graph.source, filename="test.png", format="png")
+# s.view()
 
 
 
@@ -468,19 +500,19 @@ from sklearn import model_selection
 #                                                                             #
 ###############################################################################
 
-from sklearn.datasets import load_wine
-from sklearn.svm import LinearSVC
-from sklearn.linear_model import LogisticRegression
+# from sklearn.datasets import load_wine
+# from sklearn.svm import LinearSVC
+# from sklearn.linear_model import LogisticRegression
 
-wine_data = load_wine()
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(wine_data['data'], 
-                                          wine_data['target'], 
-                                          random_state=0)
+# wine_data = load_wine()
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(wine_data['data'], 
+#                                           wine_data['target'], 
+#                                           random_state=0)
 
-tts_model = LogisticRegression(max_iter=500000)
-tts_model.fit(data_train, target_train)
-print("TTS Score: ", tts_model.score(data_test, target_test))
+# tts_model = LogisticRegression(max_iter=500000)
+# tts_model.fit(data_train, target_train)
+# print("TTS Score: ", tts_model.score(data_test, target_test))
 
 
 
@@ -490,17 +522,17 @@ print("TTS Score: ", tts_model.score(data_test, target_test))
 #                                                                             #
 ###############################################################################
 
-from sklearn.datasets import load_wine
-from sklearn.svm import LinearSVC
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_val_score
+# from sklearn.datasets import load_wine
+# from sklearn.svm import LinearSVC
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.model_selection import cross_val_score
 
-wine_data = load_wine()
-cv_model = LogisticRegression(max_iter=500000)
-cvs = cross_val_score(cv_model, wine_data["data"], wine_data["target"], scoring="accuracy")
-print("Cross Validation Scores: ", cvs)
-print("Cross Validation Mean: ", cvs.mean())
-print("Cross Validation Standard Deviation: ", cvs.std())
+# wine_data = load_wine()
+# cv_model = LogisticRegression(max_iter=500000)
+# cvs = cross_val_score(cv_model, wine_data["data"], wine_data["target"], scoring="accuracy")
+# print("Cross Validation Scores: ", cvs)
+# print("Cross Validation Mean: ", cvs.mean())
+# print("Cross Validation Standard Deviation: ", cvs.std())
 
 
 ###############################################################################

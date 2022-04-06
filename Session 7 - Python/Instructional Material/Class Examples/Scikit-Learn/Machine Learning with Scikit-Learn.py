@@ -51,46 +51,46 @@ and sepal width as features.
 from sklearn import model_selection
 
 # from sklearn.datasets import load_iris
-# iris_dataset = load_iris()
+# data = load_iris()
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(iris_dataset['data'], 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(data['data'], 
+#                                               data['target'], 
 #                                               random_state=0)
     
-from sklearn.datasets import fetch_california_housing
-ca_housing_data = fetch_california_housing()
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(ca_housing_data['data'], 
-                                          ca_housing_data['target'], 
-                                          random_state=0)
+# from sklearn.datasets import fetch_california_housing
+# data = fetch_california_housing()
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(data['data'], 
+#                                           data['target'], 
+#                                           random_state=0)
     
 # from sklearn.datasets import load_boston
-# boston_data = load_boston()
+# data = load_boston()
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(boston_data['data'], 
-#                                           boston_data['target'], 
+#     sklearn.model_selection.train_test_split(data['data'], 
+#                                           data['target'], 
 #                                           random_state=0)
     
 # from sklearn.datasets import load_diabetes
-# diabetes_data = load_diabetes()
+# data = load_diabetes()
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(diabetes_data['data'], 
-#                                           diabetes_data['target'], 
+#     sklearn.model_selection.train_test_split(data['data'], 
+#                                           data['target'], 
 #                                           random_state=0)
    
 # from sklearn.datasets import load_breast_cancer
-# breast_cancer_data = load_breast_cancer()
+# data = load_breast_cancer()
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(breast_cancer_data['data'], 
-#                                           breast_cancer_data['target'], 
+#     sklearn.model_selection.train_test_split(data['data'], 
+#                                           data['target'], 
 #                                           random_state=0)
 
-# from sklearn.datasets import load_wine
-# wine_data = load_wine()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(wine_data['data'], 
-#                                           wine_data['target'], 
-#                                           random_state=0)
+from sklearn.datasets import load_wine
+data = load_wine()
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(data['data'], 
+                                          data['target'], 
+                                          random_state=0)
 
 
 # print("\nIntro Model - K-Nearest Neighbors Classifier\n")
@@ -162,11 +162,11 @@ data_train, data_test, target_train, target_test = \
 # # Create a document that represents the tree
 # from sklearn.tree import export_graphviz
 # tree_file_name = "./decision_tree_classifier/decision_tree.dot"
-# class_name_vals = iris_dataset.target_names
+# class_name_vals = data.target_names
 # export_graphviz(dec_tree_model,          # The machine learning model to export \
 #                 out_file=tree_file_name, # The output filepath for the graph \
-#                 class_names=iris_dataset.target_names,    # Target classes \
-#                 feature_names=iris_dataset.feature_names, # Feature data names \
+#                 class_names=data.target_names,    # Target classes \
+#                 feature_names=data.feature_names, # Feature data names \
 #                 impurity=True, # Show the gini score or not \
 #                 filled=True,   # Fill each node with color in the output image \
 #                 rounded=True)  # Round the corners of the output graph image 
@@ -337,12 +337,12 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
-from sklearn.pipeline import Pipeline
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error
+# from sklearn.pipeline import Pipeline
+# from sklearn.pipeline import make_pipeline
+# from sklearn.preprocessing import StandardScaler
+# from sklearn.metrics import mean_squared_error
 
-tuning_parameter_vals = [0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10, 100, 1000]
+# tuning_parameter_vals = [0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10, 100, 1000]
 
 
 
@@ -450,43 +450,47 @@ tuning_parameter_vals = [0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10, 100
 #                                                                             #
 ###############################################################################
 
-from sklearn.tree import DecisionTreeRegressor
+# from sklearn.tree import DecisionTreeRegressor
 
-dec_tree_reg = DecisionTreeRegressor(max_depth=4)
-dec_tree_reg.fit(data_train, target_train)
-MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
-                            target_train, target_test, 8)
+# dec_tree_reg = DecisionTreeRegressor(max_depth=5)
+# dec_tree_reg.fit(data_train, target_train)
+# MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
+#                             target_train, target_test, 6)
 
-for depth_val in range(1, 9):
-    print("Decision Tree Regressor Depth=",depth_val)
-    dec_tree_reg = DecisionTreeRegressor(max_depth=depth_val)
-    dec_tree_reg.fit(data_train, target_train)
-    MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
-                                target_train, target_test, 8)
+# for depth_val in range(1, 30):
+#     print("Decision Tree Regressor Depth=",depth_val)
+#     dec_tree_reg = DecisionTreeRegressor(max_depth=depth_val)
+#     dec_tree_reg.fit(data_train, target_train)
+#     MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
+#                                 target_train, target_test, 8)
 
 
-# Viewing the decision tree
-# Create a document that represents the tree
-from sklearn.tree import export_graphviz
-tree_file_name = "./decision_tree_regressor/decision_tree.dot"
-class_name_vals = ca_housing_data.target_names
-export_graphviz(dec_tree_reg,            # The machine learning model to export \
-                out_file=tree_file_name, # The output filepath for the graph \
-                class_names=ca_housing_data.target_names,    # Target classes \
-                feature_names=ca_housing_data.feature_names, # Feature data names \
-                impurity=True, # Show the gini score or not \
-                filled=True,   # Fill each node with color in the output image \
-                rounded=True)  # Round the corners of the output graph image 
+# # Viewing the decision tree
+# # Create a document that represents the tree
+# from sklearn.tree import export_graphviz
+# tree_file_name = "./decision_tree_regressor/decision_tree.dot"
+# # class_name_vals = data.target_names
+# class_name_vals = "Median House Val"
+# export_graphviz(dec_tree_reg,            # The machine learning model to export \
+#                 out_file=tree_file_name, # The output filepath for the graph \
+#                 class_names=class_name_vals,    # Target classes \                
+#                 feature_names=data.feature_names, # Feature data names \
+#                 impurity=True, # Show the gini score/mse or not \
+#                 filled=True,   # Fill each node with color in the output image \
+#                 rounded=True)  # Round the corners of the output graph image 
     
-# # If this does not work due to pathin issues, you can always run dot.exe from
-# # the Graphviz installation, and generate the graph manually.  See the file
-# # 'Convert dot.ps1' for an example PowerShell script
+# If this does not work due to pathing issues, you can always run dot.exe from
+# the Graphviz installation, and generate the graph manually.  See the file
+# 'Convert dot.ps1' for an example PowerShell script.  The graphviz\bin directory
+# must be in you envinronment PATH variable for Python to autoload the graph
+# file.
 
 # # Load the document and view
 # import graphviz
 # with open(tree_file_name) as fileHandle:
 #     dot_graph = fileHandle.read()
-    
+
+
 # graph = graphviz.Source(dot_graph)
 # s = graphviz.Source(graph.source, filename="test.png", format="png")
 # s.view()
@@ -500,19 +504,18 @@ export_graphviz(dec_tree_reg,            # The machine learning model to export 
 #                                                                             #
 ###############################################################################
 
-# from sklearn.datasets import load_wine
-# from sklearn.svm import LinearSVC
-# from sklearn.linear_model import LogisticRegression
 
-# wine_data = load_wine()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(wine_data['data'], 
-#                                           wine_data['target'], 
-#                                           random_state=0)
+# test_size + train_size <= 1.00
+sklearn.model_selection.train_test_split(data['data'], 
+                                          data['target'], 
+                                          test_size=0.3,
+                                          train_size=0.7,
+                                          random_state=0)
 
-# tts_model = LogisticRegression(max_iter=500000)
-# tts_model.fit(data_train, target_train)
-# print("TTS Score: ", tts_model.score(data_test, target_test))
+from sklearn.linear_model import LogisticRegression
+tts_model = LogisticRegression(max_iter=500000)
+MLHelper.FitAndGetAccuracy(tts_model, data_train, data_test, \
+                            target_train, target_test, 4)
 
 
 
@@ -522,17 +525,23 @@ export_graphviz(dec_tree_reg,            # The machine learning model to export 
 #                                                                             #
 ###############################################################################
 
-# from sklearn.datasets import load_wine
-# from sklearn.svm import LinearSVC
 # from sklearn.linear_model import LogisticRegression
 # from sklearn.model_selection import cross_val_score
 
-# wine_data = load_wine()
 # cv_model = LogisticRegression(max_iter=500000)
-# cvs = cross_val_score(cv_model, wine_data["data"], wine_data["target"], scoring="accuracy")
+# cvs = cross_val_score(cv_model, data["data"], data["target"], scoring="accuracy")
 # print("Cross Validation Scores: ", cvs)
 # print("Cross Validation Mean: ", cvs.mean())
 # print("Cross Validation Standard Deviation: ", cvs.std())
+
+# # The default number of folds is 5.  Can change this with the cv parameter
+# print("\n\n\n")
+# print("10 folds")
+# cvs = cross_val_score(cv_model, data["data"], data["target"], scoring="accuracy", cv=10)
+# print("Cross Validation Scores: ", cvs)
+# print("Cross Validation Mean: ", cvs.mean())
+# print("Cross Validation Standard Deviation: ", cvs.std())
+
 
 
 ###############################################################################
@@ -541,8 +550,32 @@ export_graphviz(dec_tree_reg,            # The machine learning model to export 
 #                                                                             #
 ###############################################################################
 
+# from sklearn.linear_model import LogisticRegression
+# from sklearn.linear_model import Ridge
 
+# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+# from sklearn.metrics import accuracy_score
 
+# from sklearn.decomposition import PCA
+# from sklearn.naive_bayes import GaussianNB
+
+# C_val = 100
+# max_iterations = 1000
+
+# print("Accuracy without scaling:\n","--------------------\n")
+# log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
+# MLHelper.FitAndGetAccuracy(log_reg_model, data_train, data_test, \
+#                             target_train, target_test, 8)
+    
+
+# print("\n\n\n")
+# print("Accuracy with scaling:\n","--------------------\n")
+
+# scaler = StandardScaler()
+# scaled_data = scaler.fit_transform(data_train, target_train)
+# log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
+# MLHelper.FitAndGetAccuracy(log_reg_model, scaled_data, data_test, \
+#                             target_train, target_test, 8)
 
 
 

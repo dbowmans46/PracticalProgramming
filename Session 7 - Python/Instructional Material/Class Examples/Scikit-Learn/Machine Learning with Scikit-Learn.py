@@ -50,47 +50,198 @@ and sepal width as features.
 # the random_state argument as the seed.
 from sklearn import model_selection
 
-# from sklearn.datasets import load_iris
-# data = load_iris()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data['data'], 
-#                                               data['target'], 
-#                                               random_state=0)
-    
-# from sklearn.datasets import fetch_california_housing
-# data = fetch_california_housing()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data['data'], 
-#                                           data['target'], 
-#                                           random_state=0)
-    
-# from sklearn.datasets import load_boston
-# data = load_boston()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data['data'], 
-#                                           data['target'], 
-#                                           random_state=0)
-    
-# from sklearn.datasets import load_diabetes
-# data = load_diabetes()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data['data'], 
-#                                           data['target'], 
-#                                           random_state=0)
-   
-# from sklearn.datasets import load_breast_cancer
-# data = load_breast_cancer()
-# data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data['data'], 
-#                                           data['target'], 
-#                                           random_state=0)
 
-from sklearn.datasets import load_wine
-data = load_wine()
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(data['data'], 
-                                          data['target'], 
-                                          random_state=0)
+def GetTrainTestSplitIrisData():
+    """
+    Classification data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import load_iris
+    data = load_iris()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                                  data['target'], 
+                                                  random_state=0)
+        
+    return data_train, data_test, target_train, target_test
+
+
+def GetTrainTestSplitCAHousingData():
+    """
+    Regressor data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import fetch_california_housing
+    data = fetch_california_housing()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                              data['target'], 
+                                              random_state=0)
+        
+    return data_train, data_test, target_train, target_test
+
+
+def GetTrainTestSplitBostonHousingData():
+    """
+    Regressor data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import load_boston
+    data = load_boston()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                              data['target'], 
+                                              random_state=0)
+        
+    return data_train, data_test, target_train, target_test    
+
+
+def GetTrainTestSplitDiabetesgData():
+    """
+    Regressor data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    from sklearn.datasets import load_diabetes
+    data = load_diabetes()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                              data['target'], 
+                                              random_state=0)
+        
+    return data_train, data_test, target_train, target_test   
+
+
+def GetTrainTestSplitBreastCancerData():
+    """
+    Classification data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import load_breast_cancer
+    data = load_breast_cancer()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                              data['target'], 
+                                              random_state=0)
+        
+    return data_train, data_test, target_train, target_test
+
+
+def GetTrainTestSplitWineData():
+    """
+    Classification data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import load_wine
+    data = load_wine()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                              data['target'],
+                                              test_size=0.25,
+                                              train_size=0.75,
+                                              random_state=0)
+        
+    return data_train, data_test, target_train, target_test
+
+
+def GetTrainTestSplitCovertypeData():
+    """
+    Classification data set
+
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import fetch_covtype
+    data = fetch_covtype()
+    data_train, data_test, target_train, target_test = \
+        sklearn.model_selection.train_test_split(data['data'], 
+                                              data['target'],
+                                              test_size=0.25,
+                                              train_size=0.75,
+                                              random_state=0)
+        
+    return data_train, data_test, target_train, target_test
+
 
 
 # print("\nIntro Model - K-Nearest Neighbors Classifier\n")
@@ -122,6 +273,8 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
+# data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
+
 # print("\n\n\n\nK-Nearest Neighbors Classifier\n")
 # from sklearn.neighbors import KNeighborsClassifier
 
@@ -143,6 +296,7 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
+# data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
 
 # # This example will use the decision tree classifier
 # from sklearn.tree import DecisionTreeClassifier
@@ -210,6 +364,8 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
+# data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
+
 # from sklearn.linear_model import LogisticRegression
 
 # # Default model uses a c value of 1
@@ -244,6 +400,8 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
+# data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
+
 # from sklearn.svm import LinearSVC
 
 # for c_val in [0.001, 1, 10000]:
@@ -263,7 +421,7 @@ data_train, data_test, target_train, target_test = \
 #                                                                             #
 ###############################################################################
 
-
+# data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
 
 # # Option 1 - Use PolynomialFeatures and LinearSVC to add polynomial features
 
@@ -341,6 +499,8 @@ data_train, data_test, target_train, target_test = \
 # from sklearn.pipeline import make_pipeline
 # from sklearn.preprocessing import StandardScaler
 # from sklearn.metrics import mean_squared_error
+
+# data_train, data_test, target_train, target_test = GetTrainTestSplitBostonHousingData()
 
 # tuning_parameter_vals = [0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10, 100, 1000]
 
@@ -452,7 +612,13 @@ data_train, data_test, target_train, target_test = \
 
 # from sklearn.tree import DecisionTreeRegressor
 
-# dec_tree_reg = DecisionTreeRegressor(max_depth=5)
+# dec_tree_reg = DecisionTreeRegressor(max_depth=5, \
+#                                         #max_leaf_nodes=10, \
+#                                         #max_features=7, \
+#                                         #min_samples_split=4, \
+#                                         #min_samples_leaf=1, \
+#                                         #min_weight_fraction_leaf=1 \
+# )
 # dec_tree_reg.fit(data_train, target_train)
 # MLHelper.FitAndGetAccuracy(dec_tree_reg, data_train, data_test, \
 #                             target_train, target_test, 6)
@@ -505,17 +671,17 @@ data_train, data_test, target_train, target_test = \
 ###############################################################################
 
 
-# test_size + train_size <= 1.00
-sklearn.model_selection.train_test_split(data['data'], 
-                                          data['target'], 
-                                          test_size=0.3,
-                                          train_size=0.7,
-                                          random_state=0)
+# # test_size + train_size <= 1.00
+# sklearn.model_selection.train_test_split(data['data'], 
+#                                           data['target'], 
+#                                           test_size=0.3,
+#                                           train_size=0.7,
+#                                           random_state=0)
 
-from sklearn.linear_model import LogisticRegression
-tts_model = LogisticRegression(max_iter=500000)
-MLHelper.FitAndGetAccuracy(tts_model, data_train, data_test, \
-                            target_train, target_test, 4)
+# from sklearn.linear_model import LogisticRegression
+# tts_model = LogisticRegression(max_iter=500000)
+# MLHelper.FitAndGetAccuracy(tts_model, data_train, data_test, \
+#                             target_train, target_test, 4)
 
 
 
@@ -550,32 +716,53 @@ MLHelper.FitAndGetAccuracy(tts_model, data_train, data_test, \
 #                                                                             #
 ###############################################################################
 
-# from sklearn.linear_model import LogisticRegression
-# from sklearn.linear_model import Ridge
+from sklearn.linear_model import LogisticRegression
 
-# from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-# from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
 
-# from sklearn.decomposition import PCA
-# from sklearn.naive_bayes import GaussianNB
+data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
 
-# C_val = 100
-# max_iterations = 1000
+C_val = 100
+max_iterations = 100000
 
-# print("Accuracy without scaling:\n","--------------------\n")
-# log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
-# MLHelper.FitAndGetAccuracy(log_reg_model, data_train, data_test, \
-#                             target_train, target_test, 8)
+print("Accuracy without scaling:\n","--------------------\n")
+log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
+MLHelper.FitAndGetAccuracy(log_reg_model, data_train, data_test, \
+                            target_train, target_test, 8)
     
 
-# print("\n\n\n")
-# print("Accuracy with scaling:\n","--------------------\n")
+print("\n\n\n")
+print("Accuracy with scaling:\n","--------------------\n")
 
+scaler = StandardScaler()
+# scaler = RobustScaler()
+# scaler = MinMaxScaler()
+scaled_train_data = scaler.fit_transform(data_train, target_train)
+scaled_test_data = scaler.fit_transform(data_test, target_test)
+log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
+MLHelper.FitAndGetAccuracy(log_reg_model, scaled_train_data, scaled_test_data, \
+                            target_train, target_test, 8)
+    
+# print("\n\n\n")
+# print("Accuracy with scaling and cross validation:\n","--------------------\n")
+
+# from sklearn.datasets import load_iris
+# from sklearn.model_selection import cross_val_score
+
+# data = load_iris()
 # scaler = StandardScaler()
-# scaled_data = scaler.fit_transform(data_train, target_train)
-# log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
-# MLHelper.FitAndGetAccuracy(log_reg_model, scaled_data, data_test, \
-#                             target_train, target_test, 8)
+# scaled_data = scaler.fit_transform(data['data'], data['target'])
+# cvs = cross_val_score(log_reg_model, scaled_data, data["target"], scoring="accuracy")
+    
+# print("Cross Validation Scores: ", cvs)
+# print("Cross Validation Mean: ", cvs.mean())
+# print("Cross Validation Standard Deviation: ", cvs.std())
+    
+###############################################################################
+#                                                                             #
+#                       Converting Categories to Numbers                      #
+#                                                                             #
+###############################################################################
 
 
 

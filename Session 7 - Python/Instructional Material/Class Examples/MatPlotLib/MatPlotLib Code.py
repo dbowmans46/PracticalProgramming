@@ -311,5 +311,5 @@ plt.yticks(range(6),fontsize=5)
 plt.title('Polar Plot')
 
 # Adjust the spacing between subplots
-plt.subplots_adjust(hspace=1.25, wspace=0.75)
+plt.subplots_adjust(top=1.2, hspace=1.25, wspace=0.75)
 plt.show()

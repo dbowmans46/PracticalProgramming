@@ -4,3 +4,4 @@ NYS_Alcoholic_Beverage_Wet_and_Dry_Local_Options.csv: https://catalog.data.gov/d
 Inflation 1980-2020.csv: https://data.oecd.org/price/inflation-cpi.htm
 2020_earthquakes_4_5_plus.csv: https://earthquake.usgs.gov/earthquakes/search/
 Blight_Violations.csv: https://data.detroitmi.gov/datasets/blight-violations/explore?showTable=true
+housing.csv: https://github.com/ageron/handson-ml2/blob/master/datasets/housing/housing.csv

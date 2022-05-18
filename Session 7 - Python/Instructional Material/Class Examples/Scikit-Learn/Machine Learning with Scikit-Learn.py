@@ -895,6 +895,8 @@ def GetHousingData():
 
 
 
+# TODO: Redo the OHE with a sparse matrix vs array
+
 
 
 # # We can use the LabelBinarizer to accomplish the label encoding, and the 
@@ -915,50 +917,50 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import LabelEncoder
+# from sklearn.impute import SimpleImputer
+# from sklearn.preprocessing import LabelEncoder
 
-# Load data that has categpry-based values
-data_file_path = "../../In-Class Exercises/Data/housing.csv"
-data_set = pd.read_csv(data_file_path)
+# # Load data that has categpry-based values
+# data_file_path = "../../In-Class Exercises/Data/housing.csv"
+# data_set = pd.read_csv(data_file_path)
 
-# Imputers cannot estimate text, so first we convert string data to a number.
-# Reminder: scikit-learn algorithms may erroneously assume numbers that are
-# closer together are more correlated.  To avoid this, use OneHotEncoder
-# or LabelBinarizer, as seen in a previous example.
-le = LabelEncoder()
-encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
-data_encoded = data_set.drop('ocean_proximity', axis=1)
-data_encoded['ocean_proximity'] = encoded_ocean_data
+# # Imputers cannot estimate text, so first we convert string data to a number.
+# # Reminder: scikit-learn algorithms may erroneously assume numbers that are
+# # closer together are more correlated.  To avoid this, use OneHotEncoder
+# # or LabelBinarizer, as seen in a previous example.
+# le = LabelEncoder()
+# encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
+# data_encoded = data_set.drop('ocean_proximity', axis=1)
+# data_encoded['ocean_proximity'] = encoded_ocean_data
 
-# Now that we have numerical data, we can impute missing values.
-si = SimpleImputer(strategy="median")
-imputed_data = si.fit(data_encoded)
+# # Now that we have numerical data, we can impute missing values.
+# si = SimpleImputer(strategy="median")
+# imputed_data = si.fit(data_encoded)
 
-# We can take a look at the median values by looking at the statistics
-print(imputed_data.statistics_)
+# # We can take a look at the median values by looking at the statistics
+# print(imputed_data.statistics_)
 
-# Now we apply the median value to the NaN values.
-filled_in_data = imputed_data.transform(data_encoded)
+# # Now we apply the median value to the NaN values.
+# filled_in_data = imputed_data.transform(data_encoded)
 
-# Did it work?  Here are some checks
-# 1. make sure the data sizes are the same
-print("Size check: ", data_set.shape == data_encoded.shape)
+# # Did it work?  Here are some checks
+# # 1. make sure the data sizes are the same
+# print("Size check: ", data_set.shape == data_encoded.shape)
 
-# 2. Spot check a known NaN value.  Can also compare values of entire row to ensure
-# the correct row was compared.
-print("Dataset NaN at row 538:", data_set['total_bedrooms'].iloc[538])
-print("Imputed data at row 538:",  filled_in_data[538][4])
+# # 2. Spot check a known NaN value.  Can also compare values of entire row to ensure
+# # the correct row was compared.
+# print("Dataset NaN at row 538:", data_set['total_bedrooms'].iloc[538])
+# print("Imputed data at row 538:",  filled_in_data[538][4])
 
-# The filled in data is in an array that we can make a DataFrame with if we want
-filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
+# # The filled in data is in an array that we can make a DataFrame with if we want
+# filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
 
-# We can now split the data into training data and test data, and train a 
-# machine learning model as abovel.
+# # We can now split the data into training data and test data, and train a 
+# # machine learning model as abovel.
 
-# Notice that the ocean_proimity column median values are all 1, representing
-# INLAND.  If this is most likely not the case, you could either pick a different
-# strategy, or remove the records that have NaN values.
+# # Notice that the ocean_proimity column median values are all 1, representing
+# # INLAND.  If this is most likely not the case, you could either pick a different
+# # strategy, or remove the records that have NaN values.
 
 
 ###############################################################################
@@ -967,8 +969,33 @@ filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
 #                                                                             #
 ###############################################################################
 
+# Pandas dataframe correlation matrix, same as Pearson's R correlation factor
+# Only useful for linear correlations
+import pandas as pd
+data_file_path = "../../In-Class Exercises/Data/housing.csv"
+data_set = pd.read_csv(data_file_path)
+print("Correlation matrix: ")
+print(data_set.corr())
 
+# We can also check the correlation of a single feature with all others
+print("Correlations of just meadian_house_value:")
+print(data_set.corr()["median_house_value"])
+print("\n\n")
 
+#feature_importance_
+
+# This is Pearson's R correlation factor, same as the DataFrame.corr() method.
+# Only useful for linear correlations
+import scipy
+pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
+print("pearson_r:", pearson_r)
+print("p_val:", p_val,"\n\n")
+
+# This is Spearman's R correlation factor, and can be used for non-linear 
+# correlations
+spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
+print("spearman_r:", spearman_r)
+print("p_val:", p_val)
 ###############################################################################
 #                                                                             #
 #                          Manual Feature Engineering                         #

@@ -840,75 +840,77 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# from sklearn.preprocessing import LabelEncoder, OneHotEncoder, LabelBinarizer
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder, LabelBinarizer
 
-# # Load data that has categpry-based values
-# data_file_path = "../../In-Class Exercises/Data/housing.csv"
-# data_set = pd.read_csv(data_file_path)
+# Load data that has categpry-based values
+data_file_path = "../../In-Class Exercises/Data/housing.csv"
+data_set = pd.read_csv(data_file_path)
 
-# le = LabelEncoder()
-# encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
+le = LabelEncoder()
+encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
 
-# # Remove the string-based data and put in the encoded data
-# data_encoded = data_set.drop('ocean_proximity', axis=1)
-# data_encoded['ocean_proximity'] = encoded_ocean_data
-# print(data_encoded.head(10))
-
-
+# Remove the string-based data and put in the encoded data
+data_encoded = data_set.drop('ocean_proximity', axis=1)
+data_encoded['ocean_proximity'] = encoded_ocean_data
+print(data_encoded.head(10))
 
 
 
-# # One-hot encoding the data
-# # This will build off of the numerically-categorized data we produced above
-# ohe = OneHotEncoder()
 
-# # The fit_transform method expects a 2D matrix, so we need to convert the 
-# # encoded data from a 1D array to a 2D array.
-# encoded_ocean_data_reshaped = encoded_ocean_data.reshape(-1,1)
-# ohe_ocean_data = ohe.fit_transform(encoded_ocean_data_reshaped)
 
-# # By default, one-hot encoding returns a SciPy sparse matrix to save memory.
-# # To add this to our dataframe, we can convert it to a normal array.
-# ohe_ocean_data_arr = ohe_ocean_data.toarray()
+# One-hot encoding the data
+# This will build off of the numerically-categorized data we produced above
+ohe = OneHotEncoder()
 
-# # # If we transpose the matrix, the data will be in a format easier to make
-# # # new columns with for our Pandas dataframe
-# ohe_ocean_data_arr = ohe_ocean_data_arr.transpose()
+# The fit_transform method expects a 2D matrix, so we need to convert the 
+# encoded data from a 1D array to a 2D array.
+encoded_ocean_data_reshaped = encoded_ocean_data.reshape(-1,1)
+ohe_ocean_data = ohe.fit_transform(encoded_ocean_data_reshaped)
 
-# # Now we can make a column for each category name.  To check what each category
-# # number corresponds to, we can use the "classes_" property.  We can also
-# # use each label directly, as we will to later.
-# print("Label categories:", le.classes_)
+# By default, one-hot encoding returns a SciPy sparse matrix to save memory.
+# To add this to our dataframe, we can convert it to a normal array.
+ohe_ocean_data_arr = ohe_ocean_data.toarray()
 
-# # As before, we can remove the old string-category column
-# data_ohe_encoded = data_set.drop('ocean_proximity', axis=1)
+# # If we transpose the matrix, the data will be in a format easier to make
+# # new columns with for our Pandas dataframe
+ohe_ocean_data_arr = ohe_ocean_data_arr.transpose()
 
-# # Now we can add the new columns for each category, and add the appropriate
-# # data.
+# Now we can make a column for each category name.  To check what each category
+# number corresponds to, we can use the "classes_" property.  We can also
+# use each label directly, as we will to later.
+print("Label categories:", le.classes_)
 
-# for category_index in range(len(le.classes_)):
-#     category_name = le.classes_[category_index]
-#     print("Category to add to the dataframe: ", category_name)
-#     data_ohe_encoded[category_name] = ohe_ocean_data_arr[category_index]
+# As before, we can remove the old string-category column
+data_ohe_encoded = data_set.drop('ocean_proximity', axis=1)
+
+# Now we can add the new columns for each category, and add the appropriate
+# data.
+
+for category_index in range(len(le.classes_)):
+    category_name = le.classes_[category_index]
+    print("Category to add to the dataframe: ", category_name)
+    data_ohe_encoded[category_name] = ohe_ocean_data_arr[category_index]
     
-# print(data_ohe_encoded.head(1))
+print(data_ohe_encoded.head(1))
 
 
 
-# TODO: Redo the OHE with a sparse matrix vs array
+# For sparce matrices, you will need to adapt the code to convert the data
+# for it to work with a dataframe.  There are functions that can import
+# a sparse matrix into a dataframe directly.
 
 
 
-# # We can use the LabelBinarizer to accomplish the label encoding, and the 
-# # one-hot encoding at the same time.  This will produce separate arrays
-# # that we will still need to manipulate into a form that a Pandas dataframe
-# # will like.
-# lb = LabelBinarizer()
-# ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
+# We can use the LabelBinarizer to accomplish the label encoding, and the 
+# one-hot encoding at the same time.  This will produce separate arrays
+# that we will still need to manipulate into a form that a Pandas dataframe
+# will like.
+lb = LabelBinarizer()
+ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
 
-# # We can check if this is the same as our previous output after applying the
-# # label encoding and one-hot encoding sequentially
-# print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
+# We can check if this is the same as our previous output after applying the
+# label encoding and one-hot encoding sequentially
+print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 
 
 ###############################################################################
@@ -917,43 +919,43 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import LabelEncoder
+# from sklearn.impute import SimpleImputer
+# from sklearn.preprocessing import LabelEncoder
 
-# Load data that has categpry-based values
-data_file_path = "../../In-Class Exercises/Data/housing.csv"
-data_set = pd.read_csv(data_file_path)
+# # Load data that has categpry-based values
+# data_file_path = "../../In-Class Exercises/Data/housing.csv"
+# data_set = pd.read_csv(data_file_path)
 
-# Imputers cannot estimate text, so first we convert string data to a number.
-# Reminder: scikit-learn algorithms may erroneously assume numbers that are
-# closer together are more correlated.  To avoid this, use OneHotEncoder
-# or LabelBinarizer, as seen in a previous example.
-le = LabelEncoder()
-encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
-data_encoded = data_set.drop('ocean_proximity', axis=1)
-data_encoded['ocean_proximity'] = encoded_ocean_data
+# # Imputers cannot estimate text, so first we convert string data to a number.
+# # Reminder: scikit-learn algorithms may erroneously assume numbers that are
+# # closer together are more correlated.  To avoid this, use OneHotEncoder
+# # or LabelBinarizer, as seen in a previous example.
+# le = LabelEncoder()
+# encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
+# data_encoded = data_set.drop('ocean_proximity', axis=1)
+# data_encoded['ocean_proximity'] = encoded_ocean_data
 
-# Now that we have numerical data, we can impute missing values.
-si = SimpleImputer(strategy="median")
-imputed_data = si.fit(data_encoded)
+# # Now that we have numerical data, we can impute missing values.
+# si = SimpleImputer(strategy="median")
+# imputed_data = si.fit(data_encoded)
 
-# We can take a look at the median values by looking at the statistics
-print(imputed_data.statistics_)
+# # We can take a look at the median values by looking at the statistics
+# print(imputed_data.statistics_)
 
-# Now we apply the median value to the NaN values.
-filled_in_data = imputed_data.transform(data_encoded)
+# # Now we apply the median value to the NaN values.
+# filled_in_data = imputed_data.transform(data_encoded)
 
-# Did it work?  Here are some checks
-# 1. make sure the data sizes are the same
-print("Size check: ", data_set.shape == data_encoded.shape)
+# # Did it work?  Here are some checks
+# # 1. make sure the data sizes are the same
+# print("Size check: ", data_set.shape == data_encoded.shape)
 
-# 2. Spot check a known NaN value.  Can also compare values of entire row to ensure
-# the correct row was compared.
-print("Dataset NaN at row 538:", data_set['total_bedrooms'].iloc[538])
-print("Imputed data at row 538:",  filled_in_data[538][4])
+# # 2. Spot check a known NaN value.  Can also compare values of entire row to ensure
+# # the correct row was compared.
+# print("Dataset NaN at row 538:", data_set['total_bedrooms'].iloc[538])
+# print("Imputed data at row 538:",  filled_in_data[538][4])
 
-# The filled in data is in an array that we can make a DataFrame with if we want
-filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
+# # The filled in data is in an array that we can make a DataFrame with if we want
+# filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
 
 # We can now split the data into training data and test data, and train a 
 # machine learning model as abovel.
@@ -969,97 +971,97 @@ filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
 #                                                                             #
 ###############################################################################
 
-# Pandas dataframe correlation matrix, same as Pearson's R correlation factor
-# Only useful for linear correlations
-import pandas as pd
-data_file_path = "../../In-Class Exercises/Data/housing.csv"
-data_set = pd.read_csv(data_file_path)
-print("Correlation matrix: ")
-print(data_set.corr())
+# # Pandas dataframe correlation matrix, same as Pearson's R correlation factor
+# # Only useful for linear correlations
+# import pandas as pd
+# data_file_path = "../../In-Class Exercises/Data/housing.csv"
+# data_set = pd.read_csv(data_file_path)
+# print("Correlation matrix: ")
+# print(data_set.corr())
 
-# We can also check the correlation of a single feature with all others
-print("Correlations of just meadian_house_value:")
-print(data_set.corr()["median_house_value"])
-print("\n\n")
-
-
-
-
-
-# This is Pearson's R correlation factor, same as the DataFrame.corr() method.
-# Only useful for linear correlations
-import scipy
-pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
-print("pearson_r:", pearson_r)
-print("p_val:", p_val,"\n\n")
-
-# This is Spearman's R correlation factor, and can be used for non-linear 
-# correlations
-spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
-print("spearman_r:", spearman_r)
-print("p_val:", p_val,"\n\n\n")
+# # We can also check the correlation of a single feature with all others
+# print("Correlations of just meadian_house_value:")
+# print(data_set.corr()["median_house_value"])
+# print("\n\n")
 
 
 
 
 
-# Feature Importances can also tell us how much a feature affects targets.  For this
-# example, we will also need to convert string data to numerical, impute
-# missing values, and manually split off the data and targets from a DataFrame
+# # This is Pearson's R correlation factor, same as the DataFrame.corr() method.
+# # Only useful for linear correlations
+# import scipy
+# pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
+# print("pearson_r:", pearson_r)
+# print("p_val:", p_val,"\n\n")
 
-# First, convert string categories to numbers
-from sklearn.preprocessing import LabelBinarizer
-lb = LabelBinarizer()
-ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
+# # This is Spearman's R correlation factor, and can be used for non-linear 
+# # correlations
+# spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
+# print("spearman_r:", spearman_r)
+# print("p_val:", p_val,"\n\n\n")
 
-# Transpose for easy addition to dataframe
-ocean_cat_lb = ocean_cat_lb.transpose()
 
-# Drop string categorical data
-data_encoded = data_set.drop('ocean_proximity', axis=1)
 
-# Add numerical categorical data
-for category_index in range(len(lb.classes_)):
-    category_name = lb.classes_[category_index]
-    data_encoded[category_name] = ocean_cat_lb[category_index]
 
-# Let's remove the invalid values.  We will use the Impute as we saw above
-# to estimate these values.
-from sklearn.impute import SimpleImputer
-si = SimpleImputer(strategy="median")
-imputed_data = si.fit(data_encoded)
-filled_in_data = imputed_data.transform(data_encoded)
 
-# Since we added new columns, need to incorporate those into the list of columns
-# for the new dataframe
-new_cols = data_set.columns.tolist()
-new_cols.remove('ocean_proximity')
-new_cols.extend(lb.classes_)
-filled_in_df = pd.DataFrame(data=filled_in_data, columns=new_cols)
+# # Feature Importances can also tell us how much a feature affects targets.  For this
+# # example, we will also need to convert string data to numerical, impute
+# # missing values, and manually split off the data and targets from a DataFrame
 
-# Setup the targets and the data
-targets = filled_in_df["median_house_value"]
-data =  filled_in_df.drop(labels="median_house_value", axis=1)
+# # First, convert string categories to numbers
+# from sklearn.preprocessing import LabelBinarizer
+# lb = LabelBinarizer()
+# ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
 
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(data, 
-                                          targets, 
-                                          random_state=0)
+# # Transpose for easy addition to dataframe
+# ocean_cat_lb = ocean_cat_lb.transpose()
 
-# Train a model that can utilize feature_importances_ (any of the decision tree
-# regressors will work)
-from sklearn.tree import DecisionTreeRegressor
+# # Drop string categorical data
+# data_encoded = data_set.drop('ocean_proximity', axis=1)
 
-dtr = DecisionTreeRegressor()
-dtr.fit(data_train, target_train)
+# # Add numerical categorical data
+# for category_index in range(len(lb.classes_)):
+#     category_name = lb.classes_[category_index]
+#     data_encoded[category_name] = ocean_cat_lb[category_index]
 
-# And finally, we can check the feature importance
-col_names = filled_in_df.columns.tolist()
-col_names.remove("median_house_value")
-print("Feature Importances:")
-for index in range(len(dtr.feature_importances_)):
-    print(index)
-    print(col_names[index], "-", dtr.feature_importances_[index])
+# # Let's remove the invalid values.  We will use the Impute as we saw above
+# # to estimate these values.
+# from sklearn.impute import SimpleImputer
+# si = SimpleImputer(strategy="median")
+# imputed_data = si.fit(data_encoded)
+# filled_in_data = imputed_data.transform(data_encoded)
+
+# # Since we added new columns, need to incorporate those into the list of columns
+# # for the new dataframe
+# new_cols = data_set.columns.tolist()
+# new_cols.remove('ocean_proximity')
+# new_cols.extend(lb.classes_)
+# filled_in_df = pd.DataFrame(data=filled_in_data, columns=new_cols)
+
+# # Setup the targets and the data
+# targets = filled_in_df["median_house_value"]
+# data =  filled_in_df.drop(labels="median_house_value", axis=1)
+
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(data, 
+#                                           targets, 
+#                                           random_state=0)
+
+# # Train a model that can utilize feature_importances_ (any of the decision tree
+# # regressors will work)
+# from sklearn.tree import DecisionTreeRegressor
+
+# dtr = DecisionTreeRegressor()
+# dtr.fit(data_train, target_train)
+
+# # And finally, we can check the feature importance
+# col_names = filled_in_df.columns.tolist()
+# col_names.remove("median_house_value")
+# print("Feature Importances:")
+# for index in range(len(dtr.feature_importances_)):
+#     print(index)
+#     print(col_names[index], "-", dtr.feature_importances_[index])
 
 
 ###############################################################################

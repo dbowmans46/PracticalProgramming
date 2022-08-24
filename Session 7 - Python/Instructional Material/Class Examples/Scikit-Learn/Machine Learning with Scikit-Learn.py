@@ -42,7 +42,7 @@ and sepal width as features.
 # iris_dataset.target_names
 # iris_dataset.target
 
-# Let's setup our first model.  We will use a 75% training to 25% testing data
+# Let's set up our first model.  We will use a 75% training to 25% testing data
 # ratio.  First, let's separate our training and testing data.  We use the
 # train_test_split function to get x and y values (data points and accurate 
 # outcomes) for our training data, and our testing data.  This function
@@ -132,7 +132,7 @@ def GetTrainTestSplitBostonHousingData():
     return data_train, data_test, target_train, target_test    
 
 
-def GetTrainTestSplitDiabetesgData():
+def GetTrainTestSplitDiabetesData():
     """
     Regressor data set
 
@@ -356,7 +356,7 @@ def GetHousingData():
 #                 filled=True,   # Fill each node with color in the output image \
 #                 rounded=True)  # Round the corners of the output graph image 
     
-# # If this does not work due to pathin issues, you can always run dot.exe from
+# # If this does not work due to pathing issues, you can always run dot.exe from
 # # the Graphviz installation, and generate the graph manually.  See the file
 # # 'Convert dot.ps1' for an example PowerShell script
 
@@ -417,7 +417,7 @@ def GetHousingData():
     
 # # What happens when we play around with c
 # for c_val in c_vals:
-#     print("Logistic Regresion with c =",c_val)
+#     print("Logistic Regression with c =",c_val)
 #     lr_model = LogisticRegression(C=c_val, max_iter=100000)  # Note that C is capitalized
 #     lr_model.fit(data_train, target_train)
 #     print("Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
@@ -679,7 +679,7 @@ def GetHousingData():
 # If this does not work due to pathing issues, you can always run dot.exe from
 # the Graphviz installation, and generate the graph manually.  See the file
 # 'Convert dot.ps1' for an example PowerShell script.  The graphviz\bin directory
-# must be in you envinronment PATH variable for Python to autoload the graph
+# must be in you environment PATH variable for Python to autoload the graph
 # file.
 
 # # Load the document and view
@@ -840,77 +840,77 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder, LabelBinarizer
+# from sklearn.preprocessing import LabelEncoder, OneHotEncoder, LabelBinarizer
 
-# Load data that has categpry-based values
-data_file_path = "../../In-Class Exercises/Data/housing.csv"
-data_set = pd.read_csv(data_file_path)
+# # Load data that has category-based values
+# data_file_path = "../../In-Class Exercises/Data/housing.csv"
+# data_set = pd.read_csv(data_file_path)
 
-le = LabelEncoder()
-encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
+# le = LabelEncoder()
+# encoded_ocean_data = le.fit_transform(data_set['ocean_proximity'])
 
-# Remove the string-based data and put in the encoded data
-data_encoded = data_set.drop('ocean_proximity', axis=1)
-data_encoded['ocean_proximity'] = encoded_ocean_data
-print(data_encoded.head(10))
-
-
+# # Remove the string-based data and put in the encoded data
+# data_encoded = data_set.drop('ocean_proximity', axis=1)
+# data_encoded['ocean_proximity'] = encoded_ocean_data
+# print(data_encoded.head(10))
 
 
 
-# One-hot encoding the data
-# This will build off of the numerically-categorized data we produced above
-ohe = OneHotEncoder()
 
-# The fit_transform method expects a 2D matrix, so we need to convert the 
-# encoded data from a 1D array to a 2D array.
-encoded_ocean_data_reshaped = encoded_ocean_data.reshape(-1,1)
-ohe_ocean_data = ohe.fit_transform(encoded_ocean_data_reshaped)
 
-# By default, one-hot encoding returns a SciPy sparse matrix to save memory.
-# To add this to our dataframe, we can convert it to a normal array.
-ohe_ocean_data_arr = ohe_ocean_data.toarray()
+# # One-hot encoding the data
+# # This will build off of the numerically-categorized data we produced above
+# ohe = OneHotEncoder()
 
-# # If we transpose the matrix, the data will be in a format easier to make
-# # new columns with for our Pandas dataframe
-ohe_ocean_data_arr = ohe_ocean_data_arr.transpose()
+# # The fit_transform method expects a 2D matrix, so we need to convert the 
+# # encoded data from a 1D array to a 2D array.
+# encoded_ocean_data_reshaped = encoded_ocean_data.reshape(-1,1)
+# ohe_ocean_data = ohe.fit_transform(encoded_ocean_data_reshaped)
 
-# Now we can make a column for each category name.  To check what each category
-# number corresponds to, we can use the "classes_" property.  We can also
-# use each label directly, as we will to later.
-print("Label categories:", le.classes_)
+# # By default, one-hot encoding returns a SciPy sparse matrix to save memory.
+# # To add this to our dataframe, we can convert it to a normal array.
+# ohe_ocean_data_arr = ohe_ocean_data.toarray()
 
-# As before, we can remove the old string-category column
-data_ohe_encoded = data_set.drop('ocean_proximity', axis=1)
+# # # If we transpose the matrix, the data will be in a format easier to make
+# # # new columns with for our Pandas dataframe
+# ohe_ocean_data_arr = ohe_ocean_data_arr.transpose()
 
-# Now we can add the new columns for each category, and add the appropriate
-# data.
+# # Now we can make a column for each category name.  To check what each category
+# # number corresponds to, we can use the "classes_" property.  We can also
+# # use each label directly, as we will to later.
+# print("Label categories:", le.classes_)
 
-for category_index in range(len(le.classes_)):
-    category_name = le.classes_[category_index]
-    print("Category to add to the dataframe: ", category_name)
-    data_ohe_encoded[category_name] = ohe_ocean_data_arr[category_index]
+# # As before, we can remove the old string-category column
+# data_ohe_encoded = data_set.drop('ocean_proximity', axis=1)
+
+# # Now we can add the new columns for each category, and add the appropriate
+# # data.
+
+# for category_index in range(len(le.classes_)):
+#     category_name = le.classes_[category_index]
+#     print("Category to add to the dataframe: ", category_name)
+#     data_ohe_encoded[category_name] = ohe_ocean_data_arr[category_index]
     
-print(data_ohe_encoded.head(1))
+# print(data_ohe_encoded.head(1))
 
 
 
-# For sparce matrices, you will need to adapt the code to convert the data
-# for it to work with a dataframe.  There are functions that can import
-# a sparse matrix into a dataframe directly.
+# # For sparse matrices, you will need to adapt the code to convert the data
+# # for it to work with a dataframe.  There are functions that can import
+# # a sparse matrix into a dataframe directly.
 
 
 
-# We can use the LabelBinarizer to accomplish the label encoding, and the 
-# one-hot encoding at the same time.  This will produce separate arrays
-# that we will still need to manipulate into a form that a Pandas dataframe
-# will like.
-lb = LabelBinarizer()
-ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
+# # We can use the LabelBinarizer to accomplish the label encoding, and the 
+# # one-hot encoding at the same time.  This will produce separate arrays
+# # that we will still need to manipulate into a form that a Pandas dataframe
+# # will like.
+# lb = LabelBinarizer()
+# ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
 
-# We can check if this is the same as our previous output after applying the
-# label encoding and one-hot encoding sequentially
-print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
+# # We can check if this output is the same as our previous output after 
+# # applying the label encoding and one-hot encoding sequentially
+# print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 
 
 ###############################################################################
@@ -922,7 +922,7 @@ print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 # from sklearn.impute import SimpleImputer
 # from sklearn.preprocessing import LabelEncoder
 
-# # Load data that has categpry-based values
+# # Load data that has category-based values
 # data_file_path = "../../In-Class Exercises/Data/housing.csv"
 # data_set = pd.read_csv(data_file_path)
 
@@ -957,12 +957,12 @@ print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 # # The filled in data is in an array that we can make a DataFrame with if we want
 # filled_in_df = pd.DataFrame(data=filled_in_data, columns=data_set.columns)
 
-# We can now split the data into training data and test data, and train a 
-# machine learning model as abovel.
-
-# Notice that the ocean_proimity column median values are all 1, representing
-# INLAND.  If this is most likely not the case, you could either pick a different
-# strategy, or remove the records that have NaN values.
+# # We can now split the data into training data and test data, and train a
+# # machine learning model as above.
+# #
+# # Notice that the ocean_proximity column median values are all 1, representing
+# # INLAND.  If this is most likely not the case, you could either pick a different
+# # strategy, or remove the records that have NaN values.
 
 
 ###############################################################################
@@ -971,18 +971,18 @@ print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 #                                                                             #
 ###############################################################################
 
-# # Pandas dataframe correlation matrix, same as Pearson's R correlation factor
-# # Only useful for linear correlations
-# import pandas as pd
-# data_file_path = "../../In-Class Exercises/Data/housing.csv"
-# data_set = pd.read_csv(data_file_path)
-# print("Correlation matrix: ")
-# print(data_set.corr())
+# Pandas dataframe correlation matrix, same as Pearson's R correlation factor
+# Only useful for linear correlations
+import pandas as pd
+data_file_path = "../../In-Class Exercises/Data/housing.csv"
+data_set = pd.read_csv(data_file_path)
+print("Correlation matrix: ")
+print(data_set.corr())
 
-# # We can also check the correlation of a single feature with all others
-# print("Correlations of just meadian_house_value:")
-# print(data_set.corr()["median_house_value"])
-# print("\n\n")
+# We can also check the correlation of a single feature with all others
+print("Correlations of just median_house_value:")
+print(data_set.corr()["median_house_value"])
+print("\n\n")
 
 
 
@@ -1025,7 +1025,7 @@ print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 #     category_name = lb.classes_[category_index]
 #     data_encoded[category_name] = ocean_cat_lb[category_index]
 
-# # Let's remove the invalid values.  We will use the Impute as we saw above
+# # Let's remove the invalid values.  We will use the Imputer estimator as we saw above
 # # to estimate these values.
 # from sklearn.impute import SimpleImputer
 # si = SimpleImputer(strategy="median")
@@ -1039,7 +1039,7 @@ print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 # new_cols.extend(lb.classes_)
 # filled_in_df = pd.DataFrame(data=filled_in_data, columns=new_cols)
 
-# # Setup the targets and the data
+# # Set up the targets and the data
 # targets = filled_in_df["median_house_value"]
 # data =  filled_in_df.drop(labels="median_house_value", axis=1)
 

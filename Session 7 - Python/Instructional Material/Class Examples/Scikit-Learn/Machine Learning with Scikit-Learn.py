@@ -276,6 +276,7 @@ def GetHousingData():
 
 
 # print("\nIntro Model - K-Nearest Neighbors Classifier\n")
+# data_train, data_test, target_train, target_test = GetTrainTestSplitIrisData()
 
 # # We can look at our data to see how it was split
 # print("data_train.shape:", data_train.shape)
@@ -988,18 +989,18 @@ print("\n\n")
 
 
 
-# # This is Pearson's R correlation factor, same as the DataFrame.corr() method.
-# # Only useful for linear correlations
-# import scipy
-# pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
-# print("pearson_r:", pearson_r)
-# print("p_val:", p_val,"\n\n")
+# This is Pearson's R correlation factor, same as the DataFrame.corr() method.
+# Only useful for linear correlations
+import scipy
+pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
+print("pearson_r:", pearson_r)
+print("p_val:", p_val,"\n\n")
 
-# # This is Spearman's R correlation factor, and can be used for non-linear 
-# # correlations
-# spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
-# print("spearman_r:", spearman_r)
-# print("p_val:", p_val,"\n\n\n")
+# This is Spearman's R correlation factor, and can be used for non-linear 
+# correlations
+spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
+print("spearman_r:", spearman_r)
+print("p_val:", p_val,"\n\n\n")
 
 
 
@@ -1062,6 +1063,34 @@ print("\n\n")
 # for index in range(len(dtr.feature_importances_)):
 #     print(index)
 #     print(col_names[index], "-", dtr.feature_importances_[index])
+
+
+
+
+
+
+###############################################################################
+#                                                                             #
+#                             Dataset Collection                              #
+#                                                                             #
+###############################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ###############################################################################

@@ -1006,9 +1006,10 @@ print("p_val:", p_val,"\n\n\n")
 
 
 
-# # Feature Importances can also tell us how much a feature affects targets.  For this
-# # example, we will also need to convert string data to numerical, impute
-# # missing values, and manually split off the data and targets from a DataFrame
+# # In addition to correlation factors, feature importances can tell us how 
+# # much a feature affects targets.  For this example, we will also need to 
+# # convert string data to numerical, imputemissing values, and manually split 
+# # off the data and targets from a DataFrame
 
 # # First, convert string categories to numbers
 # from sklearn.preprocessing import LabelBinarizer
@@ -1026,19 +1027,21 @@ print("p_val:", p_val,"\n\n\n")
 #     category_name = lb.classes_[category_index]
 #     data_encoded[category_name] = ocean_cat_lb[category_index]
 
-# # Let's remove the invalid values.  We will use the Imputer estimator as we saw above
+# # Let's replace the invalid values.  We will use the Imputer estimator as we saw above
 # # to estimate these values.
 # from sklearn.impute import SimpleImputer
 # si = SimpleImputer(strategy="median")
 # imputed_data = si.fit(data_encoded)
 # filled_in_data = imputed_data.transform(data_encoded)
 
+# # Let's create a dataframe to house our new data, and give each column an 
+# # appropriate name.
 # # Since we added new columns, need to incorporate those into the list of columns
 # # for the new dataframe
-# new_cols = data_set.columns.tolist()
-# new_cols.remove('ocean_proximity')
-# new_cols.extend(lb.classes_)
-# filled_in_df = pd.DataFrame(data=filled_in_data, columns=new_cols)
+# new_col_names = data_set.columns.tolist()
+# new_col_names.remove('ocean_proximity')
+# new_col_names.extend(lb.classes_)
+# filled_in_df = pd.DataFrame(data=filled_in_data, columns=new_col_names)
 
 # # Set up the targets and the data
 # targets = filled_in_df["median_house_value"]
@@ -1061,8 +1064,13 @@ print("p_val:", p_val,"\n\n\n")
 # col_names.remove("median_house_value")
 # print("Feature Importances:")
 # for index in range(len(dtr.feature_importances_)):
-#     print(index)
-#     print(col_names[index], "-", dtr.feature_importances_[index])
+#     # Create an index holder.  Will be sliced to align text after index.
+#     index_str = str(index) + ")   "
+    
+#     # Used to align feature importance values
+#     spacer_string = "                          "
+#     len_to_strip = len('housing_median_age') - len(col_names[index])
+#     print(index_str[:5], col_names[index], spacer_string[:len_to_strip], dtr.feature_importances_[index])
 
 
 

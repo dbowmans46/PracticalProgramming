@@ -972,35 +972,35 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# Pandas dataframe correlation matrix, same as Pearson's R correlation factor
-# Only useful for linear correlations
-import pandas as pd
-data_file_path = "../../In-Class Exercises/Data/housing.csv"
-data_set = pd.read_csv(data_file_path)
-print("Correlation matrix: ")
-print(data_set.corr())
+# # Pandas dataframe correlation matrix, same as Pearson's R correlation factor
+# # Only useful for linear correlations
+# import pandas as pd
+# data_file_path = "../../In-Class Exercises/Data/housing.csv"
+# data_set = pd.read_csv(data_file_path)
+# print("Correlation matrix: ")
+# print(data_set.corr())
 
-# We can also check the correlation of a single feature with all others
-print("Correlations of just median_house_value:")
-print(data_set.corr()["median_house_value"])
-print("\n\n")
-
-
+# # We can also check the correlation of a single feature with all others
+# print("Correlations of just median_house_value:")
+# print(data_set.corr()["median_house_value"])
+# print("\n\n")
 
 
 
-# This is Pearson's R correlation factor, same as the DataFrame.corr() method.
-# Only useful for linear correlations
-import scipy
-pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
-print("pearson_r:", pearson_r)
-print("p_val:", p_val,"\n\n")
 
-# This is Spearman's R correlation factor, and can be used for non-linear 
-# correlations
-spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
-print("spearman_r:", spearman_r)
-print("p_val:", p_val,"\n\n\n")
+
+# # This is Pearson's R correlation factor, same as the DataFrame.corr() method.
+# # Only useful for linear correlations
+# import scipy
+# pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
+# print("pearson_r:", pearson_r)
+# print("p_val:", p_val,"\n\n")
+
+# # This is Spearman's R correlation factor, and can be used for non-linear 
+# # correlations
+# spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
+# print("spearman_r:", spearman_r)
+# print("p_val:", p_val,"\n\n\n")
 
 
 
@@ -1072,6 +1072,50 @@ print("p_val:", p_val,"\n\n\n")
 #     len_to_strip = len('housing_median_age') - len(col_names[index])
 #     print(index_str[:5], col_names[index], spacer_string[:len_to_strip], dtr.feature_importances_[index])
 
+
+
+
+
+
+
+###############################################################################
+#                                                                             #
+#           Dimensionality Reduction - Principal Component Analysis           #
+#                                                                             #
+###############################################################################
+
+from sklearn.decomposition import PCA
+
+# For this example, we will use a data set with fewer dimensions
+from sklearn.datasets import load_iris
+iris_dataset = load_iris()
+iris_data = iris_dataset['data']
+
+# Note that for this example, the data is all within the same order of magnitude,
+# and thus we do not need to scale the data. If this is not the case, the data 
+# should first be scaled before passing it  to the PCA transformer.  For
+# sake of completeness, the data will be scaled.
+from sklearn.preprocessing import StandardScaler
+
+sc = StandardScaler()
+scaled_data = sc.fit_transform(iris_data)
+
+# For this basic example, we will just reduce the number of dimensions by 1
+principal_component_count = iris_data.shape[1] - 1
+pca = PCA(n_components = principal_component_count)
+pca_transformed_data = pca.fit_transform(scaled_data)
+print(pca_transformed_data)
+
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(pca_transformed_data, 
+                                              iris_dataset['target'], 
+                                              random_state=0)
+
+# For this example, the KNN classifier is used for no particular reason, 
+# and the number of neighbors chosen for no particular reason, as well.
+from sklearn.neighbors import KNeighborsClassifier
+knn_model = KNeighborsClassifier(n_neighbors=3) 
+MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
 
 
 

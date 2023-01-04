@@ -975,14 +975,15 @@ def GetHousingData():
 # # Pandas dataframe correlation matrix, same as Pearson's R correlation factor
 # # Only useful for linear correlations
 # import pandas as pd
-# data_file_path = "../../In-Class Exercises/Data/housing.csv"
-# data_set = pd.read_csv(data_file_path)
+# # data_file_path = "../../In-Class Exercises/Data/housing.csv"
+# data_file_path = "../../In-Class Exercises/Data/housing NaN Strings.csv"
+# original_data_set = pd.read_csv(data_file_path)
 # print("Correlation matrix: ")
-# print(data_set.corr())
+# print(original_data_set.corr())
 
 # # We can also check the correlation of a single feature with all others
 # print("Correlations of just median_house_value:")
-# print(data_set.corr()["median_house_value"])
+# print(original_data_set.corr()["median_house_value"])
 # print("\n\n")
 
 
@@ -992,13 +993,13 @@ def GetHousingData():
 # # This is Pearson's R correlation factor, same as the DataFrame.corr() method.
 # # Only useful for linear correlations
 # import scipy
-# pearson_r, p_val = scipy.stats.pearsonr(data_set["median_house_value"], data_set["latitude"])
+# pearson_r, p_val = scipy.stats.pearsonr(original_data_set["median_house_value"], original_data_set["latitude"])
 # print("pearson_r:", pearson_r)
 # print("p_val:", p_val,"\n\n")
 
 # # This is Spearman's R correlation factor, and can be used for non-linear 
 # # correlations
-# spearman_r, p_val = scipy.stats.spearmanr(data_set["median_house_value"], data_set["latitude"])
+# spearman_r, p_val = scipy.stats.spearmanr(original_data_set["median_house_value"], original_data_set["latitude"])
 # print("spearman_r:", spearman_r)
 # print("p_val:", p_val,"\n\n\n")
 
@@ -1014,13 +1015,13 @@ def GetHousingData():
 # # First, convert string categories to numbers
 # from sklearn.preprocessing import LabelBinarizer
 # lb = LabelBinarizer()
-# ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
+# ocean_cat_lb = lb.fit_transform(original_data_set['ocean_proximity'])
 
 # # Transpose for easy addition to dataframe
 # ocean_cat_lb = ocean_cat_lb.transpose()
 
 # # Drop string categorical data
-# data_encoded = data_set.drop('ocean_proximity', axis=1)
+# data_encoded = original_data_set.drop('ocean_proximity', axis=1)
 
 # # Add numerical categorical data
 # for category_index in range(len(lb.classes_)):
@@ -1038,7 +1039,7 @@ def GetHousingData():
 # # appropriate name.
 # # Since we added new columns, need to incorporate those into the list of columns
 # # for the new dataframe
-# new_col_names = data_set.columns.tolist()
+# new_col_names = original_data_set.columns.tolist()
 # new_col_names.remove('ocean_proximity')
 # new_col_names.extend(lb.classes_)
 # filled_in_df = pd.DataFrame(data=filled_in_data, columns=new_col_names)
@@ -1116,6 +1117,48 @@ data_train, data_test, target_train, target_test = \
 from sklearn.neighbors import KNeighborsClassifier
 knn_model = KNeighborsClassifier(n_neighbors=3) 
 MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+
+# We can get the original features by inversing the transform
+pca_inverted_data = pca.inverse_transform(pca_transformed_data)
+
+# We can also see how much of the data we have lost by checking how much data
+# is preserved in our reduced model.  This information is held in the 
+# explained_variance_ratio_ member.  We can see that we still have about 99.5%
+# of the total variance in the reduced data, so using the reduced feature set
+# is a good tradeoff (remember, keeping at least 95% is ta good starting 
+# point).
+
+print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
+print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
+
+
+
+# We can also let the algorithm determine how many dimensions we should keep
+# based on the variance we want to maintain
+min_variance = 0.95
+
+# The only difference is using the fraction of fariance as the input to the PCA
+# argument
+pca = PCA(n_components = min_variance)
+pca_transformed_data = pca.fit_transform(scaled_data)
+print(pca_transformed_data)
+
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(pca_transformed_data, 
+                                              iris_dataset['target'], 
+                                              random_state=0)
+
+# For this example, the KNN classifier is used for no particular reason, 
+# and the number of neighbors chosen for no particular reason, as well.
+from sklearn.neighbors import KNeighborsClassifier
+knn_model = KNeighborsClassifier(n_neighbors=3) 
+MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+
+print("\n\n\nSetting Variance Fraction")
+print("-------------------------------")
+print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
+print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
+
 
 
 

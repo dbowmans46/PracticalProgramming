@@ -1085,79 +1085,186 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-from sklearn.decomposition import PCA
+# from sklearn.decomposition import PCA
 
-# For this example, we will use a data set with fewer dimensions
+# # For this example, we will use a data set with fewer dimensions
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# iris_data = iris_dataset['data']
+
+# # Note that for this example, the data is all within the same order of magnitude,
+# # and thus we do not need to scale the data. If this is not the case, the data 
+# # should first be scaled before passing it  to the PCA transformer.  For
+# # sake of completeness, the data will be scaled.
+# from sklearn.preprocessing import StandardScaler
+
+# sc = StandardScaler()
+# scaled_data = sc.fit_transform(iris_data)
+
+# # For this basic example, we will just reduce the number of dimensions by 1
+# principal_component_count = iris_data.shape[1] - 1
+# pca = PCA(n_components = principal_component_count)
+# pca_transformed_data = pca.fit_transform(scaled_data)
+# print(pca_transformed_data)
+
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(pca_transformed_data, 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
+
+# # For this example, the KNN classifier is used for no particular reason, 
+# # and the number of neighbors chosen for no particular reason, as well.
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+
+# # We can get the original features by inversing the transform
+# pca_inverted_data = pca.inverse_transform(pca_transformed_data)
+
+# # We can also see how much of the data we have lost by checking how much data
+# # is preserved in our reduced model.  This information is held in the 
+# # explained_variance_ratio_ member.  We can see that we still have about 99.5%
+# # of the total variance in the reduced data, so using the reduced feature set
+# # is a good tradeoff (remember, keeping at least 95% is ta good starting 
+# # point).
+
+# print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
+# print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
+
+
+
+# # We can also let the algorithm determine how many dimensions we should keep
+# # based on the variance we want to maintain
+# min_variance = 0.95
+
+# # The only difference is using the fraction of fariance as the input to the PCA
+# # argument
+# pca = PCA(n_components = min_variance)
+# pca_transformed_data = pca.fit_transform(scaled_data)
+# print(pca_transformed_data)
+
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(pca_transformed_data, 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
+
+# # For this example, the KNN classifier is used for no particular reason, 
+# # and the number of neighbors chosen for no particular reason, as well.
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+
+# print("\n\n\nSetting Variance Fraction")
+# print("-------------------------------")
+# print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
+# print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
+
+
+
+
+
+
+
+###############################################################################
+#                                                                             #
+#     Dimensionality Reduction - Incremental Principal Component Analysis     #
+#                                                                             #
+###############################################################################
+
+from sklearn.decomposition import IncrementalPCA
+import numpy as np
+
 from sklearn.datasets import load_iris
 iris_dataset = load_iris()
 iris_data = iris_dataset['data']
 
-# Note that for this example, the data is all within the same order of magnitude,
-# and thus we do not need to scale the data. If this is not the case, the data 
-# should first be scaled before passing it  to the PCA transformer.  For
-# sake of completeness, the data will be scaled.
 from sklearn.preprocessing import StandardScaler
-
 sc = StandardScaler()
 scaled_data = sc.fit_transform(iris_data)
 
-# For this basic example, we will just reduce the number of dimensions by 1
-principal_component_count = iris_data.shape[1] - 1
-pca = PCA(n_components = principal_component_count)
-pca_transformed_data = pca.fit_transform(scaled_data)
-print(pca_transformed_data)
+num_batches = 10
+# We cannot use a minimum variance input for incremental PCA, as we could with
+# the normal PCA transformer.  Here, we must specify how many components we
+# want.
+component_count = iris_data.shape[1] - 2
+incremental_pca = IncrementalPCA(n_components = component_count)
 
+# We will use NumPy to split the data into equal batches, then feed the
+# incremental PCA transformer
+for batch_of_data in np.array_split(scaled_data, num_batches):
+    incremental_pca.partial_fit(batch_of_data)
+
+# Once we have trained the incremental PCA model, we can use it to transform
+# our initial scaled data
+data_reduced = incremental_pca.transform(scaled_data)
+
+print("Reduced data: \n", data_reduced)
+print("explained variance: ", incremental_pca.explained_variance_ratio_)
+print("Variance Maintained: ", sum(incremental_pca.explained_variance_ratio_))
+print()
+
+# Now we can use the transformed data as we would have with any other data set.
+# First split the data for training and testing, then feed a predictor
 data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(pca_transformed_data, 
+    sklearn.model_selection.train_test_split(data_reduced, 
                                               iris_dataset['target'], 
                                               random_state=0)
 
-# For this example, the KNN classifier is used for no particular reason, 
-# and the number of neighbors chosen for no particular reason, as well.
+# For this example, the KNN classifier is used for simplicity.
 from sklearn.neighbors import KNeighborsClassifier
 knn_model = KNeighborsClassifier(n_neighbors=3) 
 MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
 
-# We can get the original features by inversing the transform
-pca_inverted_data = pca.inverse_transform(pca_transformed_data)
-
-# We can also see how much of the data we have lost by checking how much data
-# is preserved in our reduced model.  This information is held in the 
-# explained_variance_ratio_ member.  We can see that we still have about 99.5%
-# of the total variance in the reduced data, so using the reduced feature set
-# is a good tradeoff (remember, keeping at least 95% is ta good starting 
-# point).
-
-print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
-print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
 
 
 
-# We can also let the algorithm determine how many dimensions we should keep
-# based on the variance we want to maintain
-min_variance = 0.95
+###############################################################################
+#                                                                             #
+#       Dimensionality Reduction - Random Principal Component Analysis        #
+#                                                                             #
+###############################################################################
 
-# The only difference is using the fraction of fariance as the input to the PCA
-# argument
-pca = PCA(n_components = min_variance)
-pca_transformed_data = pca.fit_transform(scaled_data)
-print(pca_transformed_data)
+# # This example is almost identical to the first with PCA, we are just going 
+# # to pass an additional argument to the PCA transformer.  
 
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(pca_transformed_data, 
-                                              iris_dataset['target'], 
-                                              random_state=0)
+# from sklearn.decomposition import PCA
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# iris_data = iris_dataset['data']
 
-# For this example, the KNN classifier is used for no particular reason, 
-# and the number of neighbors chosen for no particular reason, as well.
-from sklearn.neighbors import KNeighborsClassifier
-knn_model = KNeighborsClassifier(n_neighbors=3) 
-MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+# from sklearn.preprocessing import StandardScaler
+# sc = StandardScaler()
+# scaled_data = sc.fit_transform(iris_data)
 
-print("\n\n\nSetting Variance Fraction")
-print("-------------------------------")
-print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
-print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
+# principal_component_count = iris_data.shape[1] - 2
+
+# # Here is where the only difference occurs, using a different solver with PCA.
+# pca = PCA(n_components = principal_component_count, svd_solver='randomized')
+# pca_transformed_data = pca.fit_transform(scaled_data)
+# print(pca_transformed_data)
+
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(pca_transformed_data, 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
+
+# # For this example, the KNN classifier is used for no particular reason, 
+# # and the number of neighbors chosen for no particular reason, as well.
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+
+
+
+
+
+###############################################################################
+#                                                                             #
+#       Dimensionality Reduction - Kernel Principal Component Analysis        #
+#                                                                             #
+###############################################################################
+
+
 
 
 

@@ -1094,7 +1094,7 @@ def GetHousingData():
 
 # # Note that for this example, the data is all within the same order of magnitude,
 # # and thus we do not need to scale the data. If this is not the case, the data 
-# # should first be scaled before passing it  to the PCA transformer.  For
+# # should first be scaled before passing it to the PCA transformer.  For
 # # sake of completeness, the data will be scaled.
 # from sklearn.preprocessing import StandardScaler
 
@@ -1165,64 +1165,115 @@ def GetHousingData():
 
 
 
-###############################################################################
-#                                                                             #
-#     Dimensionality Reduction - Incremental Principal Component Analysis     #
-#                                                                             #
-###############################################################################
+# ###############################################################################
+# #                                                                             #
+# #     Dimensionality Reduction - Incremental Principal Component Analysis     #
+# #                                                                             #
+# ###############################################################################
 
-from sklearn.decomposition import IncrementalPCA
-import numpy as np
+# from sklearn.decomposition import IncrementalPCA
+# import numpy as np
 
-from sklearn.datasets import load_iris
-iris_dataset = load_iris()
-iris_data = iris_dataset['data']
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# iris_data = iris_dataset['data']
 
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-scaled_data = sc.fit_transform(iris_data)
+# from sklearn.preprocessing import StandardScaler
+# sc = StandardScaler()
+# scaled_data = sc.fit_transform(iris_data)
 
-num_batches = 10
-# We cannot use a minimum variance input for incremental PCA, as we could with
-# the normal PCA transformer.  Here, we must specify how many components we
-# want.
-component_count = iris_data.shape[1] - 2
-incremental_pca = IncrementalPCA(n_components = component_count)
+# num_batches = 10
+# # We cannot use a minimum variance input for incremental PCA, as we could with
+# # the normal PCA transformer.  Here, we must specify how many components we
+# # want.
+# component_count = iris_data.shape[1] - 2
+# incremental_pca = IncrementalPCA(n_components = component_count)
 
-# We will use NumPy to split the data into equal batches, then feed the
-# incremental PCA transformer
-for batch_of_data in np.array_split(scaled_data, num_batches):
-    incremental_pca.partial_fit(batch_of_data)
+# # We will use NumPy to split the data into equal batches, then feed the
+# # incremental PCA transformer.  Feeding in batches will reduce the computational
+# # power needed to train the model.
+# for batch_of_data in np.array_split(scaled_data, num_batches):
+#     incremental_pca.partial_fit(batch_of_data)
+#     data_reduced = incremental_pca.transform(scaled_data)
+#     data_train, data_test, target_train, target_test = \
+#         sklearn.model_selection.train_test_split(data_reduced, 
+#                                                   iris_dataset['target'], 
+#                                                   random_state=0)
+    
 
-# Once we have trained the incremental PCA model, we can use it to transform
-# our initial scaled data
-data_reduced = incremental_pca.transform(scaled_data)
+# # Once we have trained the incremental PCA model, we can use it to transform
+# # our initial scaled data.
+# data_reduced = incremental_pca.transform(scaled_data)
 
-print("Reduced data: \n", data_reduced)
-print("explained variance: ", incremental_pca.explained_variance_ratio_)
-print("Variance Maintained: ", sum(incremental_pca.explained_variance_ratio_))
-print()
+# print("Reduced data: \n", data_reduced)
+# print("explained variance: ", incremental_pca.explained_variance_ratio_)
+# print("Variance Maintained: ", sum(incremental_pca.explained_variance_ratio_))
+# print()
 
-# Now we can use the transformed data as we would have with any other data set.
-# First split the data for training and testing, then feed a predictor
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(data_reduced, 
-                                              iris_dataset['target'], 
-                                              random_state=0)
+# # Now we can use the transformed data as we would have with any other data set.
+# # First split the data for training and testing, then feed a predictor
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(data_reduced, 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
 
-# For this example, the KNN classifier is used for simplicity.
-from sklearn.neighbors import KNeighborsClassifier
-knn_model = KNeighborsClassifier(n_neighbors=3) 
-MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
-
-
+# # For this example, the KNN class with a modelifier is used for simplicity.
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
 
 
-###############################################################################
-#                                                                             #
-#       Dimensionality Reduction - Random Principal Component Analysis        #
-#                                                                             #
-###############################################################################
+
+
+# ###############################################################################
+# #                                                                             #
+# #     Dimensionality Reduction - Incremental PCA and Incremental Training     #
+# #                                                                             #
+# ###############################################################################
+
+# from sklearn.decomposition import IncrementalPCA
+# import numpy as np
+
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# iris_data = iris_dataset['data']
+
+# from sklearn.preprocessing import StandardScaler
+# sc = StandardScaler()
+# scaled_data = sc.fit_transform(iris_data)
+
+# num_batches = 10
+# # We cannot use a minimum variance input for incremental PCA, as we could with
+# # the normal PCA transformer.  Here, we must specify how many components we
+# # want.
+# component_count = iris_data.shape[1] - 2
+# incremental_pca = IncrementalPCA(n_components = component_count)
+
+# # We will use NumPy to split the data into equal batches, then feed the
+# # incremental PCA transformer
+# for batch_of_data in np.array_split(scaled_data, num_batches):
+#     incremental_pca.partial_fit(batch_of_data)
+#     data_reduced = incremental_pca.transform(scaled_data)
+#     data_train, data_test, target_train, target_test = \
+#         sklearn.model_selection.train_test_split(data_reduced, 
+#                                                   iris_dataset['target'], 
+#                                                   random_state=0)
+#
+#     # If we also need to save size in the output data, we can use an 
+#     # incremental ML model to partially fit the data
+#     from sklearn.linear_model import SGDClassifier    
+#     model = SGDClassifier()
+#     model.partial_fit(data_train, target_train, classes=(0,1,2))
+
+
+
+
+
+# ###############################################################################
+# #                                                                             #
+# #       Dimensionality Reduction - Random Principal Component Analysis        #
+# #                                                                             #
+# ###############################################################################
 
 # # This example is almost identical to the first with PCA, we are just going 
 # # to pass an additional argument to the PCA transformer.  
@@ -1264,7 +1315,38 @@ MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, targe
 #                                                                             #
 ###############################################################################
 
+from sklearn.decomposition import KernelPCA
+from sklearn.datasets import load_iris
+iris_dataset = load_iris()
+iris_data = iris_dataset['data']
 
+# Scale the data
+from sklearn.preprocessing import StandardScaler
+sc = StandardScaler()
+scaled_data = sc.fit_transform(iris_data)
+
+# For the kernel PCA, we tell it how many dimensions we want to end up with
+num_dimensions = 2
+
+# We then call the kernel PCA object, giving it the number of dimensions we
+# want, the type of kernel function we want to choose (just as with SVM's, 
+# there are multiple types and ways we can build our own), and the 
+# gamma hyperparameter controls how much wrapping/clustering is done on the 
+# decision boundary  .
+rbf_pca = KernelPCA(n_components=num_dimensions, kernel="rbf", gamma=0.04)
+data_reduced = rbf_pca.fit_transform(scaled_data)
+
+data_train, data_test, target_train, target_test = \
+    sklearn.model_selection.train_test_split(data_reduced, 
+                                              iris_dataset['target'], 
+                                              random_state=0)
+
+# For this example, the KNN classifier is used for no particular reason, 
+# and the number of neighbors chosen for no particular reason, as well.
+from sklearn.neighbors import KNeighborsClassifier
+knn_model = KNeighborsClassifier(n_neighbors=3) 
+print("Kernel PCA")
+MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
 
 
 

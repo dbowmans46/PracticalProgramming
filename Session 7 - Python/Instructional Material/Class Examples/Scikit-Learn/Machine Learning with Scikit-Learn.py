@@ -1315,40 +1315,77 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-from sklearn.decomposition import KernelPCA
+# from sklearn.decomposition import KernelPCA
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# iris_data = iris_dataset['data']
+
+# # Scale the data
+# from sklearn.preprocessing import StandardScaler
+# sc = StandardScaler()
+# scaled_data = sc.fit_transform(iris_data)
+
+# # For the kernel PCA, we tell it how many dimensions we want to end up with
+# num_dimensions = 2
+
+# # We then call the kernel PCA object, giving it the number of dimensions we
+# # want, the type of kernel function we want to choose (just as with SVM's, 
+# # there are multiple types and ways we can build our own), and the 
+# # gamma hyperparameter controls how much wrapping/clustering is done on the 
+# # decision boundary  .
+# rbf_pca = KernelPCA(n_components=num_dimensions, kernel="rbf", gamma=0.04)
+# data_reduced = rbf_pca.fit_transform(scaled_data)
+
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(data_reduced, 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
+
+# # For this example, the KNN classifier is used for no particular reason, 
+# # and the number of neighbors chosen for no particular reason, as well.
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# print("Kernel PCA")
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+
+
+
+
+###############################################################################
+#                                                                             #
+#            Dimensionality Reduction - Locally Linear Embedding              #
+#                                                                             #
+###############################################################################
+
+from sklearn.manifold import LocallyLinearEmbedding
+
+# For this example, we will use a data set with fewer dimensions
 from sklearn.datasets import load_iris
 iris_dataset = load_iris()
 iris_data = iris_dataset['data']
 
-# Scale the data
 from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-scaled_data = sc.fit_transform(iris_data)
+st_sc = StandardScaler()
+scaled_data = st_sc.fit_transform(iris_data)
 
-# For the kernel PCA, we tell it how many dimensions we want to end up with
-num_dimensions = 2
-
-# We then call the kernel PCA object, giving it the number of dimensions we
-# want, the type of kernel function we want to choose (just as with SVM's, 
-# there are multiple types and ways we can build our own), and the 
-# gamma hyperparameter controls how much wrapping/clustering is done on the 
-# decision boundary  .
-rbf_pca = KernelPCA(n_components=num_dimensions, kernel="rbf", gamma=0.04)
-data_reduced = rbf_pca.fit_transform(scaled_data)
+# n_components represents the number of dimensions in the manifold, 
+# and n_neighbors is the closest neighbors we will use to estimate the weights
+# and thus the projected data in the manifold.
+lle = LocallyLinearEmbedding(n_components=2, n_neighbors=10)
+lle_transformed_data = lle.fit_transform(iris_data)
+print(lle_transformed_data)
 
 data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(data_reduced, 
+    sklearn.model_selection.train_test_split(lle_transformed_data, 
                                               iris_dataset['target'], 
                                               random_state=0)
 
-# For this example, the KNN classifier is used for no particular reason, 
-# and the number of neighbors chosen for no particular reason, as well.
+# For this example, the KNN classifier is again used for no particular reason. 
+# The number of neighbors was chosen to maximize the test score, then the train
+# score respectively.
 from sklearn.neighbors import KNeighborsClassifier
-knn_model = KNeighborsClassifier(n_neighbors=3) 
-print("Kernel PCA")
+knn_model = KNeighborsClassifier(n_neighbors=4) 
 MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
-
-
 
 
 

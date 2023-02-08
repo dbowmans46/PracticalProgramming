@@ -1350,6 +1350,114 @@ def GetHousingData():
 
 
 
+###############################################################################
+#                                                                             #
+#          Dimensionality Reduction - Locally Linear Embedding on S           #
+#                                                                             #
+###############################################################################
+
+from sklearn.datasets import make_s_curve
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d
+
+
+# Code modified from SkLearn's website, https://scikit-learn.org/stable/auto_examples/manifold/plot_compare_methods.html#sphx-glr-auto-examples-manifold-plot-compare-methods-py
+# and Hands-On ML GitHub page: https://github.com/ageron/handson-ml2/blob/master/08_dimensionality_reduction.ipynb
+points, color = make_s_curve(n_samples=1000, noise=0.2, random_state=0)
+
+x, y, z = points.T
+
+fig, ax = plt.subplots(
+    figsize=(6, 6),
+    facecolor="white",
+    tight_layout=True,
+    subplot_kw={"projection": "3d"},
+)
+fig.suptitle("S-Curve", size=16)
+col = ax.scatter(x, y, z, c=color, s=50, alpha=0.8)
+ax.view_init(azim=-60, elev=9)
+ax.xaxis.set_major_locator(mpl.ticker.MultipleLocator(1))
+ax.yaxis.set_major_locator(mpl.ticker.MultipleLocator(1))
+ax.zaxis.set_major_locator(mpl.ticker.MultipleLocator(1))
+
+fig.colorbar(col, ax=ax, orientation="horizontal", shrink=0.6, aspect=60, pad=0.01)
+plt.show()
+
+
+from sklearn.manifold import LocallyLinearEmbedding
+
+lle = LocallyLinearEmbedding(n_components=2, n_neighbors=10, random_state=42)
+X_reduced = lle.fit_transform(points)
+
+# Code to generate Figure 8–12. Unrolled Swiss roll using LLE:
+
+plt.title("Unrolled S curve using LLE", fontsize=14)
+plt.scatter(X_reduced[:, 0], X_reduced[:, 1], c=color)
+plt.xlabel("$z_1$", fontsize=18)
+plt.ylabel("$z_2$", fontsize=18)
+plt.axis([-0.065, 0.055, -0.1, 0.12])
+plt.grid(True)
+
+#save_fig("lle_unrolling_plot")
+plt.show()
+
+
+
+###############################################################################
+#                                                                             #
+#      Dimensionality Reduction - Locally Linear Embedding on Swiss Roll      #
+#                                                                             #
+###############################################################################
+
+from sklearn.datasets import make_swiss_roll
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d
+
+
+# Code modified from SkLearn's website, https://scikit-learn.org/stable/auto_examples/manifold/plot_compare_methods.html#sphx-glr-auto-examples-manifold-plot-compare-methods-py
+# and Hands-On ML GitHub page: https://github.com/ageron/handson-ml2/blob/master/08_dimensionality_reduction.ipynb
+points, color = make_swiss_roll(n_samples=1000, noise=0.2, random_state=0)
+
+x, y, z = points.T
+
+fig, ax = plt.subplots(
+    figsize=(6, 6),
+    facecolor="white",
+    tight_layout=True,
+    subplot_kw={"projection": "3d"},
+)
+fig.suptitle("Swiss Roll", size=16)
+col = ax.scatter(x, y, z, c=color, s=50, alpha=0.8)
+ax.view_init(azim=-60, elev=9)
+ax.xaxis.set_major_locator(mpl.ticker.MultipleLocator(1))
+ax.yaxis.set_major_locator(mpl.ticker.MultipleLocator(1))
+ax.zaxis.set_major_locator(mpl.ticker.MultipleLocator(1))
+
+fig.colorbar(col, ax=ax, orientation="horizontal", shrink=0.6, aspect=60, pad=0.01)
+plt.show()
+
+
+from sklearn.manifold import LocallyLinearEmbedding
+
+lle = LocallyLinearEmbedding(n_components=2, n_neighbors=10, random_state=42)
+X_reduced = lle.fit_transform(points)
+
+# Code to generate Figure 8–12. Unrolled Swiss roll using LLE:
+
+plt.title("Unrolled S curve using LLE", fontsize=14)
+plt.scatter(X_reduced[:, 0], X_reduced[:, 1], c=color)
+plt.xlabel("$z_1$", fontsize=18)
+plt.ylabel("$z_2$", fontsize=18)
+plt.axis([-0.065, 0.055, -0.1, 0.12])
+plt.grid(True)
+
+#save_fig("lle_unrolling_plot")
+plt.show()
+
+
+
 
 ###############################################################################
 #                                                                             #
@@ -1357,35 +1465,35 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-from sklearn.manifold import LocallyLinearEmbedding
+# from sklearn.manifold import LocallyLinearEmbedding
 
-# For this example, we will use a data set with fewer dimensions
-from sklearn.datasets import load_iris
-iris_dataset = load_iris()
-iris_data = iris_dataset['data']
+# # For this example, we will use a data set with fewer dimensions
+# from sklearn.datasets import load_iris
+# iris_dataset = load_iris()
+# iris_data = iris_dataset['data']
 
-from sklearn.preprocessing import StandardScaler
-st_sc = StandardScaler()
-scaled_data = st_sc.fit_transform(iris_data)
+# from sklearn.preprocessing import StandardScaler
+# st_sc = StandardScaler()
+# scaled_data = st_sc.fit_transform(iris_data)
 
-# n_components represents the number of dimensions in the manifold, 
-# and n_neighbors is the closest neighbors we will use to estimate the weights
-# and thus the projected data in the manifold.
-lle = LocallyLinearEmbedding(n_components=2, n_neighbors=10)
-lle_transformed_data = lle.fit_transform(iris_data)
-print(lle_transformed_data)
+# # n_components represents the number of dimensions in the manifold, 
+# # and n_neighbors is the closest neighbors we will use to estimate the weights
+# # and thus the projected data in the manifold.
+# lle = LocallyLinearEmbedding(n_components=2, n_neighbors=10)
+# lle_transformed_data = lle.fit_transform(iris_data)
+# print(lle_transformed_data)
 
-data_train, data_test, target_train, target_test = \
-    sklearn.model_selection.train_test_split(lle_transformed_data, 
-                                              iris_dataset['target'], 
-                                              random_state=0)
+# data_train, data_test, target_train, target_test = \
+#     sklearn.model_selection.train_test_split(lle_transformed_data, 
+#                                               iris_dataset['target'], 
+#                                               random_state=0)
 
-# For this example, the KNN classifier is again used for no particular reason. 
-# The number of neighbors was chosen to maximize the test score, then the train
-# score respectively.
-from sklearn.neighbors import KNeighborsClassifier
-knn_model = KNeighborsClassifier(n_neighbors=4) 
-MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+# # For this example, the KNN classifier is again used for no particular reason. 
+# # The number of neighbors was chosen to maximize the test score, then the train
+# # score respectively.
+# from sklearn.neighbors import KNeighborsClassifier
+# knn_model = KNeighborsClassifier(n_neighbors=4) 
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
 
 
 

@@ -1504,30 +1504,30 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# Data wrangling tools
-import pandas as pd
+# # Data wrangling tools
+# import pandas as pd
 
-# Plotting tools
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import mpl_toolkits.mplot3d
+# # Plotting tools
+# import matplotlib as mpl
+# import matplotlib.pyplot as plt
+# import mpl_toolkits.mplot3d
 
 
-# Fetch example
-# The data is used to attempt to categorize topics of messages.
-from sklearn.datasets import fetch_20newsgroups
-newsgroup_data = fetch_20newsgroups()
+# # Fetch example
+# # The data is used to attempt to categorize topics of messages.
+# from sklearn.datasets import fetch_20newsgroups
+# newsgroup_data = fetch_20newsgroups()
 
-# For this example, we will create a historgram of the count of each type of
-# target.  First, wrangle data and get counts.
-newsgroup_df = pd.DataFrame(data = newsgroup_data.target, columns=["Target"])
-newsgroup_df["Target Name"] = newsgroup_df.apply(lambda row: newsgroup_data.target_names[row[0]], axis=1)
-grouped_data = newsgroup_df.groupby("Target Name",axis=0).count()
+# # For this example, we will create a historgram of the count of each type of
+# # target.  First, wrangle data and get counts.
+# newsgroup_df = pd.DataFrame(data = newsgroup_data.target, columns=["Target"])
+# newsgroup_df["Target Name"] = newsgroup_df.apply(lambda row: newsgroup_data.target_names[row[0]], axis=1)
+# grouped_data = newsgroup_df.groupby("Target Name",axis=0).count()
 
-# Make the histogram
-plt.bar(grouped_data.index, grouped_data['Target'].values, width=0.8, align='center')
-plt.title("Count of News Piece Topics in Scikit-Learn fetch_20newsgroups")
-plt.xticks(rotation=310, ha='left')
+# # Make the histogram
+# plt.bar(grouped_data.index, grouped_data['Target'].values, width=0.8, align='center')
+# plt.title("Count of News Piece Topics in Scikit-Learn fetch_20newsgroups")
+# plt.xticks(rotation=310, ha='left')
 
 
 
@@ -1542,7 +1542,7 @@ plt.xticks(rotation=310, ha='left')
 # iris_df = pd.DataFrame(iris_dataset.data, columns=feature_names)
 # iris_df['Targets'] = iris_dataset.target
 
-# Setup the 3D plot.
+# # Setup the 3D plot.
 # fig, ax = plt.subplots(
 #     figsize=(100,100),
 #     facecolor="white",
@@ -1580,8 +1580,8 @@ plt.xticks(rotation=310, ha='left')
 # # We have already seen this one from the LLE example.  This time, we will
 # # make the points finer.
 # from sklearn.datasets import make_swiss_roll
-
 # points, color = make_swiss_roll(n_samples=200000, noise=0, random_state=0)
+
 # x, y, z = points.T
 
 # fig, ax = plt.subplots(
@@ -1591,8 +1591,8 @@ plt.xticks(rotation=310, ha='left')
 #     subplot_kw={"projection": "3d"},
 # )
 
-# fig.suptitle("Swiss Roll", size=16)
-# col = ax.scatter(x, y, z, c=color, s=50, alpha=0.8)
+# fig.suptitle("Swiss Roll", size=160)
+# col = ax.scatter(x, y, z, c=color, s=50, alpha=0.6)
 # ax.view_init(azim=-60, elev=9)
 # fig.colorbar(col, ax=ax, orientation="horizontal", shrink=0.6, aspect=60, pad=0.01)
 # plt.show()
@@ -1600,26 +1600,102 @@ plt.xticks(rotation=310, ha='left')
 
 
 
+###############################################################################
+#                                                                             #
+#                   Dataset Collection - Reading CSV Files                    #
+#                                                                             #
+###############################################################################
+
+import pandas as pd
+csv_filepath = "../../In-Class Exercises/Data/housing.csv"
+csv_df = pd.read_csv(csv_filepath)
+
+print(csv_df)
 
 
+###############################################################################
+#                                                                             #
+#                 Dataset Collection - Reading Excel Files                    #
+#                                                                             #
+###############################################################################
+
+import pandas as pd
+excel_filepath = "../../In-Class Exercises/Data/Orbital Elements.xlsx"
+excel_df = pd.read_excel(excel_filepath)
+
+print(excel_df)
 
 
+###############################################################################
+#                                                                             #
+#                   Dataset Collection - Reading OSD Files                    #
+#                                                                             #
+###############################################################################
+
+import pandas as pd
+
+# Newer versions of pandas can already interpret osd files.  
+ods_filepath = "../../In-Class Exercises/Data/Evapotranspiration TamilNadu-2020.ods"
+ods_df = pd.read_excel(ods_filepath)
+
+print(ods_df)
 
 
+# If your version is having trouble, you can use the odfpy library.  Specify
+# the engine in pandas after pip installing the library.  this library is
+# substatially slower than just letting pandas load the file without
+# specifying an engine
+#ods_df = pd.read_excel(ods_filepath, engine="odf")
 
+
+###############################################################################
+#                                                                             #
+#            Dataset Collection - Reading CSV Files as a Text File            #
+#                                                                             #
+###############################################################################
+
+csv_filepath = "../../In-Class Exercises/Data/housing.csv"
+file_lines = []
+with open(csv_filepath, 'r') as fileHandle:
+    file_lines = fileHandle.readlines()
+    
+# We can then split up the lines into individual elements of lists
+csv_data_lines = []
+for line in file_lines:
+    # We can clean this up a bit by prematurely removing the newline characters
+    # before splitting the lines
+    csv_data_lines.append(line.replace('\n','').split(','))
+    
+print(csv_data_lines)
+
+
+# Each element is a string.  If we need to, we can prematurely go through and
+# convert each to an int, as needed, or just convert on the fly, as needed.
 
 
 
 ###############################################################################
 #                                                                             #
-#                          Manual Feature Engineering                         #
+#           Dataset Collection - Reading CSV Files using CSV Reader           #
 #                                                                             #
 ###############################################################################
 
+import csv
+csv_filepath = "../../In-Class Exercises/Data/housing.csv"
+csv_lines = []
+with open(csv_filepath, newline='') as csv_file:
+    housing_data_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
 
+    for row in housing_data_reader:
+        csv_lines.append(row)
 
+print(csv_lines)
 
-
+###############################################################################
+#                                                                             #
+#                    Dataset Collection - Reading SQL Data                    #
+#                                                                             #
+###############################################################################
 
 
 

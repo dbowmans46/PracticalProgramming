@@ -1613,40 +1613,6 @@ def GetHousingData():
 # print(csv_df)
 
 
-###############################################################################
-#                                                                             #
-#                 Dataset Collection - Reading Excel Files                    #
-#                                                                             #
-###############################################################################
-
-# import pandas as pd
-# excel_filepath = "../../In-Class Exercises/Data/Orbital Elements.xlsx"
-# excel_df = pd.read_excel(excel_filepath)
-
-# print(excel_df)
-
-
-###############################################################################
-#                                                                             #
-#                   Dataset Collection - Reading OSD Files                    #
-#                                                                             #
-###############################################################################
-
-# import pandas as pd
-
-# # Newer versions of pandas can already interpret osd files.  
-# ods_filepath = "../../In-Class Exercises/Data/Evapotranspiration TamilNadu-2020.ods"
-# ods_df = pd.read_excel(ods_filepath)
-
-# print(ods_df)
-
-
-# If your version is having trouble, you can use the odfpy library.  Specify
-# the engine in pandas after pip installing the library.  this library is
-# substatially slower than just letting pandas load the file without
-# specifying an engine
-#ods_df = pd.read_excel(ods_filepath, engine="odf")
-
 
 ###############################################################################
 #                                                                             #
@@ -1690,6 +1656,42 @@ def GetHousingData():
 #         csv_lines.append(row)
 
 # print(csv_lines)
+
+
+###############################################################################
+#                                                                             #
+#                 Dataset Collection - Reading Excel Files                    #
+#                                                                             #
+###############################################################################
+
+# import pandas as pd
+# excel_filepath = "../../In-Class Exercises/Data/Orbital Elements.xlsx"
+# excel_df = pd.read_excel(excel_filepath)
+
+# print(excel_df)
+
+
+###############################################################################
+#                                                                             #
+#                   Dataset Collection - Reading OSD Files                    #
+#                                                                             #
+###############################################################################
+
+# import pandas as pd
+
+# # Newer versions of pandas can already interpret osd files.  
+# ods_filepath = "../../In-Class Exercises/Data/Evapotranspiration TamilNadu-2020.ods"
+# ods_df = pd.read_excel(ods_filepath)
+
+# print(ods_df)
+
+
+# If your version is having trouble, you can use the odfpy library.  Specify
+# the engine in pandas after pip installing the library.  this library is
+# substatially slower than just letting pandas load the file without
+# specifying an engine
+#ods_df = pd.read_excel(ods_filepath, engine="odf")
+
 
 ###############################################################################
 #                                                                             #

@@ -1606,11 +1606,11 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-import pandas as pd
-csv_filepath = "../../In-Class Exercises/Data/housing.csv"
-csv_df = pd.read_csv(csv_filepath)
+# import pandas as pd
+# csv_filepath = "../../In-Class Exercises/Data/housing.csv"
+# csv_df = pd.read_csv(csv_filepath)
 
-print(csv_df)
+# print(csv_df)
 
 
 ###############################################################################
@@ -1619,11 +1619,11 @@ print(csv_df)
 #                                                                             #
 ###############################################################################
 
-import pandas as pd
-excel_filepath = "../../In-Class Exercises/Data/Orbital Elements.xlsx"
-excel_df = pd.read_excel(excel_filepath)
+# import pandas as pd
+# excel_filepath = "../../In-Class Exercises/Data/Orbital Elements.xlsx"
+# excel_df = pd.read_excel(excel_filepath)
 
-print(excel_df)
+# print(excel_df)
 
 
 ###############################################################################
@@ -1632,13 +1632,13 @@ print(excel_df)
 #                                                                             #
 ###############################################################################
 
-import pandas as pd
+# import pandas as pd
 
-# Newer versions of pandas can already interpret osd files.  
-ods_filepath = "../../In-Class Exercises/Data/Evapotranspiration TamilNadu-2020.ods"
-ods_df = pd.read_excel(ods_filepath)
+# # Newer versions of pandas can already interpret osd files.  
+# ods_filepath = "../../In-Class Exercises/Data/Evapotranspiration TamilNadu-2020.ods"
+# ods_df = pd.read_excel(ods_filepath)
 
-print(ods_df)
+# print(ods_df)
 
 
 # If your version is having trouble, you can use the odfpy library.  Specify
@@ -1654,22 +1654,22 @@ print(ods_df)
 #                                                                             #
 ###############################################################################
 
-csv_filepath = "../../In-Class Exercises/Data/housing.csv"
-file_lines = []
-with open(csv_filepath, 'r') as fileHandle:
-    file_lines = fileHandle.readlines()
+# csv_filepath = "../../In-Class Exercises/Data/housing.csv"
+# file_lines = []
+# with open(csv_filepath, 'r') as fileHandle:
+#     file_lines = fileHandle.readlines()
     
-# We can then split up the lines into individual elements of lists
-csv_data_lines = []
-for line in file_lines:
-    # We can clean this up a bit by prematurely removing the newline characters
-    # before splitting the lines
-    csv_data_lines.append(line.replace('\n','').split(','))
+# # We can then split up the lines into individual elements of lists
+# csv_data_lines = []
+# for line in file_lines:
+#     # We can clean this up a bit by prematurely removing the newline characters
+#     # before splitting the lines
+#     csv_data_lines.append(line.replace('\n','').split(','))
     
-print(csv_data_lines)
+# print(csv_data_lines)
 
 
-# Each element is a string.  If we need to, we can prematurely go through and
+# Each element is a string.  If we need to, we can preemptively go through and
 # convert each to an int, as needed, or just convert on the fly, as needed.
 
 
@@ -1680,16 +1680,16 @@ print(csv_data_lines)
 #                                                                             #
 ###############################################################################
 
-import csv
-csv_filepath = "../../In-Class Exercises/Data/housing.csv"
-csv_lines = []
-with open(csv_filepath, newline='') as csv_file:
-    housing_data_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
+# import csv
+# csv_filepath = "../../In-Class Exercises/Data/housing.csv"
+# csv_lines = []
+# with open(csv_filepath, newline='') as csv_file:
+#     housing_data_reader = csv.reader(csv_file, delimiter=',', quotechar='"')
 
-    for row in housing_data_reader:
-        csv_lines.append(row)
+#     for row in housing_data_reader:
+#         csv_lines.append(row)
 
-print(csv_lines)
+# print(csv_lines)
 
 ###############################################################################
 #                                                                             #
@@ -1697,8 +1697,47 @@ print(csv_lines)
 #                                                                             #
 ###############################################################################
 
+# import sqlite3
+# import pandas as pd
 
+# # SQLite databases are just a file
+# sqlite_chinook_db_filepath = "../../In-Class Exercises/Data/Chinook Database/Chinook_Sqlite.sqlite"
 
+# # Creating a connection is really like opening the file
+# conn = sqlite3.connect(sqlite_chinook_db_filepath)
+
+# # Can make pandas dataframes from tables
+# sql_data_df = pd.read_sql_query("SELECT * FROM album", conn)
+# sql_data_df = pd.read_sql_query("SELECT * FROM employee", conn)
+# sql_data_df = pd.read_sql_query("SELECT * FROM customer", conn)
+
+# # Can make pandas dataframes from tables
+# sql_data_df = pd.read_sql_query("SELECT * FROM customer_support_reps", conn)
+
+# # Can create custom query
+# customer_support_reps_query = """
+# SELECT	
+# 	Customer.CustomerID,
+# 	Customer.FirstName || Customer.LastName AS Customer_Name,
+# 	Customer.Company,
+# 	employee.FirstName || employee.LastName AS Support_Employee_Name,
+# 	employee.Title AS Employee_Title
+# FROM	
+# 	Customer
+# LEFT JOIN
+# (
+# 	SELECT
+# 		EmployeeID,
+# 		FirstName,
+# 		LastName,
+# 		Title
+# 	FROM
+# 		Employee
+# ) employee
+# ON
+# 	Customer.SupportRepID = Employee.EmployeeID
+# """
+# sql_data_df = pd.read_sql_query(customer_support_reps_query, conn)
 
 
 ###############################################################################

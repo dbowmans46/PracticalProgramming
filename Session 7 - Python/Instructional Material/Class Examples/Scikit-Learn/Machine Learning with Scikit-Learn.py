@@ -17,26 +17,26 @@ import sklearn
 from MLHelper import MLHelper
 
 
-'''
+"""
 The hello-world of machine learning - The iris data set prediction.  This data
 set gives the petal length, petal width, sepal length, sepal width, and name 
 for 3 different species of iris flowers.  This dataset is setup to predict
 the name of an iris flower given the petal length, petal width, sepal length, 
 and sepal width as features.
-'''
+"""
 # from sklearn.datasets import load_iris
 # iris_dataset = load_iris()
 
 # # We can get a description of the dataset
 # iris_dataset.DESCR
 
-# # We can get the features 
+# # We can get the features
 # iris_dataset.feature_names
 
 # # We can look at the data
 # iris_dataset.data
 
-# # We can see what the name of the actual species is, and what values the data 
+# # We can see what the name of the actual species is, and what values the data
 # # represents.  The term 'target' is used in scikit-learn to represent the
 # # actual value the data represents.
 # iris_dataset.target_names
@@ -44,7 +44,7 @@ and sepal width as features.
 
 # Let's set up our first model.  We will use a 75% training to 25% testing data
 # ratio.  First, let's separate our training and testing data.  We use the
-# train_test_split function to get x and y values (data points and accurate 
+# train_test_split function to get x and y values (data points and accurate
 # outcomes) for our training data, and our testing data.  This function
 # will shuffle the data, using a pseudorandom number generator that takes
 # the random_state argument as the seed.
@@ -67,14 +67,19 @@ def GetTrainTestSplitIrisData():
         DESCRIPTION.
 
     """
-    
+
     from sklearn.datasets import load_iris
+
     data = load_iris()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                                  data['target'], 
-                                                  random_state=0)
-        
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], random_state=0
+    )
+
     return data_train, data_test, target_train, target_test
 
 
@@ -94,14 +99,19 @@ def GetTrainTestSplitCAHousingData():
         DESCRIPTION.
 
     """
-    
+
     from sklearn.datasets import fetch_california_housing
+
     data = fetch_california_housing()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                              data['target'], 
-                                              random_state=0)
-        
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], random_state=0
+    )
+
     return data_train, data_test, target_train, target_test
 
 
@@ -121,15 +131,20 @@ def GetTrainTestSplitBostonHousingData():
         DESCRIPTION.
 
     """
-    
+
     from sklearn.datasets import load_boston
+
     data = load_boston()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                              data['target'], 
-                                              random_state=0)
-        
-    return data_train, data_test, target_train, target_test    
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], random_state=0
+    )
+
+    return data_train, data_test, target_train, target_test
 
 
 def GetTrainTestSplitDiabetesData():
@@ -149,13 +164,18 @@ def GetTrainTestSplitDiabetesData():
 
     """
     from sklearn.datasets import load_diabetes
+
     data = load_diabetes()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                              data['target'], 
-                                              random_state=0)
-        
-    return data_train, data_test, target_train, target_test   
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], random_state=0
+    )
+
+    return data_train, data_test, target_train, target_test
 
 
 def GetTrainTestSplitBreastCancerData():
@@ -174,14 +194,19 @@ def GetTrainTestSplitBreastCancerData():
         DESCRIPTION.
 
     """
-    
+
     from sklearn.datasets import load_breast_cancer
+
     data = load_breast_cancer()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                              data['target'], 
-                                              random_state=0)
-        
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], random_state=0
+    )
+
     return data_train, data_test, target_train, target_test
 
 
@@ -201,16 +226,19 @@ def GetTrainTestSplitWineData():
         DESCRIPTION.
 
     """
-    
+
     from sklearn.datasets import load_wine
+
     data = load_wine()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                              data['target'],
-                                              test_size=0.25,
-                                              train_size=0.75,
-                                              random_state=0)
-        
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], test_size=0.25, train_size=0.75, random_state=0
+    )
+
     return data_train, data_test, target_train, target_test
 
 
@@ -230,20 +258,23 @@ def GetTrainTestSplitCovertypeData():
         DESCRIPTION.
 
     """
-    
+
     from sklearn.datasets import fetch_covtype
+
     data = fetch_covtype()
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data['data'], 
-                                              data['target'],
-                                              test_size=0.25,
-                                              train_size=0.75,
-                                              random_state=0)
-        
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data["data"], data["target"], test_size=0.25, train_size=0.75, random_state=0
+    )
+
     return data_train, data_test, target_train, target_test
 
 
-def GetHousingData():    
+def GetHousingData():
     """
     Regression data set from https://github.com/ageron/handson-ml2/blob/master/datasets/housing/housing.csv
 
@@ -259,20 +290,25 @@ def GetHousingData():
         DESCRIPTION.
 
     """
-    
+
     import pandas as pd
-    
+
     data_file_path = "../../In-Class Exercises/Data/housing.csv"
     data = pd.read_csv(data_file_path)
-    data_train, data_test, target_train, target_test = \
-        sklearn.model_selection.train_test_split(data.drop('median_house_value',axis=1), 
-                                              data['median_house_value'],
-                                              test_size=0.25,
-                                              train_size=0.75,
-                                              random_state=0)
-        
-    return data_train, data_test, target_train, target_test
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data.drop("median_house_value", axis=1),
+        data["median_house_value"],
+        test_size=0.25,
+        train_size=0.75,
+        random_state=0,
+    )
 
+    return data_train, data_test, target_train, target_test
 
 
 # print("\nIntro Model - K-Nearest Neighbors Classifier\n")
@@ -297,8 +333,6 @@ def GetHousingData():
 # print("Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%")
 
 
-
-
 ###############################################################################
 #                                                                             #
 #                    K-Nearest Neighbors Classifier                           #
@@ -312,8 +346,8 @@ def GetHousingData():
 
 # # How does accuracy change with the number of neighbors?
 # for neighbors in range(1,11):
-#     knn_model = KNeighborsClassifier(n_neighbors=neighbors) 
-#     knn_model.fit(data_train, target_train)         
+#     knn_model = KNeighborsClassifier(n_neighbors=neighbors)
+#     knn_model.fit(data_train, target_train)
 #     target_predictions = knn_model.predict(data_test)
 #     knn_score = round(knn_model.score(data_test,target_test)*100,8)
 #     print("K-Nearest Neighbors accuracy neighbors=" + str(neighbors) + " score:", str(knn_score) + "%")
@@ -355,8 +389,8 @@ def GetHousingData():
 #                 feature_names=data.feature_names, # Feature data names \
 #                 impurity=True, # Show the gini score or not \
 #                 filled=True,   # Fill each node with color in the output image \
-#                 rounded=True)  # Round the corners of the output graph image 
-    
+#                 rounded=True)  # Round the corners of the output graph image
+
 # # If this does not work due to pathing issues, you can always run dot.exe from
 # # the Graphviz installation, and generate the graph manually.  See the file
 # # 'Convert dot.ps1' for an example PowerShell script
@@ -365,12 +399,10 @@ def GetHousingData():
 # import graphviz
 # with open(tree_file_name) as fileHandle:
 #     dot_graph = fileHandle.read()
-    
+
 # graph = graphviz.Source(dot_graph)
 # s = graphviz.Source(graph.source, filename="test.png", format="png")
 # s.view()
-    
-
 
 
 # # How does accuracy change with the number of decisions?
@@ -387,7 +419,6 @@ def GetHousingData():
 # print(breast_cancer_data.feature_names)
 # # Why does the accuracy not improve after so many depth levels?  Hint: How many
 # # attributes do we have?
-
 
 
 ###############################################################################
@@ -415,7 +446,7 @@ def GetHousingData():
 # c_vals = [0.001]
 # for x in range(10):
 #     c_vals.append(10*c_vals[-1])
-    
+
 # # What happens when we play around with c
 # for c_val in c_vals:
 #     print("Logistic Regression with c =",c_val)
@@ -423,8 +454,7 @@ def GetHousingData():
 #     lr_model.fit(data_train, target_train)
 #     print("Accuracy Score:", str(lr_model.score(data_test,target_test)*100) + "%")
 #     print("\n")
-    
-    
+
 
 ###############################################################################
 #                                                                             #
@@ -444,7 +474,6 @@ def GetHousingData():
 #     print("----------------------------")
 #     MLHelper.FitAndGetAccuracy(svc_model, data_train, data_test,  \
 #                                 target_train, target_test, 8)
-
 
 
 ###############################################################################
@@ -470,7 +499,7 @@ def GetHousingData():
 
 # # Can shorten the chain by using Pipelines.  Also, below is a brief peek at
 # # scaling data.  Scaling data becomes necessary when the features span vastly
-# # different orders of magnitude.  SVM's are particularly sensitive to 
+# # different orders of magnitude.  SVM's are particularly sensitive to
 # # scaling
 # from sklearn.pipeline import Pipeline
 # poly_svm = Pipeline([
@@ -488,7 +517,7 @@ def GetHousingData():
 # # Option 2 - Use SVC with arguments to use the kernel trick
 # from sklearn.svm import SVC
 
-# # coef0 adjusts high-degree polynomial coefficients and low-degree polynomial 
+# # coef0 adjusts high-degree polynomial coefficients and low-degree polynomial
 # # coefficients
 # nonlinear_svc_model = SVC(kernel="poly", degree=3, coef0=1, max_iter=100000)
 # nonlinear_svc_model.fit(data_train, target_train)
@@ -517,10 +546,6 @@ def GetHousingData():
 #                             target_train, target_test, 8)
 
 
-
-
-
-
 ###############################################################################
 #                                                                             #
 #                          Regressor Data Setup                               #
@@ -537,13 +562,12 @@ def GetHousingData():
 # tuning_parameter_vals = [0, 0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1, 2, 5, 10, 100, 1000]
 
 
-
 ###############################################################################
 #                                                                             #
 #                     K-Nearest Neighbors Regressor                           #
 #                                                                             #
 ###############################################################################
-    
+
 # from sklearn.neighbors import KNeighborsRegressor
 # for neighbor_count in range(1,20):
 #     knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
@@ -555,7 +579,6 @@ def GetHousingData():
 #     # knn_model.fit(data_train, target_train)
 #     print(neighbor_count,"Neighbors Training Accuracy Score:", str(knn_model.score(data_train,target_train)*100) + "%")
 #     print(neighbor_count,"Neighbors Test Accuracy Score:", str(knn_model.score(data_test,target_test)*100) + "%\n")
-
 
 
 ###############################################################################
@@ -572,7 +595,7 @@ def GetHousingData():
 # # l_reg_model.fit(data_train, target_train)
 # # MLHelper.FitAndGetAccuracy(l_reg_model, data_train, data_test, \
 # #                             target_train, target_test, 8)
-    
+
 # # Time difference in scaling with a pipeline vs normal scaling
 # import time
 # times = []
@@ -586,7 +609,7 @@ def GetHousingData():
 #     #                             target_train, target_test, 8)
 #     end_time_standard = time.perf_counter()
 #     time_standard = end_time_standard - start_time_standard
-    
+
 #     start_time_pipeline = time.perf_counter()
 #     l_reg_model = make_pipeline(StandardScaler(), LinearRegression())
 #     l_reg_model.fit(data_train, target_train)
@@ -630,7 +653,7 @@ def GetHousingData():
 #     lasso_model = Lasso(alpha=alpha_val)
 #     MLHelper.FitAndGetAccuracy(lasso_model, data_train, data_test, \
 #                                 target_train, target_test, 8)
-        
+
 #     pred_test_lasso = lasso_model.predict(data_test)
 #     #print("MSE: ", np.sqrt(mean_squared_error(target_test,pred_test_lasso)))
 #     #print("Weights: ", lasso_model.coef_)
@@ -671,12 +694,12 @@ def GetHousingData():
 # class_name_vals = "Median House Val"
 # export_graphviz(dec_tree_reg,            # The machine learning model to export \
 #                 out_file=tree_file_name, # The output filepath for the graph \
-#                 class_names=class_name_vals,    # Target classes \                
+#                 class_names=class_name_vals,    # Target classes \
 #                 feature_names=data.feature_names, # Feature data names \
 #                 impurity=True, # Show the gini score/mse or not \
 #                 filled=True,   # Fill each node with color in the output image \
-#                 rounded=True)  # Round the corners of the output graph image 
-    
+#                 rounded=True)  # Round the corners of the output graph image
+
 # If this does not work due to pathing issues, you can always run dot.exe from
 # the Graphviz installation, and generate the graph manually.  See the file
 # 'Convert dot.ps1' for an example PowerShell script.  The graphviz\bin directory
@@ -694,8 +717,6 @@ def GetHousingData():
 # s.view()
 
 
-
-
 ###############################################################################
 #                                                                             #
 #                              Train Test Split                               #
@@ -704,8 +725,8 @@ def GetHousingData():
 
 
 # # test_size + train_size <= 1.00
-# sklearn.model_selection.train_test_split(data['data'], 
-#                                           data['target'], 
+# sklearn.model_selection.train_test_split(data['data'],
+#                                           data['target'],
 #                                           test_size=0.3,
 #                                           train_size=0.7,
 #                                           random_state=0)
@@ -714,7 +735,6 @@ def GetHousingData():
 # tts_model = LogisticRegression(max_iter=500000)
 # MLHelper.FitAndGetAccuracy(tts_model, data_train, data_test, \
 #                             target_train, target_test, 4)
-
 
 
 ###############################################################################
@@ -767,7 +787,6 @@ def GetHousingData():
 # print("Cross Validation Standard Deviation: ", cvs.std())
 
 
-
 ###############################################################################
 #                                                                             #
 #                                Scaling Data                                 #
@@ -786,7 +805,7 @@ def GetHousingData():
 # log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
 # MLHelper.FitAndGetAccuracy(log_reg_model, data_train, data_test, \
 #                             target_train, target_test, 8)
-    
+
 
 # print("\n\n\n")
 # print("Accuracy with scaling:\n","--------------------\n")
@@ -799,7 +818,7 @@ def GetHousingData():
 # log_reg_model = LogisticRegression(C=C_val, max_iter=max_iterations)
 # MLHelper.FitAndGetAccuracy(log_reg_model, scaled_train_data, scaled_test_data, \
 #                             target_train, target_test, 8)
-    
+
 # print("\n\n\n")
 # print("Accuracy with scaling and cross validation:\n","--------------------\n")
 
@@ -810,7 +829,7 @@ def GetHousingData():
 # scaler = StandardScaler()
 # scaled_data = scaler.fit_transform(data['data'], data['target'])
 # cvs = cross_val_score(log_reg_model, scaled_data, data["target"], scoring="accuracy")
-    
+
 # print("Cross Validation Scores: ", cvs)
 # print("Cross Validation Mean: ", cvs.mean())
 # print("Cross Validation Standard Deviation: ", cvs.std())
@@ -834,7 +853,6 @@ def GetHousingData():
 # print("Cross Validation Standard Deviation: ", cvs.std())
 
 
-    
 ###############################################################################
 #                                                                             #
 #                       Converting Categories to Numbers                      #
@@ -856,14 +874,11 @@ def GetHousingData():
 # print(data_encoded.head(10))
 
 
-
-
-
 # # One-hot encoding the data
 # # This will build off of the numerically-categorized data we produced above
 # ohe = OneHotEncoder()
 
-# # The fit_transform method expects a 2D matrix, so we need to convert the 
+# # The fit_transform method expects a 2D matrix, so we need to convert the
 # # encoded data from a 1D array to a 2D array.
 # encoded_ocean_data_reshaped = encoded_ocean_data.reshape(-1,1)
 # ohe_ocean_data = ohe.fit_transform(encoded_ocean_data_reshaped)
@@ -891,9 +906,8 @@ def GetHousingData():
 #     category_name = le.classes_[category_index]
 #     print("Category to add to the dataframe: ", category_name)
 #     data_ohe_encoded[category_name] = ohe_ocean_data_arr[category_index]
-    
-# print(data_ohe_encoded.head(1))
 
+# print(data_ohe_encoded.head(1))
 
 
 # # For sparse matrices, you will need to adapt the code to convert the data
@@ -901,15 +915,14 @@ def GetHousingData():
 # # a sparse matrix into a dataframe directly.
 
 
-
-# # We can use the LabelBinarizer to accomplish the label encoding, and the 
+# # We can use the LabelBinarizer to accomplish the label encoding, and the
 # # one-hot encoding at the same time.  This will produce separate arrays
 # # that we will still need to manipulate into a form that a Pandas dataframe
 # # will like.
 # lb = LabelBinarizer()
 # ocean_cat_lb = lb.fit_transform(data_set['ocean_proximity'])
 
-# # We can check if this output is the same as our previous output after 
+# # We can check if this output is the same as our previous output after
 # # applying the label encoding and one-hot encoding sequentially
 # print("LabelBinarizer Check:", ocean_cat_lb == ohe_ocean_data)
 
@@ -987,9 +1000,6 @@ def GetHousingData():
 # print("\n\n")
 
 
-
-
-
 # # This is Pearson's R correlation factor, same as the DataFrame.corr() method.
 # # Only useful for linear correlations
 # import scipy
@@ -997,19 +1007,16 @@ def GetHousingData():
 # print("pearson_r:", pearson_r)
 # print("p_val:", p_val,"\n\n")
 
-# # This is Spearman's R correlation factor, and can be used for non-linear 
+# # This is Spearman's R correlation factor, and can be used for non-linear
 # # correlations
 # spearman_r, p_val = scipy.stats.spearmanr(original_data_set["median_house_value"], original_data_set["latitude"])
 # print("spearman_r:", spearman_r)
 # print("p_val:", p_val,"\n\n\n")
 
 
-
-
-
-# # In addition to correlation factors, feature importances can tell us how 
-# # much a feature affects targets.  For this example, we will also need to 
-# # convert string data to numerical, imputemissing values, and manually split 
+# # In addition to correlation factors, feature importances can tell us how
+# # much a feature affects targets.  For this example, we will also need to
+# # convert string data to numerical, imputemissing values, and manually split
 # # off the data and targets from a DataFrame
 
 # # First, convert string categories to numbers
@@ -1035,7 +1042,7 @@ def GetHousingData():
 # imputed_data = si.fit(data_encoded)
 # filled_in_data = imputed_data.transform(data_encoded)
 
-# # Let's create a dataframe to house our new data, and give each column an 
+# # Let's create a dataframe to house our new data, and give each column an
 # # appropriate name.
 # # Since we added new columns, need to incorporate those into the list of columns
 # # for the new dataframe
@@ -1049,8 +1056,8 @@ def GetHousingData():
 # data =  filled_in_df.drop(labels="median_house_value", axis=1)
 
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data, 
-#                                           targets, 
+#     sklearn.model_selection.train_test_split(data,
+#                                           targets,
 #                                           random_state=0)
 
 # # Train a model that can utilize feature_importances_ (any of the decision tree
@@ -1067,16 +1074,11 @@ def GetHousingData():
 # for index in range(len(dtr.feature_importances_)):
 #     # Create an index holder.  Will be sliced to align text after index.
 #     index_str = str(index) + ")   "
-    
+
 #     # Used to align feature importance values
 #     spacer_string = "                          "
 #     len_to_strip = len('housing_median_age') - len(col_names[index])
 #     print(index_str[:5], col_names[index], spacer_string[:len_to_strip], dtr.feature_importances_[index])
-
-
-
-
-
 
 
 ###############################################################################
@@ -1093,7 +1095,7 @@ def GetHousingData():
 # iris_data = iris_dataset['data']
 
 # # Note that for this example, the data is all within the same order of magnitude,
-# # and thus we do not need to scale the data. If this is not the case, the data 
+# # and thus we do not need to scale the data. If this is not the case, the data
 # # should first be scaled before passing it to the PCA transformer.  For
 # # sake of completeness, the data will be scaled.
 # from sklearn.preprocessing import StandardScaler
@@ -1108,29 +1110,28 @@ def GetHousingData():
 # print(pca_transformed_data)
 
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(pca_transformed_data, 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(pca_transformed_data,
+#                                               iris_dataset['target'],
 #                                               random_state=0)
 
-# # For this example, the KNN classifier is used for no particular reason, 
+# # For this example, the KNN classifier is used for no particular reason,
 # # and the number of neighbors chosen for no particular reason, as well.
 # from sklearn.neighbors import KNeighborsClassifier
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
-# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+# knn_model = KNeighborsClassifier(n_neighbors=3)
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)
 
 # # We can get the original features by inversing the transform
 # pca_inverted_data = pca.inverse_transform(pca_transformed_data)
 
 # # We can also see how much of the data we have lost by checking how much data
-# # is preserved in our reduced model.  This information is held in the 
+# # is preserved in our reduced model.  This information is held in the
 # # explained_variance_ratio_ member.  We can see that we still have about 99.5%
 # # of the total variance in the reduced data, so using the reduced feature set
-# # is a good tradeoff (remember, keeping at least 95% is ta good starting 
+# # is a good tradeoff (remember, keeping at least 95% is ta good starting
 # # point).
 
 # print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
 # print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
-
 
 
 # # We can also let the algorithm determine how many dimensions we should keep
@@ -1144,25 +1145,20 @@ def GetHousingData():
 # print(pca_transformed_data)
 
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(pca_transformed_data, 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(pca_transformed_data,
+#                                               iris_dataset['target'],
 #                                               random_state=0)
 
-# # For this example, the KNN classifier is used for no particular reason, 
+# # For this example, the KNN classifier is used for no particular reason,
 # # and the number of neighbors chosen for no particular reason, as well.
 # from sklearn.neighbors import KNeighborsClassifier
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
-# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
+# knn_model = KNeighborsClassifier(n_neighbors=3)
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)
 
 # print("\n\n\nSetting Variance Fraction")
 # print("-------------------------------")
 # print("Explained Variance Ratios: ", pca.explained_variance_ratio_)
 # print("Total variance captured in the reduced model: ", sum(pca.explained_variance_ratio_))
-
-
-
-
-
 
 
 # ###############################################################################
@@ -1196,10 +1192,10 @@ def GetHousingData():
 #     incremental_pca.partial_fit(batch_of_data)
 #     data_reduced = incremental_pca.transform(scaled_data)
 #     data_train, data_test, target_train, target_test = \
-#         sklearn.model_selection.train_test_split(data_reduced, 
-#                                                   iris_dataset['target'], 
+#         sklearn.model_selection.train_test_split(data_reduced,
+#                                                   iris_dataset['target'],
 #                                                   random_state=0)
-    
+
 
 # # Once we have trained the incremental PCA model, we can use it to transform
 # # our initial scaled data.
@@ -1213,16 +1209,14 @@ def GetHousingData():
 # # Now we can use the transformed data as we would have with any other data set.
 # # First split the data for training and testing, then feed a predictor
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data_reduced, 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(data_reduced,
+#                                               iris_dataset['target'],
 #                                               random_state=0)
 
 # # For this example, the KNN class with a modelifier is used for simplicity.
 # from sklearn.neighbors import KNeighborsClassifier
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
-# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
-
-
+# knn_model = KNeighborsClassifier(n_neighbors=3)
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)
 
 
 # ###############################################################################
@@ -1255,18 +1249,15 @@ def GetHousingData():
 #     incremental_pca.partial_fit(batch_of_data)
 #     data_reduced = incremental_pca.transform(scaled_data)
 #     data_train, data_test, target_train, target_test = \
-#         sklearn.model_selection.train_test_split(data_reduced, 
-#                                                   iris_dataset['target'], 
+#         sklearn.model_selection.train_test_split(data_reduced,
+#                                                   iris_dataset['target'],
 #                                                   random_state=0)
 #
-#     # If we also need to save size in the output data, we can use an 
+#     # If we also need to save size in the output data, we can use an
 #     # incremental ML model to partially fit the data
-#     from sklearn.linear_model import SGDClassifier    
+#     from sklearn.linear_model import SGDClassifier
 #     model = SGDClassifier()
 #     model.partial_fit(data_train, target_train, classes=(0,1,2))
-
-
-
 
 
 # ###############################################################################
@@ -1275,8 +1266,8 @@ def GetHousingData():
 # #                                                                             #
 # ###############################################################################
 
-# # This example is almost identical to the first with PCA, we are just going 
-# # to pass an additional argument to the PCA transformer.  
+# # This example is almost identical to the first with PCA, we are just going
+# # to pass an additional argument to the PCA transformer.
 
 # from sklearn.decomposition import PCA
 # from sklearn.datasets import load_iris
@@ -1295,18 +1286,15 @@ def GetHousingData():
 # print(pca_transformed_data)
 
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(pca_transformed_data, 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(pca_transformed_data,
+#                                               iris_dataset['target'],
 #                                               random_state=0)
 
-# # For this example, the KNN classifier is used for no particular reason, 
+# # For this example, the KNN classifier is used for no particular reason,
 # # and the number of neighbors chosen for no particular reason, as well.
 # from sklearn.neighbors import KNeighborsClassifier
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
-# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
-
-
-
+# knn_model = KNeighborsClassifier(n_neighbors=3)
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)
 
 
 ###############################################################################
@@ -1329,25 +1317,24 @@ def GetHousingData():
 # num_dimensions = 2
 
 # # We then call the kernel PCA object, giving it the number of dimensions we
-# # want, the type of kernel function we want to choose (just as with SVM's, 
-# # there are multiple types and ways we can build our own), and the 
-# # gamma hyperparameter controls how much wrapping/clustering is done on the 
+# # want, the type of kernel function we want to choose (just as with SVM's,
+# # there are multiple types and ways we can build our own), and the
+# # gamma hyperparameter controls how much wrapping/clustering is done on the
 # # decision boundary  .
 # rbf_pca = KernelPCA(n_components=num_dimensions, kernel="rbf", gamma=0.04)
 # data_reduced = rbf_pca.fit_transform(scaled_data)
 
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(data_reduced, 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(data_reduced,
+#                                               iris_dataset['target'],
 #                                               random_state=0)
 
-# # For this example, the KNN classifier is used for no particular reason, 
+# # For this example, the KNN classifier is used for no particular reason,
 # # and the number of neighbors chosen for no particular reason, as well.
 # from sklearn.neighbors import KNeighborsClassifier
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# knn_model = KNeighborsClassifier(n_neighbors=3)
 # print("Kernel PCA")
-# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
-
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)
 
 
 ###############################################################################
@@ -1403,7 +1390,6 @@ def GetHousingData():
 # plt.show()
 
 
-
 ###############################################################################
 #                                                                             #
 #      Dimensionality Reduction - Locally Linear Embedding on Swiss Roll      #
@@ -1457,8 +1443,6 @@ def GetHousingData():
 # plt.show()
 
 
-
-
 ###############################################################################
 #                                                                             #
 #            Dimensionality Reduction - Locally Linear Embedding              #
@@ -1476,7 +1460,7 @@ def GetHousingData():
 # st_sc = StandardScaler()
 # scaled_data = st_sc.fit_transform(iris_data)
 
-# # n_components represents the number of dimensions in the manifold, 
+# # n_components represents the number of dimensions in the manifold,
 # # and n_neighbors is the closest neighbors we will use to estimate the weights
 # # and thus the projected data in the manifold.
 # lle = LocallyLinearEmbedding(n_components=2, n_neighbors=10)
@@ -1484,18 +1468,16 @@ def GetHousingData():
 # print(lle_transformed_data)
 
 # data_train, data_test, target_train, target_test = \
-#     sklearn.model_selection.train_test_split(lle_transformed_data, 
-#                                               iris_dataset['target'], 
+#     sklearn.model_selection.train_test_split(lle_transformed_data,
+#                                               iris_dataset['target'],
 #                                               random_state=0)
 
-# # For this example, the KNN classifier is again used for no particular reason. 
+# # For this example, the KNN classifier is again used for no particular reason.
 # # The number of neighbors was chosen to maximize the test score, then the train
 # # score respectively.
 # from sklearn.neighbors import KNeighborsClassifier
-# knn_model = KNeighborsClassifier(n_neighbors=4) 
-# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)  
-
-
+# knn_model = KNeighborsClassifier(n_neighbors=4)
+# MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, target_train, target_test)
 
 
 ###############################################################################
@@ -1530,8 +1512,6 @@ def GetHousingData():
 # plt.xticks(rotation=310, ha='left')
 
 
-
-
 # # Load Example
 # from sklearn.datasets import load_iris
 # iris_dataset = load_iris()
@@ -1552,7 +1532,7 @@ def GetHousingData():
 
 # standard_text_size = 150
 # fig.suptitle("Iris Data", size=200)
-# # Plot each data point, separating out each classification with its own 
+# # Plot each data point, separating out each classification with its own
 # # data point marker
 # plot_markers = ['o', '^', 's']
 # for target, data in iris_df.groupby('Targets'):
@@ -1572,8 +1552,6 @@ def GetHousingData():
 # ax.set_ylabel('Sepal Width (cm)', size=standard_text_size)
 # ax.set_zlabel('Petal Length (cm)', size=standard_text_size)
 # plt.show()
-
-
 
 
 # # Make example
@@ -1598,8 +1576,6 @@ def GetHousingData():
 # plt.show()
 
 
-
-
 ###############################################################################
 #                                                                             #
 #                   Dataset Collection - Reading CSV Files                    #
@@ -1613,7 +1589,6 @@ def GetHousingData():
 # print(csv_df)
 
 
-
 ###############################################################################
 #                                                                             #
 #            Dataset Collection - Reading CSV Files as a Text File            #
@@ -1624,20 +1599,19 @@ def GetHousingData():
 # file_lines = []
 # with open(csv_filepath, 'r') as fileHandle:
 #     file_lines = fileHandle.readlines()
-    
+
 # # We can then split up the lines into individual elements of lists
 # csv_data_lines = []
 # for line in file_lines:
 #     # We can clean this up a bit by prematurely removing the newline characters
 #     # before splitting the lines
 #     csv_data_lines.append(line.replace('\n','').split(','))
-    
+
 # print(csv_data_lines)
 
 
 # Each element is a string.  If we need to, we can preemptively go through and
 # convert each to an int, as needed, or just convert on the fly, as needed.
-
 
 
 ###############################################################################
@@ -1679,7 +1653,7 @@ def GetHousingData():
 
 # import pandas as pd
 
-# # Newer versions of pandas can already interpret osd files.  
+# # Newer versions of pandas can already interpret osd files.
 # ods_filepath = "../../In-Class Exercises/Data/Evapotranspiration TamilNadu-2020.ods"
 # ods_df = pd.read_excel(ods_filepath)
 
@@ -1690,7 +1664,7 @@ def GetHousingData():
 # the engine in pandas after pip installing the library.  this library is
 # substatially slower than just letting pandas load the file without
 # specifying an engine
-#ods_df = pd.read_excel(ods_filepath, engine="odf")
+# ods_df = pd.read_excel(ods_filepath, engine="odf")
 
 
 ###############################################################################
@@ -1718,13 +1692,13 @@ def GetHousingData():
 
 # # Can create custom query
 # customer_support_reps_query = """
-# SELECT	
+# SELECT
 # 	Customer.CustomerID,
 # 	Customer.FirstName || Customer.LastName AS Customer_Name,
 # 	Customer.Company,
 # 	employee.FirstName || employee.LastName AS Support_Employee_Name,
 # 	employee.Title AS Employee_Title
-# FROM	
+# FROM
 # 	Customer
 # LEFT JOIN
 # (
@@ -1744,10 +1718,99 @@ def GetHousingData():
 
 ###############################################################################
 #                                                                             #
-#                           Random Forest Regressor                           #
+#                  Dataset Collection - Reading HTML Web Data                 #
 #                                                                             #
 ###############################################################################
 
+# TODO: HTML
+# import urllib.request
+
+# # Beautiful soup
+# import bs4
+
+# html_url = "http://www.williams-int.com/"
+# romeo_url = "http://data.pr4e.org/romeo.txt"
+
+# html_text = ""
+# fhand = urllib.request.urlopen(html_url)
+# for line in fhand:
+#     html_text += line.decode().strip()
+
+
+
+
+###############################################################################
+#                                                                             #
+#                  Dataset Collection - Reading XML Web Data                  #
+#                                                                             #
+###############################################################################
+
+import urllib.request
+# The xml package handles reading XML structures in Python
+import xml.etree.ElementTree as ET
+
+
+breakfast_menu_xml_url = "https://www.w3schools.com/xml/simple.xml"
+xml_text = ""
+
+# First, let's get the XML data from the website
+fhand = urllib.request.urlopen(breakfast_menu_xml_url)
+for line in fhand:
+    # Information coming from the website is in byte format.  We need to decode
+    # it into a text format that can be stored in a string
+    xml_text += line.decode().strip()
+
+# Next, let's put it in a format Python can effectively parse
+xml_tree = ET.fromstring(xml_text)
+prices = xml_tree.findall('price')
+
+# Get all the items from the data.  Could also write a recursive function
+# to get all data from a general data structure
+
+# Setup the basic structure of each menu item's data in a template we will
+# copy later.
+food_menu_item_template = {"name":"",
+                           "price":0,
+                           "description":"",
+                           "calories":0}
+food_menu_items = []
+# Get each set of data pertaining to the breakfast menu options
+for menu_item in xml_tree:
+    food_menu_item = food_menu_item_template.copy()
+    
+    # Get the details for each menu option
+    for item_parameters in menu_item:
+        food_menu_item[item_parameters.tag] = item_parameters.text
+        
+    food_menu_items.append(food_menu_item)
+
+# Output the data structure for testing purposes
+for menu_item in food_menu_items:
+    for key_val in menu_item:
+        print(key_val, ":", menu_item[key_val])
+        
+        
+# TODO: XML Attributes
+# TODO: XML namespaces        
+
+###############################################################################
+#                                                                             #
+#                 Dataset Collection - Reading JSON Web Data                  #
+#                                                                             #
+###############################################################################
+
+# TODO: JSON examples
+
+
+
+
+
+
+###############################################################################
+#                                                                             #
+#                           Random Forest Regressor                           #
+#                                                                             #
+###############################################################################
 
 
 ###############################################################################
@@ -1757,21 +1820,8 @@ def GetHousingData():
 ###############################################################################
 
 
-
-
 ###############################################################################
 #                                                                             #
 #                      Evaluating Predictive Capabilities                     #
 #                                                                             #
 ###############################################################################
-
-
-
-
-
-
-
-
-
-
-

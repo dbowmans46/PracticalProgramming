@@ -1660,10 +1660,10 @@ def GetHousingData():
 # print(ods_df)
 
 
-# If your version is having trouble, you can use the odfpy library.  Specify
-# the engine in pandas after pip installing the library.  this library is
-# substatially slower than just letting pandas load the file without
-# specifying an engine
+# # If your version is having trouble, you can use the odfpy library.  Specify
+# # the engine in pandas after pip installing the library.  This library is
+# # substatially slower than just letting pandas load the file without
+# # specifying an engine
 # ods_df = pd.read_excel(ods_filepath, engine="odf")
 
 
@@ -1673,47 +1673,55 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# import sqlite3
-# import pandas as pd
+import sqlite3
+import pandas as pd
 
-# # SQLite databases are just a file
-# sqlite_chinook_db_filepath = "../../In-Class Exercises/Data/Chinook Database/Chinook_Sqlite.sqlite"
+# SQLite databases are just a file
+sqlite_chinook_db_filepath = "../../In-Class Exercises/Data/Chinook Database/Chinook_Sqlite.sqlite"
 
-# # Creating a connection is really like opening the file
-# conn = sqlite3.connect(sqlite_chinook_db_filepath)
+# Creating a connection is really like opening the file
+chinook_connection = sqlite3.connect(sqlite_chinook_db_filepath)
+
+# Can make pandas dataframes from tables
+# read_sql() is a wrapper for read_sql_query, so can use either
+# There is also a read_sql_table() for alchemy connection objects.
+sql_data_df = pd.read_sql("SELECT * FROM album", chinook_connection)
+sql_data_df = pd.read_sql_query("SELECT * FROM employee", chinook_connection)
+sql_data_df = pd.read_sql_query("SELECT * FROM customer", chinook_connection)
+
+# To get information about the database itself, we need to query 
+# main.sqlite_master for a SQLite database (other databases will
+# have a different table name housing this information).
+sql_data_df = pd.read_sql("SELECT type,name,sql,tbl_name FROM main.sqlite_master;", chinook_connection)
 
 # # Can make pandas dataframes from tables
-# sql_data_df = pd.read_sql_query("SELECT * FROM album", conn)
-# sql_data_df = pd.read_sql_query("SELECT * FROM employee", conn)
-# sql_data_df = pd.read_sql_query("SELECT * FROM customer", conn)
+sql_data_df = pd.read_sql_query("SELECT * FROM customer_support_reps", chinook_connection)
 
-# # Can make pandas dataframes from tables
-# sql_data_df = pd.read_sql_query("SELECT * FROM customer_support_reps", conn)
-
-# # Can create custom query
-# customer_support_reps_query = """
-# SELECT
-# 	Customer.CustomerID,
-# 	Customer.FirstName || Customer.LastName AS Customer_Name,
-# 	Customer.Company,
-# 	employee.FirstName || employee.LastName AS Support_Employee_Name,
-# 	employee.Title AS Employee_Title
-# FROM
-# 	Customer
-# LEFT JOIN
-# (
-# 	SELECT
-# 		EmployeeID,
-# 		FirstName,
-# 		LastName,
-# 		Title
-# 	FROM
-# 		Employee
-# ) employee
-# ON
-# 	Customer.SupportRepID = Employee.EmployeeID
-# """
-# sql_data_df = pd.read_sql_query(customer_support_reps_query, conn)
+# Can create custom query
+customer_support_reps_query = """
+SELECT
+ 	Customer.CustomerID,
+ 	Customer.FirstName || Customer.LastName AS Customer_Name,
+ 	Customer.Company,
+ 	employee.FirstName || employee.LastName AS Support_Employee_Name,
+ 	employee.Title AS Employee_Title
+FROM
+ 	Customer
+LEFT JOIN
+(
+ 	SELECT
+		EmployeeID,
+		FirstName,
+		LastName,
+		Title
+ 	FROM
+		Employee
+) employee
+ON
+ 	Customer.SupportRepID = Employee.EmployeeID
+"""
+sql_data_df = pd.read_sql_query(customer_support_reps_query, chinook_connection)
+print(sql_data_df)
 
 
 ###############################################################################
@@ -1745,53 +1753,84 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-import urllib.request
-# The xml package handles reading XML structures in Python
-import xml.etree.ElementTree as ET
+# import urllib.request
+# # The xml package handles reading XML structures in Python
+# import xml.etree.ElementTree as ET
 
+# # XML sources
+# breakfast_menu_xml_url = "https://www.w3schools.com/xml/simple.xml"
+# # cd_collection_xml_url = "https://www.w3schools.com/xml/cd_catalog.xml"
+# # plants_xml_url = "https://www.w3schools.com/xml/plant_catalog.xml"
 
-breakfast_menu_xml_url = "https://www.w3schools.com/xml/simple.xml"
-xml_text = ""
+# xml_text = ""
 
-# First, let's get the XML data from the website
-fhand = urllib.request.urlopen(breakfast_menu_xml_url)
-for line in fhand:
-    # Information coming from the website is in byte format.  We need to decode
-    # it into a text format that can be stored in a string
-    xml_text += line.decode().strip()
+# # First, let's get the XML data from the website
+# fhand = urllib.request.urlopen(breakfast_menu_xml_url)
+# for line in fhand:
+#     # Information coming from the website is in byte format.  We need to decode
+#     # it into a text format that can be stored in a string
+#     xml_text += line.decode().strip()
 
-# Next, let's put it in a format Python can effectively parse
-xml_tree = ET.fromstring(xml_text)
-prices = xml_tree.findall('price')
+# # Next, let's put it in a format Python can effectively parse
+# xml_tree = ET.fromstring(xml_text) # Can use ET.parse() if there is a local file to read
 
-# Get all the items from the data.  Could also write a recursive function
-# to get all data from a general data structure
-
-# Setup the basic structure of each menu item's data in a template we will
-# copy later.
-food_menu_item_template = {"name":"",
-                           "price":0,
-                           "description":"",
-                           "calories":0}
-food_menu_items = []
-# Get each set of data pertaining to the breakfast menu options
-for menu_item in xml_tree:
-    food_menu_item = food_menu_item_template.copy()
+# # Can search for specific elements within the node
+# prices = []
+# for menu_item in xml_tree:
+#     prices.append(menu_item.findall('price'))
     
-    # Get the details for each menu option
-    for item_parameters in menu_item:
-        food_menu_item[item_parameters.tag] = item_parameters.text
-        
-    food_menu_items.append(food_menu_item)
+# for price in prices:
+#     # Each price is a single-element list
+#     print(price[0].text)
 
-# Output the data structure for testing purposes
-for menu_item in food_menu_items:
-    for key_val in menu_item:
-        print(key_val, ":", menu_item[key_val])
+
+# # Get all the items from the data.  Could also write a recursive function
+# # to get all data from a general data structure
+
+# # Setup the basic structure of each menu item's data in a template we will
+# # copy later.
+# food_menu_item_template = {"name":"",
+#                            "price":0,
+#                            "description":"",
+#                            "calories":0}
+# food_menu_items = []
+# # Get each set of data pertaining to the breakfast menu options
+# for menu_item in xml_tree:
+#     food_menu_item = food_menu_item_template.copy()
+    
+#     # Get the details for each menu option
+#     for item_parameters in menu_item:
+#         food_menu_item[item_parameters.tag] = item_parameters.text
+        
+#     food_menu_items.append(food_menu_item)
+
+# # Output the data structure for testing purposes
+# for menu_item in food_menu_items:
+#     for key_val in menu_item:
+#         print(key_val, ":", menu_item[key_val])
         
         
-# TODO: XML Attributes
-# TODO: XML namespaces        
+# # TODO: XML Attributes and parsing files
+
+# breakfast_xml_filepath = "../../In-Class Exercises/Data/breakfast_menu_modified.xml"
+# xml_tree_from_file = ET.parse(breakfast_xml_filepath)
+# xml_tree_root = xml_tree_from_file.getroot()
+
+
+# food_menu_items = []
+# # Get each set of data pertaining to the breakfast menu options
+# for menu_item in xml_tree_root:
+#     food_menu_item = food_menu_item_template.copy()
+    
+#     # Get the details for each menu option
+#     for item_parameters in menu_item:
+#         food_menu_item[item_parameters.tag] = item_parameters.text
+#         food_menu_item['attribute'] = item_parameters.attrib
+#         print(food_menu_item['attribute'])
+        
+#     food_menu_items.append(food_menu_item)
+
+# TODO: XML namespaces
 
 ###############################################################################
 #                                                                             #

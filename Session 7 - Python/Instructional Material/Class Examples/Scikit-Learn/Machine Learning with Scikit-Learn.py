@@ -1673,55 +1673,55 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-import sqlite3
-import pandas as pd
+# import sqlite3
+# import pandas as pd
 
-# SQLite databases are just a file
-sqlite_chinook_db_filepath = "../../In-Class Exercises/Data/Chinook Database/Chinook_Sqlite.sqlite"
+# # SQLite databases are just a file
+# sqlite_chinook_db_filepath = "../../In-Class Exercises/Data/Chinook Database/Chinook_Sqlite.sqlite"
 
-# Creating a connection is really like opening the file
-chinook_connection = sqlite3.connect(sqlite_chinook_db_filepath)
-
-# Can make pandas dataframes from tables
-# read_sql() is a wrapper for read_sql_query, so can use either
-# There is also a read_sql_table() for alchemy connection objects.
-sql_data_df = pd.read_sql("SELECT * FROM album", chinook_connection)
-sql_data_df = pd.read_sql_query("SELECT * FROM employee", chinook_connection)
-sql_data_df = pd.read_sql_query("SELECT * FROM customer", chinook_connection)
-
-# To get information about the database itself, we need to query 
-# main.sqlite_master for a SQLite database (other databases will
-# have a different table name housing this information).
-sql_data_df = pd.read_sql("SELECT type,name,sql,tbl_name FROM main.sqlite_master;", chinook_connection)
+# # Creating a connection is really like opening the file
+# chinook_connection = sqlite3.connect(sqlite_chinook_db_filepath)
 
 # # Can make pandas dataframes from tables
-sql_data_df = pd.read_sql_query("SELECT * FROM customer_support_reps", chinook_connection)
+# # read_sql() is a wrapper for read_sql_query, so can use either
+# # There is also a read_sql_table() for alchemy connection objects.
+# sql_data_df = pd.read_sql("SELECT * FROM album", chinook_connection)
+# sql_data_df = pd.read_sql_query("SELECT * FROM employee", chinook_connection)
+# sql_data_df = pd.read_sql_query("SELECT * FROM customer", chinook_connection)
 
-# Can create custom query
-customer_support_reps_query = """
-SELECT
- 	Customer.CustomerID,
- 	Customer.FirstName || Customer.LastName AS Customer_Name,
- 	Customer.Company,
- 	employee.FirstName || employee.LastName AS Support_Employee_Name,
- 	employee.Title AS Employee_Title
-FROM
- 	Customer
-LEFT JOIN
-(
- 	SELECT
-		EmployeeID,
-		FirstName,
-		LastName,
-		Title
- 	FROM
-		Employee
-) employee
-ON
- 	Customer.SupportRepID = Employee.EmployeeID
-"""
-sql_data_df = pd.read_sql_query(customer_support_reps_query, chinook_connection)
-print(sql_data_df)
+# # To get information about the database itself, we need to query 
+# # main.sqlite_master for a SQLite database (other databases will
+# # have a different table name housing this information).
+# sql_data_df = pd.read_sql("SELECT type,name,sql,tbl_name FROM main.sqlite_master;", chinook_connection)
+
+# # # Can make pandas dataframes from tables
+# sql_data_df = pd.read_sql_query("SELECT * FROM customer_support_reps", chinook_connection)
+
+# # Can create custom query
+# customer_support_reps_query = """
+# SELECT
+#  	Customer.CustomerID,
+#  	Customer.FirstName || Customer.LastName AS Customer_Name,
+#  	Customer.Company,
+#  	employee.FirstName || employee.LastName AS Support_Employee_Name,
+#  	employee.Title AS Employee_Title
+# FROM
+#  	Customer
+# LEFT JOIN
+# (
+#  	SELECT
+# 		EmployeeID,
+# 		FirstName,
+# 		LastName,
+# 		Title
+#  	FROM
+# 		Employee
+# ) employee
+# ON
+#  	Customer.SupportRepID = Employee.EmployeeID
+# """
+# sql_data_df = pd.read_sql_query(customer_support_reps_query, chinook_connection)
+# print(sql_data_df)
 
 
 ###############################################################################
@@ -1731,22 +1731,83 @@ print(sql_data_df)
 ###############################################################################
 
 # TODO: HTML
-# import urllib.request
+import urllib.request
 
-# # Beautiful soup
-# import bs4
+# Beautiful soup
+from bs4 import BeautifulSoup
 
-# html_url = "http://www.williams-int.com/"
-# romeo_url = "http://data.pr4e.org/romeo.txt"
+html_url = "http://www.williams-int.com/"
+romeo_url = "http://data.pr4e.org/romeo.txt"
 
-# html_text = ""
-# fhand = urllib.request.urlopen(html_url)
-# for line in fhand:
-#     html_text += line.decode().strip()
+# Request web text
+html_text = ""
+fhand = urllib.request.urlopen(html_url)
+for line in fhand:
+    html_text += line.decode().strip()
+
+# Load HTML text from website into BeautifulSoup
+soup = BeautifulSoup(html_text, 'html.parser')
+
+# We can output the text in a human-readable format, such as a programmer 
+# would format the text as
+print("Formatted Text:")
+print(soup.prettify())
+print("\n\n\n")
+
+# We can filter on specific elements
+print("Get title and HTML tags: ", soup.title)
+print("\n")
+print("Get just the HTML title tag's name:", soup.title.name)
+print("\n")
+print("Get just the title text:", soup.title.string)
+print("\n")
+print("Get the HTML tag that contains the title element:", soup.title.parent.name)
+print("\n")
+print("Get the first HTML paragraph tag:", soup.p)
+print("\n")
+print("Get all HTML paragraph tags, as a list:", soup.find_all('p'))
+print("\n")
+print("Get each HTML paragraph tag:")
+for paragraph in soup.find_all('p'):
+    print(paragraph)
+print("\n")
+print("Get the first HTML reference tags:", soup.a)
+print("\n")
+print("Get all HTML reference tags:", soup.find_all('a'))
+print("\n")
+print("Get each HTML reference tag:")
+for ref_tag in soup.find_all('a'):
+    print(ref_tag)
+print("Get the class assigned to a specific HTML element:", soup.a['class'])
+print("\n")
+print("Get a specific HTML tag by ID:", soup.find(id="navbarDropdown3"))
+print("\n")
+
+# As shown above, each HTML tag found in a page is created as a property of
+# the soup.  The property text includes the tags
+footer_text = soup.footer
+print("Footer: ", footer_text)
+print("\n")
+
+# We can get specific elements within the property using find_all.  A list
+# is returned containing all matches
+ref_in_footer = soup.footer.find_all('a')
+print("References in the footer:", ref_in_footer)
+print("\n")
+
+# We can get specific attributes by tag using the get().  If there are more than
+# one paragraph tag, can use find_all and iterate through each one to get the
+# style.
+p_style_in_footer = soup.footer.p.get('style')
+print("Paragraph style in footer:", p_style_in_footer)
+print("\n")
 
 
-
-
+# We can get all URL's from a webpage
+print("Get all URL's on the page, including relative:")
+for link in soup.find_all('a'):
+    print(link.get('href'))
+    
 ###############################################################################
 #                                                                             #
 #                  Dataset Collection - Reading XML Web Data                  #

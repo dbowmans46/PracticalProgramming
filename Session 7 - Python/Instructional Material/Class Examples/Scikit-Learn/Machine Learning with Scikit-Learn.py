@@ -1730,10 +1730,10 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# TODO: HTML
+# Library to read HTTP data/handle requests
 import urllib.request
 
-# Beautiful soup
+# Beautiful soup can parse HTML
 from bs4 import BeautifulSoup
 
 html_url = "http://www.williams-int.com/"
@@ -1745,68 +1745,79 @@ fhand = urllib.request.urlopen(html_url)
 for line in fhand:
     html_text += line.decode().strip()
 
-# Load HTML text from website into BeautifulSoup
-soup = BeautifulSoup(html_text, 'html.parser')
+# # Load HTML text from website into BeautifulSoup
+# soup = BeautifulSoup(html_text, 'html.parser')
 
-# We can output the text in a human-readable format, such as a programmer 
-# would format the text as
-print("Formatted Text:")
-print(soup.prettify())
-print("\n\n\n")
+# # We can output the text in a human-readable format, such as a programmer 
+# # would format the text as
+# print("Formatted Text:")
+# print(soup.prettify())
+# print("\n\n\n")
 
-# We can filter on specific elements
-print("Get title and HTML tags: ", soup.title)
-print("\n")
-print("Get just the HTML title tag's name:", soup.title.name)
-print("\n")
-print("Get just the title text:", soup.title.string)
-print("\n")
-print("Get the HTML tag that contains the title element:", soup.title.parent.name)
-print("\n")
-print("Get the first HTML paragraph tag:", soup.p)
-print("\n")
-print("Get all HTML paragraph tags, as a list:", soup.find_all('p'))
-print("\n")
-print("Get each HTML paragraph tag:")
-for paragraph in soup.find_all('p'):
-    print(paragraph)
-print("\n")
-print("Get the first HTML reference tags:", soup.a)
-print("\n")
-print("Get all HTML reference tags:", soup.find_all('a'))
-print("\n")
-print("Get each HTML reference tag:")
-for ref_tag in soup.find_all('a'):
-    print(ref_tag)
-print("Get the class assigned to a specific HTML element:", soup.a['class'])
-print("\n")
-print("Get a specific HTML tag by ID:", soup.find(id="navbarDropdown3"))
-print("\n")
+# # We can filter on specific elements
+# print("Get title and HTML tags: ", soup.title)
+# print("\n")
+# print("Get just the HTML title tag's name:", soup.title.name)
+# print("\n")
+# print("Get just the title text:", soup.title.string)
+# print("\n")
+# print("Get the HTML tag that contains the title element:", soup.title.parent.name)
+# print("\n")
+# print("Get the first HTML paragraph tag:", soup.p)
+# print("\n")
+# print("Get all HTML paragraph tags, as a list:", soup.find_all('p'))
+# print("\n")
+# print("Get each HTML paragraph tag:")
+# for paragraph in soup.find_all('p'):
+#     print(paragraph)
+# print("\n")
+# print("Get the first HTML reference tags:", soup.a)
+# print("\n")
+# print("Get all HTML reference tags:", soup.find_all('a'))
+# print("\n")
+# print("Get each HTML reference tag:")
+# for ref_tag in soup.find_all('a'):
+#     print(ref_tag)
+# print("Get the class assigned to a specific HTML element:", soup.a['class'])
+# print("\n")
+# print("Get a specific HTML tag by ID:", soup.find(id="navbarDropdown3"))
+# print("\n")
 
-# As shown above, each HTML tag found in a page is created as a property of
-# the soup.  The property text includes the tags
-footer_text = soup.footer
-print("Footer: ", footer_text)
-print("\n")
+# # As shown above, each HTML tag found in a page is created as a property of
+# # the soup.  The property text includes the tags
+# footer_text = soup.footer
+# print("Footer: ", footer_text)
+# print("\n")
 
-# We can get specific elements within the property using find_all.  A list
-# is returned containing all matches
-ref_in_footer = soup.footer.find_all('a')
-print("References in the footer:", ref_in_footer)
-print("\n")
+# # We can get specific elements within the property using find_all.  A list
+# # is returned containing all matches.  The search is recursive.
+# ref_in_footer = soup.footer.find_all('a')
+# print("References in the footer:", ref_in_footer)
+# print("\n")
 
-# We can get specific attributes by tag using the get().  If there are more than
-# one paragraph tag, can use find_all and iterate through each one to get the
-# style.
-p_style_in_footer = soup.footer.p.get('style')
-print("Paragraph style in footer:", p_style_in_footer)
-print("\n")
+# # We can pass a list of elements to return more than one type of tag.  The
+# # search is recursive, so you may find <a> within <p> text, and a later
+# # returned element will be just the <a> tag that was in the <p> tag.
+# print("Paragraph and reference elements in the body:")
+# print("-----------------------------------------------")
+# for element in soup.body.find_all(['p','a']):
+#     print(element, "\n")
+    
+# print("-----------------------------------------------")
+# print("\n")
+
+# # We can get specific attributes by tag using the get().  If there are more than
+# # one paragraph tag, can use find_all and iterate through each one to get the
+# # style.
+# p_style_in_footer = soup.footer.p.get('style')
+# print("Paragraph style in footer:", p_style_in_footer)
+# print("\n")
 
 
-# We can get all URL's from a webpage
-print("Get all URL's on the page, including relative:")
-for link in soup.find_all('a'):
-    print(link.get('href'))
+# # We can get all URL's from a webpage
+# print("Get all URL's on the page, including relative:")
+# for link in soup.find_all('a'):
+#     print(link.get('href'))
     
 ###############################################################################
 #                                                                             #
@@ -1815,6 +1826,7 @@ for link in soup.find_all('a'):
 ###############################################################################
 
 # import urllib.request
+
 # # The xml package handles reading XML structures in Python
 # import xml.etree.ElementTree as ET
 
@@ -1843,6 +1855,7 @@ for link in soup.find_all('a'):
 # for price in prices:
 #     # Each price is a single-element list
 #     print(price[0].text)
+# print("\n\n\n")
 
 
 # # Get all the items from the data.  Could also write a recursive function
@@ -1851,9 +1864,9 @@ for link in soup.find_all('a'):
 # # Setup the basic structure of each menu item's data in a template we will
 # # copy later.
 # food_menu_item_template = {"name":"",
-#                            "price":0,
-#                            "description":"",
-#                            "calories":0}
+#                             "price":0,
+#                             "description":"",
+#                             "calories":0}
 # food_menu_items = []
 # # Get each set of data pertaining to the breakfast menu options
 # for menu_item in xml_tree:
@@ -1869,27 +1882,49 @@ for link in soup.find_all('a'):
 # for menu_item in food_menu_items:
 #     for key_val in menu_item:
 #         print(key_val, ":", menu_item[key_val])
-        
-        
-# # TODO: XML Attributes and parsing files
+# print("\n\n\n")
 
+        
+        
+# # XML Attributes and parsing files
 # breakfast_xml_filepath = "../../In-Class Exercises/Data/breakfast_menu_modified.xml"
 # xml_tree_from_file = ET.parse(breakfast_xml_filepath)
 # xml_tree_root = xml_tree_from_file.getroot()
 
+# # First, setup a new template for storing the data
+# food_menu_item_template = {"name":"",
+#                             "price":0,
+#                             "description":"",
+#                             "calories":0,
+#                             "attribute":{}}
 
-# food_menu_items = []
 # # Get each set of data pertaining to the breakfast menu options
+# food_menu_items = []
 # for menu_item in xml_tree_root:
 #     food_menu_item = food_menu_item_template.copy()
     
-#     # Get the details for each menu option
+#     # Get the details for each menu option    
+#     temp_attribute = {}
 #     for item_parameters in menu_item:
 #         food_menu_item[item_parameters.tag] = item_parameters.text
-#         food_menu_item['attribute'] = item_parameters.attrib
-#         print(food_menu_item['attribute'])
+    
+#         # Create a temporary dictionary for the attributes, only
+#         # if there is actual attribute data for this menu item
+#         if len(item_parameters.attrib.keys()) > 0:
+#             for key in item_parameters.attrib.keys():
+#                 temp_attribute[key] = item_parameters.attrib[key]
+#         food_menu_item['attribute'] = temp_attribute
         
 #     food_menu_items.append(food_menu_item)
+
+# # Check data parsed
+# for menu_item in food_menu_items:
+#     print("Name: ", menu_item['name'])
+#     print("Price: ", menu_item['price'])
+#     print("Description: ", menu_item['description'])
+#     print("Calories: ", menu_item['calories'])
+#     print("Attributes: ", menu_item['attribute'])
+#     print("\n")
 
 # TODO: XML namespaces
 

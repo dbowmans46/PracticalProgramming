@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<trees xmlns:arborist="http://arborists.example.com"
+   xmlns:data_struct="http://data_structs.example.com" 
+   xmlns="http://default.site.com">
+    <arborist:tree>
+        <arborist:tree_type>Red Maple</arborist:tree_type>
+        <arborist:leaf_color>red</arborist:leaf_color>
+        <arborist:bark>rough</arborist:bark>
+    </arborist:tree>    
+    <data_struct:tree>
+        <data_struct:node>A</data_struct:node>
+        <data_struct:node>B</data_struct:node>
+        <data_struct:node>C</data_struct:node>
+        <data_struct:node>D</data_struct:node>
+        <data_struct:node>E</data_struct:node>
+        <data_struct:edge>A->B</data_struct:edge>
+        <data_struct:edge>A->C</data_struct:edge>
+        <data_struct:edge>B->D</data_struct:edge>
+        <data_struct:edge>B->E</data_struct:edge>
+    </data_struct:tree>
+</trees>

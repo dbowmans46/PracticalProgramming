@@ -1730,20 +1730,21 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# Library to read HTTP data/handle requests
-import urllib.request
+# # Library to read HTTP data/handle requests
+# import urllib.request
 
-# Beautiful soup can parse HTML
-from bs4 import BeautifulSoup
+# # Beautiful soup can parse HTML
+# from bs4 import BeautifulSoup
 
-html_url = "http://www.williams-int.com/"
-romeo_url = "http://data.pr4e.org/romeo.txt"
+# html_url = "http://www.williams-int.com/"
+# romeo_url = "http://data.pr4e.org/romeo.txt"
+# pypi_url = "https://pypi.org/"
 
-# Request web text
-html_text = ""
-fhand = urllib.request.urlopen(html_url)
-for line in fhand:
-    html_text += line.decode().strip()
+# # Request web text
+# html_text = ""
+# fhand = urllib.request.urlopen(html_url)
+# for line in fhand:
+#     html_text += line.decode().strip()
 
 # # Load HTML text from website into BeautifulSoup
 # soup = BeautifulSoup(html_text, 'html.parser')
@@ -1769,7 +1770,7 @@ for line in fhand:
 # print("\n")
 # print("Get each HTML paragraph tag:")
 # for paragraph in soup.find_all('p'):
-#     print(paragraph)
+#     print(paragraph.prettify())
 # print("\n")
 # print("Get the first HTML reference tags:", soup.a)
 # print("\n")
@@ -1783,7 +1784,7 @@ for line in fhand:
 # print("Get a specific HTML tag by ID:", soup.find(id="navbarDropdown3"))
 # print("\n")
 
-# # As shown above, each HTML tag found in a page is created as a property of
+# # # As shown above, each HTML tag found in a page is created as a property of
 # # the soup.  The property text includes the tags
 # footer_text = soup.footer
 # print("Footer: ", footer_text)
@@ -1834,6 +1835,7 @@ for line in fhand:
 # breakfast_menu_xml_url = "https://www.w3schools.com/xml/simple.xml"
 # # cd_collection_xml_url = "https://www.w3schools.com/xml/cd_catalog.xml"
 # # plants_xml_url = "https://www.w3schools.com/xml/plant_catalog.xml"
+# # embedded_xml_text_url = "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85)"
 
 # xml_text = ""
 
@@ -1926,7 +1928,43 @@ for line in fhand:
 #     print("Attributes: ", menu_item['attribute'])
 #     print("\n")
 
-# TODO: XML namespaces
+# # XML namespaces
+# import xml.etree.ElementTree as ET
+
+# xml_file_path = "../../In-Class Exercises/Data/namespace_example.xml"
+
+# # if there is a special encoding for the file, we may need to specify that when
+# # reading the file
+# utf_parser = ET.XMLParser(encoding="utf-8")
+# xml_tree = ET.parse(xml_file_path, parser=utf_parser)
+
+# print("Getting all tags:")
+# # To use a namespace, use the URL enclosed in curly braces before the tag
+# # you are searching for.
+# for tree in xml_tree.findall('{http://arborists.example.com}tree'):
+#     for tag in tree:
+#         print(str(tag.tag)+ ":", tag.text)
+
+# print("\n")
+# print("Getting just a single tag:")
+# # We can get a specific hierarchy using findall multiple times.  Remember, 
+# # findall() only searches one hierarchy level.
+# for tree in xml_tree.findall('{http://arborists.example.com}tree'):
+#     for tag in tree.findall('{http://arborists.example.com}tree_type'):
+#         print(str(tag.tag)+ ":", tag.text)
+
+# # To make it easier for using the namespaces, we can setup a dictionary
+# xmlns_dict = {"arborist":"http://arborists.example.com",
+#               "data_struct":"http://data_structs.example.com"
+#               }
+
+# print("\n")
+# print("Using a namespace dictionary:")
+# # root = fromstring(xml_text)
+# for tree in xml_tree.findall('arborist:tree', xmlns_dict):
+#     for tag in tree:
+#         print(str(tag.tag)+ ":", tag.text)
+
 
 ###############################################################################
 #                                                                             #

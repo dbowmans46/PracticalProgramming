@@ -1730,30 +1730,31 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# # Library to read HTTP data/handle requests
-# import urllib.request
+# Library to read HTTP data/handle requests
+import urllib.request
 
-# # Beautiful soup can parse HTML
-# from bs4 import BeautifulSoup
+# Beautiful soup can parse HTML
+from bs4 import BeautifulSoup
 
 # html_url = "http://www.williams-int.com/"
 # romeo_url = "http://data.pr4e.org/romeo.txt"
-# pypi_url = "https://pypi.org/"
+pypi_url = "https://pypi.org/"
+ms_xml_url = 'https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85)'
 
-# # Request web text
-# html_text = ""
-# fhand = urllib.request.urlopen(html_url)
-# for line in fhand:
-#     html_text += line.decode().strip()
+# Request web text
+html_text = ""
+fhand = urllib.request.urlopen(ms_xml_url)
+for line in fhand:
+    html_text += line.decode().strip()
 
-# # Load HTML text from website into BeautifulSoup
-# soup = BeautifulSoup(html_text, 'html.parser')
+# Load HTML text from website into BeautifulSoup
+soup = BeautifulSoup(html_text, 'html.parser')
 
-# # We can output the text in a human-readable format, such as a programmer 
-# # would format the text as
-# print("Formatted Text:")
-# print(soup.prettify())
-# print("\n\n\n")
+# We can output the text in a human-readable format, such as a programmer 
+# would format the text as
+print("Formatted Text:")
+print(soup.prettify())
+print("\n\n\n")
 
 # # We can filter on specific elements
 # print("Get title and HTML tags: ", soup.title)
@@ -1764,7 +1765,7 @@ def GetHousingData():
 # print("\n")
 # print("Get the HTML tag that contains the title element:", soup.title.parent.name)
 # print("\n")
-# print("Get the first HTML paragraph tag:", soup.p)
+print("Get the first HTML paragraph tag:", soup.p)
 # print("\n")
 # print("Get all HTML paragraph tags, as a list:", soup.find_all('p'))
 # print("\n")
@@ -1807,7 +1808,7 @@ def GetHousingData():
 # print("-----------------------------------------------")
 # print("\n")
 
-# # We can get specific attributes by tag using the get().  If there are more than
+# # We can get specific attributes by tag using the get().  If there is more than
 # # one paragraph tag, can use find_all and iterate through each one to get the
 # # style.
 # p_style_in_footer = soup.footer.p.get('style')
@@ -1826,146 +1827,146 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# import urllib.request
+import urllib.request
 
-# # The xml package handles reading XML structures in Python
-# import xml.etree.ElementTree as ET
+# The xml package handles reading XML structures in Python
+import xml.etree.ElementTree as ET
 
-# # XML sources
-# breakfast_menu_xml_url = "https://www.w3schools.com/xml/simple.xml"
-# # cd_collection_xml_url = "https://www.w3schools.com/xml/cd_catalog.xml"
-# # plants_xml_url = "https://www.w3schools.com/xml/plant_catalog.xml"
-# # embedded_xml_text_url = "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85)"
+# XML sources
+breakfast_menu_xml_url = "https://www.w3schools.com/xml/simple.xml"
+# cd_collection_xml_url = "https://www.w3schools.com/xml/cd_catalog.xml"
+# plants_xml_url = "https://www.w3schools.com/xml/plant_catalog.xml"
+# embedded_xml_text_url = "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ms762271(v=vs.85)"
 
-# xml_text = ""
+xml_text = ""
 
-# # First, let's get the XML data from the website
-# fhand = urllib.request.urlopen(breakfast_menu_xml_url)
-# for line in fhand:
-#     # Information coming from the website is in byte format.  We need to decode
-#     # it into a text format that can be stored in a string
-#     xml_text += line.decode().strip()
+# First, let's get the XML data from the website
+fhand = urllib.request.urlopen(breakfast_menu_xml_url)
+for line in fhand:
+    # Information coming from the website is in byte format.  We need to decode
+    # it into a text format that can be stored in a string
+    xml_text += line.decode().strip()
 
-# # Next, let's put it in a format Python can effectively parse
-# xml_tree = ET.fromstring(xml_text) # Can use ET.parse() if there is a local file to read
+# Next, let's put it in a format Python can effectively parse
+xml_tree = ET.fromstring(xml_text) # Can use ET.parse() if there is a local file to read
 
-# # Can search for specific elements within the node
-# prices = []
-# for menu_item in xml_tree:
-#     prices.append(menu_item.findall('price'))
+# Can search for specific elements within the node
+prices = []
+for menu_item in xml_tree:
+    prices.append(menu_item.findall('price'))
     
-# for price in prices:
-#     # Each price is a single-element list
-#     print(price[0].text)
-# print("\n\n\n")
+for price in prices:
+    # Each price is a single-element list
+    print(price[0].text)
+print("\n\n\n")
 
 
-# # Get all the items from the data.  Could also write a recursive function
-# # to get all data from a general data structure
+# Get all the items from the data.  Could also write a recursive function
+# to get all data from a general data structure
 
-# # Setup the basic structure of each menu item's data in a template we will
-# # copy later.
-# food_menu_item_template = {"name":"",
-#                             "price":0,
-#                             "description":"",
-#                             "calories":0}
-# food_menu_items = []
-# # Get each set of data pertaining to the breakfast menu options
-# for menu_item in xml_tree:
-#     food_menu_item = food_menu_item_template.copy()
+# Setup the basic structure of each menu item's data in a template we will
+# copy later.
+food_menu_item_template = {"name":"",
+                            "price":0,
+                            "description":"",
+                            "calories":0}
+food_menu_items = []
+# Get each set of data pertaining to the breakfast menu options
+for menu_item in xml_tree:
+    food_menu_item = food_menu_item_template.copy()
     
-#     # Get the details for each menu option
-#     for item_parameters in menu_item:
-#         food_menu_item[item_parameters.tag] = item_parameters.text
+    # Get the details for each menu option
+    for item_parameters in menu_item:
+        food_menu_item[item_parameters.tag] = item_parameters.text
         
-#     food_menu_items.append(food_menu_item)
+    food_menu_items.append(food_menu_item)
 
-# # Output the data structure for testing purposes
-# for menu_item in food_menu_items:
-#     for key_val in menu_item:
-#         print(key_val, ":", menu_item[key_val])
+# Output the data structure for testing purposes
+for menu_item in food_menu_items:
+    for key_val in menu_item:
+        print(key_val, ":", menu_item[key_val])
         
-#     print("\n")
-# print("\n\n\n")
+    print("\n")
+print("\n\n\n")
 
         
         
-# # XML Attributes and parsing files
-# breakfast_xml_filepath = "../../In-Class Exercises/Data/breakfast_menu_modified.xml"
-# xml_tree_from_file = ET.parse(breakfast_xml_filepath)
-# xml_tree_root = xml_tree_from_file.getroot()
+# XML Attributes and parsing files
+breakfast_xml_filepath = "../../In-Class Exercises/Data/breakfast_menu_modified.xml"
+xml_tree_from_file = ET.parse(breakfast_xml_filepath)
+xml_tree_root = xml_tree_from_file.getroot()
 
-# # First, setup a new template for storing the data
-# food_menu_item_template = {"name":"",
-#                             "price":0,
-#                             "description":"",
-#                             "calories":0,
-#                             "attribute":{}}
+# First, setup a new template for storing the data
+food_menu_item_template = {"name":"",
+                            "price":0,
+                            "description":"",
+                            "calories":0,
+                            "attribute":{}}
 
-# # Get each set of data pertaining to the breakfast menu options
-# food_menu_items = []
-# for menu_item in xml_tree_root:
-#     food_menu_item = food_menu_item_template.copy()
+# Get each set of data pertaining to the breakfast menu options
+food_menu_items = []
+for menu_item in xml_tree_root:
+    food_menu_item = food_menu_item_template.copy()
     
-#     # Get the details for each menu option    
-#     temp_attribute = {}
-#     for item_parameters in menu_item:
-#         food_menu_item[item_parameters.tag] = item_parameters.text
+    # Get the details for each menu option    
+    temp_attribute = {}
+    for item_parameters in menu_item:
+        food_menu_item[item_parameters.tag] = item_parameters.text
     
-#         # Create a temporary dictionary for the attributes, only
-#         # if there is actual attribute data for this menu item
-#         if len(item_parameters.attrib.keys()) > 0:
-#             for key in item_parameters.attrib.keys():
-#                 temp_attribute[key] = item_parameters.attrib[key]
-#         food_menu_item['attribute'] = temp_attribute
+        # Create a temporary dictionary for the attributes, only
+        # if there is actual attribute data for this menu item
+        if len(item_parameters.attrib.keys()) > 0:
+            for key in item_parameters.attrib.keys():
+                temp_attribute[key] = item_parameters.attrib[key]
+        food_menu_item['attribute'] = temp_attribute
         
-#     food_menu_items.append(food_menu_item)
+    food_menu_items.append(food_menu_item)
 
-# # Check data parsed
-# for menu_item in food_menu_items:
-#     print("Name: ", menu_item['name'])
-#     print("Price: ", menu_item['price'])
-#     print("Description: ", menu_item['description'])
-#     print("Calories: ", menu_item['calories'])
-#     print("Attributes: ", menu_item['attribute'])
-#     print("\n")
+# Check data parsed
+for menu_item in food_menu_items:
+    print("Name: ", menu_item['name'])
+    print("Price: ", menu_item['price'])
+    print("Description: ", menu_item['description'])
+    print("Calories: ", menu_item['calories'])
+    print("Attributes: ", menu_item['attribute'])
+    print("\n")
 
-# # XML namespaces
-# import xml.etree.ElementTree as ET
+# XML namespaces
+import xml.etree.ElementTree as ET
 
-# xml_file_path = "../../In-Class Exercises/Data/namespace_example.xml"
+xml_file_path = "../../In-Class Exercises/Data/namespace_example.xml"
 
-# # if there is a special encoding for the file, we may need to specify that when
-# # reading the file
-# utf_parser = ET.XMLParser(encoding="utf-8")
-# xml_tree = ET.parse(xml_file_path, parser=utf_parser)
+# if there is a special encoding for the file, we may need to specify that when
+# reading the file
+utf_parser = ET.XMLParser(encoding="utf-8")
+xml_tree = ET.parse(xml_file_path, parser=utf_parser)
 
-# print("Getting all tags:")
-# # To use a namespace, use the URL enclosed in curly braces before the tag
-# # you are searching for.
-# for tree in xml_tree.findall('{http://arborists.example.com}tree'):
-#     for tag in tree:
-#         print(str(tag.tag)+ ":", tag.text)
+print("Getting all tags:")
+# To use a namespace, use the URL enclosed in curly braces before the tag
+# you are searching for.
+for tree in xml_tree.findall('{http://arborists.example.com}tree'):
+    for tag in tree:
+        print(str(tag.tag)+ ":", tag.text)
 
-# print("\n")
-# print("Getting just a single tag:")
-# # We can get a specific hierarchy using findall multiple times.  Remember, 
-# # findall() only searches one hierarchy level.
-# for tree in xml_tree.findall('{http://arborists.example.com}tree'):
-#     for tag in tree.findall('{http://arborists.example.com}tree_type'):
-#         print(str(tag.tag)+ ":", tag.text)
+print("\n")
+print("Getting just a single tag:")
+# We can get a specific hierarchy using findall multiple times.  Remember, 
+# findall() only searches one hierarchy level.
+for tree in xml_tree.findall('{http://arborists.example.com}tree'):
+    for tag in tree.findall('{http://arborists.example.com}tree_type'):
+        print(str(tag.tag)+ ":", tag.text)
 
-# # To make it easier for using the namespaces, we can setup a dictionary
-# xmlns_dict = {"arborist":"http://arborists.example.com",
-#               "data_struct":"http://data_structs.example.com"
-#               }
+# To make it easier for using the namespaces, we can setup a dictionary
+xmlns_dict = {"arborist":"http://arborists.example.com",
+              "data_struct":"http://data_structs.example.com"
+              }
 
-# print("\n")
-# print("Using a namespace dictionary:")
-# # root = fromstring(xml_text)
-# for tree in xml_tree.findall('data_struct:tree', xmlns_dict):
-#     for tag in tree:
-#         print(str(tag.tag)+ ":", tag.text)
+print("\n")
+print("Using a namespace dictionary:")
+# root = fromstring(xml_text)
+for tree in xml_tree.findall('data_struct:tree', xmlns_dict):
+    for tag in tree:
+        print(str(tag.tag)+ ":", tag.text)
 
 
 ###############################################################################
@@ -1974,27 +1975,27 @@ def GetHousingData():
 #                                                                             #
 ###############################################################################
 
-# Using the json library to convert JSON data to Python structures
-import json
+# # Using the json library to convert JSON data to Python structures
+# import json
 
-json_widget_file_path = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/Example Widget Data.json"
-json_webapp_file_path = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/Example Webapp Data.json"
+# json_widget_file_path = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/Example Widget Data.json"
+# json_webapp_file_path = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/Example Webapp Data.json"
 
-print("Widget Example")
-with open(json_widget_file_path, 'r') as jsonFileHandle:
-    json_text = jsonFileHandle.read()
+# print("Widget Example")
+# with open(json_widget_file_path, 'r') as jsonFileHandle:
+#     json_text = jsonFileHandle.read()
 
-# We can then create a JSONDecoder to convert the string into Python lists, 
-# dictionaries, and other data structures.
-json_decoder = json.JSONDecoder() 
-json_structures = json_decoder.decode(json_text)
-print(json_structures)
-print()
+# # We can then create a JSONDecoder to convert the string into Python lists, 
+# # dictionaries, and other data structures.
+# json_decoder = json.JSONDecoder() 
+# json_structures = json_decoder.decode(json_text)
+# print(json_structures)
+# print()
 
-# From here, we can traverse the structure like we would any nested Python
-# data structures
-print(json_structures['widget']['window'])
-print("\n\n\n")
+# # From here, we can traverse the structure like we would any nested Python
+# # data structures
+# print(json_structures['widget']['window'])
+# print("\n\n\n")
 
 
 # # A more complicated example can include both dictionaries and lists nested
@@ -2057,6 +2058,38 @@ print("\n\n\n")
 # json_quiz_structure = json_decoder.decode(json_web_string)
 # print("Quiz math questions: ", json_quiz_structure['quiz']['maths'])
 # print("\n\n\n")
+
+
+###############################################################################
+#                                                                             #
+#              Dataset Collection - Converting to JSON Web Data               #
+#                                                                             #
+###############################################################################
+
+# import json
+
+# # A set of embedded dictionaries can represent an object to encode in JSON
+# test_object = {
+#     "height": 500,
+#     "width":  200,
+#     "title":  "SamplevWindow",
+#     # An embedded dictionary represents an object within an object
+#     "central_widget" : {
+#         "img": "gray_duck",
+#         "color": "#001144"
+#         }
+#     }
+
+# # The JSON Encoder object will convert the object representation to a JSON 
+# # string
+# json_encoder = json.JSONEncoder()
+# json_object = json_encoder.encode(test_object)
+
+# print("json_object: ", json_object)
+# print("\n\n\n")
+
+
+
 
 ###############################################################################
 #                                                                             #

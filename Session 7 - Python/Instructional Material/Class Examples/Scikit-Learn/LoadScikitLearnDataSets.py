@@ -13,7 +13,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 """
 
-
+import sklearn
 from sklearn import model_selection
 
 def GetTrainTestSplitIrisData():
@@ -275,4 +275,33 @@ def GetHousingData():
 
     return data_train, data_test, target_train, target_test
 
+def GetTrainTestSplitMakeMoonsData():
+    """
+    Classifier data set
 
+    Returns
+    -------
+    data_train : TYPE
+        DESCRIPTION.
+    data_test : TYPE
+        DESCRIPTION.
+    target_train : TYPE
+        DESCRIPTION.
+    target_test : TYPE
+        DESCRIPTION.
+
+    """
+    
+    from sklearn.datasets import make_moons
+    
+    data, targets = make_moons(n_samples=1000, noise=0.25)
+    (
+        data_train,
+        data_test,
+        target_train,
+        target_test,
+    ) = sklearn.model_selection.train_test_split(
+        data, targets, test_size=0.25, train_size=0.75, random_state=0
+    )
+
+    return data_train, data_test, target_train, target_test

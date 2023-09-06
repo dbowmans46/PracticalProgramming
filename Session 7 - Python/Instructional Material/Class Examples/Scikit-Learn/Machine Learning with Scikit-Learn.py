@@ -2138,7 +2138,8 @@ def GetHousingData():
 
 # # Import curves/graphs
 # from sklearn.metrics import precision_recall_curve, roc_curve, roc_auc_score
-# from sklearn.metrics import plot_precision_recall_curve, plot_roc_curve
+# # TODO: This no longer works, probablu update broke this.  Fix it.
+# #from sklearn.metrics import plot_precision_recall_curve, plot_roc_curve
 
 # from sklearn.tree import DecisionTreeClassifier
 
@@ -2211,40 +2212,40 @@ def GetHousingData():
 
 ###############################################################################
 #                                                                             #
-#                              Regression Metrics                             #
+#                      Evaluating Accuracy of Regressors                      #
 #                                                                             #
 ###############################################################################
 
 
-# Setup our data
-import matplotlib.pyplot as plt
-from sklearn.tree import DecisionTreeRegressor
+# # Setup our data
+# import matplotlib.pyplot as plt
+# from sklearn.tree import DecisionTreeRegressor
 
-data_train, data_test, target_train, target_test = GetTrainTestSplitCAHousingData()
+# data_train, data_test, target_train, target_test = GetTrainTestSplitCAHousingData()
 
-# Don't forget to scale the data as needed.  Here, we are not applying a
-# scalar to simplify the code, but scaling the data may be important 
-# depending on the model you choose and the data you are processing.
-dec_tree_model = DecisionTreeRegressor(max_depth=3, random_state=0)
-dec_tree_model.fit(data_train, target_train)
-y_pred_train = dec_tree_model.predict(data_train)
-y_pred_test = dec_tree_model.predict(data_test)
+# # Don't forget to scale the data as needed.  Here, we are not applying a
+# # scalar to simplify the code, but scaling the data may be important 
+# # depending on the model you choose and the data you are processing.
+# dec_tree_model = DecisionTreeRegressor(max_depth=3, random_state=0)
+# dec_tree_model.fit(data_train, target_train)
+# y_pred_train = dec_tree_model.predict(data_train)
+# y_pred_test = dec_tree_model.predict(data_test)
 
-# Mean squared error
-from sklearn.metrics import mean_squared_error
-mse_score_train = mean_squared_error(y_pred_train, target_train)
-mse_score_test = mean_squared_error(y_pred_test, target_test)
-print("MSE values for max_depth=3:")
-print("mse_score_train:", mse_score_train)
-print("mse_score_test:", mse_score_test,"\n")
+# # Mean squared error
+# from sklearn.metrics import mean_squared_error
+# mse_score_train = mean_squared_error(y_pred_train, target_train)
+# mse_score_test = mean_squared_error(y_pred_test, target_test)
+# print("MSE values for max_depth=3:")
+# print("mse_score_train:", mse_score_train)
+# print("mse_score_test:", mse_score_test,"\n")
 
-# Coefficient of Determination (R^2)
-from sklearn.metrics import r2_score
-coeff_of_det_score_train = r2_score(y_pred_train, target_train)
-coeff_of_det_score_test = r2_score(y_pred_test, target_test)
-print("R^2 values for max_depth=3:")
-print("coeff_of_det_score_train:", coeff_of_det_score_train)
-print("coeff_of_det_score_test:", coeff_of_det_score_test,"\n\n\n")
+# # Coefficient of Determination (R^2)
+# from sklearn.metrics import r2_score
+# coeff_of_det_score_train = r2_score(y_pred_train, target_train)
+# coeff_of_det_score_test = r2_score(y_pred_test, target_test)
+# print("R^2 values for max_depth=3:")
+# print("coeff_of_det_score_train:", coeff_of_det_score_train)
+# print("coeff_of_det_score_test:", coeff_of_det_score_test,"\n\n\n")
 
 # # As we can see fro the MSE and R^2 values, this model using a max depth of 3
 # # is pretty attrocious.  We can change the max depth to get better results, 
@@ -2289,6 +2290,16 @@ print("coeff_of_det_score_test:", coeff_of_det_score_test,"\n\n\n")
 # # a different input
 # display = PredictionErrorDisplay.from_predictions(y_true=target_train, y_pred=y_pred_train, kind="residual_vs_predicted")
 # plt.show()
+
+
+###############################################################################
+#                                                                             #
+#                           Random Forest Regressor                           #
+#                                                                             #
+###############################################################################
+
+
+
 
 
 ###############################################################################

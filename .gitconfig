@@ -1,0 +1,22 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "github"]
+	url = https://github.com/dbowmans46/PracticalProgramming.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[branch "master"]
+	remote = github
+	merge = refs/heads/master
+[remote "sourceforge"]
+	url = https://git.code.sf.net/p/practicalprogramming/code
+	fetch = +refs/heads/*:refs/remotes/sourceforge/*
+[remote "multi_repo"]
+	url = https://github.com/dbowmans46/PracticalProgramming.git
+	fetch = +refs/heads/*:refs/remotes/multi_repo/*
+	pushurl = https://dbowmans46@git.code.sf.net/p/practicalprogramming/code
+	pushurl = https://github.com/dbowmans46/PracticalProgramming.git
+[branch "add_LLE_slides_and_code"]
+	remote = multi_repo
+	merge = refs/heads/add_LLE_slides_and_code

@@ -31,7 +31,7 @@ from sklearn import model_selection
 data_train, data_test, target_train, target_test = GetTrainTestSplitBreastCancerData()
 
 # We will be using a decision tree for our model, so train one first. Any
-# classifier can be used, however.
+# classifier can be used, however.  Only one type of trainer can be used.
 dec_tree_model = DecisionTreeClassifier(max_depth=3)
 
 # For AdaBoost, we will be using the SAMME.R algorithm.  This is a version of 

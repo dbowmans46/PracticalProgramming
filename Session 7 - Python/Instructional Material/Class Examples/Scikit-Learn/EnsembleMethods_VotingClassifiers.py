@@ -45,14 +45,14 @@ estimators_list = [('lr', lr_model),
 # We can chose either hard voting or soft voting.  Hard voting does a simple
 # vote between the different models, while soft voting takes into account
 # the confidence of the data.
-voting_model = VotingClassifier(estimators = estimators_list, voting='hard')
-#voting_model = VotingClassifier(estimators = estimators_list, voting='soft')
+#voting_model = VotingClassifier(estimators = estimators_list, voting='hard')
+voting_model = VotingClassifier(estimators = estimators_list, voting='soft')
 
 # Let's check the accuracy score of each model individually and of the ensemble
 from sklearn.metrics import accuracy_score
 print("   Model                       Accuracy")
 print("   -----                       --------")
-for model in (lr_model, dtc_model, svc_model, voting_model):
+for model in (lr_model, dtc_model, svc_model, knn_model, voting_model):
     model.fit(data_train, target_train)
     model_predictions = model.predict(data_test)
     model_name = model.__class__.__name__

@@ -63,9 +63,9 @@ print("AdaBoost Classifier Score: ", ada_model_score)
 
 # for estimator_count in estimator_counts:
 #     ada_model = AdaBoostClassifier(dec_tree_model, 
-#                                    n_estimators=estimator_count, 
-#                                    algorithm="SAMME.R", 
-#                                    learning_rate = 0.5)
+#                                     n_estimators=estimator_count, 
+#                                     algorithm="SAMME.R", 
+#                                     learning_rate = 0.5)
 #     ada_model.fit(data_train, target_train)
 #     scores.append(ada_model.score(data_test, target_test))
     

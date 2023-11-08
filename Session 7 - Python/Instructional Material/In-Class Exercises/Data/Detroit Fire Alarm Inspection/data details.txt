@@ -1,0 +1,45 @@
+Summary
+Annual Life Safety Fire Inspections conducted by the Detroit Fire Department (DFD) Fire Marshall Division.
+Annual Life Safety Fire Inspections are conducted by the Detroit Fire Department (DFD) Fire Marshall Division in accordance with Chapter 18 of the Detroit City Code, the Detroit Fire Prevention and Protection Code. Inspections occur as a part of routine daily district work in support of the core mission of the DFD Fire Marshall Division to provide the citizens and visitors of Detroit with the highest level of fire prevention using standards and guidelines set forth by the Michigan Building Code, City Ordinance and the NFPA (National Fire Protection Association). Inspections are also conducted to fulfill City of Detroit (CoD) Business Licensing requirements. Business owners required to obtain or renew a CoD Business License from Buildings, Safety Engineering, and Environment Department (BSEED) must get a Fire Permit from the Fire Marshall division as a part of the licensing process. The Permit certifies that the business premises have undergone and passed a Life Safety Fire Inspection within the past 12 months.
+
+Inspection ID
+Internal inspection ID assigned by the mobileyes system used by DFD to record fire inspection data.
+
+Address
+Street address of the inspected structure includes street number, direction, name, and type. Unit designators are included on an ad hoc basis.
+
+Occupant Name
+Business or organizational name of the occupant of the property as provided by the occupant or available in previous fire inspection records.
+
+Structure Name
+Name of the structure assigned by the DFD Fire Marshal division on an ad hoc basis during the inspection process.
+
+Inspection Type
+Type of inspection performed.
+
+Latest Inspection Date
+Most recent annual inspection date.
+
+Inspection Within Last Year
+Indication of whether the most recent annual inspection occurred within one calendar year.
+
+Address ID
+Unique numeric identifier for the address of the inspected location. Address IDs are assigned when an address is geocoded using Detroit's Base Units.
+
+Longitude
+Latitudinal coordinate of the address of the inspected structure.
+
+Latitude
+Longitudinal coordinate of the address of the inspected structure.
+
+Property Use Type
+The 3-digit National Fire Incident Reporting System (NFIRS) Property Use Type code (if assigned) for the occupant. Property use (in NFIRS 5.0) refers to the actual use of the property, not the overall use of mixed use properties. Property use types are assigned by inspectors during an initial inspection and are retained for subsequent inspections for an occupant.
+
+Property Use Type Description
+Standardized National Fire Incident Reporting System (NFIRS 5.0) Property Use Type code descriptions.
+
+Zip Code
+Zip code of the inspected structure.
+
+source
+https://data.detroitmi.gov/datasets/detroitmi::fire-inspections/about

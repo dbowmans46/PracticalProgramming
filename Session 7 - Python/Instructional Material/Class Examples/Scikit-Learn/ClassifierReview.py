@@ -25,7 +25,7 @@ from sklearn import model_selection
 # which ID's have had a recent annual inspection.
 filepath = "../../In-Class Exercises/Data/Detroit Fire Alarm Inspection/Fire_Inspections.csv"
 data = pandas.read_csv(filepath)
-data = data.set_index('IO_ID')
+#data = data.set_index('IO_ID')
 
 ###############################################################################
 #                               Data Preparation                              #
@@ -38,20 +38,67 @@ data = data.set_index('IO_ID')
 import numpy as np
 data = data.replace(np.nan,0)
 
-# We need to convert strings to numbers, or drop the columns
+# We can see that the addresses are mostly unique, and the ones that are the 
+# same don't necessarily mean anything.  Drop this column.
+data = data.drop(['Address', 'address_id'], axis=1)
 
+# The propusetypedescription is just a description string of the propusetype
+# column, so drop this one
+data = data.drop('propusetypedescription', axis=1)
+
+# X and Y are the same as latitutde and longitude, so drop those
+data = data.drop(['X', 'Y'], axis=1)
+
+# The occupant name and structure nameinfo is encoded in the IO_ID column, so 
+# drop these string columns
+data = data.drop('OccupantName', axis=1)
+data = data.drop('StructureName', axis=1)
+
+# propusetype has NNN and UUU values.  These need converted into a value.
+# We could alternatively drop these rows, if there aren't too many.  Further,
+# we may need to label binarize these values to pevent the trainer from making
+# erroneous associations with the numbers.
+data = data.replace({'propusetype':'UUU'}, value = 2000)
+data = data.replace({'propusetype':'NNN'}, value = 5000)
+
+# The last thing we need to modify is the LatestInspDate column.  I will just
+# convert this to a single integer-compatible string of YYYYMMDDHHMMSS
+def convert_date_time_to_int(date_time_val):
+    
+    date, time = date_time_val.split(" ")
+    date = date.replace("/","")
+    time = time.replace(":","").replace("+00","")
+    
+    return date + time
+
+data['LatestInspDate'] = data['LatestInspDate'].apply(convert_date_time_to_int)
+
+
+
+# We need to convert the remaining string data into number data.
+# For InspectionType_Full and InspWithinLastYear, these are labels
+# and can be encoded.  We will first prepare the InspectionType_Full binary data
+from sklearn.preprocessing import LabelBinarizer
+
+lb = LabelBinarizer()
+inspection_type_lb_arr = lb.fit_transform(data['InspectionType_Full'])
+# Add the new binary columns with the name of labels
+inspection_type_df = pandas.DataFrame(data=inspection_type_lb_arr, columns=lb.classes_)
+data_concat_df = pandas.concat([data.reset_index(drop=True), inspection_type_df.reset_index(drop=True)], axis=1)
+# Remove the old column, since the data has been label binarized
+data_concat_df = data_concat_df.drop('InspectionType_Full', axis=1)
+
+# Now we will label binarize InspWithinLastYear.  Since this is a single column,
+# we don't need to concatenate DataFrames together
+inspection_last_year_lb_arr = lb.fit_transform(data_concat_df['InspWithinLastYear'])
+data_concat_df["InspWithinLastYear"] = inspection_last_year_lb_arr
 
 # Split the data into training data and test data
-
-data_points = data.drop('InspWithinLastYear', axis=1)
-targets = data['InspWithinLastYear']
+data_points = data_concat_df.drop('InspWithinLastYear', axis=1)
+targets = data_concat_df['InspWithinLastYear']
 
 data_train, data_test, target_train, target_test = \
     model_selection.train_test_split(data_points, targets, random_state=0)
-
-
-
-
 
 
 
@@ -68,10 +115,12 @@ data_train, data_test, target_train, target_test = \
 ###############################################################################
 
 # We will try a bunch of classifiers to see which one works best
+# This fails with Scikit-Learn v 1.3.0, there is a bug https://github.com/scikit-learn/scikit-learn/issues/26768
 from sklearn.neighbors import KNeighborsClassifier
 knn_model = KNeighborsClassifier(n_neighbors=3) 
 knn_model.fit(data_train, target_train)         
 target_predictions = knn_model.predict(data_test)
+
 
 # from sklearn.tree import DecisionTreeClassifier
 # dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type

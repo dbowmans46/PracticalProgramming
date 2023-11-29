@@ -115,76 +115,130 @@ data_train, data_test, target_train, target_test = \
 ###############################################################################
 
 # We will try a bunch of classifiers to see which one works best
+
 # This fails with Scikit-Learn v 1.3.0, there is a bug https://github.com/scikit-learn/scikit-learn/issues/26768
 from sklearn.neighbors import KNeighborsClassifier
 knn_model = KNeighborsClassifier(n_neighbors=3) 
 knn_model.fit(data_train, target_train)         
 target_predictions = knn_model.predict(data_test)
 
+from sklearn.tree import DecisionTreeClassifier
+dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
+dec_tree_model.fit(data_train, target_train)            # Train the model with data
+dec_target_predictions = dec_tree_model.predict(data_test)
 
-# from sklearn.tree import DecisionTreeClassifier
-# dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
-# dec_tree_model.fit(data_train, target_train)            # Train the model with data
-# dec_target_predictions = dec_tree_model.predict(data_test)
+from sklearn.linear_model import LogisticRegression
+lr_model = LogisticRegression(max_iter=10000, C=0.005)
+lr_model.fit(data_train, target_train)
+target_predictions = lr_model.predict(data_test)
 
-# from sklearn.linear_model import LogisticRegression
-# lr_model = LogisticRegression(max_iter=1000000, c=0.005)
-# lr_model.fit(data_train, target_train)
-# target_predictions = lr_model.predict(data_test)
+from sklearn.svm import LinearSVC
+svc_model = LinearSVC(max_iter=10000, C=0.05)
+svc_model.fit(data_train, target_train)
 
-# from sklearn.svm import LinearSVC
-# svc_model = LinearSVC(max_iter=1e7, C=0.05)
-# svc_model.fit(data_train, target_train)
-# target_predictions = svc_model.predict(data_test)
+from sklearn.svm import SVC
+nonlinear_svc_model = SVC(kernel="rbf", gamma=5, C=1, probability=True)
+nonlinear_svc_model.fit(data_train, target_train)
 
-# from sklearn.svm import SVC
-# nonlinear_svc_model = SVC(kernel="rbf", gamma=5, C=1)
-# nonlinear_svc_model.fit(data_train, target_train)
+from sklearn.ensemble import VotingClassifier
+lr_model = LogisticRegression(max_iter=100, n_jobs=-1)
+dec_tree_model = DecisionTreeClassifier()
+knn_model = KNeighborsClassifier()
+# Seting the probability=True for the SVC trainer allows us to utilize soft 
+# voting.
+svc_model = SVC(probability=True) 
 
-# from sklearn.ensemble import VotingClassifier
-# lr_model = LogisticRegression(max_iter=100)
-# dtc_model = DecisionTreeClassifier()
-# knn_model = KNeighborsClassifier()
-# # Seting the probability=True for the SVC trainer allows us to utilize soft 
-# # voting.
-# svc_model = SVC(probability=True) 
+estimators_list = [('lr', lr_model),
+                    ('dtc', dec_tree_model),
+                    ('knn', knn_model),               
+                    ('svc', nonlinear_svc_model)]
 
-# estimators_list = [('lr', lr_model),
-#                    ('dtc', dtc_model),
-#                    ('knn', knn_model),               
-#                    ('svc', svc_model)]
+voting_model = VotingClassifier(estimators = estimators_list, voting='soft')
+voting_model.fit(data_train, target_train)
 
-# voting_model = VotingClassifier(estimators = estimators_list, voting='soft')
-# voting_model.fit(data_train, target_train)
+from sklearn.ensemble import BaggingClassifier
+bagger_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
+                                  n_estimators=300, max_samples=75, bootstrap=True, 
+                                  n_jobs=-1, oob_score=True)
+bagger_model.fit(data_train, target_train)
 
-# from sklearn.ensemble import BaggingClassifier
-# bagger_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
-#                                  n_estimators=300, max_samples=75, bootstrap=True, 
-#                                  n_jobs=-1, oob_score=True)
-# bagger_model.fit(data_train, target_train)
+paster_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
+                                  n_estimators=300, max_samples=75, bootstrap=False, 
+                                  n_jobs=-1, oob_score=False)
+paster_model.fit(data_train, target_train)
 
-# paster_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
-#                                  n_estimators=300, max_samples=75, bootstrap=False, 
-#                                  n_jobs=-1, oob_score=True)
-# paster_model.fit(data_train, target_train)
+from sklearn.ensemble import RandomForestClassifier
+rf_model = RandomForestClassifier(n_estimators=6000, max_leaf_nodes=15, n_jobs=-1)
+rf_model.fit(data_train, target_train)
 
-# from sklearn.ensemble import RandomForestClassifier
-# rf_model = RandomForestClassifier(n_estimators=6000, max_leaf_nodes=15, n_jobs=-1)
-# rf_model.fit(data_train, target_train)
+from sklearn.ensemble import AdaBoostClassifier
+ada_model = AdaBoostClassifier(dec_tree_model, 
+                                n_estimators=5, 
+                                algorithm="SAMME.R", 
+                                learning_rate = 0.5)
+ada_model.fit(data_train, target_train)
 
-# from sklearn.ensemble import AdaBoostClassifier
-# ada_model = AdaBoostClassifier(dec_tree_model, 
-#                                n_estimators=5, 
-#                                algorithm="SAMME.R", 
-#                                learning_rate = 0.5)
-# ada_model.fit(data_train, target_train)
-
-# from sklearn.ensemble import GradientBoostingClassifier
-# gbt_model = GradientBoostingClassifier(max_depth=2, learning_rate=0.1, subsample=0.27)
-# gbt_model.fit(data_train, target_train)
+from sklearn.ensemble import GradientBoostingClassifier
+gbt_model = GradientBoostingClassifier(max_depth=2, learning_rate=0.1, subsample=0.27)
+gbt_model.fit(data_train, target_train)
 
 ###############################################################################
 #                                   Metrics                                   #
 ###############################################################################
 
+import matplotlib.pyplot as plt
+
+# ml_model = knn_model
+# ml_model = dec_tree_model
+# ml_model = lr_model
+# ml_model = svc_model
+# ml_model = nonlinear_svc_model
+# ml_model = voting_model
+# ml_model = bagger_model
+# ml_model = paster_model
+# ml_model = rf_model
+# ml_model = ada_model
+# ml_model = gbt_model
+
+
+# # Setup predictions and probabilities for metric calculations
+# model_predictions = ml_model.predict(data_test)
+# model_probabilities = ml_model.predict_proba(data_test)
+# model_probabilities_pos_class_test_data = [probability[1] for probability in model_probabilities]
+
+# # Confusion matrix 
+# from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+# confused_matrix = confusion_matrix(target_test, model_predictions)
+# cm_display = ConfusionMatrixDisplay.from_estimator(ml_model, data_test, target_test)
+# plt.xlabel("Predictions")
+# plt.ylabel("True Labels")
+# plt.title("Confusion Matrix with Heat Map Scheme")
+# plt.show()
+
+
+# from sklearn.metrics import precision_score, recall_score
+# precision_score_vals = precision_score(target_test, model_predictions)
+# recall_score_vals = recall_score(target_test, model_predictions)
+# print("Precision Score:", precision_score_vals)
+# print("Recall Score:", recall_score_vals)
+
+# # Precisoin recall curve
+# from sklearn.metrics import PrecisionRecallDisplay
+# prd = PrecisionRecallDisplay.from_estimator(ml_model, data_test, target_test)
+# plt.xlabel("Recall")
+# plt.ylabel("Precision")
+# plt.title("PR Graph Plotting from from_estimator() Method")
+# plt.show()
+
+# # ROC Curve
+# from sklearn.metrics import RocCurveDisplay, roc_auc_score
+# prd = RocCurveDisplay.from_estimator(ml_model, data_test, target_test)
+# plt.xlabel("False Positive Rate")
+# plt.ylabel("True Positive Rate")
+# plt.title("ROC Graph Plotting from from_estimator() Method")
+# plt.show()
+
+
+# roc_score = roc_auc_score(target_test, model_probabilities_pos_class_test_data)
+# print("ROC Score:", roc_score)
 

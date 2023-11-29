@@ -22,7 +22,7 @@ from sklearn.metrics import precision_score, recall_score, confusion_matrix
 
 # Import curves/graphs
 from sklearn.metrics import precision_recall_curve, roc_curve, roc_auc_score
-# TODO: This no longer works, probably update broke this.  Fix it.
+# The below no longer works as of Scikit-Learn Version 1.2
 #from sklearn.metrics import plot_precision_recall_curve, plot_roc_curve
 
 from sklearn.tree import DecisionTreeClassifier
@@ -104,7 +104,8 @@ plt.show()
 # We can create an ROC display, just like we did with the precision recall
 # data
 from sklearn.metrics import RocCurveDisplay
-prd = RocCurveDisplay(precisions, recalls)
+# prd = RocCurveDisplay(precisions, recalls)
+prd = RocCurveDisplay(fpr=FPR, tpr=TPR)
 plt.xlabel("False Positive Rate")
 plt.ylabel("True Positive Rate")
 plt.title("ROC Graph Plotting Directly from RocCurveDisplay Constructor")

@@ -107,7 +107,11 @@ data_train, data_test, target_train, target_test = \
 #                                 Data Scaling                                #
 ###############################################################################
 
+# Before uncommenting and running the code below, get through the sanity check
 
+# from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
+# standard_scaler = StandardScaler()
+# data_train = standard_scaler.fit_transform(data_train, target_train)
 
 
 ###############################################################################
@@ -186,19 +190,54 @@ gbt_model.fit(data_train, target_train)
 #                                   Metrics                                   #
 ###############################################################################
 
-import matplotlib.pyplot as plt
+# # Before we do anything, let's do a quick score check on a simple classifier
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# knn_model.fit(data_train, target_train)  
+# train_score = knn_model.score(data_train, target_train)
+# test_score = knn_model.score(data_test, target_test)
+# print("Sanity check")
+# print("Training Data Score:", train_score)
+# print("Test Data Score:", test_score)
+# print("\n\n\n")
 
-# ml_model = knn_model
-# ml_model = dec_tree_model
-# ml_model = lr_model
-# ml_model = svc_model
-# ml_model = nonlinear_svc_model
-# ml_model = voting_model
-# ml_model = bagger_model
-# ml_model = paster_model
-# ml_model = rf_model
-# ml_model = ada_model
-# ml_model = gbt_model
+# # Looks like we have a problem.  The problem is that our target data, which
+# # is the original column 'InspWithinLastYear', is contained in one of the 
+# # columns that exists in our data, the column 'LatestInspDate'.  To fix, 
+# # we can just remove that column from our data  We shouldn't have to redo the 
+# # label binarizer, since that data is contained in separate columns.  We will
+# # need to recreate our train_test_split data.
+# #
+# # Interestingly, another solution is to scale the data, and avoid all this.
+# data_points = data_points.drop('LatestInspDate', axis=1)
+# data_train, data_test, target_train, target_test = \
+#     model_selection.train_test_split(data_points, targets, random_state=0)
+    
+
+# # Now, let's rerun the sanity check
+# knn_model = KNeighborsClassifier(n_neighbors=3) 
+# knn_model.fit(data_train, target_train)  
+# train_score = knn_model.score(data_train, target_train)
+# test_score = knn_model.score(data_test, target_test)
+# print("Sanity check after LatestInspDate column removal")
+# print("Training Data Score:", train_score)
+# print("Test Data Score:", test_score)
+# print("\n\n\n")
+
+
+
+# import matplotlib.pyplot as plt
+
+# # ml_model = knn_model
+# # ml_model = dec_tree_model
+# # ml_model = lr_model
+# # ml_model = svc_model
+# # ml_model = nonlinear_svc_model
+# # ml_model = voting_model
+# # ml_model = bagger_model
+# # ml_model = paster_model
+# # ml_model = rf_model
+# # ml_model = ada_model
+# # ml_model = gbt_model
 
 
 # # Setup predictions and probabilities for metric calculations

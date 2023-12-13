@@ -62,7 +62,7 @@ data = data.replace({'propusetype':'UUU'}, value = 2000)
 data = data.replace({'propusetype':'NNN'}, value = 5000)
 
 # The last thing we need to modify is the LatestInspDate column.  I will just
-# convert this to a single integer-compatible string of YYYYMMDDHHMMSS
+# convert this to a single integer-compatible string of YYYYMMDDHHmmSS
 def convert_date_time_to_int(date_time_val):
     
     date, time = date_time_val.split(" ")
@@ -100,6 +100,38 @@ targets = data_concat_df['InspWithinLastYear']
 data_train, data_test, target_train, target_test = \
     model_selection.train_test_split(data_points, targets, random_state=0)
 
+# Before we do anything, let's do a quick score check on a simple classifier
+from sklearn.neighbors import KNeighborsClassifier
+knn_model = KNeighborsClassifier(n_neighbors=3) 
+knn_model.fit(data_train, target_train)  
+train_score = knn_model.score(data_train, target_train)
+test_score = knn_model.score(data_test, target_test)
+print("Sanity check")
+print("Training Data Score:", train_score)
+print("Test Data Score:", test_score)
+print("\n\n\n")
+
+# Looks like we have a problem.  The problem is that our target data, which
+# is the original column 'InspWithinLastYear', is contained in one of the 
+# columns that exists in our data, the column 'LatestInspDate'.  To fix, 
+# we can just remove that column from our data  We shouldn't have to redo the 
+# label binarizer, since that data is contained in separate columns.  We will
+# need to recreate our train_test_split data.
+
+data_points = data_points.drop('LatestInspDate', axis=1)
+data_train, data_test, target_train, target_test = \
+    model_selection.train_test_split(data_points, targets, random_state=0)
+    
+
+# Now, let's rerun the sanity check
+knn_model = KNeighborsClassifier(n_neighbors=3) 
+knn_model.fit(data_train, target_train)  
+train_score = knn_model.score(data_train, target_train)
+test_score = knn_model.score(data_test, target_test)
+print("Sanity check after LatestInspDate column removal")
+print("Training Data Score:", train_score)
+print("Test Data Score:", test_score)
+print("\n\n\n")
 
 
 
@@ -108,6 +140,10 @@ data_train, data_test, target_train, target_test = \
 ###############################################################################
 
 # Before uncommenting and running the code below, get through the sanity check
+# Note that scaling without removing the 'LatestInspDate' column will cause the 
+# time data to scale, which causes the sanity check to now pass.  This is 
+# because the time data changes, and no longer contains the target information.
+# It is important to check for duplicate column data before scaling.
 
 # from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
 # standard_scaler = StandardScaler()
@@ -126,108 +162,73 @@ knn_model = KNeighborsClassifier(n_neighbors=3)
 knn_model.fit(data_train, target_train)         
 target_predictions = knn_model.predict(data_test)
 
-from sklearn.tree import DecisionTreeClassifier
-dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
-dec_tree_model.fit(data_train, target_train)            # Train the model with data
-dec_target_predictions = dec_tree_model.predict(data_test)
+# from sklearn.tree import DecisionTreeClassifier
+# dec_tree_model = DecisionTreeClassifier(max_depth=3, random_state=0)  # Set the classifier type
+# dec_tree_model.fit(data_train, target_train)            # Train the model with data
+# dec_target_predictions = dec_tree_model.predict(data_test)
 
-from sklearn.linear_model import LogisticRegression
-lr_model = LogisticRegression(max_iter=10000, C=0.005)
-lr_model.fit(data_train, target_train)
-target_predictions = lr_model.predict(data_test)
+# from sklearn.linear_model import LogisticRegression
+# lr_model = LogisticRegression(max_iter=10000, C=0.005)
+# lr_model.fit(data_train, target_train)
+# target_predictions = lr_model.predict(data_test)
 
-from sklearn.svm import LinearSVC
-svc_model = LinearSVC(max_iter=10000, C=0.05)
-svc_model.fit(data_train, target_train)
+# from sklearn.svm import LinearSVC
+# svc_model = LinearSVC(max_iter=10000, C=0.05)
+# svc_model.fit(data_train, target_train)
 
-from sklearn.svm import SVC
-nonlinear_svc_model = SVC(kernel="rbf", gamma=5, C=1, probability=True)
-nonlinear_svc_model.fit(data_train, target_train)
+# from sklearn.svm import SVC
+# nonlinear_svc_model = SVC(kernel="rbf", gamma=5, C=1, probability=True)
+# nonlinear_svc_model.fit(data_train, target_train)
 
-from sklearn.ensemble import VotingClassifier
-lr_model = LogisticRegression(max_iter=100, n_jobs=-1)
-dec_tree_model = DecisionTreeClassifier()
-knn_model = KNeighborsClassifier()
-# Seting the probability=True for the SVC trainer allows us to utilize soft 
-# voting.
-svc_model = SVC(probability=True) 
+# from sklearn.ensemble import VotingClassifier
+# lr_model = LogisticRegression(max_iter=100, n_jobs=-1)
+# dec_tree_model = DecisionTreeClassifier()
+# knn_model = KNeighborsClassifier()
+# # Seting the probability=True for the SVC trainer allows us to utilize soft 
+# # voting.
+# svc_model = SVC(probability=True) 
 
-estimators_list = [('lr', lr_model),
-                    ('dtc', dec_tree_model),
-                    ('knn', knn_model),               
-                    ('svc', nonlinear_svc_model)]
+# estimators_list = [('lr', lr_model),
+#                     ('dtc', dec_tree_model),
+#                     ('knn', knn_model),               
+#                     ('svc', nonlinear_svc_model)]
 
-voting_model = VotingClassifier(estimators = estimators_list, voting='soft')
-voting_model.fit(data_train, target_train)
+# voting_model = VotingClassifier(estimators = estimators_list, voting='soft')
+# voting_model.fit(data_train, target_train)
 
-from sklearn.ensemble import BaggingClassifier
-bagger_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
-                                  n_estimators=300, max_samples=75, bootstrap=True, 
-                                  n_jobs=-1, oob_score=True)
-bagger_model.fit(data_train, target_train)
+# from sklearn.ensemble import BaggingClassifier
+# bagger_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
+#                                   n_estimators=300, max_samples=75, bootstrap=True, 
+#                                   n_jobs=-1, oob_score=True)
+# bagger_model.fit(data_train, target_train)
 
-paster_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
-                                  n_estimators=300, max_samples=75, bootstrap=False, 
-                                  n_jobs=-1, oob_score=False)
-paster_model.fit(data_train, target_train)
+# paster_model = BaggingClassifier(KNeighborsClassifier(n_neighbors=5), 
+#                                   n_estimators=300, max_samples=75, bootstrap=False, 
+#                                   n_jobs=-1, oob_score=False)
+# paster_model.fit(data_train, target_train)
 
-from sklearn.ensemble import RandomForestClassifier
-rf_model = RandomForestClassifier(n_estimators=6000, max_leaf_nodes=15, n_jobs=-1)
-rf_model.fit(data_train, target_train)
+# from sklearn.ensemble import RandomForestClassifier
+# rf_model = RandomForestClassifier(n_estimators=6000, max_leaf_nodes=15, n_jobs=-1)
+# rf_model.fit(data_train, target_train)
 
-from sklearn.ensemble import AdaBoostClassifier
-ada_model = AdaBoostClassifier(dec_tree_model, 
-                                n_estimators=5, 
-                                algorithm="SAMME.R", 
-                                learning_rate = 0.5)
-ada_model.fit(data_train, target_train)
+# from sklearn.ensemble import AdaBoostClassifier
+# ada_model = AdaBoostClassifier(dec_tree_model, 
+#                                 n_estimators=5, 
+#                                 algorithm="SAMME.R", 
+#                                 learning_rate = 0.5)
+# ada_model.fit(data_train, target_train)
 
-from sklearn.ensemble import GradientBoostingClassifier
-gbt_model = GradientBoostingClassifier(max_depth=2, learning_rate=0.1, subsample=0.27)
-gbt_model.fit(data_train, target_train)
+# from sklearn.ensemble import GradientBoostingClassifier
+# gbt_model = GradientBoostingClassifier(max_depth=2, learning_rate=0.1, subsample=0.27)
+# gbt_model.fit(data_train, target_train)
 
 ###############################################################################
 #                                   Metrics                                   #
 ###############################################################################
 
-# # Before we do anything, let's do a quick score check on a simple classifier
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
-# knn_model.fit(data_train, target_train)  
-# train_score = knn_model.score(data_train, target_train)
-# test_score = knn_model.score(data_test, target_test)
-# print("Sanity check")
-# print("Training Data Score:", train_score)
-# print("Test Data Score:", test_score)
-# print("\n\n\n")
-
-# # Looks like we have a problem.  The problem is that our target data, which
-# # is the original column 'InspWithinLastYear', is contained in one of the 
-# # columns that exists in our data, the column 'LatestInspDate'.  To fix, 
-# # we can just remove that column from our data  We shouldn't have to redo the 
-# # label binarizer, since that data is contained in separate columns.  We will
-# # need to recreate our train_test_split data.
-# #
-# # Interestingly, another solution is to scale the data, and avoid all this.
-# data_points = data_points.drop('LatestInspDate', axis=1)
-# data_train, data_test, target_train, target_test = \
-#     model_selection.train_test_split(data_points, targets, random_state=0)
-    
-
-# # Now, let's rerun the sanity check
-# knn_model = KNeighborsClassifier(n_neighbors=3) 
-# knn_model.fit(data_train, target_train)  
-# train_score = knn_model.score(data_train, target_train)
-# test_score = knn_model.score(data_test, target_test)
-# print("Sanity check after LatestInspDate column removal")
-# print("Training Data Score:", train_score)
-# print("Test Data Score:", test_score)
-# print("\n\n\n")
-
-
-
 # import matplotlib.pyplot as plt
 
-# # ml_model = knn_model
+# ml_model = knn_model
 # # ml_model = dec_tree_model
 # # ml_model = lr_model
 # # ml_model = svc_model
@@ -243,6 +244,8 @@ gbt_model.fit(data_train, target_train)
 # # Setup predictions and probabilities for metric calculations
 # model_predictions = ml_model.predict(data_test)
 # model_probabilities = ml_model.predict_proba(data_test)
+# # Choose index 1 of the probability list because this is the probability of the
+# # positive class.
 # model_probabilities_pos_class_test_data = [probability[1] for probability in model_probabilities]
 
 # # Confusion matrix 

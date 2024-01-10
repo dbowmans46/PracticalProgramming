@@ -21,7 +21,8 @@ from sklearn import model_selection
 #                                 Gather Data                                 #
 ###############################################################################
 
-
+from LoadScikitLearnDataSets import GetTrainTestSplitCAHousingData
+data_train, data_test, target_train, target_test = GetTrainTestSplitCAHousingData()
 
 
 ###############################################################################
@@ -38,7 +39,7 @@ from sklearn import model_selection
 from sklearn.neighbors import KNeighborsRegressor
 neighbor_count = 3
 print("K-Nearest Neighbors with", neighbor_count, "Neighbors")
-knn_model = KNeighborsRegressor(n_neighbors=neighbor_count)
+knn_model = KNeighborsRegressor(n_neighbors=neighbor_count, )
 knn_model.fit(data_train, target_train)
 MLHelper.FitAndGetAccuracy(knn_model, data_train, data_test, \
                             target_train, target_test, 8)
@@ -63,7 +64,7 @@ print("\n\n\n")
 
 
 from sklearn.linear_model import Ridge
-alpha_ridge = 0.005
+alpha_ridge = 5
 print("Ridge Regression with Alpha of", alpha_ridge)
 ridge_model = Ridge(alpha=alpha_ridge)
 MLHelper.FitAndGetAccuracy(ridge_model, data_train, data_test, \
@@ -73,7 +74,7 @@ print("\n\n\n")
 
 from sklearn.linear_model import Lasso
 
-alpha_lasso = 0.005
+alpha_lasso = 0.1
 print("Ridge Regression with Alpha of", alpha_lasso)
 lasso_model = Lasso(alpha=alpha_lasso)
 MLHelper.FitAndGetAccuracy(lasso_model, data_train, data_test, \
@@ -85,4 +86,33 @@ print("\n\n\n")
 #                                   Metrics                                   #
 ###############################################################################
 
-from sklearn.metrics import mean_squared_error
+# For usage of built-in metric functions, see the MLHelper.py file
+
+# Calculate the coefficient of determination
+
+# First, need to calculate the sum of squared residuals (SSR) of the 
+# predictions vs the actual target values from the test data.
+predictions = l_reg_model.predict(data_test)
+SSR = 0
+for index in range(len(predictions)):
+    SSR += (target_test[index] - predictions[index])**2
+
+# Next, we need to get the total sum of squares (TSS), calculated as the 
+# differences between the actual targets and the mean of the actual targets
+import numpy as np      
+target_test_mean_val = np.mean(target_test)
+TSS = 0
+for index in range(len(target_test)):
+    TSS += (target_test[index] - target_test_mean_val)**2
+    
+coefficient_of_det = 1 - SSR/TSS
+print("Manually-calculated Coefficient of Determination (R^2):", coefficient_of_det)
+
+# MSE is the sum of squared residuals divided by the number of samples.  The 
+# squared sum of residuals have already been calculated for the coefficient
+# of determination
+manual_mse = SSR/len(predictions)
+print("Manually-calculated Mean Squared Error:", manual_mse)
+
+manual_rmse = manual_mse**(1/2)
+print("Manually-calculated Root Mean Squared Error:", manual_rmse)

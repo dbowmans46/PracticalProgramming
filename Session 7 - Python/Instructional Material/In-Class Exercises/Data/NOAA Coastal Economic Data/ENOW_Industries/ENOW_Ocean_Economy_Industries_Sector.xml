@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Department of Commerce (DOC), National Oceanic and Atmospheric Administration (NOAA), National Ocean Service (NOS), Office for Coastal Management (OCM)</origin>
+        <pubdate>2021</pubdate>
+        <title>Time-Series Data on the Ocean and Great Lakes Economy for Counties, States, and the Nation between 2005 and 2019(Sector and Industry Level)</title>
+        <pubinfo>
+          <pubplace>Charleston, SC</pubplace>
+          <publish>NOAA's Ocean Service, Office for Coastal Management (OCM)</publish>
+        </pubinfo>
+        <onlink>http://www.coast.noaa.gov/htdata/SocioEconomic/ENOW.zip</onlink>
+        <onlink>http://coast.noaa.gov/api/enow/</onlink>
+        <onlink>http://www.coast.noaa.gov/digitalcoast/data/enow/</onlink>
+        <onlink>https://coast.noaa.gov/data/digitalcoast/pdf/enow-crosswalk-table.pdf</onlink>
+        <onlink>https://coast.noaa.gov/data/digitalcoast/pdf/enow-counties-list.pdf</onlink>
+        <onlink>https://coast.noaa.gov/data/digitalcoast/pdf/enow-faq.pdf</onlink>
+        <onlink>http://www.coast.noaa.gov/</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>Economics: National Ocean Watch (ENOW) contains annual time-series data for about 400 coastal counties, 30 coastal states, and the nation, derived from the Bureau of Labor Statistics and the Bureau of Economic Analysis.  It describes 23 industries in six economic sectors that depend on the oceans and Great Lakes and measures four economic indicators: Establishments, Employment, Wages, and Gross Domestic Product (GDP).</abstract>
+      <purpose>ENOW organizes economic data in ways that focus directly on economic activity dependent on the oceans and Great Lakes.</purpose>
+      <supplinf>This data complies with the Information Quality Act directive from the Office of Management and Budget. The Bureau of Economic Analysis (BEA) revise their GDP estimates for all years of data on an annual basis. With the annual release of new ENOW data, gross domestic product (GDP) for the ocean economy are updated for the entire time series to reflect the revision of GDP. In addition, BEA rebenchmark the entire GDP account every five years to better reflect the evolving nature of the U.S. economy. The rebenchmarking involves making changes to what is included in different industries, as well as classifying new and emerging industries. The current benchmark for the GDP industries is 2012. An additional industry, Fish and Seafood Merchant Wholesalers (NAICS 424460) was added to the Living Resources sector's Seafood Market industry for data years 2016 and beyond. The industry was not applied to earlier years.</supplinf>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>2005</begdate>
+          <enddate>2019</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>publication date</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>Updated annually</update>
+    </status>
+    <spdom>
+      <bounding>
+        <westbc>-178.217598</westbc>
+        <eastbc>-66.969271</eastbc>
+        <northbc>71.406235</northbc>
+        <southbc>18.921786</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>economy</themekey>
+        <themekey>oceans</themekey>
+        <themekey>society</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Socioeconomics</themekey>
+        <themekey>tourism</themekey>
+        <themekey>recreation</themekey>
+        <themekey>fishing</themekey>
+        <themekey>marine construction</themekey>
+        <themekey>marine transportation</themekey>
+        <themekey>shipping</themekey>
+        <themekey>dredging</themekey>
+        <themekey>offshore oil and gas</themekey>
+        <themekey>ship building</themekey>
+        <themekey>NAICS</themekey>
+        <themekey>North American Industrial Classification System</themekey>
+      </theme>
+      <place>
+        <placekt>None</placekt>
+        <placekey>United States</placekey>
+        <placekey>Great Lakes</placekey>
+        <placekey>Coastal states</placekey>
+        <placekey>Coastal counties</placekey>
+      </place>
+    </keywords>
+    <accconst>None</accconst>
+    <useconst>None</useconst>
+  </idinfo>
+  <dataqual>
+    <logic>To ensure the quality of the data, we checked that all data was present for the ENOW defined geography, verified and formatted data types, ensured that suppressed data were flagged as -9999, and normalized dollar figures into real numbers.</logic>
+    <complete>To ensure the completeness of the data set, zeros were added to counties with no data for any or all sectors. This does not change the integrity of the data but allows for easier visualization. Zeros in the data indicate that there is no employment, establishment, wage, or GDP data based on the ENOW definitions of ocean related economic activity.  -9999 indicates that data have been suppressed to avoid violating the confidentiality of information provided to employers by the Bureau of Labor Statistics.</complete>
+    <lineage>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bureau of Labor Statistics (BLS)</origin>
+            <pubdate>2022</pubdate>
+            <title>Quarterly Census of Employment and Wages (QCEW)</title>
+            <othercit>NOAA OCM received this data from another federal agency (Bureau of Labor Statistics). Questions regarding the original data collection and /or processing should be directed to that agency.</othercit>
+          </citeinfo>
+        </srccite>
+        <typesrc>database</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2005</begdate>
+              <enddate>2020</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>BLS 1</srccitea>
+        <srccontr>Industry level data on establishment, employment, and wages for five non-Tourism and Recreation sectors</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bureau of Labor Statistics (BLS)</origin>
+            <pubdate>Unpublished material</pubdate>
+            <title>Quarterly Census of Employment and Wages (QCEW)</title>
+            <othercit>NOAA OCM received this data from another federal agency (Bureau of Labor Statistics). Questions regarding the original data collection and /or processing should be directed to that agency.</othercit>
+          </citeinfo>
+        </srccite>
+        <typesrc>database</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2005</begdate>
+              <enddate>2020</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>BLS Unpublished</srccurr>
+        </srctime>
+        <srccitea>BLS 2</srccitea>
+        <srccontr>Establishment level data on establishments, employment, and wages for Tourism and Recreation and Ocean Economy sectors for Shore-Adjacent ENOW Counties</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bureau of Labor Statistics (BLS)</origin>
+            <pubdate>Unpublished material</pubdate>
+            <title>Quarterly Census of Employment and Wages (QCEW)</title>
+            <othercit>NOAA OCM received this data from another federal agency (Bureau of Labor Statistics). Questions regarding the original data collection and /or processing should be directed to that agency.</othercit>
+          </citeinfo>
+        </srccite>
+        <typesrc>database</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2005</begdate>
+              <enddate>2020</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>BLS Unpublished</srccurr>
+        </srctime>
+        <srccitea>BLS 3</srccitea>
+        <srccontr>Establishment level data on employment and wages for 26 Participating ENOW States</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>US Census Bureau</origin>
+            <pubdate>2020</pubdate>
+            <title>ZIP Code Business Patterns</title>
+            <othercit>NOAA OCM received this data from another federal agency (US Census Bureau). Questions regarding the original data collection and /or processing should be directed to that agency.</othercit>
+          </citeinfo>
+        </srccite>
+        <typesrc>database</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2005</begdate>
+              <enddate>2020</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>Census</srccitea>
+        <srccontr>Zip code level data on establishments, employment, and wages for 4 non-participating states (Michigan, Massachusetts, New Hampshire, and New York).</srccontr>
+      </srcinfo>
+      <srcinfo>
+        <srccite>
+          <citeinfo>
+            <origin>Bureau of Economic Analysis (BEA)</origin>
+            <pubdate>2020</pubdate>
+            <title>Gross Domestic Product (GDP) by State</title>
+            <othercit>NOAA OCM received this data from another federal agency (Bureau of Economic Analysis). Questions regarding the original data collection and /or processing should be directed to that agency.</othercit>
+          </citeinfo>
+        </srccite>
+        <typesrc>database</typesrc>
+        <srctime>
+          <timeinfo>
+            <rngdates>
+              <begdate>2005</begdate>
+              <enddate>2020</enddate>
+            </rngdates>
+          </timeinfo>
+          <srccurr>publication date</srccurr>
+        </srctime>
+        <srccitea>BEA</srccitea>
+        <srccontr>State level totals of gross domestic product (GDP) at the industry levels</srccontr>
+      </srcinfo>
+      <procstep>
+        <procdesc>Developed totals of establishments, employment, and wages using definitions of ocean related economic activity developed by the National Ocean Economics Program.</procdesc>
+        <srcused>BLS 1</srcused>
+        <srcused>BLS 2</srcused>
+        <srcused>BLS 3</srcused>
+        <srcused>Census</srcused>
+        <procdate>2020</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Developed GDP using definitions of ocean related economic activity developed by the National Ocean Economics Program.</procdesc>
+        <srcused>BEA</srcused>
+        <procdate>2020</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>Coastal Counties</enttypl>
+        <enttypd>ENOW Coastal Counties</enttypd>
+        <enttypds>Coastal Zone Management Act, NOAA Office for Coastal Management</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>GEOID</attrlabl>
+        <attrdef>5-digit FIPS code</attrdef>
+        <attrdefs>National Institute of Standards and Technology, NOAA Office of Coastal Management</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>5-digit FIPS code</codesetn>
+            <codesets>National Institute of Standards and Technology, NOAA Office of Coastal Management</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GeoName</attrlabl>
+        <attrdef>Geographic name</attrdef>
+        <attrdefs>National Institute of Standards and Technology</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Geographic name</codesetn>
+            <codesets>National Institute of Standards and Technology</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GeoScale</attrlabl>
+        <attrdef>Geographic Scale</attrdef>
+        <attrdefs>NOAA Office for Coastal Management</attrdefs>
+        <attrdomv>
+          <codesetd>
+            <codesetn>Geographic Scale</codesetn>
+            <codesets>NOAA Office for Coastal Management</codesets>
+          </codesetd>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>OceanSect_Id</attrlabl>
+        <attrdef>Identification number for ocean sector</attrdef>
+        <attrdefs>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Marine Construction</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Living Resources</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>OffShore Mineral Extraction</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Ship and Boat Building</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>5</edomv>
+            <edomvd>Tourism and Recreation</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>6</edomv>
+            <edomvd>Marine Transportation</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>9</edomv>
+            <edomvd>All Ocean Sectors</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>OceanInd_Id</attrlabl>
+        <attrdef>Identification number for ocean industries</attrdef>
+        <attrdefs>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>11</edomv>
+            <edomvd>Marine Construction: Marine Construction</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>19</edomv>
+            <edomvd>Marine Construction: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>21</edomv>
+            <edomvd>Living Resources: Fishing</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>22</edomv>
+            <edomvd>Living Resources: Fish Hatcheries and Aquaculture</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>23</edomv>
+            <edomvd>Living Resources: Seafood Processing</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>24</edomv>
+            <edomvd>Living Resources: Seafood Markets</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>29</edomv>
+            <edomvd>Living Resources: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>31</edomv>
+            <edomvd>OffShore Mineral Extraction: Limestone, Sand, and Gravel</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>32</edomv>
+            <edomvd>OffShore Mineral Extraction: Oil and Gas Exploration and Production</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>39</edomv>
+            <edomvd>OffShore Mineral Extraction: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>41</edomv>
+            <edomvd>Ship and Boat Building: Ship Building</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>42</edomv>
+            <edomvd>Ship and Boat Building: Boat Building</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>49</edomv>
+            <edomvd>Ship and Boat Building: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>50</edomv>
+            <edomvd>Tourism and Recreation: Zoos and Aquaria</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>51</edomv>
+            <edomvd>Tourism and Recreation: Boat Dealers</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>52</edomv>
+            <edomvd>Tourism and Recreation: Eating and Drinking Places</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>53</edomv>
+            <edomvd>Tourism and Recreation: Hotels and Lodging Places</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>54</edomv>
+            <edomvd>Tourism and Recreation: Marinas</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>55</edomv>
+            <edomvd>Tourism and Recreation: RV Parks and Campgrounds</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>56</edomv>
+            <edomvd>Tourism and Recreation: Scenic Water Tours</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>58</edomv>
+            <edomvd>Tourism and Recreation: Amusement and Recreation Services</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>59</edomv>
+            <edomvd>Tourism and Recreation: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>61</edomv>
+            <edomvd>Marine Transportation: Marine Freight</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>62</edomv>
+            <edomvd>Marine Transportation: Marine Passenger Transportation</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>63</edomv>
+            <edomvd>Marine Transportation: Marine Transportation Services</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>64</edomv>
+            <edomvd>Marine Transportation: Search and Navigation Equipment</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>65</edomv>
+            <edomvd>Marine Transportation: Warehousing</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>69</edomv>
+            <edomvd>Marine Transportation: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Year</attrlabl>
+        <attrdef>Year of data used</attrdef>
+        <attrdefs>NOAA Office for Coastal Management</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2005</rdommin>
+            <rdommax>2020</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>estab</attrlabl>
+        <attrdef>Establishments</attrdef>
+        <attrdefs>Bureau of Labor Statistics, Quarterly Census of Employment and Wages</attrdefs>
+        <attrdomv>
+          <udom>Number of establishments</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>employ</attrlabl>
+        <attrdef>Employment</attrdef>
+        <attrdefs>Bureau of Labor Statistics, Quarterly Census of Employment and Wages</attrdefs>
+        <attrdomv>
+          <udom>Number of employees</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>wages</attrlabl>
+        <attrdef>Wages</attrdef>
+        <attrdefs>Bureau of Labor Statistics, Quarterly Census of Employment and Wages</attrdefs>
+        <attrdomv>
+          <udom>Wages paid</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>GDP</attrlabl>
+        <attrdef>Gross Domestic Product</attrdef>
+        <attrdefs>Bureau of Economic Analysis</attrdefs>
+        <attrdomv>
+          <udom>Value of goods and services</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>Real_GDP</attrlabl>
+        <attrdef>Real GDP</attrdef>
+        <attrdefs>Bureau of Economic Analysis</attrdefs>
+        <attrdomv>
+          <udom>Value of goods and services adjusted for inflation</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>OceanIndustry</attrlabl>
+        <attrdef>Ocean Industry Name</attrdef>
+        <attrdefs>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>11</edomv>
+            <edomvd>Marine Construction: Marine Construction</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>19</edomv>
+            <edomvd>Marine Construction: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>21</edomv>
+            <edomvd>Living Resources: Fishing</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>22</edomv>
+            <edomvd>Living Resources: Fish Hatcheries and Aquaculture</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>23</edomv>
+            <edomvd>Living Resources: Seafood Processing</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>24</edomv>
+            <edomvd>Living Resources: Seafood Markets</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>29</edomv>
+            <edomvd>Living Resources: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>31</edomv>
+            <edomvd>OffShore Mineral Extraction: Limestone, Sand, and Gravel</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>32</edomv>
+            <edomvd>OffShore Mineral Extraction: Oil and Gas Exploration and Production</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>39</edomv>
+            <edomvd>OffShore Mineral Extraction: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>41</edomv>
+            <edomvd>Ship and Boat Building: Ship Building</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>42</edomv>
+            <edomvd>Ship and Boat Building: Boat Building</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>49</edomv>
+            <edomvd>Ship and Boat Building: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>50</edomv>
+            <edomvd>Tourism and Recreation: Zoos and Aquaria</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>51</edomv>
+            <edomvd>Tourism and Recreation: Boat Dealers</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>52</edomv>
+            <edomvd>Tourism and Recreation: Eating and Drinking Places</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>53</edomv>
+            <edomvd>Tourism and Recreation: Hotels and Lodging Places</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>54</edomv>
+            <edomvd>Tourism and Recreation: Marinas</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>55</edomv>
+            <edomvd>Tourism and Recreation: RV Parks and Campgrounds</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>56</edomv>
+            <edomvd>Tourism and Recreation: Scenic Water Tours</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>58</edomv>
+            <edomvd>Tourism and Recreation: Amusement and Recreation Services</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>59</edomv>
+            <edomvd>Tourism and Recreation: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>61</edomv>
+            <edomvd>Marine Transportation: Marine Freight</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>62</edomv>
+            <edomvd>Marine Transportation: Marine Passenger Transportation</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>63</edomv>
+            <edomvd>Marine Transportation: Marine Transportation Services</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>64</edomv>
+            <edomvd>Marine Transportation: Search and Navigation Equipment</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>65</edomv>
+            <edomvd>Marine Transportation: Warehousing</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>69</edomv>
+            <edomvd>Marine Transportation: Industry Total</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>OceanSector</attrlabl>
+        <attrdef>Ocean Sector Name</attrdef>
+        <attrdefs>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>Marine Construction</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>Living Resource</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>OffShore Mineral Extraction</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>Ship and Boat Building</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>5</edomv>
+            <edomvd>Tourism and Recreation</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>6</edomv>
+            <edomvd>Marine Transportation</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>9</edomv>
+            <edomvd>All Ocean Sectors</edomvd>
+            <edomvds>NOAA Office for Coastal Management, Economics: National Ocean Watch (ENOW)</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>NOAA Office for Coastal Management</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>2234 South Hobson Avenue</address>
+          <city>Charleston</city>
+          <state>SC</state>
+          <postal>29405-2413</postal>
+        </cntaddr>
+        <cntvoice>843-740-1202</cntvoice>
+        <cntemail>coastal.info@noaa.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <resdesc>Downloadable Data</resdesc>
+    <distliab>Any conclusions drawn from the analysis of this information are not the responsibility of the NOAA Office for Coastal Management or its partners.</distliab>
+  </distinfo>
+  <metainfo>
+    <metd>20211221</metd>
+    <metc>
+      <cntinfo>
+        <cntorgp>
+          <cntorg>NOAA Office for Coastal Management</cntorg>
+        </cntorgp>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>2234 South Hobson Avenue</address>
+          <city>Charleston</city>
+          <state>SC</state>
+          <postal>29405-2413</postal>
+        </cntaddr>
+        <cntvoice>843-740-1202</cntvoice>
+        <cntemail>coastal.info@noaa.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001-1998</metstdv>
+  </metainfo>
+</metadata>

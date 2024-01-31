@@ -1,0 +1,407 @@
+GEOID,County_Name,Region,shore-Adjacent
+1003,Baldwin,Gulf of Mexico,1
+1097,Mobile,Gulf of Mexico,1
+2013,Aleutians East,North Pacific,1
+2016,Aleutians West,North Pacific,1
+2020,Anchorage,North Pacific,1
+2050,Bethel,North Pacific,1
+2060,Bristol Bay,North Pacific,1
+2070,Dillingham,North Pacific,1
+2100,Haines,North Pacific,1
+2105,Hoonah-Angoon Census Area,North Pacific,1
+2110,Juneau,North Pacific,1
+2122,Kenai Peninsula,North Pacific,1
+2130,Ketchikan Gateway,North Pacific,1
+2150,Kodiak Island,North Pacific,1
+2164,Lake and Peninsula,North Pacific,1
+2170,Matanuska-Susitna,North Pacific,1
+2180,Nome,North Pacific,1
+2185,North Slope,North Pacific,1
+2188,Northwest Arctic,North Pacific,1
+2195,Petersburg Census Area,North Pacific,1
+2198,Prince of Wales-Hyder Census Area,North Pacific,1
+2201,Prince of Wales-Outer Ketchika,North Pacific,1
+2220,Sitka,North Pacific,1
+2232,Skagway-Hoonah-Angoon,North Pacific,1
+2261,Valdez-Cordova,North Pacific,1
+2270,Wade Hampton,North Pacific,1
+2275,Wrangell City and Borough,North Pacific,1
+2280,Wrangell-Petersburg,North Pacific,1
+2282,Yakutat Borough,North Pacific,1
+6001,Alameda,West,1
+6013,Contra Costa,West,1
+6015,Del Norte,West,1
+6023,Humboldt,West,1
+6037,Los Angeles,West,1
+6041,Marin,West,1
+6045,Mendocino,West,1
+6053,Monterey,West,1
+6055,Napa,West,0
+6059,Orange,West,1
+6067,Sacramento,West,0
+6073,San Diego,West,1
+6075,San Francisco,West,1
+6077,San Joaquin,West,0
+6079,San Luis Obispo,West,1
+6081,San Mateo,West,1
+6083,Santa Barbara,West,1
+6085,Santa Clara,West,1
+6087,Santa Cruz,West,1
+6095,Solano,West,1
+6097,Sonoma,West,1
+6111,Ventura,West,1
+6113,Yolo,West,0
+9001,Fairfield,Northeast,1
+9007,Middlesex,Northeast,1
+9009,New Haven,Northeast,1
+9011,New London,Northeast,1
+10001,Kent,Mid-Atlantic,1
+10003,New Castle,Mid-Atlantic,1
+10005,Sussex,Mid-Atlantic,1
+12005,Bay,Gulf of Mexico,1
+12009,Brevard,Southeast,1
+12011,Broward,Southeast,1
+12015,Charlotte,Gulf of Mexico,1
+12017,Citrus,Gulf of Mexico,1
+12019,Clay,Southeast,0
+12021,Collier,Gulf of Mexico,1
+12029,Dixie,Gulf of Mexico,1
+12031,Duval,Southeast,1
+12033,Escambia,Gulf of Mexico,1
+12035,Flagler,Southeast,1
+12037,Franklin,Gulf of Mexico,1
+12045,Gulf,Gulf of Mexico,1
+12053,Hernando,Gulf of Mexico,1
+12057,Hillsborough,Gulf of Mexico,1
+12061,Indian River,Southeast,1
+12065,Jefferson,Gulf of Mexico,1
+12069,Lake,Gulf of Mexico,0
+12071,Lee,Gulf of Mexico,1
+12073,Leon,Gulf of Mexico,0
+12075,Levy,Gulf of Mexico,1
+12077,Liberty,Gulf of Mexico,0
+12081,Manatee,Gulf of Mexico,1
+12085,Martin,Southeast,1
+12086,Miami-Dade,Southeast,1
+12087,Monroe,Gulf of Mexico,1
+12089,Nassau,Southeast,1
+12091,Okaloosa,Gulf of Mexico,1
+12095,Orange,Southeast,0
+12099,Palm Beach,Southeast,1
+12101,Pasco,Gulf of Mexico,1
+12103,Pinellas,Gulf of Mexico,1
+12105,Polk,Gulf of Mexico,0
+12107,Putnam,Southeast,0
+12109,St. Johns,Southeast,1
+12111,St. Lucie,Southeast,1
+12113,Santa Rosa,Gulf of Mexico,1
+12115,Sarasota,Gulf of Mexico,1
+12117,Seminole,Southeast,0
+12123,Taylor,Gulf of Mexico,1
+12127,Volusia,Southeast,1
+12129,Wakulla,Gulf of Mexico,1
+12131,Walton,Gulf of Mexico,1
+13025,Brantley,Southeast,0
+13029,Bryan,Southeast,1
+13039,Camden,Southeast,1
+13049,Charlton,Southeast,0
+13051,Chatham,Southeast,1
+13127,Glynn,Southeast,1
+13179,Liberty,Southeast,1
+13191,McIntosh,Southeast,1
+13305,Wayne,Southeast,0
+15001,Hawaii,Pacific,1
+15003,Honolulu,Pacific,1
+15005,Kalawao,Pacific,1
+15007,Kauai,Pacific,1
+15009,Maui,Pacific,1
+17031,Cook,Great Lakes,1
+17097,Lake,Great Lakes,1
+18089,Lake,Great Lakes,1
+18091,La Porte,Great Lakes,1
+18127,Porter,Great Lakes,1
+22019,Calcasieu,Gulf of Mexico,0
+22023,Cameron,Gulf of Mexico,1
+22045,Iberia,Gulf of Mexico,1
+22051,Jefferson,Gulf of Mexico,1
+22057,Lafourche,Gulf of Mexico,1
+22063,Livingston,Gulf of Mexico,0
+22071,Orleans,Gulf of Mexico,1
+22075,Plaquemines,Gulf of Mexico,1
+22087,St. Bernard,Gulf of Mexico,1
+22089,St. Charles,Gulf of Mexico,0
+22093,St. James,Gulf of Mexico,0
+22095,St. John the Baptist,Gulf of Mexico,0
+22099,St. Martin,Gulf of Mexico,0
+22101,St. Mary,Gulf of Mexico,1
+22103,St. Tammany,Gulf of Mexico,1
+22105,Tangipahoa,Gulf of Mexico,0
+22109,Terrebonne,Gulf of Mexico,1
+22113,Vermilion,Gulf of Mexico,1
+23005,Cumberland,Northeast,1
+23009,Hancock,Northeast,1
+23013,Knox,Northeast,1
+23015,Lincoln,Northeast,1
+23023,Sagadahoc,Northeast,1
+23027,Waldo,Northeast,1
+23029,Washington,Northeast,1
+23031,York,Northeast,1
+24003,Anne Arundel,Mid-Atlantic,1
+24005,Baltimore,Mid-Atlantic,1
+24009,Calvert,Mid-Atlantic,1
+24011,Caroline,Mid-Atlantic,0
+24015,Cecil,Mid-Atlantic,1
+24017,Charles,Mid-Atlantic,1
+24019,Dorchester,Mid-Atlantic,1
+24025,Harford,Mid-Atlantic,1
+24029,Kent,Mid-Atlantic,1
+24033,Prince Georges,Mid-Atlantic,0
+24035,Queen Annes,Mid-Atlantic,1
+24037,St. Marys,Mid-Atlantic,1
+24039,Somerset,Mid-Atlantic,1
+24041,Talbot,Mid-Atlantic,1
+24045,Wicomico,Mid-Atlantic,1
+24047,Worcester,Mid-Atlantic,1
+24510,Baltimore (city),Mid-Atlantic,1
+25001,Barnstable,Northeast,1
+25005,Bristol,Northeast,1
+25007,Dukes,Northeast,1
+25009,Essex,Northeast,1
+25017,Middlesex,Northeast,0
+25019,Nantucket,Northeast,1
+25021,Norfolk,Northeast,1
+25023,Plymouth,Northeast,1
+25025,Suffolk,Northeast,1
+26001,Alcona,Great Lakes,1
+26003,Alger,Great Lakes,1
+26005,Allegan,Great Lakes,1
+26007,Alpena,Great Lakes,1
+26009,Antrim,Great Lakes,1
+26011,Arenac,Great Lakes,1
+26013,Baraga,Great Lakes,1
+26017,Bay,Great Lakes,1
+26019,Benzie,Great Lakes,1
+26021,Berrien,Great Lakes,1
+26029,Charlevoix,Great Lakes,1
+26031,Cheboygan,Great Lakes,1
+26033,Chippewa,Great Lakes,1
+26041,Delta,Great Lakes,1
+26047,Emmet,Great Lakes,1
+26053,Gogebic,Great Lakes,1
+26055,Grand Traverse,Great Lakes,1
+26061,Houghton,Great Lakes,1
+26063,Huron,Great Lakes,1
+26069,Iosco,Great Lakes,1
+26083,Keweenaw,Great Lakes,1
+26089,Leelanau,Great Lakes,1
+26095,Luce,Great Lakes,1
+26097,Mackinac,Great Lakes,1
+26099,Macomb,Great Lakes,1
+26101,Manistee,Great Lakes,1
+26103,Marquette,Great Lakes,1
+26105,Mason,Great Lakes,1
+26109,Menominee,Great Lakes,1
+26115,Monroe,Great Lakes,1
+26121,Muskegon,Great Lakes,1
+26127,Oceana,Great Lakes,1
+26131,Ontonagon,Great Lakes,1
+26139,Ottawa,Great Lakes,1
+26141,Presque Isle,Great Lakes,1
+26145,Saginaw,Great Lakes,0
+26147,St. Clair,Great Lakes,1
+26151,Sanilac,Great Lakes,1
+26153,Schoolcraft,Great Lakes,1
+26157,Tuscola,Great Lakes,1
+26159,Van Buren,Great Lakes,1
+26163,Wayne,Great Lakes,1
+27031,Cook,Great Lakes,1
+27075,Lake,Great Lakes,1
+27137,St. Louis,Great Lakes,1
+28045,Hancock,Gulf of Mexico,1
+28047,Harrison,Gulf of Mexico,1
+28059,Jackson,Gulf of Mexico,1
+33015,Rockingham,Northeast,1
+33017,Strafford,Northeast,0
+34001,Atlantic,Mid-Atlantic,1
+34003,Bergen,Mid-Atlantic,1
+34005,Burlington,Mid-Atlantic,0
+34007,Camden,Mid-Atlantic,1
+34009,Cape May,Mid-Atlantic,1
+34011,Cumberland,Mid-Atlantic,1
+34013,Essex,Mid-Atlantic,1
+34015,Gloucester,Mid-Atlantic,1
+34017,Hudson,Mid-Atlantic,1
+34023,Middlesex,Mid-Atlantic,1
+34025,Monmouth,Mid-Atlantic,1
+34029,Ocean,Mid-Atlantic,1
+34033,Salem,Mid-Atlantic,1
+34035,Somerset,Mid-Atlantic,0
+34039,Union,Mid-Atlantic,1
+36001,Albany,Mid-Atlantic,0
+36005,Bronx,Mid-Atlantic,1
+36011,Cayuga,Great Lakes,1
+36013,Chautauqua,Great Lakes,1
+36027,Dutchess,Mid-Atlantic,0
+36029,Erie,Great Lakes,1
+36045,Jefferson,Great Lakes,1
+36047,Kings,Mid-Atlantic,1
+36055,Monroe,Great Lakes,1
+36059,Nassau,Mid-Atlantic,1
+36061,New York,Mid-Atlantic,1
+36063,Niagara,Great Lakes,1
+36071,Orange,Mid-Atlantic,0
+36073,Orleans,Great Lakes,1
+36075,Oswego,Great Lakes,1
+36079,Putnam,Mid-Atlantic,0
+36081,Queens,Mid-Atlantic,1
+36085,Richmond,Mid-Atlantic,1
+36087,Rockland,Mid-Atlantic,0
+36089,St. Lawrence,Great Lakes,0
+36103,Suffolk,Mid-Atlantic,1
+36111,Ulster,Mid-Atlantic,0
+36117,Wayne,Great Lakes,1
+36119,Westchester,Mid-Atlantic,1
+37013,Beaufort,Southeast,1
+37015,Bertie,Southeast,1
+37019,Brunswick,Southeast,1
+37029,Camden,Southeast,1
+37031,Carteret,Southeast,1
+37041,Chowan,Southeast,1
+37049,Craven,Southeast,1
+37053,Currituck,Southeast,1
+37055,Dare,Southeast,1
+37073,Gates,Southeast,0
+37091,Hertford,Southeast,0
+37095,Hyde,Southeast,1
+37129,New Hanover,Southeast,1
+37133,Onslow,Southeast,1
+37137,Pamlico,Southeast,1
+37139,Pasquotank,Southeast,1
+37141,Pender,Southeast,1
+37143,Perquimans,Southeast,1
+37177,Tyrrell,Southeast,1
+37187,Washington,Southeast,1
+39007,Ashtabula,Great Lakes,1
+39035,Cuyahoga,Great Lakes,1
+39043,Erie,Great Lakes,1
+39085,Lake,Great Lakes,1
+39093,Lorain,Great Lakes,1
+39095,Lucas,Great Lakes,1
+39123,Ottawa,Great Lakes,1
+39143,Sandusky,Great Lakes,1
+39173,Wood,Great Lakes,0
+41007,Clatsop,West,1
+41009,Columbia,West,1
+41011,Coos,West,1
+41015,Curry,West,1
+41019,Douglas,West,1
+41039,Lane,West,1
+41041,Lincoln,West,1
+41051,Multnomah ,West,1
+41057,Tillamook,West,1
+42017,Bucks,Mid-Atlantic,0
+42045,Delaware,Mid-Atlantic,1
+42049,Erie,Great Lakes,1
+42101,Philadelphia,Mid-Atlantic,1
+44001,Bristol,Northeast,1
+44003,Kent,Northeast,1
+44005,Newport,Northeast,1
+44007,Providence,Northeast,1
+44009,Washington,Northeast,1
+45013,Beaufort,Southeast,1
+45015,Berkeley,Southeast,0
+45019,Charleston,Southeast,1
+45029,Colleton,Southeast,1
+45035,Dorchester,Southeast,0
+45043,Georgetown,Southeast,1
+45051,Horry,Southeast,1
+45053,Jasper,Southeast,1
+48007,Aransas,Gulf of Mexico,1
+48039,Brazoria,Gulf of Mexico,1
+48057,Calhoun,Gulf of Mexico,1
+48061,Cameron,Gulf of Mexico,1
+48071,Chambers,Gulf of Mexico,1
+48167,Galveston,Gulf of Mexico,1
+48201,Harris,Gulf of Mexico,1
+48239,Jackson,Gulf of Mexico,1
+48245,Jefferson,Gulf of Mexico,1
+48261,Kenedy,Gulf of Mexico,1
+48273,Kleberg,Gulf of Mexico,1
+48321,Matagorda,Gulf of Mexico,1
+48355,Nueces,Gulf of Mexico,1
+48361,Orange,Gulf of Mexico,0
+48391,Refugio,Gulf of Mexico,1
+48409,San Patricio,Gulf of Mexico,1
+48469,Victoria,Gulf of Mexico,1
+48489,Willacy,Gulf of Mexico,1
+51001,Accomack,Mid-Atlantic,1
+51013,Arlington,Mid-Atlantic,0
+51033,Caroline,Mid-Atlantic,0
+51036,Charles City,Mid-Atlantic,0
+51041,Chesterfield,Mid-Atlantic,0
+51057,Essex,Mid-Atlantic,1
+51059,Fairfax,Mid-Atlantic,0
+51073,Gloucester,Mid-Atlantic,1
+51085,Hanover,Mid-Atlantic,0
+51087,Henrico,Mid-Atlantic,0
+51093,Isle of Wight,Mid-Atlantic,1
+51095,James City,Mid-Atlantic,1
+51097,King and Queen,Mid-Atlantic,0
+51099,King George,Mid-Atlantic,1
+51101,King William,Mid-Atlantic,0
+51103,Lancaster,Mid-Atlantic,1
+51115,Mathews,Mid-Atlantic,1
+51119,Middlesex,Mid-Atlantic,1
+51127,New Kent,Mid-Atlantic,0
+51131,Northampton,Mid-Atlantic,1
+51133,Northumberland,Mid-Atlantic,1
+51149,Prince countygeorge,Mid-Atlantic,0
+51153,Prince William,Mid-Atlantic,0
+51159,Richmond,Mid-Atlantic,1
+51177,Spotsylvania,Mid-Atlantic,0
+51179,Stafford,Mid-Atlantic,0
+51181,Surry,Mid-Atlantic,1
+51193,Westmoreland,Mid-Atlantic,1
+51199,York,Mid-Atlantic,1
+51510,Alexandria (city),Mid-Atlantic,0
+51550,Chesapeake (city),Mid-Atlantic,0
+51650,Hampton (city),Mid-Atlantic,1
+51670,Hopewell (city),Mid-Atlantic,0
+51700,Newport News (city),Mid-Atlantic,1
+51710,Norfolk (city),Mid-Atlantic,1
+51735,Poquoson (city),Mid-Atlantic,1
+51740,Portsmouth (city),Mid-Atlantic,1
+51760,Richmond (city),Mid-Atlantic,0
+51800,Suffolk,Mid-Atlantic,1
+51810,Virginia Beach,Mid-Atlantic,1
+51830,Williamsburg,Mid-Atlantic,0
+53009,Clallam,West,1
+53027,Grays Harbor,West,1
+53029,Island,West,1
+53031,Jefferson,West,1
+53033,King,West,1
+53035,Kitsap,West,1
+53045,Mason,West,1
+53049,Pacific,West,1
+53053,Pierce,West,1
+53055,San Juan,West,1
+53057,Skagit,West,1
+53061,Snohomish,West,1
+53067,Thurston,West,0
+53069,Wahkiakum,West,1
+53073,Whatcom,West,1
+55003,Ashland,Great Lakes,1
+55007,Bayfield,Great Lakes,1
+55009,Brown,Great Lakes,1
+55029,Door,Great Lakes,1
+55031,Douglas,Great Lakes,1
+55051,Iron,Great Lakes,1
+55059,Kenosha,Great Lakes,1
+55061,Kewaunee,Great Lakes,1
+55071,Manitowoc,Great Lakes,1
+55075,Marinette,Great Lakes,1
+55079,Milwaukee,Great Lakes,1
+55083,Oconto,Great Lakes,1
+55089,Ozaukee,Great Lakes,1
+55101,Racine,Great Lakes,1
+55117,Sheboygan,Great Lakes,1

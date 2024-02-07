@@ -1,0 +1,901 @@
+GeoID,GeoName,GeoScale,Year,OceanSector,OceanSect_ID,OceanIndustry,OceanInd_ID,Industry Index,Establishments,Employment,Wages,GDP
+1000,Alabama,State,2021,Marine Construction,1,Marine Related Construction,1,Alabama-Marine Construction-Marine Related Construction,43,400,18498311.5,34557962
+1000,Alabama,State,2021,Marine Construction,1,Total,9,Alabama-Marine Construction-Total,43,402,18638735,34932257
+1000,Alabama,State,2021,Living Resources,2,Fishing,1,Alabama-Living Resources-Fishing,17.5,38.5,1063573.5,2289342.5
+1000,Alabama,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Alabama-Living Resources-Fish Hatcheries and Aquaculture,34,190,7705031,48059363
+1000,Alabama,State,2021,Living Resources,2,Seafood Processing,3,Alabama-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Living Resources,2,Seafood Markets,4,Alabama-Living Resources-Seafood Markets,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Living Resources,2,Total,9,Alabama-Living Resources-Total,128,1980,53215020,162407770
+1000,Alabama,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Alabama-Offshore Mineral Extraction-Limestone, Sand and Gravel",13,55,2709202,9157695
+1000,Alabama,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Alabama-Offshore Mineral Extraction-Oil and Gas Exploration and Product,28.5,225,28391991,169442442
+1000,Alabama,State,2021,Offshore Mineral Extraction,3,Total,9,Alabama-Offshore Mineral Extraction-Total,39,459,35357065,439302416
+1000,Alabama,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Alabama-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Alabama-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Ship and Boat Building,4,Total,9,Alabama-Ship and Boat Building-Total,52,4417,306441017,528816439
+1000,Alabama,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Alabama-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Tourism and Recreation,5,Boat Dealers,1,Alabama-Tourism and Recreation-Boat Dealers,25,213,7114481,15561203.5
+1000,Alabama,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Alabama-Tourism and Recreation-Eating and Drinking Places,628,12016,174971307,341572755
+1000,Alabama,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Alabama-Tourism and Recreation-Hotels and Lodging Places,96,2314,44990692,108946953
+1000,Alabama,State,2021,Tourism and Recreation,5,Marinas,4,Alabama-Tourism and Recreation-Marinas,17,143.5,4267531.5,6370167.5
+1000,Alabama,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Alabama-Tourism and Recreation-RV Parks and Campgrounds,8,21,379455,918867
+1000,Alabama,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Alabama-Tourism and Recreation-Scenic Water Tours,26,45,1536180.5,2436811
+1000,Alabama,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Alabama-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Alabama-Tourism and Recreation-Amusement and Recreation Services,39,274,5524565,16539025
+1000,Alabama,State,2021,Tourism and Recreation,5,Total,9,Alabama-Tourism and Recreation-Total,860,15897,259013071,533394261
+1000,Alabama,State,2021,Marine Transportation,6,Marine Freight,1,Alabama-Marine Transportation-Marine Freight,10,453.5,27490099.5,75901183
+1000,Alabama,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Alabama-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+1000,Alabama,State,2021,Marine Transportation,6,Marine Transportation Services,3,Alabama-Marine Transportation-Marine Transportation Services,71,1545,79659385,125869208.5
+1000,Alabama,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Alabama-Marine Transportation-Search and Navigation Equipment,7,770,35647676,83278630
+1000,Alabama,State,2021,Marine Transportation,6,Warehousing,5,Alabama-Marine Transportation-Warehousing,25.5,734.5,24566773.5,39679484.5
+1000,Alabama,State,2021,Marine Transportation,6,Total,9,Alabama-Marine Transportation-Total,122,4020,205019776,383133183
+1000,Alabama,State,2021,All Ocean Sectors,9,Total,9,Alabama-All Ocean Sectors-Total,1243,28220,900950977,2174625173
+2000,Alaska,State,2021,Marine Construction,1,Marine Related Construction,1,Alaska-Marine Construction-Marine Related Construction,42.5,447,43330381.5,71440656.5
+2000,Alaska,State,2021,Marine Construction,1,Total,9,Alaska-Marine Construction-Total,42,434,43092950,70621314
+2000,Alaska,State,2021,Living Resources,2,Fishing,1,Alaska-Living Resources-Fishing,107.5,177,15887382.5,193179833.5
+2000,Alaska,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Alaska-Living Resources-Fish Hatcheries and Aquaculture,30,293,11150345,11589983
+2000,Alaska,State,2021,Living Resources,2,Seafood Processing,3,Alaska-Living Resources-Seafood Processing,161.5,9270.5,378453376,637345714.5
+2000,Alaska,State,2021,Living Resources,2,Seafood Markets,4,Alaska-Living Resources-Seafood Markets,9.5,79.5,1963322.5,3751795
+2000,Alaska,State,2021,Living Resources,2,Total,9,Alaska-Living Resources-Total,313,9749,423699253,898062841
+2000,Alaska,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Alaska-Offshore Mineral Extraction-Limestone, Sand and Gravel",24,106,5946788,42516262
+2000,Alaska,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Alaska-Offshore Mineral Extraction-Oil and Gas Exploration and Product,145,9660,1358314197,5989341056.5
+2000,Alaska,State,2021,Offshore Mineral Extraction,3,Total,9,Alaska-Offshore Mineral Extraction-Total,165,11525,1434960697,11865350323
+2000,Alaska,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Alaska-Ship and Boat Building-Ship Building and Repair,11,267,14389680,18948177
+2000,Alaska,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Alaska-Ship and Boat Building-Boat Building and Repair,13,72,3006298,3558111
+2000,Alaska,State,2021,Ship and Boat Building,4,Total,9,Alaska-Ship and Boat Building-Total,24,356,17506294,21734900
+2000,Alaska,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Alaska-Tourism and Recreation-Zoos and Aquaria,19,501,29077103,31270429
+2000,Alaska,State,2021,Tourism and Recreation,5,Boat Dealers,1,Alaska-Tourism and Recreation-Boat Dealers,23.5,130,5387838.5,10278204.5
+2000,Alaska,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Alaska-Tourism and Recreation-Eating and Drinking Places,949,13385,243408339,483968813
+2000,Alaska,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Alaska-Tourism and Recreation-Hotels and Lodging Places,246,5215,119930488,300998078
+2000,Alaska,State,2021,Tourism and Recreation,5,Marinas,4,Alaska-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+2000,Alaska,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Alaska-Tourism and Recreation-RV Parks and Campgrounds,16,47,790794,2224237
+2000,Alaska,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Alaska-Tourism and Recreation-Scenic Water Tours,116,460,15082310.5,26878391
+2000,Alaska,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Alaska-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+2000,Alaska,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Alaska-Tourism and Recreation-Amusement and Recreation Services,221,1183,28363928,57839778
+2000,Alaska,State,2021,Tourism and Recreation,5,Total,9,Alaska-Tourism and Recreation-Total,1614,20788,449004025,873611111
+2000,Alaska,State,2021,Marine Transportation,6,Marine Freight,1,Alaska-Marine Transportation-Marine Freight,73,720,57167120,191165026.5
+2000,Alaska,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Alaska-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+2000,Alaska,State,2021,Marine Transportation,6,Marine Transportation Services,3,Alaska-Marine Transportation-Marine Transportation Services,61,737,46327467.5,80001920.5
+2000,Alaska,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Alaska-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+2000,Alaska,State,2021,Marine Transportation,6,Warehousing,5,Alaska-Marine Transportation-Warehousing,14.5,223,8604649,14123153.5
+2000,Alaska,State,2021,Marine Transportation,6,Total,9,Alaska-Marine Transportation-Total,189,1884,127257559,293919339
+2000,Alaska,State,2021,All Ocean Sectors,9,Total,9,Alaska-All Ocean Sectors-Total,2330,44929,2507394097,13682936741
+6000,California,State,2021,Marine Construction,1,Marine Related Construction,1,California-Marine Construction-Marine Related Construction,296.5,6259.5,523185135.5,988161940
+6000,California,State,2021,Marine Construction,1,Total,9,California-Marine Construction-Total,297,6271,532282365,990385296
+6000,California,State,2021,Living Resources,2,Fishing,1,California-Living Resources-Fishing,199,427.5,30392594.5,54970031.5
+6000,California,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,California-Living Resources-Fish Hatcheries and Aquaculture,67,493,16873084,67758879
+6000,California,State,2021,Living Resources,2,Seafood Processing,3,California-Living Resources-Seafood Processing,49,1110,47159673,120402677.5
+6000,California,State,2021,Living Resources,2,Seafood Markets,4,California-Living Resources-Seafood Markets,191,1597.5,39994781,97130983
+6000,California,State,2021,Living Resources,2,Total,9,California-Living Resources-Total,531,4526,153224631,380283601
+6000,California,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"California-Offshore Mineral Extraction-Limestone, Sand and Gravel",76,1416,114327134,451528948
+6000,California,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,California-Offshore Mineral Extraction-Oil and Gas Exploration and Product,334,4988.5,489674404,1481918170
+6000,California,State,2021,Offshore Mineral Extraction,3,Total,9,California-Offshore Mineral Extraction-Total,416,9336,1024859988,5557855279
+6000,California,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,California-Ship and Boat Building-Ship Building and Repair,68,7518,453897045,950356281
+6000,California,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,California-Ship and Boat Building-Boat Building and Repair,58,1131,66706831,120398361
+6000,California,State,2021,Ship and Boat Building,4,Total,9,California-Ship and Boat Building-Total,132,8947,507719143,1041882824
+6000,California,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,California-Tourism and Recreation-Zoos and Aquaria,81,4543,207033202,483502522
+6000,California,State,2021,Tourism and Recreation,5,Boat Dealers,1,California-Tourism and Recreation-Boat Dealers,130.5,835,35027239,84906064.5
+6000,California,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,California-Tourism and Recreation-Eating and Drinking Places,14934,255187,5277771560,10707962393
+6000,California,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,California-Tourism and Recreation-Hotels and Lodging Places,1789,84788,2703533609,5480794499
+6000,California,State,2021,Tourism and Recreation,5,Marinas,4,California-Tourism and Recreation-Marinas,112,1154,41260540.5,62034455.5
+6000,California,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,California-Tourism and Recreation-RV Parks and Campgrounds,51,668,15917255,32204307
+6000,California,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,California-Tourism and Recreation-Scenic Water Tours,133,1889,52496576,83382766
+6000,California,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,California-Tourism and Recreation-Sporting Goods Manufacturing,131,2138,143146616.5,339402173
+6000,California,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,California-Tourism and Recreation-Amusement and Recreation Services,854,8592,208044005,376234862
+6000,California,State,2021,Tourism and Recreation,5,Total,9,California-Tourism and Recreation-Total,18862,362662,9216943432,18533176904
+6000,California,State,2021,Marine Transportation,6,Marine Freight,1,California-Marine Transportation-Marine Freight,107.5,2422.5,268979401,914545154.5
+6000,California,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,California-Marine Transportation-Marine Passenger Transportation,29,2461.5,146713278,458954076.5
+6000,California,State,2021,Marine Transportation,6,Marine Transportation Services,3,California-Marine Transportation-Marine Transportation Services,217.5,18418,1701443857.5,2782138467.5
+6000,California,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,California-Marine Transportation-Search and Navigation Equipment,200,33074,3870873127,8697820186
+6000,California,State,2021,Marine Transportation,6,Warehousing,5,California-Marine Transportation-Warehousing,1177.5,43541,2013227138.5,3273511662
+6000,California,State,2021,Marine Transportation,6,Total,9,California-Marine Transportation-Total,1715,106553,8503818313,15949931769
+6000,California,State,2021,All Ocean Sectors,9,Total,9,California-All Ocean Sectors-Total,21882,502073,19331643365,42524481387
+9000,Connecticut,State,2021,Marine Construction,1,Marine Related Construction,1,Connecticut-Marine Construction-Marine Related Construction,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Marine Construction,1,Total,9,Connecticut-Marine Construction-Total,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Living Resources,2,Fishing,1,Connecticut-Living Resources-Fishing,11,45,2537655.5,13729767
+9000,Connecticut,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Connecticut-Living Resources-Fish Hatcheries and Aquaculture,10,137,6823280,11364837
+9000,Connecticut,State,2021,Living Resources,2,Seafood Processing,3,Connecticut-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Living Resources,2,Seafood Markets,4,Connecticut-Living Resources-Seafood Markets,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Living Resources,2,Total,9,Connecticut-Living Resources-Total,71,466,17645057,54712999
+9000,Connecticut,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Connecticut-Offshore Mineral Extraction-Limestone, Sand and Gravel",15,244,18789245,77142156
+9000,Connecticut,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Connecticut-Offshore Mineral Extraction-Oil and Gas Exploration and Product,9,27.5,1886129,3762270.5
+9000,Connecticut,State,2021,Offshore Mineral Extraction,3,Total,9,Connecticut-Offshore Mineral Extraction-Total,23,252,19360661,75234145
+9000,Connecticut,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Connecticut-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Connecticut-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Ship and Boat Building,4,Total,9,Connecticut-Ship and Boat Building-Total,17,8505,694829849,1512933067
+9000,Connecticut,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Connecticut-Tourism and Recreation-Zoos and Aquaria,9,494,19113157,90950909
+9000,Connecticut,State,2021,Tourism and Recreation,5,Boat Dealers,1,Connecticut-Tourism and Recreation-Boat Dealers,47.5,335.5,14838489.5,32403780
+9000,Connecticut,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Connecticut-Tourism and Recreation-Eating and Drinking Places,2051,25006,499575833,1074621120
+9000,Connecticut,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Connecticut-Tourism and Recreation-Hotels and Lodging Places,140,4030,114399410,296984683
+9000,Connecticut,State,2021,Tourism and Recreation,5,Marinas,4,Connecticut-Tourism and Recreation-Marinas,103.5,1057,46782676.5,40262802.5
+9000,Connecticut,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Connecticut-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Connecticut-Tourism and Recreation-Scenic Water Tours,10,59,1258293,2241302
+9000,Connecticut,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Connecticut-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Connecticut-Tourism and Recreation-Amusement and Recreation Services,137,1316,29105204,27160078
+9000,Connecticut,State,2021,Tourism and Recreation,5,Total,9,Connecticut-Tourism and Recreation-Total,2669,32190,797194452,1754969363
+9000,Connecticut,State,2021,Marine Transportation,6,Marine Freight,1,Connecticut-Marine Transportation-Marine Freight,23.5,495,58307869,187318387.5
+9000,Connecticut,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Connecticut-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Marine Transportation,6,Marine Transportation Services,3,Connecticut-Marine Transportation-Marine Transportation Services,28.5,182,11829616,20725366.5
+9000,Connecticut,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Connecticut-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+9000,Connecticut,State,2021,Marine Transportation,6,Warehousing,5,Connecticut-Marine Transportation-Warehousing,66.5,2341.5,147279427.5,218943912.5
+9000,Connecticut,State,2021,Marine Transportation,6,Total,9,Connecticut-Marine Transportation-Total,128,4627,332130270,629050859
+9000,Connecticut,State,2021,All Ocean Sectors,9,Total,9,Connecticut-All Ocean Sectors-Total,2963,50410,1958823423,4180992932
+10000,Delaware,State,2021,Marine Construction,1,Marine Related Construction,1,Delaware-Marine Construction-Marine Related Construction,-4988,-4960.5,2456418.5,4552651
+10000,Delaware,State,2021,Marine Construction,1,Total,9,Delaware-Marine Construction-Total,23,78,4922836,9115301
+10000,Delaware,State,2021,Living Resources,2,Fishing,1,Delaware-Living Resources-Fishing,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Delaware-Living Resources-Fish Hatcheries and Aquaculture,0,0,0,0
+10000,Delaware,State,2021,Living Resources,2,Seafood Processing,3,Delaware-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Living Resources,2,Seafood Markets,4,Delaware-Living Resources-Seafood Markets,24,109.5,2979100,5537014.5
+10000,Delaware,State,2021,Living Resources,2,Total,9,Delaware-Living Resources-Total,30,220,8068700,16788044
+10000,Delaware,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Delaware-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Delaware-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Offshore Mineral Extraction,3,Total,9,Delaware-Offshore Mineral Extraction-Total,8,25,1219029,2248221
+10000,Delaware,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Delaware-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Delaware-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Ship and Boat Building,4,Total,9,Delaware-Ship and Boat Building-Total,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Delaware-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Tourism and Recreation,5,Boat Dealers,1,Delaware-Tourism and Recreation-Boat Dealers,17,213.5,8450748.5,15211597
+10000,Delaware,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Delaware-Tourism and Recreation-Eating and Drinking Places,822,15669,243744793,467313659
+10000,Delaware,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Delaware-Tourism and Recreation-Hotels and Lodging Places,111,1484,27572062,72675800
+10000,Delaware,State,2021,Tourism and Recreation,5,Marinas,4,Delaware-Tourism and Recreation-Marinas,11.5,56,1465142.5,2708009.5
+10000,Delaware,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Delaware-Tourism and Recreation-RV Parks and Campgrounds,9,137,4464055,11830721
+10000,Delaware,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Delaware-Tourism and Recreation-Scenic Water Tours,-4996,-4989.5,253422,351955.5
+10000,Delaware,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Delaware-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Delaware-Tourism and Recreation-Amusement and Recreation Services,52,310,4342396,25613718
+10000,Delaware,State,2021,Tourism and Recreation,5,Total,9,Delaware-Tourism and Recreation-Total,1052,18906,311932136,636154810
+10000,Delaware,State,2021,Marine Transportation,6,Marine Freight,1,Delaware-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Delaware-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Marine Transportation,6,Marine Transportation Services,3,Delaware-Marine Transportation-Marine Transportation Services,17,842.5,44961662,60023827.5
+10000,Delaware,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Delaware-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+10000,Delaware,State,2021,Marine Transportation,6,Warehousing,5,Delaware-Marine Transportation-Warehousing,55,2530.5,102195313,159940045
+10000,Delaware,State,2021,Marine Transportation,6,Total,9,Delaware-Marine Transportation-Total,74,3936,184200064,266822914
+10000,Delaware,State,2021,All Ocean Sectors,9,Total,9,Delaware-All Ocean Sectors-Total,1183,23194,511185192,933609739
+12000,Florida,State,2021,Marine Construction,1,Marine Related Construction,1,Florida-Marine Construction-Marine Related Construction,764,8561.5,451226681,913264502.5
+12000,Florida,State,2021,Marine Construction,1,Total,9,Florida-Marine Construction-Total,767,8760,454440481,925523271
+12000,Florida,State,2021,Living Resources,2,Fishing,1,Florida-Living Resources-Fishing,184,368,12740546,35144379.5
+12000,Florida,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Florida-Living Resources-Fish Hatcheries and Aquaculture,71,353,11960732,37440985
+12000,Florida,State,2021,Living Resources,2,Seafood Processing,3,Florida-Living Resources-Seafood Processing,42,1572,61293696,186746537.5
+12000,Florida,State,2021,Living Resources,2,Seafood Markets,4,Florida-Living Resources-Seafood Markets,268,1338.5,35313668.5,75210643
+12000,Florida,State,2021,Living Resources,2,Total,9,Florida-Living Resources-Total,571,3882,125314302,340641852
+12000,Florida,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Florida-Offshore Mineral Extraction-Limestone, Sand and Gravel",98,718,31948930,206199116
+12000,Florida,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Florida-Offshore Mineral Extraction-Oil and Gas Exploration and Product,189.5,833.5,51748311.5,118023434.5
+12000,Florida,State,2021,Offshore Mineral Extraction,3,Total,9,Florida-Offshore Mineral Extraction-Total,297,1522,89524644,330224391
+12000,Florida,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Florida-Ship and Boat Building-Ship Building and Repair,157,3836,200681116,396128219
+12000,Florida,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Florida-Ship and Boat Building-Boat Building and Repair,296,8417,343818713,587850334
+12000,Florida,State,2021,Ship and Boat Building,4,Total,9,Florida-Ship and Boat Building-Total,431,12358,559438521,933016219
+12000,Florida,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Florida-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+12000,Florida,State,2021,Tourism and Recreation,5,Boat Dealers,1,Florida-Tourism and Recreation-Boat Dealers,702,4990.5,213778596.5,457580489
+12000,Florida,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Florida-Tourism and Recreation-Eating and Drinking Places,14522,260962,4762214658,9858710765
+12000,Florida,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Florida-Tourism and Recreation-Hotels and Lodging Places,2231,79660,2257817469,5692378785
+12000,Florida,State,2021,Tourism and Recreation,5,Marinas,4,Florida-Tourism and Recreation-Marinas,490.5,4661.5,155050522.5,289453824.5
+12000,Florida,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Florida-Tourism and Recreation-RV Parks and Campgrounds,157,1141,25391636,63533999
+12000,Florida,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Florida-Tourism and Recreation-Scenic Water Tours,408,1541,44425292.5,80458532.5
+12000,Florida,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Florida-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+12000,Florida,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Florida-Tourism and Recreation-Amusement and Recreation Services,1245,7724,183347979,418721388
+12000,Florida,State,2021,Tourism and Recreation,5,Total,9,Florida-Tourism and Recreation-Total,19808,355998,8168355140,17342147413
+12000,Florida,State,2021,Marine Transportation,6,Marine Freight,1,Florida-Marine Transportation-Marine Freight,115,3347.5,283622453.5,948907567.5
+12000,Florida,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Florida-Marine Transportation-Marine Passenger Transportation,69,8538,580055771.5,2062593962.5
+12000,Florida,State,2021,Marine Transportation,6,Marine Transportation Services,3,Florida-Marine Transportation-Marine Transportation Services,549.5,8592.5,357962532.5,649240323
+12000,Florida,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Florida-Marine Transportation-Search and Navigation Equipment,78,9382,674355062,1566616139
+12000,Florida,State,2021,Marine Transportation,6,Warehousing,5,Florida-Marine Transportation-Warehousing,614,25308,960949278,1551577722.5
+12000,Florida,State,2021,Marine Transportation,6,Total,9,Florida-Marine Transportation-Total,1466,55157,2821084963,6995651109
+12000,Florida,State,2021,All Ocean Sectors,9,Total,9,Florida-All Ocean Sectors-Total,23685,446835,11994843320,26263808289
+13000,Georgia,State,2021,Marine Construction,1,Marine Related Construction,1,Georgia-Marine Construction-Marine Related Construction,22.5,164,6345344.5,13240104.5
+13000,Georgia,State,2021,Marine Construction,1,Total,9,Georgia-Marine Construction-Total,23,168,6447154,13370656
+13000,Georgia,State,2021,Living Resources,2,Fishing,1,Georgia-Living Resources-Fishing,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Georgia-Living Resources-Fish Hatcheries and Aquaculture,8,43,1057428,8698164
+13000,Georgia,State,2021,Living Resources,2,Seafood Processing,3,Georgia-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Living Resources,2,Seafood Markets,4,Georgia-Living Resources-Seafood Markets,65.5,269,7002486.5,15135317.5
+13000,Georgia,State,2021,Living Resources,2,Total,9,Georgia-Living Resources-Total,95,997,32656715,108067069
+13000,Georgia,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Georgia-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Georgia-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Offshore Mineral Extraction,3,Total,9,Georgia-Offshore Mineral Extraction-Total,8,33,1388177,3416615
+13000,Georgia,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Georgia-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Georgia-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Ship and Boat Building,4,Total,9,Georgia-Ship and Boat Building-Total,24,1248,48883642,97069187
+13000,Georgia,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Georgia-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Tourism and Recreation,5,Boat Dealers,1,Georgia-Tourism and Recreation-Boat Dealers,12,76.5,2868495.5,6110462
+13000,Georgia,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Georgia-Tourism and Recreation-Eating and Drinking Places,625,11458,172365110,329409081
+13000,Georgia,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Georgia-Tourism and Recreation-Hotels and Lodging Places,130,2789,68776059,172265605
+13000,Georgia,State,2021,Tourism and Recreation,5,Marinas,4,Georgia-Tourism and Recreation-Marinas,16.5,120.5,2729350.5,5631928.5
+13000,Georgia,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Georgia-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Georgia-Tourism and Recreation-Scenic Water Tours,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Georgia-Tourism and Recreation-Sporting Goods Manufacturing,-4999.5,-4999.5,-4999.5,-4999.5
+13000,Georgia,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Georgia-Tourism and Recreation-Amusement and Recreation Services,43,331,5786392,12973893
+13000,Georgia,State,2021,Tourism and Recreation,5,Total,9,Georgia-Tourism and Recreation-Total,848,15430,266017654,562353882
+13000,Georgia,State,2021,Marine Transportation,6,Marine Freight,1,Georgia-Marine Transportation-Marine Freight,24.5,223,14455115.5,35193683
+13000,Georgia,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Georgia-Marine Transportation-Marine Passenger Transportation,-4995.5,-4986.5,691895,2128957
+13000,Georgia,State,2021,Marine Transportation,6,Marine Transportation Services,3,Georgia-Marine Transportation-Marine Transportation Services,45,4179.5,153138722,235645769.5
+13000,Georgia,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Georgia-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+13000,Georgia,State,2021,Marine Transportation,6,Warehousing,5,Georgia-Marine Transportation-Warehousing,57,2126,76087472,129373016.5
+13000,Georgia,State,2021,Marine Transportation,6,Total,9,Georgia-Marine Transportation-Total,147,6844,272974336,460214571
+13000,Georgia,State,2021,All Ocean Sectors,9,Total,9,Georgia-All Ocean Sectors-Total,1137,24310,594915665,1188332208
+15000,Hawaii,State,2021,Marine Construction,1,Marine Related Construction,1,Hawaii-Marine Construction-Marine Related Construction,34.5,634.5,57941880,111692817
+15000,Hawaii,State,2021,Marine Construction,1,Total,9,Hawaii-Marine Construction-Total,35,636,59950315,113492190
+15000,Hawaii,State,2021,Living Resources,2,Fishing,1,Hawaii-Living Resources-Fishing,64.5,114.5,4941235,14911465
+15000,Hawaii,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Hawaii-Living Resources-Fish Hatcheries and Aquaculture,22,203,8360883,17887272
+15000,Hawaii,State,2021,Living Resources,2,Seafood Processing,3,Hawaii-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Living Resources,2,Seafood Markets,4,Hawaii-Living Resources-Seafood Markets,39.5,388,9889545.5,23936567
+15000,Hawaii,State,2021,Living Resources,2,Total,9,Hawaii-Living Resources-Total,149,807,26297731,70782004
+15000,Hawaii,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Hawaii-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Hawaii-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Offshore Mineral Extraction,3,Total,9,Hawaii-Offshore Mineral Extraction-Total,9,110,11293500,28957149
+15000,Hawaii,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Hawaii-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Hawaii-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Ship and Boat Building,4,Total,9,Hawaii-Ship and Boat Building-Total,25,5189,446264157,92961365
+15000,Hawaii,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Hawaii-Tourism and Recreation-Zoos and Aquaria,27,816,29835641,80131645
+15000,Hawaii,State,2021,Tourism and Recreation,5,Boat Dealers,1,Hawaii-Tourism and Recreation-Boat Dealers,10,85.5,2715150.5,6357094.5
+15000,Hawaii,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Hawaii-Tourism and Recreation-Eating and Drinking Places,2853,52044,998977347,1874826190
+15000,Hawaii,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Hawaii-Tourism and Recreation-Hotels and Lodging Places,320,37389,1464381279,3923904024
+15000,Hawaii,State,2021,Tourism and Recreation,5,Marinas,4,Hawaii-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Hawaii-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Hawaii-Tourism and Recreation-Scenic Water Tours,157,1759.5,49237584.5,89576235.5
+15000,Hawaii,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Hawaii-Tourism and Recreation-Sporting Goods Manufacturing,26,102,3525109.5,4647696.5
+15000,Hawaii,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Hawaii-Tourism and Recreation-Amusement and Recreation Services,335,4486,115460907,260608239
+15000,Hawaii,State,2021,Tourism and Recreation,5,Total,9,Hawaii-Tourism and Recreation-Total,3746,96348,2576555642,6076196529
+15000,Hawaii,State,2021,Marine Transportation,6,Marine Freight,1,Hawaii-Marine Transportation-Marine Freight,18,666.5,58773556,140455635.5
+15000,Hawaii,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Hawaii-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Marine Transportation,6,Marine Transportation Services,3,Hawaii-Marine Transportation-Marine Transportation Services,35.5,1199,98928975.5,179064231.5
+15000,Hawaii,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Hawaii-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+15000,Hawaii,State,2021,Marine Transportation,6,Warehousing,5,Hawaii-Marine Transportation-Warehousing,40.5,708,29234433,37897979
+15000,Hawaii,State,2021,Marine Transportation,6,Total,9,Hawaii-Marine Transportation-Total,102,3806,289424406,541171523
+15000,Hawaii,State,2021,All Ocean Sectors,9,Total,9,Hawaii-All Ocean Sectors-Total,4044,109279,3498749809,6913548254
+17000,Illinois,State,2021,Marine Construction,1,Marine Related Construction,1,Illinois-Marine Construction-Marine Related Construction,109,464.5,32151054,61408386.5
+17000,Illinois,State,2021,Marine Construction,1,Total,9,Illinois-Marine Construction-Total,109,476,32288940,61856261
+17000,Illinois,State,2021,Living Resources,2,Fishing,1,Illinois-Living Resources-Fishing,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Illinois-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Living Resources,2,Seafood Processing,3,Illinois-Living Resources-Seafood Processing,14.5,164.5,7105901,18771055
+17000,Illinois,State,2021,Living Resources,2,Seafood Markets,4,Illinois-Living Resources-Seafood Markets,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Living Resources,2,Total,9,Illinois-Living Resources-Total,66,584,16861438,50444629
+17000,Illinois,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Illinois-Offshore Mineral Extraction-Limestone, Sand and Gravel",10,170,14224641,48951655
+17000,Illinois,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Illinois-Offshore Mineral Extraction-Oil and Gas Exploration and Product,30,131.5,13739001.5,27541606.5
+17000,Illinois,State,2021,Offshore Mineral Extraction,3,Total,9,Illinois-Offshore Mineral Extraction-Total,40,322,28822460,75413413
+17000,Illinois,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Illinois-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Illinois-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Ship and Boat Building,4,Total,9,Illinois-Ship and Boat Building-Total,23,505,22741415,65153421
+17000,Illinois,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Illinois-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Tourism and Recreation,5,Boat Dealers,1,Illinois-Tourism and Recreation-Boat Dealers,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Illinois-Tourism and Recreation-Eating and Drinking Places,1888,46297,927331171,1948970314
+17000,Illinois,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Illinois-Tourism and Recreation-Hotels and Lodging Places,153,13514,550567630,1651460473
+17000,Illinois,State,2021,Tourism and Recreation,5,Marinas,4,Illinois-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Illinois-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Illinois-Tourism and Recreation-Scenic Water Tours,9.5,524.5,16384093,33974951.5
+17000,Illinois,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Illinois-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Illinois-Tourism and Recreation-Amusement and Recreation Services,85,2406,85034407,149929193
+17000,Illinois,State,2021,Tourism and Recreation,5,Total,9,Illinois-Tourism and Recreation-Total,2322,64606,1680619184,3957676830
+17000,Illinois,State,2021,Marine Transportation,6,Marine Freight,1,Illinois-Marine Transportation-Marine Freight,38,620,42451589,102607080.5
+17000,Illinois,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Illinois-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Marine Transportation,6,Marine Transportation Services,3,Illinois-Marine Transportation-Marine Transportation Services,58,1317.5,71450865,140182760.5
+17000,Illinois,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Illinois-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+17000,Illinois,State,2021,Marine Transportation,6,Warehousing,5,Illinois-Marine Transportation-Warehousing,-4912.5,2218,298480060.5,510254269.5
+17000,Illinois,State,2021,Marine Transportation,6,Total,9,Illinois-Marine Transportation-Total,345,19955,1051886732,2024351169
+17000,Illinois,State,2021,All Ocean Sectors,9,Total,9,Illinois-All Ocean Sectors-Total,2907,85540,2828171413,6468063553
+18000,Indiana,State,2021,Marine Construction,1,Marine Related Construction,1,Indiana-Marine Construction-Marine Related Construction,19.5,463.5,33906290.5,58149892
+18000,Indiana,State,2021,Marine Construction,1,Total,9,Indiana-Marine Construction-Total,19,469,34448651,60639354
+18000,Indiana,State,2021,Living Resources,2,Fishing,1,Indiana-Living Resources-Fishing,0,0,0,0
+18000,Indiana,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Indiana-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Living Resources,2,Seafood Processing,3,Indiana-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Living Resources,2,Seafood Markets,4,Indiana-Living Resources-Seafood Markets,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Living Resources,2,Total,9,Indiana-Living Resources-Total,17,96,2696884,16589637
+18000,Indiana,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Indiana-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Indiana-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Offshore Mineral Extraction,3,Total,9,Indiana-Offshore Mineral Extraction-Total,9,52,2707409,7944336
+18000,Indiana,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Indiana-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Indiana-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Ship and Boat Building,4,Total,9,Indiana-Ship and Boat Building-Total,23,3035,157228764,314238823
+18000,Indiana,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Indiana-Tourism and Recreation-Zoos and Aquaria,0,0,0,0
+18000,Indiana,State,2021,Tourism and Recreation,5,Boat Dealers,1,Indiana-Tourism and Recreation-Boat Dealers,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Indiana-Tourism and Recreation-Eating and Drinking Places,328,5842,73553864,142256211
+18000,Indiana,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Indiana-Tourism and Recreation-Hotels and Lodging Places,35,438,5849362,17817074
+18000,Indiana,State,2021,Tourism and Recreation,5,Marinas,4,Indiana-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Indiana-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Indiana-Tourism and Recreation-Scenic Water Tours,0,0,0,0
+18000,Indiana,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Indiana-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Indiana-Tourism and Recreation-Amusement and Recreation Services,8,83,1008030,1595917
+18000,Indiana,State,2021,Tourism and Recreation,5,Total,9,Indiana-Tourism and Recreation-Total,384,6554,90999496,188480848
+18000,Indiana,State,2021,Marine Transportation,6,Marine Freight,1,Indiana-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Indiana-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Marine Transportation,6,Marine Transportation Services,3,Indiana-Marine Transportation-Marine Transportation Services,20.5,377,16603502,28385295.5
+18000,Indiana,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Indiana-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+18000,Indiana,State,2021,Marine Transportation,6,Warehousing,5,Indiana-Marine Transportation-Warehousing,35,1021.5,41421783.5,70595694.5
+18000,Indiana,State,2021,Marine Transportation,6,Total,9,Indiana-Marine Transportation-Total,67,3093,173715105,390813007
+18000,Indiana,State,2021,All Ocean Sectors,9,Total,9,Indiana-All Ocean Sectors-Total,514,13741,459396543,1018774832
+22000,Louisiana,State,2021,Marine Construction,1,Marine Related Construction,1,Louisiana-Marine Construction-Marine Related Construction,142,5938.5,351511804.5,560992271.5
+22000,Louisiana,State,2021,Marine Construction,1,Total,9,Louisiana-Marine Construction-Total,141,5885,352905373,562232771
+22000,Louisiana,State,2021,Living Resources,2,Fishing,1,Louisiana-Living Resources-Fishing,64.5,199.5,5058293,13506433.5
+22000,Louisiana,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Louisiana-Living Resources-Fish Hatcheries and Aquaculture,51,233,8477451,88024193
+22000,Louisiana,State,2021,Living Resources,2,Seafood Processing,3,Louisiana-Living Resources-Seafood Processing,67,1786.5,57665088.5,170393559.5
+22000,Louisiana,State,2021,Living Resources,2,Seafood Markets,4,Louisiana-Living Resources-Seafood Markets,145.5,994,19988822.5,48588461
+22000,Louisiana,State,2021,Living Resources,2,Total,9,Louisiana-Living Resources-Total,326,3279,108053964,421134264
+22000,Louisiana,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Louisiana-Offshore Mineral Extraction-Limestone, Sand and Gravel",24,240,12787915,46636481
+22000,Louisiana,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Louisiana-Offshore Mineral Extraction-Oil and Gas Exploration and Product,547.5,15695,1677158710.5,5928318464
+22000,Louisiana,State,2021,Offshore Mineral Extraction,3,Total,9,Louisiana-Offshore Mineral Extraction-Total,714,21380,1862284984,10010211054
+22000,Louisiana,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Louisiana-Ship and Boat Building-Ship Building and Repair,113,10272,560350790,938554696
+22000,Louisiana,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Louisiana-Ship and Boat Building-Boat Building and Repair,36,812,42465434,74113370
+22000,Louisiana,State,2021,Ship and Boat Building,4,Total,9,Louisiana-Ship and Boat Building-Total,145,10020,602470910,974880790
+22000,Louisiana,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Louisiana-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+22000,Louisiana,State,2021,Tourism and Recreation,5,Boat Dealers,1,Louisiana-Tourism and Recreation-Boat Dealers,35,276.5,10996468.5,27637633.5
+22000,Louisiana,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Louisiana-Tourism and Recreation-Eating and Drinking Places,1906,33996,598185194,1174618489
+22000,Louisiana,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Louisiana-Tourism and Recreation-Hotels and Lodging Places,248,7765,205647461,643874547
+22000,Louisiana,State,2021,Tourism and Recreation,5,Marinas,4,Louisiana-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+22000,Louisiana,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Louisiana-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+22000,Louisiana,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Louisiana-Tourism and Recreation-Scenic Water Tours,20,223.5,7687842,12997472.5
+22000,Louisiana,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Louisiana-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+22000,Louisiana,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Louisiana-Tourism and Recreation-Amusement and Recreation Services,79,857,18539400,33743861
+22000,Louisiana,State,2021,Tourism and Recreation,5,Total,9,Louisiana-Tourism and Recreation-Total,2335,43660,868407306,1795789897
+22000,Louisiana,State,2021,Marine Transportation,6,Marine Freight,1,Louisiana-Marine Transportation-Marine Freight,67.5,2616,232045037,499390345.5
+22000,Louisiana,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Louisiana-Marine Transportation-Marine Passenger Transportation,19,154,9411974,17897271
+22000,Louisiana,State,2021,Marine Transportation,6,Marine Transportation Services,3,Louisiana-Marine Transportation-Marine Transportation Services,403.5,14212,955473887,1631996245.5
+22000,Louisiana,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Louisiana-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+22000,Louisiana,State,2021,Marine Transportation,6,Warehousing,5,Louisiana-Marine Transportation-Warehousing,71,2993,136720433.5,247673441
+22000,Louisiana,State,2021,Marine Transportation,6,Total,9,Louisiana-Marine Transportation-Total,569,20252,1373905340,2478200060
+22000,Louisiana,State,2021,All Ocean Sectors,9,Total,9,Louisiana-All Ocean Sectors-Total,4241,106276,5192480951,16960338799
+23000,Maine,State,2021,Marine Construction,1,Marine Related Construction,1,Maine-Marine Construction-Marine Related Construction,35.5,216.5,11354145.5,19434168.5
+23000,Maine,State,2021,Marine Construction,1,Total,9,Maine-Marine Construction-Total,36,218,11502510,19543582
+23000,Maine,State,2021,Living Resources,2,Fishing,1,Maine-Living Resources-Fishing,313,484,28030621.5,93231104.5
+23000,Maine,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Maine-Living Resources-Fish Hatcheries and Aquaculture,25,141,4498975,24010536
+23000,Maine,State,2021,Living Resources,2,Seafood Processing,3,Maine-Living Resources-Seafood Processing,37,748,22810519,69108110.5
+23000,Maine,State,2021,Living Resources,2,Seafood Markets,4,Maine-Living Resources-Seafood Markets,73,378.5,8175754.5,18056356
+23000,Maine,State,2021,Living Resources,2,Total,9,Maine-Living Resources-Total,459,1742,62805646,203502952
+23000,Maine,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Maine-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Maine-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Offshore Mineral Extraction,3,Total,9,Maine-Offshore Mineral Extraction-Total,15,53,2312514,7143635
+23000,Maine,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Maine-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Maine-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Ship and Boat Building,4,Total,9,Maine-Ship and Boat Building-Total,87,11387,752499185,696420703
+23000,Maine,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Maine-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Tourism and Recreation,5,Boat Dealers,1,Maine-Tourism and Recreation-Boat Dealers,42.5,342.5,11981752.5,26019581
+23000,Maine,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Maine-Tourism and Recreation-Eating and Drinking Places,1510,20195,344609407,682371657
+23000,Maine,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Maine-Tourism and Recreation-Hotels and Lodging Places,468,6017,128501387,316256984
+23000,Maine,State,2021,Tourism and Recreation,5,Marinas,4,Maine-Tourism and Recreation-Marinas,85,797,29705987.5,53775615.5
+23000,Maine,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Maine-Tourism and Recreation-RV Parks and Campgrounds,60,361,7140255,16088543
+23000,Maine,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Maine-Tourism and Recreation-Scenic Water Tours,45,209.5,4302434.5,6228804
+23000,Maine,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Maine-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Maine-Tourism and Recreation-Amusement and Recreation Services,128,1141,20135550,37208716
+23000,Maine,State,2021,Tourism and Recreation,5,Total,9,Maine-Tourism and Recreation-Total,2369,29118,580256835,1283107112
+23000,Maine,State,2021,Marine Transportation,6,Marine Freight,1,Maine-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Maine-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+23000,Maine,State,2021,Marine Transportation,6,Marine Transportation Services,3,Maine-Marine Transportation-Marine Transportation Services,29,159.5,7965234,11296075
+23000,Maine,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Maine-Marine Transportation-Search and Navigation Equipment,-4999.5,-4999.5,-4999.5,-4999.5
+23000,Maine,State,2021,Marine Transportation,6,Warehousing,5,Maine-Marine Transportation-Warehousing,32.5,2860.5,102268590,161764605.5
+23000,Maine,State,2021,Marine Transportation,6,Total,9,Maine-Marine Transportation-Total,69,3050,111546312,176546273
+23000,Maine,State,2021,All Ocean Sectors,9,Total,9,Maine-All Ocean Sectors-Total,3026,45007,1527800563,2363548368
+24000,Maryland,State,2021,Marine Construction,1,Marine Related Construction,1,Maryland-Marine Construction-Marine Related Construction,129.5,1526,78314337.5,142431918
+24000,Maryland,State,2021,Marine Construction,1,Total,9,Maryland-Marine Construction-Total,128,1536,79391970,152519155
+24000,Maryland,State,2021,Living Resources,2,Fishing,1,Maryland-Living Resources-Fishing,17.5,53.5,1513250,4408664.5
+24000,Maryland,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Maryland-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+24000,Maryland,State,2021,Living Resources,2,Seafood Processing,3,Maryland-Living Resources-Seafood Processing,20,380.5,15401565,54225154
+24000,Maryland,State,2021,Living Resources,2,Seafood Markets,4,Maryland-Living Resources-Seafood Markets,129.5,781.5,18817172.5,37330839.5
+24000,Maryland,State,2021,Living Resources,2,Total,9,Maryland-Living Resources-Total,186,1757,49417986,146959777
+24000,Maryland,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Maryland-Offshore Mineral Extraction-Limestone, Sand and Gravel",24,332,19367016,82192207
+24000,Maryland,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Maryland-Offshore Mineral Extraction-Oil and Gas Exploration and Product,28,140,7842881,12778635
+24000,Maryland,State,2021,Offshore Mineral Extraction,3,Total,9,Maryland-Offshore Mineral Extraction-Total,56,533,29762119,98880244
+24000,Maryland,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Maryland-Ship and Boat Building-Ship Building and Repair,12,315,17613716,34368519
+24000,Maryland,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Maryland-Ship and Boat Building-Boat Building and Repair,24,137,5244719,12501560
+24000,Maryland,State,2021,Ship and Boat Building,4,Total,9,Maryland-Ship and Boat Building-Total,38,492,24928912,53993367
+24000,Maryland,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Maryland-Tourism and Recreation-Zoos and Aquaria,10,447,15458721,25672174
+24000,Maryland,State,2021,Tourism and Recreation,5,Boat Dealers,1,Maryland-Tourism and Recreation-Boat Dealers,120,816,35477430,76558153.5
+24000,Maryland,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Maryland-Tourism and Recreation-Eating and Drinking Places,3008,47036,841790575,1770359561
+24000,Maryland,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Maryland-Tourism and Recreation-Hotels and Lodging Places,350,9764,240068564,668384186
+24000,Maryland,State,2021,Tourism and Recreation,5,Marinas,4,Maryland-Tourism and Recreation-Marinas,174,1553.5,50309319,107792886
+24000,Maryland,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Maryland-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+24000,Maryland,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Maryland-Tourism and Recreation-Scenic Water Tours,30.5,259.5,5109484.5,8373114
+24000,Maryland,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Maryland-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+24000,Maryland,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Maryland-Tourism and Recreation-Amusement and Recreation Services,216,1751,34830405,64665326
+24000,Maryland,State,2021,Tourism and Recreation,5,Total,9,Maryland-Tourism and Recreation-Total,3974,62961,1258980451,2781675858
+24000,Maryland,State,2021,Marine Transportation,6,Marine Freight,1,Maryland-Marine Transportation-Marine Freight,13,68,8620729.5,16004479.5
+24000,Maryland,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Maryland-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+24000,Maryland,State,2021,Marine Transportation,6,Marine Transportation Services,3,Maryland-Marine Transportation-Marine Transportation Services,63.5,2627.5,137675694.5,232780680.5
+24000,Maryland,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Maryland-Marine Transportation-Search and Navigation Equipment,82,9618,1161387019,2424660741
+24000,Maryland,State,2021,Marine Transportation,6,Warehousing,5,Maryland-Marine Transportation-Warehousing,160.5,8739.5,479853036,733157220.5
+24000,Maryland,State,2021,Marine Transportation,6,Total,9,Maryland-Marine Transportation-Total,325,21834,1896117365,3603371799
+24000,Maryland,State,2021,All Ocean Sectors,9,Total,9,Maryland-All Ocean Sectors-Total,4680,90729,3312724320,6790981153
+25000,Massachusetts,State,2021,Marine Construction,1,Marine Related Construction,1,Massachusetts-Marine Construction-Marine Related Construction,92.5,1006,63767920.5,103263142
+25000,Massachusetts,State,2021,Marine Construction,1,Total,9,Massachusetts-Marine Construction-Total,95,1066,63825130,104314399
+25000,Massachusetts,State,2021,Living Resources,2,Fishing,1,Massachusetts-Living Resources-Fishing,361,1461,134022421,453084634.5
+25000,Massachusetts,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Massachusetts-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+25000,Massachusetts,State,2021,Living Resources,2,Seafood Processing,3,Massachusetts-Living Resources-Seafood Processing,52,2448.5,126163470.5,258655779
+25000,Massachusetts,State,2021,Living Resources,2,Seafood Markets,4,Massachusetts-Living Resources-Seafood Markets,148.5,1026,28709299.5,52091766.5
+25000,Massachusetts,State,2021,Living Resources,2,Total,9,Massachusetts-Living Resources-Total,635,5204,297092895,865943942
+25000,Massachusetts,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Massachusetts-Offshore Mineral Extraction-Limestone, Sand and Gravel",22,106,6345433,15401007
+25000,Massachusetts,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Massachusetts-Offshore Mineral Extraction-Oil and Gas Exploration and Product,25,23.5,2083975,3387460.5
+25000,Massachusetts,State,2021,Offshore Mineral Extraction,3,Total,9,Massachusetts-Offshore Mineral Extraction-Total,47,123,6996184,20436161
+25000,Massachusetts,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Massachusetts-Ship and Boat Building-Ship Building and Repair,10,255,15906942,23217852
+25000,Massachusetts,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Massachusetts-Ship and Boat Building-Boat Building and Repair,31,232,9292554,13795184
+25000,Massachusetts,State,2021,Ship and Boat Building,4,Total,9,Massachusetts-Ship and Boat Building-Total,41,480,24905815,36870016
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Massachusetts-Tourism and Recreation-Zoos and Aquaria,11,94,4305591,8615311
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Boat Dealers,1,Massachusetts-Tourism and Recreation-Boat Dealers,74.5,537.5,28902670,47703713
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Massachusetts-Tourism and Recreation-Eating and Drinking Places,3353,52390,1023474499,1702304023
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Massachusetts-Tourism and Recreation-Hotels and Lodging Places,412,9365,311232056,739108309
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Marinas,4,Massachusetts-Tourism and Recreation-Marinas,165.5,1504,60988657.5,130195023
+25000,Massachusetts,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Massachusetts-Tourism and Recreation-RV Parks and Campgrounds,28,151,3716091,8414569
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Massachusetts-Tourism and Recreation-Scenic Water Tours,58,432.5,11591165,11556393.5
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Massachusetts-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Massachusetts-Tourism and Recreation-Amusement and Recreation Services,254,1744,39148389,75255636
+25000,Massachusetts,State,2021,Tourism and Recreation,5,Total,9,Massachusetts-Tourism and Recreation-Total,4438,65366,1549214400,3197043234
+25000,Massachusetts,State,2021,Marine Transportation,6,Marine Freight,1,Massachusetts-Marine Transportation-Marine Freight,18,228,25892467.5,67201191.5
+25000,Massachusetts,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Massachusetts-Marine Transportation-Marine Passenger Transportation,15.5,305.5,9969194,25449141
+25000,Massachusetts,State,2021,Marine Transportation,6,Marine Transportation Services,3,Massachusetts-Marine Transportation-Marine Transportation Services,44.5,384,20906302.5,31052830.5
+25000,Massachusetts,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Massachusetts-Marine Transportation-Search and Navigation Equipment,34,5170,611955351,1435225533
+25000,Massachusetts,State,2021,Marine Transportation,6,Warehousing,5,Massachusetts-Marine Transportation-Warehousing,150.5,5114.5,306236365,448200572
+25000,Massachusetts,State,2021,Marine Transportation,6,Total,9,Massachusetts-Marine Transportation-Total,264,11252,980037446,1996876950
+25000,Massachusetts,State,2021,All Ocean Sectors,9,Total,9,Massachusetts-All Ocean Sectors-Total,5427,82417,2998730778,6466160353
+26000,Michigan,State,2021,Marine Construction,1,Marine Related Construction,1,Michigan-Marine Construction-Marine Related Construction,100.5,339.5,24439833.5,47435106.5
+26000,Michigan,State,2021,Marine Construction,1,Total,9,Michigan-Marine Construction-Total,101,346,24460984,47626871
+26000,Michigan,State,2021,Living Resources,2,Fishing,1,Michigan-Living Resources-Fishing,-9999,-9999,-9999,-9999
+26000,Michigan,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Michigan-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+26000,Michigan,State,2021,Living Resources,2,Seafood Processing,3,Michigan-Living Resources-Seafood Processing,6,117.5,6846049.5,0
+26000,Michigan,State,2021,Living Resources,2,Seafood Markets,4,Michigan-Living Resources-Seafood Markets,54.5,199,3953491,0
+26000,Michigan,State,2021,Living Resources,2,Total,9,Michigan-Living Resources-Total,99,336,11627162,0
+26000,Michigan,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Michigan-Offshore Mineral Extraction-Limestone, Sand and Gravel",41,9,429485,1592970
+26000,Michigan,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Michigan-Offshore Mineral Extraction-Oil and Gas Exploration and Product,89.5,172.5,13578896,28050833
+26000,Michigan,State,2021,Offshore Mineral Extraction,3,Total,9,Michigan-Offshore Mineral Extraction-Total,154,300,22288425,33318779
+26000,Michigan,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Michigan-Ship and Boat Building-Ship Building and Repair,5,49,1696149,3368545
+26000,Michigan,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Michigan-Ship and Boat Building-Boat Building and Repair,29,980,41987950,107243243
+26000,Michigan,State,2021,Ship and Boat Building,4,Total,9,Michigan-Ship and Boat Building-Total,34,904,34859512,99409089
+26000,Michigan,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Michigan-Tourism and Recreation-Zoos and Aquaria,11,171,7920071,9914750
+26000,Michigan,State,2021,Tourism and Recreation,5,Boat Dealers,1,Michigan-Tourism and Recreation-Boat Dealers,67,370.5,14806810,31746884
+26000,Michigan,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Michigan-Tourism and Recreation-Eating and Drinking Places,2326,40378,543180438,865027730
+26000,Michigan,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Michigan-Tourism and Recreation-Hotels and Lodging Places,463,5529,111839972,310250718
+26000,Michigan,State,2021,Tourism and Recreation,5,Marinas,4,Michigan-Tourism and Recreation-Marinas,151,1052,30203146,59811749
+26000,Michigan,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Michigan-Tourism and Recreation-RV Parks and Campgrounds,52,79,1303557,3392630
+26000,Michigan,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Michigan-Tourism and Recreation-Scenic Water Tours,15,32.5,493644.5,351425
+26000,Michigan,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Michigan-Tourism and Recreation-Sporting Goods Manufacturing,8,0.5,24673,57226.5
+26000,Michigan,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Michigan-Tourism and Recreation-Amusement and Recreation Services,179,830,12267373,24992657
+26000,Michigan,State,2021,Tourism and Recreation,5,Total,9,Michigan-Tourism and Recreation-Total,3324,48978,725250715,1435500014
+26000,Michigan,State,2021,Marine Transportation,6,Marine Freight,1,Michigan-Marine Transportation-Marine Freight,18,265.5,24014752.5,58119532.5
+26000,Michigan,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Michigan-Marine Transportation-Marine Passenger Transportation,17,335.5,9810118,27947822
+26000,Michigan,State,2021,Marine Transportation,6,Marine Transportation Services,3,Michigan-Marine Transportation-Marine Transportation Services,37,340.5,23541048,40127366
+26000,Michigan,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Michigan-Marine Transportation-Search and Navigation Equipment,19,2306,201931611,336964736
+26000,Michigan,State,2021,Marine Transportation,6,Warehousing,5,Michigan-Marine Transportation-Warehousing,163,5393,318237926.5,511770791
+26000,Michigan,State,2021,Marine Transportation,6,Total,9,Michigan-Marine Transportation-Total,255,8766,577240162,974614861
+26000,Michigan,State,2021,All Ocean Sectors,9,Total,9,Michigan-All Ocean Sectors-Total,3987,61836,1410190383,2600616956
+27000,Minnesota,State,2021,Marine Construction,1,Marine Related Construction,1,Minnesota-Marine Construction-Marine Related Construction,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Marine Construction,1,Total,9,Minnesota-Marine Construction-Total,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Living Resources,2,Fishing,1,Minnesota-Living Resources-Fishing,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Minnesota-Living Resources-Fish Hatcheries and Aquaculture,7,39,1424998,16475802
+27000,Minnesota,State,2021,Living Resources,2,Seafood Processing,3,Minnesota-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Living Resources,2,Seafood Markets,4,Minnesota-Living Resources-Seafood Markets,8,42,774174.5,1610963.5
+27000,Minnesota,State,2021,Living Resources,2,Total,9,Minnesota-Living Resources-Total,32,541,18303071,60885310
+27000,Minnesota,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Minnesota-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Minnesota-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Offshore Mineral Extraction,3,Total,9,Minnesota-Offshore Mineral Extraction-Total,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Minnesota-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Minnesota-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Ship and Boat Building,4,Total,9,Minnesota-Ship and Boat Building-Total,21,1144,47079917,208131414
+27000,Minnesota,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Minnesota-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Tourism and Recreation,5,Boat Dealers,1,Minnesota-Tourism and Recreation-Boat Dealers,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Minnesota-Tourism and Recreation-Eating and Drinking Places,234,4796,64062249,124582956
+27000,Minnesota,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Minnesota-Tourism and Recreation-Hotels and Lodging Places,74,1793,30416611,65993587
+27000,Minnesota,State,2021,Tourism and Recreation,5,Marinas,4,Minnesota-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Minnesota-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Minnesota-Tourism and Recreation-Scenic Water Tours,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Minnesota-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Minnesota-Tourism and Recreation-Amusement and Recreation Services,36,199,2760494,5873778
+27000,Minnesota,State,2021,Tourism and Recreation,5,Total,9,Minnesota-Tourism and Recreation-Total,354,6990,103083943,201996075
+27000,Minnesota,State,2021,Marine Transportation,6,Marine Freight,1,Minnesota-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Minnesota-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Marine Transportation,6,Marine Transportation Services,3,Minnesota-Marine Transportation-Marine Transportation Services,11.5,84,5226724.5,7194084
+27000,Minnesota,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Minnesota-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Marine Transportation,6,Warehousing,5,Minnesota-Marine Transportation-Warehousing,-9999,-9999,-9999,-9999
+27000,Minnesota,State,2021,Marine Transportation,6,Total,9,Minnesota-Marine Transportation-Total,43,3440,275012120,670857667
+27000,Minnesota,State,2021,All Ocean Sectors,9,Total,9,Minnesota-All Ocean Sectors-Total,462,12474,452252796,1178958183
+28000,Mississippi,State,2021,Marine Construction,1,Marine Related Construction,1,Mississippi-Marine Construction-Marine Related Construction,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Marine Construction,1,Total,9,Mississippi-Marine Construction-Total,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Living Resources,2,Fishing,1,Mississippi-Living Resources-Fishing,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Mississippi-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Living Resources,2,Seafood Processing,3,Mississippi-Living Resources-Seafood Processing,22.5,2171.5,52414258.5,107295950
+28000,Mississippi,State,2021,Living Resources,2,Seafood Markets,4,Mississippi-Living Resources-Seafood Markets,20.5,66,977682,2404315.5
+28000,Mississippi,State,2021,Living Resources,2,Total,9,Mississippi-Living Resources-Total,124,3264,88458890,283794456
+28000,Mississippi,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Mississippi-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Mississippi-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Offshore Mineral Extraction,3,Total,9,Mississippi-Offshore Mineral Extraction-Total,10,20,1246583,5661382
+28000,Mississippi,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Mississippi-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Mississippi-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Ship and Boat Building,4,Total,9,Mississippi-Ship and Boat Building-Total,30,13552,832920926,1199694083
+28000,Mississippi,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Mississippi-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Tourism and Recreation,5,Boat Dealers,1,Mississippi-Tourism and Recreation-Boat Dealers,14,82,2914748,7081167
+28000,Mississippi,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Mississippi-Tourism and Recreation-Eating and Drinking Places,619,11372,157700973,326860596
+28000,Mississippi,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Mississippi-Tourism and Recreation-Hotels and Lodging Places,97,1404,21911674,45614041
+28000,Mississippi,State,2021,Tourism and Recreation,5,Marinas,4,Mississippi-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Mississippi-Tourism and Recreation-RV Parks and Campgrounds,15,120,2877026,5936135
+28000,Mississippi,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Mississippi-Tourism and Recreation-Scenic Water Tours,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Mississippi-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Mississippi-Tourism and Recreation-Amusement and Recreation Services,21,150,2231398,5261796
+28000,Mississippi,State,2021,Tourism and Recreation,5,Total,9,Mississippi-Tourism and Recreation-Total,786,13544,196156279,407979415
+28000,Mississippi,State,2021,Marine Transportation,6,Marine Freight,1,Mississippi-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Mississippi-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Marine Transportation,6,Marine Transportation Services,3,Mississippi-Marine Transportation-Marine Transportation Services,42,842.5,33396044,55682209
+28000,Mississippi,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Mississippi-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+28000,Mississippi,State,2021,Marine Transportation,6,Warehousing,5,Mississippi-Marine Transportation-Warehousing,18,258,8331617,13921092
+28000,Mississippi,State,2021,Marine Transportation,6,Total,9,Mississippi-Marine Transportation-Total,69,1787,89525591,165403451
+28000,Mississippi,State,2021,All Ocean Sectors,9,Total,9,Mississippi-All Ocean Sectors-Total,1034,32775,1230807384,2135547252
+33000,New Hampshire,State,2021,Marine Construction,1,Marine Related Construction,1,New Hampshire-Marine Construction-Marine Related Construction,8,34.5,1606064,2828374
+33000,New Hampshire,State,2021,Marine Construction,1,Total,9,New Hampshire-Marine Construction-Total,8,34,1552962,2733245
+33000,New Hampshire,State,2021,Living Resources,2,Fishing,1,New Hampshire-Living Resources-Fishing,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,New Hampshire-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Living Resources,2,Seafood Processing,3,New Hampshire-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Living Resources,2,Seafood Markets,4,New Hampshire-Living Resources-Seafood Markets,11,66.5,1450960,0
+33000,New Hampshire,State,2021,Living Resources,2,Total,9,New Hampshire-Living Resources-Total,26,170,9513698,0
+33000,New Hampshire,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"New Hampshire-Offshore Mineral Extraction-Limestone, Sand and Gravel",12,28,1358648,0
+33000,New Hampshire,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,New Hampshire-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Offshore Mineral Extraction,3,Total,9,New Hampshire-Offshore Mineral Extraction-Total,16,28,1358648,2009715
+33000,New Hampshire,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,New Hampshire-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,New Hampshire-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Ship and Boat Building,4,Total,9,New Hampshire-Ship and Boat Building-Total,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,New Hampshire-Tourism and Recreation-Zoos and Aquaria,0,0,0,0
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Boat Dealers,1,New Hampshire-Tourism and Recreation-Boat Dealers,0.5,4.5,184042,319830.5
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,New Hampshire-Tourism and Recreation-Eating and Drinking Places,338,5357,91446929,152071187
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,New Hampshire-Tourism and Recreation-Hotels and Lodging Places,65,1249,28345257,90008853
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Marinas,4,New Hampshire-Tourism and Recreation-Marinas,3,25,957953,1061572.5
+33000,New Hampshire,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,New Hampshire-Tourism and Recreation-RV Parks and Campgrounds,1,6,181650,0
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,New Hampshire-Tourism and Recreation-Scenic Water Tours,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,New Hampshire-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,New Hampshire-Tourism and Recreation-Amusement and Recreation Services,22,181,3436161,5567856
+33000,New Hampshire,State,2021,Tourism and Recreation,5,Total,9,New Hampshire-Tourism and Recreation-Total,452,6918,132903261,313682153
+33000,New Hampshire,State,2021,Marine Transportation,6,Marine Freight,1,New Hampshire-Marine Transportation-Marine Freight,0,0,0,0
+33000,New Hampshire,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,New Hampshire-Marine Transportation-Marine Passenger Transportation,0,0,0,0
+33000,New Hampshire,State,2021,Marine Transportation,6,Marine Transportation Services,3,New Hampshire-Marine Transportation-Marine Transportation Services,-9999,-9999,-9999,-9999
+33000,New Hampshire,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,New Hampshire-Marine Transportation-Search and Navigation Equipment,15,5128,549549760,0
+33000,New Hampshire,State,2021,Marine Transportation,6,Warehousing,5,New Hampshire-Marine Transportation-Warehousing,28,1136,42985995,0
+33000,New Hampshire,State,2021,Marine Transportation,6,Total,9,New Hampshire-Marine Transportation-Total,46,6213,602242175,0
+33000,New Hampshire,State,2021,All Ocean Sectors,9,Total,9,New Hampshire-All Ocean Sectors-Total,549,13487,746599689,1270015593
+34000,New Jersey,State,2021,Marine Construction,1,Marine Related Construction,1,New Jersey-Marine Construction-Marine Related Construction,138,2123,166714361,340292085
+34000,New Jersey,State,2021,Marine Construction,1,Total,9,New Jersey-Marine Construction-Total,136,2104,163390484,339640052
+34000,New Jersey,State,2021,Living Resources,2,Fishing,1,New Jersey-Living Resources-Fishing,44.5,177.5,7952845.5,22872784
+34000,New Jersey,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,New Jersey-Living Resources-Fish Hatcheries and Aquaculture,9,25,832172,2096402
+34000,New Jersey,State,2021,Living Resources,2,Seafood Processing,3,New Jersey-Living Resources-Seafood Processing,17.5,529,22357385,55481667
+34000,New Jersey,State,2021,Living Resources,2,Seafood Markets,4,New Jersey-Living Resources-Seafood Markets,137,611.5,16170231,34773049.5
+34000,New Jersey,State,2021,Living Resources,2,Total,9,New Jersey-Living Resources-Total,231,1443,47726331,115738625
+34000,New Jersey,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"New Jersey-Offshore Mineral Extraction-Limestone, Sand and Gravel",25,368,24248416,79740124
+34000,New Jersey,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,New Jersey-Offshore Mineral Extraction-Oil and Gas Exploration and Product,40,272.5,20679629.5,39426582
+34000,New Jersey,State,2021,Offshore Mineral Extraction,3,Total,9,New Jersey-Offshore Mineral Extraction-Total,69,630,43475278,112672927
+34000,New Jersey,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,New Jersey-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+34000,New Jersey,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,New Jersey-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+34000,New Jersey,State,2021,Ship and Boat Building,4,Total,9,New Jersey-Ship and Boat Building-Total,30,1252,75567400,114513458
+34000,New Jersey,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,New Jersey-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+34000,New Jersey,State,2021,Tourism and Recreation,5,Boat Dealers,1,New Jersey-Tourism and Recreation-Boat Dealers,91.5,625.5,28171300,59983220
+34000,New Jersey,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,New Jersey-Tourism and Recreation-Eating and Drinking Places,5984,63992,1178025854,2143407388
+34000,New Jersey,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,New Jersey-Tourism and Recreation-Hotels and Lodging Places,679,11203,295004046,754399232
+34000,New Jersey,State,2021,Tourism and Recreation,5,Marinas,4,New Jersey-Tourism and Recreation-Marinas,178,957,35900104,87351928.5
+34000,New Jersey,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,New Jersey-Tourism and Recreation-RV Parks and Campgrounds,35,395,13320096,30930936
+34000,New Jersey,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,New Jersey-Tourism and Recreation-Scenic Water Tours,47.5,183.5,4284212.5,6396820.5
+34000,New Jersey,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,New Jersey-Tourism and Recreation-Sporting Goods Manufacturing,9,56,3204470.5,7062590
+34000,New Jersey,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,New Jersey-Tourism and Recreation-Amusement and Recreation Services,338,2108,42298419,79263378
+34000,New Jersey,State,2021,Tourism and Recreation,5,Total,9,New Jersey-Tourism and Recreation-Total,7405,79074,1686584290,3327073495
+34000,New Jersey,State,2021,Marine Transportation,6,Marine Freight,1,New Jersey-Marine Transportation-Marine Freight,42,783.5,67892041,357446256.5
+34000,New Jersey,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,New Jersey-Marine Transportation-Marine Passenger Transportation,11,28.5,777961,4113553
+34000,New Jersey,State,2021,Marine Transportation,6,Marine Transportation Services,3,New Jersey-Marine Transportation-Marine Transportation Services,105,5404.5,608077038,915911555.5
+34000,New Jersey,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,New Jersey-Marine Transportation-Search and Navigation Equipment,59,7016,760180688,1414134947
+34000,New Jersey,State,2021,Marine Transportation,6,Warehousing,5,New Jersey-Marine Transportation-Warehousing,537.5,21941.5,991812404,1632059901
+34000,New Jersey,State,2021,Marine Transportation,6,Total,9,New Jersey-Marine Transportation-Total,775,38223,2498762237,4608768299
+34000,New Jersey,State,2021,All Ocean Sectors,9,Total,9,New Jersey-All Ocean Sectors-Total,8595,123502,4328635420,8261204731
+36000,New York,State,2021,Marine Construction,1,Marine Related Construction,1,New York-Marine Construction-Marine Related Construction,197.5,2595.5,237568800.5,434305781.5
+36000,New York,State,2021,Marine Construction,1,Total,9,New York-Marine Construction-Total,201,2622,248084847,463964862
+36000,New York,State,2021,Living Resources,2,Fishing,1,New York-Living Resources-Fishing,32,25,1093408,3299250.5
+36000,New York,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,New York-Living Resources-Fish Hatcheries and Aquaculture,15,56,1796450,2727136
+36000,New York,State,2021,Living Resources,2,Seafood Processing,3,New York-Living Resources-Seafood Processing,20,392,28176900,0
+36000,New York,State,2021,Living Resources,2,Seafood Markets,4,New York-Living Resources-Seafood Markets,400,2152.5,61449851,106518406.5
+36000,New York,State,2021,Living Resources,2,Total,9,New York-Living Resources-Total,478,2609,94445940,118173541
+36000,New York,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"New York-Offshore Mineral Extraction-Limestone, Sand and Gravel",68,90,3788258,12028023
+36000,New York,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,New York-Offshore Mineral Extraction-Oil and Gas Exploration and Product,68,161,11586366,20877528
+36000,New York,State,2021,Offshore Mineral Extraction,3,Total,9,New York-Offshore Mineral Extraction-Total,137,353,20871625,51833499
+36000,New York,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,New York-Ship and Boat Building-Ship Building and Repair,15,530,38051844,100058797
+36000,New York,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,New York-Ship and Boat Building-Boat Building and Repair,26,180,7009464,15954237
+36000,New York,State,2021,Ship and Boat Building,4,Total,9,New York-Ship and Boat Building-Total,39,714,46179188,118773820
+36000,New York,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,New York-Tourism and Recreation-Zoos and Aquaria,33,635,38390900,103930549
+36000,New York,State,2021,Tourism and Recreation,5,Boat Dealers,1,New York-Tourism and Recreation-Boat Dealers,149,661,33006701.5,68442293.5
+36000,New York,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,New York-Tourism and Recreation-Eating and Drinking Places,16140,216170,5505554194,10482372533
+36000,New York,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,New York-Tourism and Recreation-Hotels and Lodging Places,694,43136,2280168793,6588947828
+36000,New York,State,2021,Tourism and Recreation,5,Marinas,4,New York-Tourism and Recreation-Marinas,261.5,1787,69668816.5,125349231
+36000,New York,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,New York-Tourism and Recreation-RV Parks and Campgrounds,21,61,1381717,2587925
+36000,New York,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,New York-Tourism and Recreation-Scenic Water Tours,70,218.5,7557778,12125227.5
+36000,New York,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,New York-Tourism and Recreation-Sporting Goods Manufacturing,7,68,3423360,7243262.5
+36000,New York,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,New York-Tourism and Recreation-Amusement and Recreation Services,806,6846,172018000,249025055
+36000,New York,State,2021,Tourism and Recreation,5,Total,9,New York-Tourism and Recreation-Total,18883,268851,7846306372,17218065819
+36000,New York,State,2021,Marine Transportation,6,Marine Freight,1,New York-Marine Transportation-Marine Freight,49.5,1587.5,158719250.5,369516637
+36000,New York,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,New York-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+36000,New York,State,2021,Marine Transportation,6,Marine Transportation Services,3,New York-Marine Transportation-Marine Transportation Services,97,1891,135245037.5,211619411.5
+36000,New York,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,New York-Marine Transportation-Search and Navigation Equipment,59,10233,1023551381,1686217841
+36000,New York,State,2021,Marine Transportation,6,Warehousing,5,New York-Marine Transportation-Warehousing,400.5,9336,394602519.5,675904801.5
+36000,New York,State,2021,Marine Transportation,6,Total,9,New York-Marine Transportation-Total,618,23989,1755398079,3028825870
+36000,New York,State,2021,All Ocean Sectors,9,Total,9,New York-All Ocean Sectors-Total,20345,297887,10488264692,21205737733
+37000,North Carolina,State,2021,Marine Construction,1,Marine Related Construction,1,North Carolina-Marine Construction-Marine Related Construction,94.5,655,30228561,59339612.5
+37000,North Carolina,State,2021,Marine Construction,1,Total,9,North Carolina-Marine Construction-Total,95,658,30312085,59444095
+37000,North Carolina,State,2021,Living Resources,2,Fishing,1,North Carolina-Living Resources-Fishing,-9999,-9999,-9999,-9999
+37000,North Carolina,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,North Carolina-Living Resources-Fish Hatcheries and Aquaculture,24,203,5298115,30611956
+37000,North Carolina,State,2021,Living Resources,2,Seafood Processing,3,North Carolina-Living Resources-Seafood Processing,29,644.5,12528238,106227850
+37000,North Carolina,State,2021,Living Resources,2,Seafood Markets,4,North Carolina-Living Resources-Seafood Markets,101.5,410,7286760.5,14511388.5
+37000,North Carolina,State,2021,Living Resources,2,Total,9,North Carolina-Living Resources-Total,171,1336,30634146,175911039
+37000,North Carolina,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"North Carolina-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+37000,North Carolina,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,North Carolina-Offshore Mineral Extraction-Oil and Gas Exploration and Product,11,22,1283515.5,2195961
+37000,North Carolina,State,2021,Offshore Mineral Extraction,3,Total,9,North Carolina-Offshore Mineral Extraction-Total,19,82,3443168,9363001
+37000,North Carolina,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,North Carolina-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+37000,North Carolina,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,North Carolina-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+37000,North Carolina,State,2021,Ship and Boat Building,4,Total,9,North Carolina-Ship and Boat Building-Total,75,1614,67277569,361408125
+37000,North Carolina,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,North Carolina-Tourism and Recreation-Zoos and Aquaria,11,193,8360174,18139863
+37000,North Carolina,State,2021,Tourism and Recreation,5,Boat Dealers,1,North Carolina-Tourism and Recreation-Boat Dealers,60,313.5,9601451.5,18942269.5
+37000,North Carolina,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,North Carolina-Tourism and Recreation-Eating and Drinking Places,1757,30086,422635027,777258649
+37000,North Carolina,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,North Carolina-Tourism and Recreation-Hotels and Lodging Places,280,4114,74272344,177834392
+37000,North Carolina,State,2021,Tourism and Recreation,5,Marinas,4,North Carolina-Tourism and Recreation-Marinas,59,398,9948619,17413155.5
+37000,North Carolina,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,North Carolina-Tourism and Recreation-RV Parks and Campgrounds,26,213,3851081,9598554
+37000,North Carolina,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,North Carolina-Tourism and Recreation-Scenic Water Tours,57,115.5,2801732,4758037
+37000,North Carolina,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,North Carolina-Tourism and Recreation-Sporting Goods Manufacturing,8,28.5,682371,1766179.5
+37000,North Carolina,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,North Carolina-Tourism and Recreation-Amusement and Recreation Services,155,859,13721129,31318671
+37000,North Carolina,State,2021,Tourism and Recreation,5,Total,9,North Carolina-Tourism and Recreation-Total,2512,38138,577588131,1149220146
+37000,North Carolina,State,2021,Marine Transportation,6,Marine Freight,1,North Carolina-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+37000,North Carolina,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,North Carolina-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+37000,North Carolina,State,2021,Marine Transportation,6,Marine Transportation Services,3,North Carolina-Marine Transportation-Marine Transportation Services,34,800,32951692,52250367.5
+37000,North Carolina,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,North Carolina-Marine Transportation-Search and Navigation Equipment,13,199,11083156,33463177
+37000,North Carolina,State,2021,Marine Transportation,6,Warehousing,5,North Carolina-Marine Transportation-Warehousing,24,340.5,12308248.5,19903347.5
+37000,North Carolina,State,2021,Marine Transportation,6,Total,9,North Carolina-Marine Transportation-Total,104,1825,116808466,244941685
+37000,North Carolina,State,2021,All Ocean Sectors,9,Total,9,North Carolina-All Ocean Sectors-Total,2972,43385,820098191,2065389602
+39000,Ohio,State,2021,Marine Construction,1,Marine Related Construction,1,Ohio-Marine Construction-Marine Related Construction,40.5,443.5,25432537,46610696.5
+39000,Ohio,State,2021,Marine Construction,1,Total,9,Ohio-Marine Construction-Total,40,446,27629513,49142841
+39000,Ohio,State,2021,Living Resources,2,Fishing,1,Ohio-Living Resources-Fishing,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Ohio-Living Resources-Fish Hatcheries and Aquaculture,11,60,1739572,15310645
+39000,Ohio,State,2021,Living Resources,2,Seafood Processing,3,Ohio-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Living Resources,2,Seafood Markets,4,Ohio-Living Resources-Seafood Markets,24,221,5149624,11501221
+39000,Ohio,State,2021,Living Resources,2,Total,9,Ohio-Living Resources-Total,43,374,9312638,34311384
+39000,Ohio,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Ohio-Offshore Mineral Extraction-Limestone, Sand and Gravel",8,46,1825979,8598769
+39000,Ohio,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Ohio-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-4979.5,-4924,5237137.5,58805380.5
+39000,Ohio,State,2021,Offshore Mineral Extraction,3,Total,9,Ohio-Offshore Mineral Extraction-Total,46,231,11584124,52048793
+39000,Ohio,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Ohio-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Ohio-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Ship and Boat Building,4,Total,9,Ohio-Ship and Boat Building-Total,15,255,12453168,42593751
+39000,Ohio,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Ohio-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Tourism and Recreation,5,Boat Dealers,1,Ohio-Tourism and Recreation-Boat Dealers,30.5,235.5,9699624.5,22740231.5
+39000,Ohio,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Ohio-Tourism and Recreation-Eating and Drinking Places,1713,27027,388838047,745984506
+39000,Ohio,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Ohio-Tourism and Recreation-Hotels and Lodging Places,127,4813,89837848,230575523
+39000,Ohio,State,2021,Tourism and Recreation,5,Marinas,4,Ohio-Tourism and Recreation-Marinas,87,835.5,22439376.5,76006277.5
+39000,Ohio,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Ohio-Tourism and Recreation-RV Parks and Campgrounds,20,181,2867987,7147553
+39000,Ohio,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Ohio-Tourism and Recreation-Scenic Water Tours,7,53.5,1055111.5,1718082.5
+39000,Ohio,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Ohio-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Ohio-Tourism and Recreation-Amusement and Recreation Services,85,1103,21729064,74717414
+39000,Ohio,State,2021,Tourism and Recreation,5,Total,9,Ohio-Tourism and Recreation-Total,2129,34693,574280531,1330643706
+39000,Ohio,State,2021,Marine Transportation,6,Marine Freight,1,Ohio-Marine Transportation-Marine Freight,14,273,27024870.5,62630876
+39000,Ohio,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Ohio-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+39000,Ohio,State,2021,Marine Transportation,6,Marine Transportation Services,3,Ohio-Marine Transportation-Marine Transportation Services,40,842.5,38502699,66185895.5
+39000,Ohio,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Ohio-Marine Transportation-Search and Navigation Equipment,18,1312,92835099,162448872
+39000,Ohio,State,2021,Marine Transportation,6,Warehousing,5,Ohio-Marine Transportation-Warehousing,140.5,5505,241893624,375854056.5
+39000,Ohio,State,2021,Marine Transportation,6,Total,9,Ohio-Marine Transportation-Total,223,8239,421210016,730551826
+39000,Ohio,State,2021,All Ocean Sectors,9,Total,9,Ohio-All Ocean Sectors-Total,2494,46245,1047056507,2022147138
+41000,Oregon,State,2021,Marine Construction,1,Marine Related Construction,1,Oregon-Marine Construction-Marine Related Construction,55,581,42755227,67816948
+41000,Oregon,State,2021,Marine Construction,1,Total,9,Oregon-Marine Construction-Total,54,570,43299225,68228366
+41000,Oregon,State,2021,Living Resources,2,Fishing,1,Oregon-Living Resources-Fishing,144,268,16081138,27531324.5
+41000,Oregon,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Oregon-Living Resources-Fish Hatcheries and Aquaculture,50,284,10213561,28345344
+41000,Oregon,State,2021,Living Resources,2,Seafood Processing,3,Oregon-Living Resources-Seafood Processing,29,1133,32382419,75255186.5
+41000,Oregon,State,2021,Living Resources,2,Seafood Markets,4,Oregon-Living Resources-Seafood Markets,32.5,190.5,4148703,7537636.5
+41000,Oregon,State,2021,Living Resources,2,Total,9,Oregon-Living Resources-Total,257,1932,68693879,152325274
+41000,Oregon,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Oregon-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+41000,Oregon,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Oregon-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+41000,Oregon,State,2021,Offshore Mineral Extraction,3,Total,9,Oregon-Offshore Mineral Extraction-Total,23,445,23612996,68287588
+41000,Oregon,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Oregon-Ship and Boat Building-Ship Building and Repair,22,1147,75693605,96316083
+41000,Oregon,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Oregon-Ship and Boat Building-Boat Building and Repair,29,380,16716047,22942803
+41000,Oregon,State,2021,Ship and Boat Building,4,Total,9,Oregon-Ship and Boat Building-Total,52,1638,92038661,146232314
+41000,Oregon,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Oregon-Tourism and Recreation-Zoos and Aquaria,22,378,11454025,25706766
+41000,Oregon,State,2021,Tourism and Recreation,5,Boat Dealers,1,Oregon-Tourism and Recreation-Boat Dealers,21.5,198,7813761,14097276
+41000,Oregon,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Oregon-Tourism and Recreation-Eating and Drinking Places,1176,14794,246794977,442052975
+41000,Oregon,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Oregon-Tourism and Recreation-Hotels and Lodging Places,322,6112,113827720,249443185
+41000,Oregon,State,2021,Tourism and Recreation,5,Marinas,4,Oregon-Tourism and Recreation-Marinas,24,141.5,4760478.5,8540215
+41000,Oregon,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Oregon-Tourism and Recreation-RV Parks and Campgrounds,65,389,6940515,14758483
+41000,Oregon,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Oregon-Tourism and Recreation-Scenic Water Tours,18.5,72,1885213.5,3119221.5
+41000,Oregon,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Oregon-Tourism and Recreation-Sporting Goods Manufacturing,8,31.5,856247.5,1966941.5
+41000,Oregon,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Oregon-Tourism and Recreation-Amusement and Recreation Services,69,325,6416787,11852313
+41000,Oregon,State,2021,Tourism and Recreation,5,Total,9,Oregon-Tourism and Recreation-Total,1732,22598,427683703,819953654
+41000,Oregon,State,2021,Marine Transportation,6,Marine Freight,1,Oregon-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+41000,Oregon,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Oregon-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+41000,Oregon,State,2021,Marine Transportation,6,Marine Transportation Services,3,Oregon-Marine Transportation-Marine Transportation Services,59,1734,114011902.5,188459333
+41000,Oregon,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Oregon-Marine Transportation-Search and Navigation Equipment,10,939,89138341,317994096
+41000,Oregon,State,2021,Marine Transportation,6,Warehousing,5,Oregon-Marine Transportation-Warehousing,95,2330.5,92358012.5,145800119.5
+41000,Oregon,State,2021,Marine Transportation,6,Total,9,Oregon-Marine Transportation-Total,174,5095,346527941,737588404
+41000,Oregon,State,2021,All Ocean Sectors,9,Total,9,Oregon-All Ocean Sectors-Total,2313,33618,966467941,1953366980
+42000,Pennsylvania,State,2021,Marine Construction,1,Marine Related Construction,1,Pennsylvania-Marine Construction-Marine Related Construction,17.5,144.5,9524401.5,16905226.5
+42000,Pennsylvania,State,2021,Marine Construction,1,Total,9,Pennsylvania-Marine Construction-Total,17,135,9270706,16736887
+42000,Pennsylvania,State,2021,Living Resources,2,Fishing,1,Pennsylvania-Living Resources-Fishing,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Pennsylvania-Living Resources-Fish Hatcheries and Aquaculture,21,236,8059137,28726502
+42000,Pennsylvania,State,2021,Living Resources,2,Seafood Processing,3,Pennsylvania-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Living Resources,2,Seafood Markets,4,Pennsylvania-Living Resources-Seafood Markets,105.5,576.5,11973796,25010820.5
+42000,Pennsylvania,State,2021,Living Resources,2,Total,9,Pennsylvania-Living Resources-Total,140,925,24276610,81425260
+42000,Pennsylvania,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Pennsylvania-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Pennsylvania-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Offshore Mineral Extraction,3,Total,9,Pennsylvania-Offshore Mineral Extraction-Total,25,128,9584382,28466097
+42000,Pennsylvania,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Pennsylvania-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Pennsylvania-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Ship and Boat Building,4,Total,9,Pennsylvania-Ship and Boat Building-Total,14,1070,61109348,121484675
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Pennsylvania-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Boat Dealers,1,Pennsylvania-Tourism and Recreation-Boat Dealers,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Pennsylvania-Tourism and Recreation-Eating and Drinking Places,1914,24138,468811445,1012371188
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Pennsylvania-Tourism and Recreation-Hotels and Lodging Places,99,6691,212453865,544321961
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Marinas,4,Pennsylvania-Tourism and Recreation-Marinas,9,130.5,2734935.5,6251521
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Pennsylvania-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Pennsylvania-Tourism and Recreation-Scenic Water Tours,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Pennsylvania-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Pennsylvania-Tourism and Recreation-Amusement and Recreation Services,40,290,5359705,9290659
+42000,Pennsylvania,State,2021,Tourism and Recreation,5,Total,9,Pennsylvania-Tourism and Recreation-Total,2120,32020,724899396,1534632935
+42000,Pennsylvania,State,2021,Marine Transportation,6,Marine Freight,1,Pennsylvania-Marine Transportation-Marine Freight,17.5,232,20723530,36909490
+42000,Pennsylvania,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Pennsylvania-Marine Transportation-Marine Passenger Transportation,0,0,0,0
+42000,Pennsylvania,State,2021,Marine Transportation,6,Marine Transportation Services,3,Pennsylvania-Marine Transportation-Marine Transportation Services,51,1729,87294684,131452203.5
+42000,Pennsylvania,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Pennsylvania-Marine Transportation-Search and Navigation Equipment,30,1700,121592358,287298183
+42000,Pennsylvania,State,2021,Marine Transportation,6,Warehousing,5,Pennsylvania-Marine Transportation-Warehousing,99,5384.5,208551718.5,327238271
+42000,Pennsylvania,State,2021,Marine Transportation,6,Total,9,Pennsylvania-Marine Transportation-Total,202,9538,448855875,840488148
+42000,Pennsylvania,State,2021,All Ocean Sectors,9,Total,9,Pennsylvania-All Ocean Sectors-Total,2500,42987,1336596642,2815734043
+44000,Rhode Island,State,2021,Marine Construction,1,Marine Related Construction,1,Rhode Island-Marine Construction-Marine Related Construction,22.5,105.5,7468712.5,15030031
+44000,Rhode Island,State,2021,Marine Construction,1,Total,9,Rhode Island-Marine Construction-Total,22,107,7911217,15323406
+44000,Rhode Island,State,2021,Living Resources,2,Fishing,1,Rhode Island-Living Resources-Fishing,28,73,5636809.5,53289765.5
+44000,Rhode Island,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Rhode Island-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Living Resources,2,Seafood Processing,3,Rhode Island-Living Resources-Seafood Processing,9.5,238.5,11025190,19802305.5
+44000,Rhode Island,State,2021,Living Resources,2,Seafood Markets,4,Rhode Island-Living Resources-Seafood Markets,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Living Resources,2,Total,9,Rhode Island-Living Resources-Total,75,480,20422550,86947589
+44000,Rhode Island,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Rhode Island-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Rhode Island-Offshore Mineral Extraction-Oil and Gas Exploration and Product,0,0,0,0
+44000,Rhode Island,State,2021,Offshore Mineral Extraction,3,Total,9,Rhode Island-Offshore Mineral Extraction-Total,17,145,8071345,28404902
+44000,Rhode Island,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Rhode Island-Ship and Boat Building-Ship Building and Repair,9,2469,132099791,217803010
+44000,Rhode Island,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Rhode Island-Ship and Boat Building-Boat Building and Repair,36,608,29708552,49256707
+44000,Rhode Island,State,2021,Ship and Boat Building,4,Total,9,Rhode Island-Ship and Boat Building-Total,46,3492,177696390,283224189
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Rhode Island-Tourism and Recreation-Zoos and Aquaria,22,758,23941748,64141116
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Boat Dealers,1,Rhode Island-Tourism and Recreation-Boat Dealers,56.5,323.5,15294897,32734154
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Rhode Island-Tourism and Recreation-Eating and Drinking Places,1663,25836,428289920,863315795
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Rhode Island-Tourism and Recreation-Hotels and Lodging Places,142,3766,96344980,381676928
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Marinas,4,Rhode Island-Tourism and Recreation-Marinas,70.5,702.5,25776205.5,54063963.5
+44000,Rhode Island,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Rhode Island-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Rhode Island-Tourism and Recreation-Scenic Water Tours,36.5,127,3250958.5,5317052
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Rhode Island-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Rhode Island-Tourism and Recreation-Amusement and Recreation Services,119,835,15662932,31183732
+44000,Rhode Island,State,2021,Tourism and Recreation,5,Total,9,Rhode Island-Tourism and Recreation-Total,2132,32329,646755276,1530028158
+44000,Rhode Island,State,2021,Marine Transportation,6,Marine Freight,1,Rhode Island-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Rhode Island-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Marine Transportation,6,Marine Transportation Services,3,Rhode Island-Marine Transportation-Marine Transportation Services,20,266,11024481,18491291.5
+44000,Rhode Island,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Rhode Island-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+44000,Rhode Island,State,2021,Marine Transportation,6,Warehousing,5,Rhode Island-Marine Transportation-Warehousing,18,1048.5,45822989,63773368.5
+44000,Rhode Island,State,2021,Marine Transportation,6,Total,9,Rhode Island-Marine Transportation-Total,53,2661,182931234,317659121
+44000,Rhode Island,State,2021,All Ocean Sectors,9,Total,9,Rhode Island-All Ocean Sectors-Total,2355,39611,1079135518,2394354562
+45000,South Carolina,State,2021,Marine Construction,1,Marine Related Construction,1,South Carolina-Marine Construction-Marine Related Construction,66,486,26202647.5,54371987
+45000,South Carolina,State,2021,Marine Construction,1,Total,9,South Carolina-Marine Construction-Total,66,511,27862877,57371707
+45000,South Carolina,State,2021,Living Resources,2,Fishing,1,South Carolina-Living Resources-Fishing,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,South Carolina-Living Resources-Fish Hatcheries and Aquaculture,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Living Resources,2,Seafood Processing,3,South Carolina-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Living Resources,2,Seafood Markets,4,South Carolina-Living Resources-Seafood Markets,59.5,254,5219127.5,11210051.5
+45000,South Carolina,State,2021,Living Resources,2,Total,9,South Carolina-Living Resources-Total,78,303,6382925,14337797
+45000,South Carolina,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"South Carolina-Offshore Mineral Extraction-Limestone, Sand and Gravel",8,40,2153488,10724871
+45000,South Carolina,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,South Carolina-Offshore Mineral Extraction-Oil and Gas Exploration and Product,13.5,103,4966791.5,8922095.5
+45000,South Carolina,State,2021,Offshore Mineral Extraction,3,Total,9,South Carolina-Offshore Mineral Extraction-Total,21,127,5232059,15532346
+45000,South Carolina,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,South Carolina-Ship and Boat Building-Ship Building and Repair,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,South Carolina-Ship and Boat Building-Boat Building and Repair,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Ship and Boat Building,4,Total,9,South Carolina-Ship and Boat Building-Total,38,2665,105385434,223447971
+45000,South Carolina,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,South Carolina-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Tourism and Recreation,5,Boat Dealers,1,South Carolina-Tourism and Recreation-Boat Dealers,33,536.5,15498165.5,33325679.5
+45000,South Carolina,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,South Carolina-Tourism and Recreation-Eating and Drinking Places,2034,41626,689935745,1327441485
+45000,South Carolina,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,South Carolina-Tourism and Recreation-Hotels and Lodging Places,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Tourism and Recreation,5,Marinas,4,South Carolina-Tourism and Recreation-Marinas,45,338.5,7853152.5,15503676
+45000,South Carolina,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,South Carolina-Tourism and Recreation-RV Parks and Campgrounds,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,South Carolina-Tourism and Recreation-Scenic Water Tours,44,210.5,4853524,8503740
+45000,South Carolina,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,South Carolina-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,South Carolina-Tourism and Recreation-Amusement and Recreation Services,166,1041,18971914,47723674
+45000,South Carolina,State,2021,Tourism and Recreation,5,Total,9,South Carolina-Tourism and Recreation-Total,2794,61527,1206084123,3253236293
+45000,South Carolina,State,2021,Marine Transportation,6,Marine Freight,1,South Carolina-Marine Transportation-Marine Freight,24.5,192,12012598,28315011.5
+45000,South Carolina,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,South Carolina-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Marine Transportation,6,Marine Transportation Services,3,South Carolina-Marine Transportation-Marine Transportation Services,51,2216,95058410,158760644
+45000,South Carolina,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,South Carolina-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+45000,South Carolina,State,2021,Marine Transportation,6,Warehousing,5,South Carolina-Marine Transportation-Warehousing,58.5,1692,59141722.5,87442062.5
+45000,South Carolina,State,2021,Marine Transportation,6,Total,9,South Carolina-Marine Transportation-Total,153,4378,177234889,347204871
+45000,South Carolina,State,2021,All Ocean Sectors,9,Total,9,South Carolina-All Ocean Sectors-Total,3108,70543,1509037005,3823556140
+48000,Texas,State,2021,Marine Construction,1,Marine Related Construction,1,Texas-Marine Construction-Marine Related Construction,166.5,7149,480918496,895065097.5
+48000,Texas,State,2021,Marine Construction,1,Total,9,Texas-Marine Construction-Total,167,7192,487645590,901081687
+48000,Texas,State,2021,Living Resources,2,Fishing,1,Texas-Living Resources-Fishing,82.5,134,3693120.5,11795448.5
+48000,Texas,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Texas-Living Resources-Fish Hatcheries and Aquaculture,74,335,9494996,51285961
+48000,Texas,State,2021,Living Resources,2,Seafood Processing,3,Texas-Living Resources-Seafood Processing,38,1534,46200901,127200111
+48000,Texas,State,2021,Living Resources,2,Seafood Markets,4,Texas-Living Resources-Seafood Markets,69,329.5,9197094.5,20212352
+48000,Texas,State,2021,Living Resources,2,Total,9,Texas-Living Resources-Total,267,2443,69789068,234008133
+48000,Texas,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Texas-Offshore Mineral Extraction-Limestone, Sand and Gravel",37,596,29670809,117492162
+48000,Texas,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Texas-Offshore Mineral Extraction-Oil and Gas Exploration and Product,2141,77292.5,13320923060.5,69140943842.5
+48000,Texas,State,2021,Offshore Mineral Extraction,3,Total,9,Texas-Offshore Mineral Extraction-Total,2233,88123,13622865020,71657428913
+48000,Texas,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Texas-Ship and Boat Building-Ship Building and Repair,78,4177,250035992,534107099
+48000,Texas,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Texas-Ship and Boat Building-Boat Building and Repair,37,858,35139124,72925731
+48000,Texas,State,2021,Ship and Boat Building,4,Total,9,Texas-Ship and Boat Building-Total,117,4804,260971938,630462063
+48000,Texas,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Texas-Tourism and Recreation-Zoos and Aquaria,17,1712,40422662,62015953
+48000,Texas,State,2021,Tourism and Recreation,5,Boat Dealers,1,Texas-Tourism and Recreation-Boat Dealers,-9999,-9999,-9999,-9999
+48000,Texas,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Texas-Tourism and Recreation-Eating and Drinking Places,1591,34483,517127070,1006131537
+48000,Texas,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Texas-Tourism and Recreation-Hotels and Lodging Places,330,5137,107828412,256827340
+48000,Texas,State,2021,Tourism and Recreation,5,Marinas,4,Texas-Tourism and Recreation-Marinas,-9999,-9999,-9999,-9999
+48000,Texas,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Texas-Tourism and Recreation-RV Parks and Campgrounds,31,124,1537191,5164217
+48000,Texas,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Texas-Tourism and Recreation-Scenic Water Tours,28,309.5,5558086.5,8498604.5
+48000,Texas,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Texas-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+48000,Texas,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Texas-Tourism and Recreation-Amusement and Recreation Services,80,569,11829125,18728343
+48000,Texas,State,2021,Tourism and Recreation,5,Total,9,Texas-Tourism and Recreation-Total,2256,44149,765103333,1580147238
+48000,Texas,State,2021,Marine Transportation,6,Marine Freight,1,Texas-Marine Transportation-Marine Freight,87,1983,195125147,456503704.5
+48000,Texas,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Texas-Marine Transportation-Marine Passenger Transportation,10.5,44,2910004.5,8024200.5
+48000,Texas,State,2021,Marine Transportation,6,Marine Transportation Services,3,Texas-Marine Transportation-Marine Transportation Services,308.5,12747.5,638738050.5,930967816
+48000,Texas,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Texas-Marine Transportation-Search and Navigation Equipment,-9999,-9999,-9999,-9999
+48000,Texas,State,2021,Marine Transportation,6,Warehousing,5,Texas-Marine Transportation-Warehousing,256.5,8122.5,354984893,736718424
+48000,Texas,State,2021,Marine Transportation,6,Total,9,Texas-Marine Transportation-Total,723,30745,1935627561,3924226801
+48000,Texas,State,2021,All Ocean Sectors,9,Total,9,Texas-All Ocean Sectors-Total,5928,178786,17584164430,78765362434
+51000,Virginia,State,2021,Marine Construction,1,Marine Related Construction,1,Virginia-Marine Construction-Marine Related Construction,159.5,2115.5,135974383.5,259210449.5
+51000,Virginia,State,2021,Marine Construction,1,Total,9,Virginia-Marine Construction-Total,156,2139,137486398,266346645
+51000,Virginia,State,2021,Living Resources,2,Fishing,1,Virginia-Living Resources-Fishing,44,103.5,3307198.5,10660449.5
+51000,Virginia,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Virginia-Living Resources-Fish Hatcheries and Aquaculture,27,319,12048574,70586124
+51000,Virginia,State,2021,Living Resources,2,Seafood Processing,3,Virginia-Living Resources-Seafood Processing,37,1449.5,53764280,528070763.5
+51000,Virginia,State,2021,Living Resources,2,Seafood Markets,4,Virginia-Living Resources-Seafood Markets,90.5,450.5,8630611.5,17441690.5
+51000,Virginia,State,2021,Living Resources,2,Total,9,Virginia-Living Resources-Total,216,2310,76886050,622040427
+51000,Virginia,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Virginia-Offshore Mineral Extraction-Limestone, Sand and Gravel",17,152,8521371,35387833
+51000,Virginia,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Virginia-Offshore Mineral Extraction-Oil and Gas Exploration and Product,35.5,150,12916668,23617342
+51000,Virginia,State,2021,Offshore Mineral Extraction,3,Total,9,Virginia-Offshore Mineral Extraction-Total,53,332,23087774,61698124
+51000,Virginia,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Virginia-Ship and Boat Building-Ship Building and Repair,47,35190,2388194657,3299458494
+51000,Virginia,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Virginia-Ship and Boat Building-Boat Building and Repair,12,75,2782461,3844379
+51000,Virginia,State,2021,Ship and Boat Building,4,Total,9,Virginia-Ship and Boat Building-Total,61,35260,2476519592,3309840828
+51000,Virginia,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Virginia-Tourism and Recreation-Zoos and Aquaria,-9999,-9999,-9999,-9999
+51000,Virginia,State,2021,Tourism and Recreation,5,Boat Dealers,1,Virginia-Tourism and Recreation-Boat Dealers,46.5,374,16403489.5,34489934
+51000,Virginia,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Virginia-Tourism and Recreation-Eating and Drinking Places,2626,48390,676050231,1284703915
+51000,Virginia,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Virginia-Tourism and Recreation-Hotels and Lodging Places,359,9348,189607336,472954809
+51000,Virginia,State,2021,Tourism and Recreation,5,Marinas,4,Virginia-Tourism and Recreation-Marinas,66.5,457,12560766,17657319.5
+51000,Virginia,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Virginia-Tourism and Recreation-RV Parks and Campgrounds,27,304,6259914,15455818
+51000,Virginia,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Virginia-Tourism and Recreation-Scenic Water Tours,18,165.5,3217162.5,5012039
+51000,Virginia,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Virginia-Tourism and Recreation-Sporting Goods Manufacturing,-9999,-9999,-9999,-9999
+51000,Virginia,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Virginia-Tourism and Recreation-Amusement and Recreation Services,153,3215,54101244,74297731
+51000,Virginia,State,2021,Tourism and Recreation,5,Total,9,Virginia-Tourism and Recreation-Total,3257,63640,979767337,1958027614
+51000,Virginia,State,2021,Marine Transportation,6,Marine Freight,1,Virginia-Marine Transportation-Marine Freight,24.5,1062.5,170886408.5,429981639.5
+51000,Virginia,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Virginia-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+51000,Virginia,State,2021,Marine Transportation,6,Marine Transportation Services,3,Virginia-Marine Transportation-Marine Transportation Services,72,3615,241072581,371593687
+51000,Virginia,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Virginia-Marine Transportation-Search and Navigation Equipment,42,2816,328532090,589637603
+51000,Virginia,State,2021,Marine Transportation,6,Warehousing,5,Virginia-Marine Transportation-Warehousing,200,9359,335712299.5,536103423
+51000,Virginia,State,2021,Marine Transportation,6,Total,9,Virginia-Marine Transportation-Total,347,18793,1118888923,2125692176
+51000,Virginia,State,2021,All Ocean Sectors,9,Total,9,Virginia-All Ocean Sectors-Total,4133,119340,4850518426,8112330721
+53000,Washington,State,2021,Marine Construction,1,Marine Related Construction,1,Washington-Marine Construction-Marine Related Construction,159,2484.5,209154149,397247274
+53000,Washington,State,2021,Marine Construction,1,Total,9,Washington-Marine Construction-Total,159,2570,213972011,411504542
+53000,Washington,State,2021,Living Resources,2,Fishing,1,Washington-Living Resources-Fishing,354.5,1628,143361265.5,347926107.5
+53000,Washington,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Washington-Living Resources-Fish Hatcheries and Aquaculture,80,844,26837003,82297562
+53000,Washington,State,2021,Living Resources,2,Seafood Processing,3,Washington-Living Resources-Seafood Processing,106.5,6578,385083247.5,819168883
+53000,Washington,State,2021,Living Resources,2,Seafood Markets,4,Washington-Living Resources-Seafood Markets,48.5,339.5,11785598.5,29048070
+53000,Washington,State,2021,Living Resources,2,Total,9,Washington-Living Resources-Total,588,9690,594640326,1367953615
+53000,Washington,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Washington-Offshore Mineral Extraction-Limestone, Sand and Gravel",47,749,43625679,158796813
+53000,Washington,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Washington-Offshore Mineral Extraction-Oil and Gas Exploration and Product,28,326,29894095,52591480
+53000,Washington,State,2021,Offshore Mineral Extraction,3,Total,9,Washington-Offshore Mineral Extraction-Total,73,1032,59699122,188528068
+53000,Washington,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Washington-Ship and Boat Building-Ship Building and Repair,47,13813,1024904576,3342951334
+53000,Washington,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Washington-Ship and Boat Building-Boat Building and Repair,98,2427,118383577,375761533
+53000,Washington,State,2021,Ship and Boat Building,4,Total,9,Washington-Ship and Boat Building-Total,145,17101,1163730383,3819414376
+53000,Washington,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Washington-Tourism and Recreation-Zoos and Aquaria,45,1024,42907011,101208537
+53000,Washington,State,2021,Tourism and Recreation,5,Boat Dealers,1,Washington-Tourism and Recreation-Boat Dealers,85,516,19854346,48498297
+53000,Washington,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Washington-Tourism and Recreation-Eating and Drinking Places,4082,54439,976428216,2164676401
+53000,Washington,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Washington-Tourism and Recreation-Hotels and Lodging Places,442,10544,275241297,1022027809
+53000,Washington,State,2021,Tourism and Recreation,5,Marinas,4,Washington-Tourism and Recreation-Marinas,69.5,481,16227776,21517267
+53000,Washington,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Washington-Tourism and Recreation-RV Parks and Campgrounds,53,324,6351177,23012575
+53000,Washington,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Washington-Tourism and Recreation-Scenic Water Tours,44,449.5,19569912,31022009
+53000,Washington,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Washington-Tourism and Recreation-Sporting Goods Manufacturing,19,898.5,43792993.5,79618387
+53000,Washington,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Washington-Tourism and Recreation-Amusement and Recreation Services,263,1625,24547419,41412222
+53000,Washington,State,2021,Tourism and Recreation,5,Total,9,Washington-Tourism and Recreation-Total,5125,70512,1533620530,3687754775
+53000,Washington,State,2021,Marine Transportation,6,Marine Freight,1,Washington-Marine Transportation-Marine Freight,29,1353,112662596,219185857
+53000,Washington,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Washington-Marine Transportation-Marine Passenger Transportation,18,3236,203226313,401059086.5
+53000,Washington,State,2021,Marine Transportation,6,Marine Transportation Services,3,Washington-Marine Transportation-Marine Transportation Services,167.5,6976,563327095,917956707
+53000,Washington,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Washington-Marine Transportation-Search and Navigation Equipment,26,1765,155895256,330690710
+53000,Washington,State,2021,Marine Transportation,6,Warehousing,5,Washington-Marine Transportation-Warehousing,188.5,6526.5,337150951,510422627.5
+53000,Washington,State,2021,Marine Transportation,6,Total,9,Washington-Marine Transportation-Total,451,19798,1387348627,2399019796
+53000,Washington,State,2021,All Ocean Sectors,9,Total,9,Washington-All Ocean Sectors-Total,6525,120462,4863822478,11723720963
+55000,Wisconsin,State,2021,Marine Construction,1,Marine Related Construction,1,Wisconsin-Marine Construction-Marine Related Construction,27.5,148,10532118.5,18583827
+55000,Wisconsin,State,2021,Marine Construction,1,Total,9,Wisconsin-Marine Construction-Total,27,146,10219996,18031301
+55000,Wisconsin,State,2021,Living Resources,2,Fishing,1,Wisconsin-Living Resources-Fishing,10,30,769718.5,2568153
+55000,Wisconsin,State,2021,Living Resources,2,Fish Hatcheries and Aquaculture,2,Wisconsin-Living Resources-Fish Hatcheries and Aquaculture,7,50,1184320,8220441
+55000,Wisconsin,State,2021,Living Resources,2,Seafood Processing,3,Wisconsin-Living Resources-Seafood Processing,-9999,-9999,-9999,-9999
+55000,Wisconsin,State,2021,Living Resources,2,Seafood Markets,4,Wisconsin-Living Resources-Seafood Markets,12.5,89,1509135,3250887.5
+55000,Wisconsin,State,2021,Living Resources,2,Total,9,Wisconsin-Living Resources-Total,34,300,7048857,28747537
+55000,Wisconsin,State,2021,Offshore Mineral Extraction,3,"Limestone, Sand and Gravel",1,"Wisconsin-Offshore Mineral Extraction-Limestone, Sand and Gravel",-9999,-9999,-9999,-9999
+55000,Wisconsin,State,2021,Offshore Mineral Extraction,3,Oil and Gas Exploration and Product,2,Wisconsin-Offshore Mineral Extraction-Oil and Gas Exploration and Product,-9999,-9999,-9999,-9999
+55000,Wisconsin,State,2021,Offshore Mineral Extraction,3,Total,9,Wisconsin-Offshore Mineral Extraction-Total,22,129,6942563,23744147
+55000,Wisconsin,State,2021,Ship and Boat Building,4,Ship Building and Repair,1,Wisconsin-Ship and Boat Building-Ship Building and Repair,9,2039,101094217,276338221
+55000,Wisconsin,State,2021,Ship and Boat Building,4,Boat Building and Repair,2,Wisconsin-Ship and Boat Building-Boat Building and Repair,18,926,35340011,99812845
+55000,Wisconsin,State,2021,Ship and Boat Building,4,Total,9,Wisconsin-Ship and Boat Building-Total,28,3030,154265209,377725247
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Zoos and Aquaria,0,Wisconsin-Tourism and Recreation-Zoos and Aquaria,8,180,6223574,12130968
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Boat Dealers,1,Wisconsin-Tourism and Recreation-Boat Dealers,21,167.5,6210471,13418304.5
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Eating and Drinking Places,2,Wisconsin-Tourism and Recreation-Eating and Drinking Places,1367,24647,328086080,651024241
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Hotels and Lodging Places,3,Wisconsin-Tourism and Recreation-Hotels and Lodging Places,211,4473,80644223,197177401
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Marinas,4,Wisconsin-Tourism and Recreation-Marinas,35.5,333.5,11008066,16421489.5
+55000,Wisconsin,State,2021,Tourism and Recreation,5,RV Parks and Campgrounds,5,Wisconsin-Tourism and Recreation-RV Parks and Campgrounds,12,48,767503,1953886
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Scenic Water Tours,6,Wisconsin-Tourism and Recreation-Scenic Water Tours,10,27,542721,1015070.5
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Sporting Goods Manufacturing,7,Wisconsin-Tourism and Recreation-Sporting Goods Manufacturing,9,271,9576347,20788192.5
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Amusement and Recreation Services,8,Wisconsin-Tourism and Recreation-Amusement and Recreation Services,87,610,9152781,13991712
+55000,Wisconsin,State,2021,Tourism and Recreation,5,Total,9,Wisconsin-Tourism and Recreation-Total,1770,30747,461908462,969674855
+55000,Wisconsin,State,2021,Marine Transportation,6,Marine Freight,1,Wisconsin-Marine Transportation-Marine Freight,-9999,-9999,-9999,-9999
+55000,Wisconsin,State,2021,Marine Transportation,6,Marine Passenger Transportation,2,Wisconsin-Marine Transportation-Marine Passenger Transportation,-9999,-9999,-9999,-9999
+55000,Wisconsin,State,2021,Marine Transportation,6,Marine Transportation Services,3,Wisconsin-Marine Transportation-Marine Transportation Services,21.5,289.5,15073595,26678110.5
+55000,Wisconsin,State,2021,Marine Transportation,6,Search and Navigation Equipment,4,Wisconsin-Marine Transportation-Search and Navigation Equipment,11,519,32927417,81742825
+55000,Wisconsin,State,2021,Marine Transportation,6,Warehousing,5,Wisconsin-Marine Transportation-Warehousing,97,3123,119167874.5,189600170.5
+55000,Wisconsin,State,2021,Marine Transportation,6,Total,9,Wisconsin-Marine Transportation-Total,141,4242,183835262,421538788
+55000,Wisconsin,State,2021,All Ocean Sectors,9,Total,9,Wisconsin-All Ocean Sectors-Total,2028,40857,905549975,1828524220

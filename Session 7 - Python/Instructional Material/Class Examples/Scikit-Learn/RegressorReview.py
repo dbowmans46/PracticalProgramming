@@ -123,9 +123,9 @@ from sklearn.preprocessing import LabelBinarizer
 
 lb = LabelBinarizer()
 for col_name in ['GeoName', 'OceanSector', 'OceanIndustry']:
-    temp_col_array = lb.fit_transform(data_df[col_name])
-    temp_df = pd.DataFrame(data=temp_col_array, columns=lb.classes_)
-    data_df = pd.concat([data_df.reset_index(drop=True), temp_df.reset_index(drop=True)], axis=1)
+    label_binarized__array = lb.fit_transform(data_df[col_name])
+    label_binarized_df = pd.DataFrame(data=label_binarized__array, columns=lb.classes_)
+    data_df = pd.concat([data_df.reset_index(drop=True), label_binarized_df.reset_index(drop=True)], axis=1)
     data_df = data_df.drop(col_name, axis=1)
 
 # Let's do a quick check to make sure the new columns exist as expected
@@ -133,9 +133,9 @@ print(data_df.columns)
 
 # Finally, let's get our testing and training data
 data_points_df = data_df.drop(['Employment'], axis=1, inplace=False)
-targets_df = list(data_df['Employment'])
+targets = list(data_df['Employment'])
 data_train, data_test, target_train, target_test = \
-    model_selection.train_test_split(data_points_df, targets_df, random_state=0)
+    model_selection.train_test_split(data_points_df, targets, random_state=0)
 
 ###############################################################################
 #                              Regressor Selection                            #
@@ -205,7 +205,7 @@ for index in range(len(predictions)):
 
 # Next, we need to get the total sum of squares (TSS), calculated as the 
 # differences between the actual targets and the mean of the actual targets
-import numpy as np      
+import numpy as np
 target_test_mean_val = np.mean(target_test)
 TSS = 0
 for index in range(len(target_test)):
@@ -270,12 +270,12 @@ lasso_predictions = lasso_model.predict(new_data_df)
 
 # These values all correspond respectively with the rows of our DataFrame.  We
 # can add them back in to the new data, if we want all the data together.
-new_data_and_predictions_df = new_data_df
-new_data_and_predictions_df['knn_predictions'] = knn_predictions
-new_data_and_predictions_df['dec_tree_predictions'] = dec_tree_predictions
-new_data_and_predictions_df['l_reg_predictions'] = l_reg_predictions
-new_data_and_predictions_df['ridge_predictions'] = ridge_predictions
-new_data_and_predictions_df['lasso_predictions'] = lasso_predictions
+# new_data_and_predictions_df = new_data_df
+# new_data_and_predictions_df['knn_predictions'] = knn_predictions
+# new_data_and_predictions_df['dec_tree_predictions'] = dec_tree_predictions
+# new_data_and_predictions_df['l_reg_predictions'] = l_reg_predictions
+# new_data_and_predictions_df['ridge_predictions'] = ridge_predictions
+# new_data_and_predictions_df['lasso_predictions'] = lasso_predictions
 
 # Notice that there are some negative values for predicitons.  These may have
 # been created from the -9999 values (if any were not filtered), or possibly

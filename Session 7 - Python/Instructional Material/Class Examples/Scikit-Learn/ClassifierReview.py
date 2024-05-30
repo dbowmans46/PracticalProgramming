@@ -226,61 +226,61 @@ target_predictions = knn_model.predict(data_test)
 #                                   Metrics                                   #
 ###############################################################################
 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-# ml_model = knn_model
-# # ml_model = dec_tree_model
-# # ml_model = lr_model
-# # ml_model = svc_model
-# # ml_model = nonlinear_svc_model
-# # ml_model = voting_model
-# # ml_model = bagger_model
-# # ml_model = paster_model
-# # ml_model = rf_model
-# # ml_model = ada_model
-# # ml_model = gbt_model
-
-
-# # Setup predictions and probabilities for metric calculations
-# model_predictions = ml_model.predict(data_test)
-# model_probabilities = ml_model.predict_proba(data_test)
-# # Choose index 1 of the probability list because this is the probability of the
-# # positive class.
-# model_probabilities_pos_class_test_data = [probability[1] for probability in model_probabilities]
-
-# # Confusion matrix 
-# from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-# confused_matrix = confusion_matrix(target_test, model_predictions)
-# cm_display = ConfusionMatrixDisplay.from_estimator(ml_model, data_test, target_test)
-# plt.xlabel("Predictions")
-# plt.ylabel("True Labels")
-# plt.title("Confusion Matrix with Heat Map Scheme")
-# plt.show()
+ml_model = knn_model
+# ml_model = dec_tree_model
+# ml_model = lr_model
+# ml_model = svc_model
+# ml_model = nonlinear_svc_model
+# ml_model = voting_model
+# ml_model = bagger_model
+# ml_model = paster_model
+# ml_model = rf_model
+# ml_model = ada_model
+# ml_model = gbt_model
 
 
-# from sklearn.metrics import precision_score, recall_score
-# precision_score_vals = precision_score(target_test, model_predictions)
-# recall_score_vals = recall_score(target_test, model_predictions)
-# print("Precision Score:", precision_score_vals)
-# print("Recall Score:", recall_score_vals)
+# Setup predictions and probabilities for metric calculations
+model_predictions = ml_model.predict(data_test)
+model_probabilities = ml_model.predict_proba(data_test)
+# Choose index 1 of the probability list because this is the probability of the
+# positive class.
+model_probabilities_pos_class_test_data = [probability[1] for probability in model_probabilities]
 
-# # Precisoin recall curve
-# from sklearn.metrics import PrecisionRecallDisplay
-# prd = PrecisionRecallDisplay.from_estimator(ml_model, data_test, target_test)
-# plt.xlabel("Recall")
-# plt.ylabel("Precision")
-# plt.title("PR Graph Plotting from from_estimator() Method")
-# plt.show()
-
-# # ROC Curve
-# from sklearn.metrics import RocCurveDisplay, roc_auc_score
-# prd = RocCurveDisplay.from_estimator(ml_model, data_test, target_test)
-# plt.xlabel("False Positive Rate")
-# plt.ylabel("True Positive Rate")
-# plt.title("ROC Graph Plotting from from_estimator() Method")
-# plt.show()
+# Confusion matrix 
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+confused_matrix = confusion_matrix(target_test, model_predictions)
+cm_display = ConfusionMatrixDisplay.from_estimator(ml_model, data_test, target_test)
+plt.xlabel("Predictions")
+plt.ylabel("True Labels")
+plt.title("Confusion Matrix with Heat Map Scheme")
+plt.show()
 
 
-# roc_score = roc_auc_score(target_test, model_probabilities_pos_class_test_data)
-# print("ROC Score:", roc_score)
+from sklearn.metrics import precision_score, recall_score
+precision_score_vals = precision_score(target_test, model_predictions)
+recall_score_vals = recall_score(target_test, model_predictions)
+print("Precision Score:", precision_score_vals)
+print("Recall Score:", recall_score_vals)
+
+# Precisoin recall curve
+from sklearn.metrics import PrecisionRecallDisplay
+prd = PrecisionRecallDisplay.from_estimator(ml_model, data_test, target_test)
+plt.xlabel("Recall")
+plt.ylabel("Precision")
+plt.title("PR Graph Plotting from from_estimator() Method")
+plt.show()
+
+# ROC Curve
+from sklearn.metrics import RocCurveDisplay, roc_auc_score
+prd = RocCurveDisplay.from_estimator(ml_model, data_test, target_test)
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Graph Plotting from from_estimator() Method")
+plt.show()
+
+
+roc_score = roc_auc_score(target_test, model_probabilities_pos_class_test_data)
+print("ROC Score:", roc_score)
 

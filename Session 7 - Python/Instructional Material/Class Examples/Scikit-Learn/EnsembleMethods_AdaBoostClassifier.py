@@ -41,12 +41,12 @@ dec_tree_model = DecisionTreeClassifier(max_depth=3)
 #
 # We can also adjust the learning rate, which affects how quickly the 
 # weights are changed over each training instance.  
-#
+from sklearn.ensemble import AdaBoostClassifier
 # The algorithm has two options:
 #     SAMME   - discrete boosting algorithm
 #     SAMME.R - SAMME real boost method, typically converges faster than SAMME
 ada_model = AdaBoostClassifier(dec_tree_model, 
-                               n_estimators=600, 
+                               n_estimators=5, 
                                algorithm="SAMME.R", 
                                learning_rate = 0.5)
 ada_model.fit(data_train, target_train)

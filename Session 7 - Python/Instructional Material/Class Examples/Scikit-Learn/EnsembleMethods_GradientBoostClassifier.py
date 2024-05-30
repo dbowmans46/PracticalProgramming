@@ -43,8 +43,8 @@ print("Gradient Boosted Tree Classifier Score: ", gbt_model_score)
 #     print("   ", learning_rate_val, "           ", gbt_model_score)
 
 # # We can iterate through to see the effect of different subsample values
-# print("Learning Rate       Score")
-# print("-------------       -----")
+# print("Subsample           Score")
+# print("---------           -----")
 # for subsample_val in [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]:
 #     gbt_model = GradientBoostingClassifier(max_depth=2, learning_rate=0.3, subsample=subsample_val)
 #     gbt_model.fit(data_train, target_train)

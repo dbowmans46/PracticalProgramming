@@ -19,7 +19,9 @@ import nltk
 # download just what you want
 nltk.download()
 
-# TODO: Import all the included texts usingfrom nltk.book import *
+# TODO: Import all the included texts using from nltk.book import *
+# TODO: Import other texts, such as nltk.corpus.pros_cons
+# TODO: Look at texts that have part-of-speech tags, such as nltk.corpus.brown.tagged_words()
 # TODO: use text1.concordance("monstrous") to show words with context
 # TODO: Get the concordance of other words
 # TODO: Calculate statistical values of text
@@ -30,6 +32,21 @@ nltk.download()
 # TODO: Frequency distribution of words nltk.FreqDist(text1)
 
 # Context
+
+####
+# Text Preparation
+####
+
+# Stopwords: nltk.corpus.stopwords.words('english')
+# As is alluded to, stopwords for multiple languages are included
+#nltk.corpus.stopwords.words('russian')
+#nltk.corpus.stopwords.words('hinglish')
+# Removing stop words
+#meaningful_words = [moby_dick_words for moby_dick_words in text1.tokens if not lower(moby_dick_words) in nltk.corpus.stopwords.words('english')]
+
+# Removing punctuation and articles
+#meaningful_words = [no_punc_words for no_punc_words in meaningful_words if len(no_punc_words) > 2]
+#nltk.FreqDist(meaningful_words)
 
 
 # Distances between words

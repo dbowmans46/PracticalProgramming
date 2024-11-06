@@ -48,11 +48,18 @@ import nltk
 # from nltk.book import *
 
 # # Stopwords: nltk.corpus.stopwords.words('english')
-# nltk.corpus.stopwords.words('english')
+# print("English Stopwords:")
+# print(nltk.corpus.stopwords.words('english'))
+# print("\n\n\n")
 
 # # As is alluded to, stopwords for multiple languages are included
-# nltk.corpus.stopwords.words('russian')
-# nltk.corpus.stopwords.words('hinglish')
+# print("Russian Stopwords:")
+# print(nltk.corpus.stopwords.words('russian'))
+# print("\n\n\n")
+
+# print("Hindi Stopwords (using Latin characters and borrowed English):")
+# print(nltk.corpus.stopwords.words('hinglish'))
+# print("\n\n\n")
 
 # # Removing stop words
 # # There are many ways to do this, one of which is using a list comprehension
@@ -83,17 +90,27 @@ import nltk
 
 
 
-raw_text = "He does run the store like a drill seargent."    
-tokenized_text = nltk.word_tokenize(raw_text)
-pos_text1 = nltk.pos_tag(tokenized_text)
-print(pos_text1,"\n")
+# raw_text = "He does run the store like a drill seargent."    
+# tokenized_text = nltk.word_tokenize(raw_text)
+# pos_text1 = nltk.pos_tag(tokenized_text)
+# print(pos_text1,"\n")
 
-# Notice that the part of speech changes depending on how the word is used.  In
-# this example, compare the word "run"
-raw_text2 = "The run was not as good as the previous three."    
-tokenized_text2 = nltk.word_tokenize(raw_text2)
-pos_text2 = nltk.pos_tag(tokenized_text2)
-print(pos_text2)
+# # Notice that the part of speech changes depending on how the word is used.  In
+# # this example, compare the word "run"
+# raw_text2 = "The run was not as good as the previous three."    
+# tokenized_text2 = nltk.word_tokenize(raw_text2)
+# pos_text2 = nltk.pos_tag(tokenized_text2)
+# print(pos_text2)
+
+# # To get all words with a specific part of speech, we can use a loop or a list
+# # comprehension.  We will get adverbs in this example (POS token is RB)
+# RB_words = []
+# for word_pos_pair in pos_text2:
+#     if word_pos_pair[1] == 'RB':
+#         RB_words.append(word_pos_pair[0])
+        
+# RB_words = [words[0] for words in pos_text2 if words[1] == 'RB']
+# print(RB_words)
 
 # # Getting a list of the parts of speach from a pre-trained text
 # pos_dict = nltk.data.load('help/tagsets/upenn_tagset.pickle')
@@ -109,22 +126,65 @@ print(pos_text2)
 ###############################################################################
 
 
-# Create a stemmer and use on some test text
-example_text = "He was studying way to hard on malicsiouly assigned reading assignments."
-tokenized_text = nltk.word_tokenize(example_text)
-porterStemmer = nltk.stem.PorterStemmer()
-for token in tokenized_text:
-    print("Token:", token, ", Stem:", porterStemmer.stem(token))
+# # Create a stemmer and use on some test text
+# example_text = "He studying way too hard on maliciously and unnecessarily assigned reading assignments from uncaring professors."
+# tokenized_text = nltk.word_tokenize(example_text)
+# porterStemmer = nltk.stem.PorterStemmer()
+# for token in tokenized_text:
+#     print("Token:", token, ", Stem:", porterStemmer.stem(token))
     
-# If we look at one of the previous sentences, can we see any issues with
-# the stem produced?
-raw_text = "He does run the store like a drill seargent."    
-tokenized_text = nltk.word_tokenize(raw_text)
-for token in tokenized_text:
-    print("Token:", token, ", Stem:", porterStemmer.stem(token))
+# # If we look at one of the previous sentences, can we see any issues with
+# # the stem produced?
+# raw_text = "He does run the store like a drill seargent."    
+# tokenized_text = nltk.word_tokenize(raw_text)
+# for token in tokenized_text:
+#     print("Token:", token, ", Stem:", porterStemmer.stem(token))
 
-# Let's see if a different stemmer may do a better job
-print("\n")
-lancasterStemmer = nltk.stem.LancasterStemmer()
-for token in tokenized_text:
-    print("Token:", token, ", Stem:", lancasterStemmer.stem(token))
+# # Let's see if a different stemmer may do a better job
+# print("\n")
+# lancasterStemmer = nltk.stem.LancasterStemmer()
+# for token in tokenized_text:
+#     print("Token:", token, ", Stem:", lancasterStemmer.stem(token))
+
+
+
+
+###############################################################################
+#                                                                             #
+#                               Lemmatization                                 #
+#                                                                             #
+###############################################################################
+
+# from nltk.stem import WordNetLemmatizer as wnl
+
+# # The lemmatize function takes two arguments: word to lemmaize and the part of 
+# # speech.  If a part of speech isn't given, it will default to a noun.  If it
+# # cannot find a matching word and part of speech, it will return the given word
+# # input.  The possible parts of speech are as follows:
+# # “n” -- nouns
+# # “v” -- verbs
+# # “a” -- adjectives
+# # “r” -- adverbs
+# # “s” -- satellite adjectives, which appear next to the word it describes, 
+# #        i.e. blue car
+# print("Lemmatized 'was':", wnl().lemmatize('was', 'v'))
+
+# # If we want to use the part-of-speech tagging from the built-in tagger with
+# # NLTK, we want to use the first character as the major classification for
+# # the part of speech.
+# example_text = "He studying way too hard on maliciously and unnecessarily assigned reading assignments from uncaring professors."
+# tokenized_text = nltk.word_tokenize(example_text)
+# pos_tagged_text = nltk.pos_tag(tokenized_text)
+# lemmas = []
+# for word,pos in pos_tagged_text:
+#     if pos[0] in ["N", "V", "A", "R"]:
+#         # If we can normalize the part-of-speech based on the 1st character of
+#         # the word tree POS, do so
+#         wnl_pos = pos[0].lower()
+#     else:
+#         # Default to noun, the default of the WordNetLemmatizer
+#         wnl_pos = "n"
+    
+#     lemmas.append(wnl().lemmatize(word, wnl_pos))
+    
+# print(lemmas)

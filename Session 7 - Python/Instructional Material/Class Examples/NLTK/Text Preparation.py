@@ -68,7 +68,7 @@ import nltk
 # # Another way is to use a for loop
 # meaningful_words_from_loop = []
 # for word in text1.tokens:
-#     if word not in nltk.corpus.stopwords.words('english'):
+#     if word.lower() not in nltk.corpus.stopwords.words('english'):
 #         meaningful_words_from_loop.append(word)
 
 # # Removing punctuation and articles.  Be careful with this one: punctuation 
@@ -90,14 +90,14 @@ import nltk
 
 
 
-# raw_text = "He does run the store like a drill seargent."    
+# raw_text = "He does run the store like a drill sergeant."    
 # tokenized_text = nltk.word_tokenize(raw_text)
 # pos_text1 = nltk.pos_tag(tokenized_text)
 # print(pos_text1,"\n")
 
 # # Notice that the part of speech changes depending on how the word is used.  In
 # # this example, compare the word "run"
-# raw_text2 = "The run was not as good as the previous three."    
+# raw_text2 = "The fourth night run was not as good as the previous three."    
 # tokenized_text2 = nltk.word_tokenize(raw_text2)
 # pos_text2 = nltk.pos_tag(tokenized_text2)
 # print(pos_text2)
@@ -112,7 +112,7 @@ import nltk
 # RB_words = [words[0] for words in pos_text2 if words[1] == 'RB']
 # print(RB_words)
 
-# # Getting a list of the parts of speach from a pre-trained text
+# # Getting the descriptions of a list of the parts of speach from a pre-trained text
 # pos_dict = nltk.data.load('help/tagsets/upenn_tagset.pickle')
 # for key_val in pos_dict:
 #     print(key_val, ":", pos_dict[key_val], "\n")
@@ -126,25 +126,35 @@ import nltk
 ###############################################################################
 
 
-# # Create a stemmer and use on some test text
-# example_text = "He studying way too hard on maliciously and unnecessarily assigned reading assignments from uncaring professors."
-# tokenized_text = nltk.word_tokenize(example_text)
-# porterStemmer = nltk.stem.PorterStemmer()
-# for token in tokenized_text:
-#     print("Token:", token, ", Stem:", porterStemmer.stem(token))
-    
-# # If we look at one of the previous sentences, can we see any issues with
-# # the stem produced?
-# raw_text = "He does run the store like a drill seargent."    
-# tokenized_text = nltk.word_tokenize(raw_text)
-# for token in tokenized_text:
-#     print("Token:", token, ", Stem:", porterStemmer.stem(token))
+# Create a stemmer and use on some test text
+example_text = "He is studying way too hard on maliciously and unnecessarily assigned reading assignments from uncaring professors."
+tokenized_text = nltk.word_tokenize(example_text)
+porterStemmer = nltk.stem.PorterStemmer()
+for token in tokenized_text:
+    print("Token:", token, ", Stem:", porterStemmer.stem(token))
 
-# # Let's see if a different stemmer may do a better job
-# print("\n")
-# lancasterStemmer = nltk.stem.LancasterStemmer()
-# for token in tokenized_text:
-#     print("Token:", token, ", Stem:", lancasterStemmer.stem(token))
+print("\n")
+
+# Let's create a side-by-side comparison of the Porter and Lancaster stemmers
+raw_text = "He does run the store like a drill seargent."    
+tokenized_text = nltk.word_tokenize(raw_text)
+lancasterStemmer = nltk.stem.LancasterStemmer()
+porter_stems = []
+lancaster_stems = []
+for token in tokenized_text:
+    porter_stems.append(porterStemmer.stem(token))
+    lancaster_stems.append(lancasterStemmer.stem(token))
+
+# Let's put all this in a DataFrame for a clear comparison
+import pandas as pd
+
+df = pd.DataFrame([tokenized_text, porter_stems, lancaster_stems])
+df = df.transpose()
+df.columns=["Tokens", "Porter", "Lancaster"]
+print(df)
+    
+# Notice the more-heavily truncated stems of the lancaster stemmer vs the porter
+# stemmer.
 
 
 

@@ -14,16 +14,67 @@ Created on Tue Nov 12 20:44:54 2024
 #                                                                             #
 ###############################################################################
 
-import nltk
+# import nltk
 
-dracula_filepath = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Books/Dracula.txt"
-with open(dracula_filepath) as fileHandle:
-    dracula_string = fileHandle.read()
-dracula_tokens = nltk.word_tokenize(dracula_string)
-draculaText = nltk.Text(dracula_tokens)
-draculaFreqDist = draculaText.vocab()
+# dracula_filepath = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Books/Dracula.txt"
+# with open(dracula_filepath) as fileHandle:
+#     dracula_string = fileHandle.read()
+# dracula_tokens = nltk.word_tokenize(dracula_string)
+# draculaText = nltk.Text(dracula_tokens)
+# draculaFreqDist = draculaText.vocab()
 
 
+
+###############################################################################
+#                                                                             #
+#                             IMDB Review Data Set                            #
+#                                                                             #
+###############################################################################
+
+# For the methods in this section, we need to have multiple corpus elements.  For the
+# remaining class lectures and examples, we will use the IMDB data set 
+# from http://ai.stanford.edu/~amaas/data/sentiment/ or
+# https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews/data
+
+# We will be utilizing the Stanford source to practice some basic python skills
+# First, let us read in the files and associate data with each review
+
+import os
+ratings_root_dir = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/aclImdb_v1/aclImdb/"
+pos_train_dir = ratings_root_dir + "train/pos/"
+neg_train_dir = ratings_root_dir + "train/neg/"
+
+# This list will contain tuple triples with (text,rating,pos=1/neg=0)
+reviews = []
+for file_name in os.listdir(pos_train_dir):
+    full_file_path = pos_train_dir + file_name
+    with open(full_file_path, 'r') as file_handle:
+        review_text = file_handle.read()
+
+    # File name has the form <id>_<rating_0-10>.txt
+    rating = file_name.split("_")[1].split(".")[0]
+    reviews.append((review_text, rating, 1))
+
+for file_name in os.listdir(neg_train_dir):
+    full_file_path = neg_train_dir + file_name
+    with open(full_file_path, 'r') as file_handle:
+        review_text = file_handle.read()
+
+    # File name has the form <id>_<rating_0-10>.txt
+    rating = file_name.split("_")[1].split(".")[0]
+    reviews.append((review_text,rating,0))
+    
+# Since the first half of reviews are positive and the second half are negative,
+# we should randomize the data so the machine learning model does not make
+# erroneous links in the data.
+from random import shuffle
+
+shuffle(reviews)
+
+# Now that we have a set of data, let's put it in a DataFrame
+
+import pandas as pd
+reviews_df = pd.DataFrame(data=reviews, columns=["reviews","rating","sentiment"])
 
 
 ###############################################################################
@@ -32,7 +83,7 @@ draculaFreqDist = draculaText.vocab()
 #                                                                             #
 ###############################################################################
 
-import sklearn.feature_extraction.text.CountVectorizer
+#import sklearn.feature_extraction.text.CountVectorizer
 
 # TODO: Load in the IMDB data into a dataframe
 # TODO: Get all the words as the initial vocab
@@ -52,14 +103,18 @@ import sklearn.feature_extraction.text.CountVectorizer
 # To utilize the TF-IDF scoring metric, we need multiple documents.  So first,
 # we must get a corpus with multiple documents that are related.
 
-import nltk
-import sklearn
+# import nltk
+# import sklearn
 
-import sklearn.feature_extraction.text.TfidfTransformer
-import sklearn.feature_extraction.text.TfidfVectorizer
+# from sklearn.feature_extraction.text import TfidfTransformer
+# from sklearn.feature_extraction.text import TfidfVectorizer
 
-vectorizer = sklearn.feature_extraction.text.TfidfVectorizer()
-train_vectors = vectorizer.fit_transform(X_train)
-test_vectors = vectorizer.transform(X_test)
-print(train_vectors.shape, test_vectors.shape)
+# # Create TF-IDF features
+# vectorizer = TfidfVectorizer(max_features=5000,stop_words='english',ngram_range=(1, 2))
+
+
+# vectorizer = sklearn.feature_extraction.text.TfidfVectorizer()
+# train_vectors = vectorizer.fit_transform(X_train)
+# test_vectors = vectorizer.transform(X_test)
+# print(train_vectors.shape, test_vectors.shape)
 

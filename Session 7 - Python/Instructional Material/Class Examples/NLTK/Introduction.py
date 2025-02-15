@@ -32,7 +32,3 @@ nltk.download()
 # TODO: text3.generate() to generate text based on a corpus
 
 
-
-# Distances between words
-#Jaccard Distance
-#Damerau-Levenshtein Distance

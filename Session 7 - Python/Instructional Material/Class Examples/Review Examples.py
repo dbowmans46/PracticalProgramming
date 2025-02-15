@@ -5,76 +5,82 @@ Created on Fri Mar  6 00:13:31 2020
 @author: Doug
 """
 
-# TODO: basic variables
-#x = 5
-#x = "6"
-#x = 5.6
-#print(type(int(x)))
+# # TODO: basic variables
+# x = 5
+# x = "6"
+# x = 5.6
+# print(type(int(x)))
 
-# TODO: tuple
-#x = [1,2,3]
-#print(x)
-#x.
-#print(x)
-# TODO: list
-# TODO: dictionary
-#scores = {"Joe":"50"}
-#print(scores["Joe"])
+# # TODO: tuple
+# x = [1,2,3]
+# print(x)
+# x.append(5)
+# print(x)
+# # TODO: list
+# # TODO: dictionary
+# scores = {"Joe":"50"}
+# print(scores["Joe"])
+
 
 # TODO: Conditions
-#condition_value = 60
-#x=0
-#
-#if (condition_value < 5):
-#    print(x)
-#    x = x - 1
-#elif (condition_value > 10):
-#    print("Greater than 10")    
-#else:    
-#    x = x + 1
-#    print(x)
-#    
-#print(x)
+# condition_value = 
+# x=0
+
+# if (condition_value < 5):
+#     print(x)
+#     x = x - 1
+# elif (condition_value > 10):
+#     print("Greater than 10")    
+# else:    
+#     x = x + 1
+#     print(x)
+    
+# print(x)
 
 # TODO: Loops
-#x = [1,2,3,4,5]
-#
-#for temp_val in x:
-#    
-#    print(temp_val)
-#    print(x)
-#    print("\n")
+# x = [1,2,3,4,5]
+
+# for temp_val in x:
     
-#conditional_value = True
-#counter = 0
-#
-#while (conditional_value):
-#    print(counter)
-#    counter += 1 # counter = counter + 1
-#    
-#    if (counter > 100):
-#        conditional_value = False
+#     print(temp_val)
+#     print(x)
+#     print("\n")
+    
+# for index in range(len(x)):
+    
+#     print(index)
+#     print(x[index])
+#     print("\n")
+    
+# conditional_value = True
+# counter = 0
+
+# while (conditional_value):
+#     print(counter)
+#     counter += 1 # counter = counter + 1
+    
+#     if (counter > 100):
+#         conditional_value = False
     
 
 
 # TODO: Functions
 
-#def Power(base, power):
-#    
-#    powerVal = base**power
-#    
-#    return powerVal
-#
-#print(Power(2,3))
-#
-## TODO: Write to a file that doesn't exist
-#filePath = "C:/users/doug/desktop/file.txt"
-#
-#with open(filePath,"a") as fileHandle:
-#    
-#    fileHandle.write("this is text")
-#    
-#    
+# def Power(base, power):    
+#     powerVal = base**power
+    
+#     return powerVal
+
+# print(Power(2,3))
+
+# TODO: Write to a file that doesn't exist
+# filePath = "C:/users/doug/desktop/file.txt"
+
+# with open(filePath,"a") as fileHandle:
+    
+#     fileHandle.write("this is text")
+    
+# print("done")
     
 
 ## TODO: Read from a file
@@ -96,20 +102,22 @@ Created on Fri Mar  6 00:13:31 2020
 # TODO: Append data to a file
 
 
-testStr = "this\tis\ta\tstring"
+# testStr = "this\tis\ta\tstring"
 
-print(testStr.split("\t"))
-
-
-testStr2 = "this is a test string, as well\n"
-print(testStr2.strip())
+# print(testStr.split("\t"))
 
 
-revenue = "500"
-cost = "200\n"
-print( int(revenue) - int(cost.split()[0]) )
+# testStr2 = "this is a test string, as well\n"
+# print(testStr2.strip())
 
 
+# revenue = "500"
+# cost = "200\n"
+# print(revenue - cost)
+# print( int(revenue) - int(cost.split()[0]) )
+
+# test_str = "this is a stringaa"
+# test_str.replace("aa","")
 
 
 

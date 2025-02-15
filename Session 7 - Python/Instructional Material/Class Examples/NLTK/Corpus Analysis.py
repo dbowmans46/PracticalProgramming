@@ -83,26 +83,26 @@ reviews_df = pd.DataFrame(data=reviews, columns=["reviews","rating","sentiment"]
 #                                                                             #
 ###############################################################################
 
-import nltk
-from sklearn.feature_extraction.text import CountVectorizer
+# import nltk
+# from sklearn.feature_extraction.text import CountVectorizer
 
-# TODO: Load in the IMDB data into a dataframe
-bag_of_words_df = reviews_df.copy()
-# TODO: Get all the words as the initial vocab
-reviews_vocab = []
+# # TODO: Load in the IMDB data into a dataframe
+# bag_of_words_df = reviews_df.copy()
+# # TODO: Get all the words as the initial vocab
+# reviews_vocab = []
 
-for review in bag_of_words_df['reviews']:
-    for word in nltk.word_tokenize(review):
-        reviews_vocab.append(word)
+# for review in bag_of_words_df['reviews']:
+#     for word in nltk.word_tokenize(review):
+#         reviews_vocab.append(word)
         
-# TODO: Remove stop words from vocab
-reviews_vocab_clean = [token for token in reviews_vocab if token not in nltk.corpus.stopwords.words('english')]
+# # TODO: Remove stop words from vocab
+# reviews_vocab_clean = [token for token in reviews_vocab if token not in nltk.corpus.stopwords.words('english')]
 
-# TODO: Remove punctuation and small words from vocab
-reviews_vocab_clean = [token for token in reviews_vocab_clean if len(token) > 1]
+# # TODO: Remove punctuation and small words from vocab
+# reviews_vocab_clean = [token for token in reviews_vocab_clean if len(token) > 1]
 
-# TODO: Get unique words in vocab, and add to DataFrame to get counts
-reviews_vocab_clean = list(set(reviews_vocab_clean))
+# # TODO: Get unique words in vocab, and add to DataFrame to get counts
+# reviews_vocab_clean = list(set(reviews_vocab_clean))
 
 
 

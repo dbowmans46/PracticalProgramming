@@ -83,29 +83,107 @@ reviews_df = pd.DataFrame(data=reviews, columns=["reviews","rating","sentiment"]
 #                                                                             #
 ###############################################################################
 
-# import nltk
-# from sklearn.feature_extraction.text import CountVectorizer
+import nltk
 
-# # TODO: Load in the IMDB data into a dataframe
-# bag_of_words_df = reviews_df.copy()
-# # TODO: Get all the words as the initial vocab
-# reviews_vocab = []
+del reviews  # Save some memory
 
-# for review in bag_of_words_df['reviews']:
-#     for word in nltk.word_tokenize(review):
-#         reviews_vocab.append(word)
+# TODO: Get all the words as the initial vocab
+reviews_vocab = []
+
+for review in reviews_df['reviews']:
+    for word in nltk.word_tokenize(review):
+        reviews_vocab.append(word)
         
-# # TODO: Remove stop words from vocab
-# reviews_vocab_clean = [token for token in reviews_vocab if token not in nltk.corpus.stopwords.words('english')]
+# Get unique vocab
+reviews_vocab_clean = list(set(reviews_vocab))
+del reviews_vocab # Save some memory
+        
+# Remove stop words from vocab
+reviews_vocab_clean = [token for token in reviews_vocab_clean if token not in nltk.corpus.stopwords.words('english')]
 
-# # TODO: Remove punctuation and small words from vocab
-# reviews_vocab_clean = [token for token in reviews_vocab_clean if len(token) > 1]
+# Remove punctuation and small words from vocab
+reviews_vocab_clean = [token for token in reviews_vocab_clean if len(token) > 1]
 
-# # TODO: Get unique words in vocab, and add to DataFrame to get counts
-# reviews_vocab_clean = list(set(reviews_vocab_clean))
+# Could also lowercase all words, but sometimes capitalization is important
+
+# TODO: Looking through the data, we can see that some groups of words were 
+# kept as one, separated by / (i.e. magician/inventor).  For the purposes of 
+# this example, I have decided to split these into separate features.  
+#
+# Some of the words also contain an erroneous period that we will remove.
+reviews_vocab_clean_split = []
+
+for token in reviews_vocab_clean:
+    # Remove any erroneous periods
+    token = token.replace(".","")
+    
+    # Split up any multi-word tokens separated by "/"
+    if token.find("/") != -1:
+        reviews_vocab_clean_split.extend(token.split("/"))
+    else:
+        reviews_vocab_clean_split.append(token)
+
+# We may now have duplicates again, so let's make the vocab set unique one
+# more time.  Note this can all be combined in the for loop that initially gets
+# the tokens for a more efficient script.
+reviews_vocab_clean_split = list(set(reviews_vocab_clean_split))
+
+del reviews_vocab_clean # Save some memory
+
+# TODO: Go through each document (the 'reviews' column in the reviews_df) and
+# get a count of each word.  This needs to be stored in an appropriate data
+# structure.  For this example, we will use a DataFrame to hold all the 
+# features, utilizing a dictionary to add new rows to each DataFrame
+review_vocab_counts = []
+for review in reviews_df["reviews"]:
+    # Make sure to split multi-word tokens so they will match our vocab
+    # Also remove erroneous periods.  The other tokens and stop words just 
+    # won't find any matches in our DataFrame features, and thus will not need
+    # to be removed here.
+    token_count_dict = {}
+    review = review.replace("/"," ")
+    for review_token in nltk.word_tokenize(review):
+        review_token = review_token.replace(".", "")
+        
+        if review_token in token_count_dict.keys():
+            token_count_dict[review_token] += 1
+        else:
+            token_count_dict[review_token] = 1
+            
+    review_vocab_counts.append(token_count_dict)
+
+# Due to memory issues, only use the first 1000 reviews
+train_df = pd.DataFrame(data=review_vocab_counts[:1000], columns=reviews_vocab_clean_split)
+
+# Where there are no matches, NaN will be placed.  These need to be numbers.
+train_df.fillna(0, inplace=True)
+
+# Taking a look at the train_df, we can see that this is a pretty sparse matrix
+
+# Let's test to see if it was filled in correctly by checking the words in
+# the first review against the columns of those tokens.
+for token in review_vocab_counts[0]:
+    review_vocab_count_val = review_vocab_counts[0][token]
+    train_df_value = train_df.loc[0][token]
+    print("token:", token, "   review token count:", review_vocab_count_val, "   train_df count:", train_df_value)
+
+# Looks like we get a key error.  Why might this be?  Hint: check the stop words
+# So, to fix this, we should be checking the cleaned vocab list when we are 
+# getting our counts.
 
 
 
+
+
+
+
+# # Sure is a lot of work.  Wouldn't it be nice if there was a library that just
+# # did this for us?
+# from sklearn.feature_extraction.text import CountVectorizer
+# vectorizer = CountVectorizer()
+# vectorizer.fit_transform(reviews_df["reviews"])
+
+# Done, noting that this is a sparse matrix numpy data structure
 
 ###############################################################################
 #                                                                             #

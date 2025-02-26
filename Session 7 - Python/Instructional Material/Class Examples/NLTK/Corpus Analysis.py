@@ -87,7 +87,7 @@ import nltk
 
 del reviews  # Save some memory
 
-# TODO: Get all the words as the initial vocab
+# Get all the words as the initial vocab
 reviews_vocab = []
 
 for review in reviews_df['reviews']:
@@ -106,7 +106,7 @@ reviews_vocab_clean = [token for token in reviews_vocab_clean if len(token) > 1]
 
 # Could also lowercase all words, but sometimes capitalization is important
 
-# TODO: Looking through the data, we can see that some groups of words were 
+# Looking through the data, we can see that some groups of words were 
 # kept as one, separated by / (i.e. magician/inventor).  For the purposes of 
 # this example, I have decided to split these into separate features.  
 #
@@ -126,11 +126,12 @@ for token in reviews_vocab_clean:
 # We may now have duplicates again, so let's make the vocab set unique one
 # more time.  Note this can all be combined in the for loop that initially gets
 # the tokens for a more efficient script.
+# Note that set() does not preserve word order
 reviews_vocab_clean_split = list(set(reviews_vocab_clean_split))
 
 del reviews_vocab_clean # Save some memory
 
-# TODO: Go through each document (the 'reviews' column in the reviews_df) and
+# Go through each document (the 'reviews' column in the reviews_df) and
 # get a count of each word.  This needs to be stored in an appropriate data
 # structure.  For this example, we will use a DataFrame to hold all the 
 # features, utilizing a dictionary to add new rows to each DataFrame
@@ -142,6 +143,8 @@ for review in reviews_df["reviews"]:
     # to be removed here.
     token_count_dict = {}
     review = review.replace("/"," ")
+    
+    # Note that nltk.word_tokenize does preserve token order
     for review_token in nltk.word_tokenize(review):
         review_token = review_token.replace(".", "")
         
@@ -152,8 +155,9 @@ for review in reviews_df["reviews"]:
             
     review_vocab_counts.append(token_count_dict)
 
-# Due to memory issues, only use the first 1000 reviews
-train_df = pd.DataFrame(data=review_vocab_counts[:1000], columns=reviews_vocab_clean_split)
+# Due to memory issues, only use the first 500 reviews
+# train_df = pd.DataFrame(data=review_vocab_counts, columns=reviews_vocab_clean_split)
+train_df = pd.DataFrame(data=review_vocab_counts[:500], columns=reviews_vocab_clean_split)
 
 # Where there are no matches, NaN will be placed.  These need to be numbers.
 train_df.fillna(0, inplace=True)
@@ -169,11 +173,8 @@ for token in review_vocab_counts[0]:
 
 # Looks like we get a key error.  Why might this be?  Hint: check the stop words
 # So, to fix this, we should be checking the cleaned vocab list when we are 
-# getting our counts.
-
-
-
-
+# getting our counts.  Also, the train_df only contains data on the first 500
+# elements of review_vocab_counts, and will be missing keys.
 
 
 

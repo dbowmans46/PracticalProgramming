@@ -40,7 +40,8 @@ Created on Tue Nov 12 20:44:54 2024
 # First, let us read in the files and associate data with each review
 
 import os
-ratings_root_dir = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/aclImdb_v1/aclImdb/"
+#ratings_root_dir = "/home/doug/repos/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/aclImdb_v1/aclImdb/"
+ratings_root_dir = "D:/repo/PracticalProgramming/Session 7 - Python/Instructional Material/In-Class Exercises/Data/aclImdb_v1/aclImdb/"
 pos_train_dir = ratings_root_dir + "train/pos/"
 neg_train_dir = ratings_root_dir + "train/neg/"
 
@@ -48,7 +49,7 @@ neg_train_dir = ratings_root_dir + "train/neg/"
 reviews = []
 for file_name in os.listdir(pos_train_dir):
     full_file_path = pos_train_dir + file_name
-    with open(full_file_path, 'r') as file_handle:
+    with open(full_file_path, 'r', encoding="UTF-8") as file_handle:
         review_text = file_handle.read()
 
     # File name has the form <id>_<rating_0-10>.txt
@@ -57,7 +58,7 @@ for file_name in os.listdir(pos_train_dir):
 
 for file_name in os.listdir(neg_train_dir):
     full_file_path = neg_train_dir + file_name
-    with open(full_file_path, 'r') as file_handle:
+    with open(full_file_path, 'r', encoding="UTF-8") as file_handle:
         review_text = file_handle.read()
 
     # File name has the form <id>_<rating_0-10>.txt
@@ -84,6 +85,7 @@ reviews_df = pd.DataFrame(data=reviews, columns=["reviews","rating","sentiment"]
 ###############################################################################
 
 import nltk
+import numpy as np
 
 del reviews  # Save some memory
 
@@ -152,36 +154,46 @@ for review in reviews_df["reviews"]:
             
     review_vocab_counts.append(token_count_dict)
 
-# Due to memory issues, only use the first 1000 reviews
+# Due to memory issues, only use the first 1000/25000 reviews
 train_df = pd.DataFrame(data=review_vocab_counts[:1000], columns=reviews_vocab_clean_split)
 
 # Where there are no matches, NaN will be placed.  These need to be numbers.
 train_df.fillna(0, inplace=True)
 
 # Taking a look at the train_df, we can see that this is a pretty sparse matrix
+# Convert to a sparse DataFrame to save some memory.  This will not store any 
+# 0 values in the DataFrame in such a way that they can be repopulated later
+train_sparse_df = train_df.astype(pd.SparseDtype("int", 0))
+del train_df
+
+# We can check the compression as below
+print("Sparse DF Density:", train_sparse_df.sparse.density)
 
 # Let's test to see if it was filled in correctly by checking the words in
 # the first review against the columns of those tokens.
 for token in review_vocab_counts[0]:
     review_vocab_count_val = review_vocab_counts[0][token]
-    train_df_value = train_df.loc[0][token]
+    train_df_value = train_sparse_df.loc[0][token]
     print("token:", token, "   review token count:", review_vocab_count_val, "   train_df count:", train_df_value)
 
 # Looks like we get a key error.  Why might this be?  Hint: check the stop words
-# So, to fix this, we should be checking the cleaned vocab list when we are 
-# getting our counts.
-
-
-
-
-
+# Note that this isn't necessarily an error, since some tokens have been removed.
+# Another issue is the set() conversion does not preserve order, so we cannot
+# simply check the values sequentially.  We can also only check words that
+# should be in our feature set by not checking stop words and not checking
+# punctuation.
+for token in review_vocab_counts[0]:
+    if len(token) > 1 and token not in nltk.corpus.stopwords.words('english'):
+        review_vocab_count_val = review_vocab_counts[0][token]
+        train_df_value = train_sparse_df.loc[0][token]
+        print("token:", token, "   review token count:", review_vocab_count_val, "   train_df count:", train_df_value)
 
 
 # # Sure is a lot of work.  Wouldn't it be nice if there was a library that just
 # # did this for us?
-# from sklearn.feature_extraction.text import CountVectorizer
-# vectorizer = CountVectorizer()
-# vectorizer.fit_transform(reviews_df["reviews"])
+from sklearn.feature_extraction.text import CountVectorizer
+vectorizer = CountVectorizer()
+tokenized_data = vectorizer.fit_transform(reviews_df["reviews"])
 
 # Done, noting that this is a sparse matrix numpy data structure
 

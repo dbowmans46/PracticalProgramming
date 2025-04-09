@@ -152,10 +152,10 @@ for review in reviews_df["reviews"]:
     # to be removed here.  We are going to add an extra column that holds
     # the total tokens within a document.  This will be needed later, and is
     # more efficient to calculate here
-    token_count_dict = {"doc_word_count":0}
+    token_count_dict = {"words_in_doc_count":0}
     review = review.replace("/"," ")
     for review_token in nltk.word_tokenize(review):
-        token_count_dict["doc_word_count"] += 1        
+        token_count_dict["words_in_doc_count"] += 1
         review_token = review_token.replace(".", "")
         
         if review_token in token_count_dict.keys():
@@ -166,7 +166,7 @@ for review in reviews_df["reviews"]:
     review_vocab_counts.append(token_count_dict)
 
 # Due to memory issues, only use the first 1000/25000 reviews
-reviews_vocab_clean_split.append("doc_word_count") # Add the document count to our list of vocab
+reviews_vocab_clean_split.append("words_in_doc_count") # Add the word count in this document to our list of vocab
 train_df = pd.DataFrame(data=review_vocab_counts, columns=reviews_vocab_clean_split)
 
 # Where there are no matches, NaN will be placed.  These need to be numbers.
@@ -216,17 +216,20 @@ train_df.fillna(0, inplace=True)
 ###############################################################################
 
 # We will build off our current data set since we need the count of tokens
-# to calculate the TF-IDF
+# to calculate the TF-IDF.  Remember that we currently have token counts 
+# per document in each row of our data.
 
-# import nltk
-# import sklearn
+import nltk
+import sklearn
 
 # First, we will calculate the value manually. 
-# TODO: Get the TF value by getting the count of the token over the count of all
+# Get the TF value by getting the count of the token over the count of all
 # tokens in this documents.  We will update the count values in place.
-def generate_tf_vals(row, count_col_name = "doc_word_count"):
+def generate_tf_vals(row, count_col_name = "words_in_doc_count"):
     for column in row.keys():
         if column != count_col_name:
+            # Update the score for each token except the column housing the
+            # total number of tokens in the document
             row[column] = row[column]/row[count_col_name]
     return row
     
@@ -234,7 +237,7 @@ train_df = train_df.apply(generate_tf_vals, axis=1)
 
  
 
-# TODO: Get the number of documents this token exists in and calculate IDF val
+# Get the number of documents this token exists in and calculate IDF val
 # as ln (docs/docs where word appears).  We will create
 # a dictionary for this to make the mapping easier.
 import math
@@ -246,14 +249,17 @@ for token in train_df.columns:
     
 # Just as above, we will apply a map to update the current TF values.  We could
 # also simplify by making 1 function that generates the tf-idf value in one go.
-def generate_tf_idf_vals(row_with_tf_vals, token_idf_vals, count_col_name = "doc_word_count"):
+def generate_tf_idf_vals(row_with_tf_vals, token_idf_vals, count_col_name = "words_in_doc_count"):
     for column in row_with_tf_vals.keys():
         if column != count_col_name:
             row_with_tf_vals[column] = row_with_tf_vals[column]*token_idf_vals[column]
     return row_with_tf_vals
 
-# TODO: Apply the function
+# Apply the function
 train_df = train_df.apply(lambda row: generate_tf_idf_vals(row, token_idf_vals), axis=1)
+
+# Output the data to a CSV for future analysis without maxing memory usage
+train_df.to_csv("tf-idf_data.csv")
 
 # At this point, we now have a data frame that we can use to train a machine
 # learning model of our choice.

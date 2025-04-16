@@ -48,7 +48,7 @@ neg_train_dir = ratings_root_dir + "train/neg/"
 # This list will contain tuple triples with (text,rating,pos=1/neg=0)
 reviews = []
 
-# TODO: These for loops have the same # of iterations.  Run in paralle to
+# TODO: These for loops have the same # of iterations.  Run in parallel to
 # possibly save time.
 for file_name in os.listdir(pos_train_dir):
     full_file_path = pos_train_dir + file_name
@@ -201,8 +201,8 @@ train_df.fillna(0, inplace=True)
 #         print("token:", token, "   review token count:", review_vocab_count_val, "   train_df count:", train_df_value)
 
 
-# # Sure is a lot of work.  Wouldn't it be nice if there was a library that just
-# # did this for us?
+# Sure is a lot of work.  Wouldn't it be nice if there was a library that just
+# did this for us?
 # from sklearn.feature_extraction.text import CountVectorizer
 # vectorizer = CountVectorizer()
 # tokenized_data = vectorizer.fit_transform(reviews_df["reviews"])
@@ -274,14 +274,11 @@ train_df.to_csv("tf-idf_data.csv")
 
 # from sklearn.feature_extraction.text import TfidfVectorizer
 
-# # Create TF-IDF features
-# vectorizer = TfidfVectorizer(max_features=5000,stop_words='english',ngram_range=(1, 2))
-
-
+# Create TF-IDF features
+# vectorizer = TfidfVectorizer(max_features=100000,stop_words='english',ngram_range=(1, 2))
 # vectorizer = sklearn.feature_extraction.text.TfidfVectorizer()
-# train_vectors = vectorizer.fit_transform(X_train)
-# test_vectors = vectorizer.transform(X_test)
-# print(train_vectors.shape, test_vectors.shape)
+# vector_matrix = vectorizer.fit_transform(reviews_df["reviews"])
+# print(vector_matrix.shape)
 
 
 
